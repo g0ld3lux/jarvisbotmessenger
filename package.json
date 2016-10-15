@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-chart.js": "^1.0.2",
+    "angular-datatables": "^0.5.5",
+    "angular-daterangepicker": "^0.2.3-alpha1",
+    "angular-sanitize": "^1.5.8",
+    "angular-toastr": "^2.0.0",
+    "angular-ui-bootstrap": "^2.1.3",
+    "angular-ui-sortable": "^0.14.3",
+    "bootstrap-daterangepicker": "^2.1.24",
+    "bootstrap-sass": "^3.0.0",
+    "chart.js": "^2.1.0",
+    "datatables": "^1.10.12",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.42",
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.1",
+    "laravel-elixir": "^5.0.0",
+    "moment": "^2.13.0",
+    "moment-timezone": "^0.5.4",
+    "ng-file-upload": "^12.2.9",
+    "pace-progress": "^1.0.2",
+    "select2": "^4.0.2",
+    "select2-bootstrap-theme": "0.1.0-beta.4",
+    "sweetalert": "^1.1.3",
+    "ui-select": "^0.19.4",
+    "underscore": "^1.8.3"
+  }
+}

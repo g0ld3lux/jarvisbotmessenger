@@ -1,0 +1,400 @@
+/*!
+ * node_modules/bootstrap-sass/assets/stylesheets/bootstrap v3.3.6 (http://getnode_modules/bootstrap-sass/assets/stylesheets/bootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+// Reset and dependencies
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+
+// Core CSS
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+
+// Components
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navs";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pager";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/labels";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/badges";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/media";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/list-group";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/wells";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/close";
+
+// Components w/ JavaScript
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
+
+// Utility classes
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+@import "node_modules/select2-bootstrap-theme/src/select2-bootstrap.scss";
+@import "bootswatch";
+
+body {
+  background: $gray-lighter;
+}
+
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.content-header {
+  background: #ffffff;
+  line-height: 40px;
+  font-size: $font-size-h3;
+  margin-bottom: 30px;
+
+  .content-header-title {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .content-header-actions {
+    padding-top: 11px;
+  }
+
+  .nav {
+    margin-top: 12px;
+    border-bottom: none;
+
+    > li {
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          background-color: $gray-lighter;
+        }
+      }
+    }
+  }
+}
+
+.fa-btn {
+  margin-right: 6px;
+}
+
+.custom-table {
+  > thead {
+    > tr {
+      border-bottom: 2px solid $gray-lighter;
+
+      > th {
+        line-height: 30px;
+      }
+    }
+  }
+  > tbody {
+    > tr {
+      border-bottom: 1px solid $gray-lighter;
+
+      > td {
+        line-height: 62px;
+      }
+    }
+  }
+}
+
+.chart {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  &.auth {
+    margin-top: 30px;
+  }
+}
+
+.panel-default {
+  > .panel-heading {
+    background: #fff;
+    border-bottom: 2px solid $gray-lighter;
+  }
+  > .panel-footer {
+    background: #fff;
+    border-bottom: 2px solid $gray-lighter;
+  }
+}
+
+.taxonomies-block {
+  > .taxonomy-group {
+    background: $gray-lighter;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+
+    > .taxonomy-group-toolbar {
+      background: #fff;
+      margin-bottom: 20px;
+
+      > .taxonomy-type {
+        background: $alert-info-bg;
+        padding: 5px 10px;
+        color: #fff;
+      }
+
+      > .taxonomy-toolbar {
+        padding: 5px;
+      }
+    }
+
+    > .taxonomy-group-bottom-toolbar {
+      padding: 0 40px;
+    }
+
+    > .taxonomy-group {
+      padding: 0 40px;
+
+      > .taxonomy-group-toolbar {
+        > .taxonomy-type {
+          background: $alert-info-bg;
+          padding: 5px 10px;
+          color: #fff;
+        }
+
+        > .taxonomy-toolbar {
+          padding: 5px;
+        }
+      }
+
+      > .taxonomy-group-params {
+        background: lighten($gray-lighter, 5);
+      }
+
+
+
+      > .taxonomy-group-bottom-toolbar {
+        padding: 0 40px;
+      }
+
+      > .taxonomy-group {
+        padding: 0 40px;
+
+        > .taxonomy-group-toolbar {
+          > .taxonomy-type {
+            background: $alert-info-bg;
+            padding: 5px 10px;
+            color: #fff;
+          }
+
+          > .taxonomy-toolbar {
+            padding: 5px;
+          }
+        }
+
+        > .taxonomy-group-params {
+          background: lighten($gray-lighter, 10);
+        }
+      }
+    }
+  }
+}
+
+.flow-container {
+  > .panel {
+    > .panel-body {
+      //min-height: 450px;
+    }
+  }
+}
+
+.flow-action-button {
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+.jumbotron-white {
+  background-color: #FFFFFF;
+}
+
+.matchers {
+  &.dashboard {
+    > div {
+      height: 70px;
+      overflow: scroll;
+
+      > div {
+        font-size: $font-size-h2;
+      }
+    }
+  }
+
+  .matcher {
+    > .btn-group {
+      margin-bottom: 2px;
+      margin-top: 2px;
+    }
+  }
+}
+
+.responds {
+  &.dashboard {
+    > div {
+      height: 70px;
+      overflow: scroll;
+
+      > div {
+        font-size: $font-size-h2;
+      }
+    }
+  }
+
+  .respond {
+    > a {
+      margin-bottom: 2px;
+      margin-top: 2px;
+    }
+  }
+}
+
+.flows-sortable-placeholder {
+  background: $gray-lighter;
+  height: 230px;
+  margin-bottom: $line-height-computed;
+  border-radius: $panel-border-radius;
+  border: 2px dashed #ffffff;
+}
+
+footer {
+  hr {
+    border-top-color: white;
+  }
+}
+
+.responds-list {
+  .respond-item {
+    @include clearfix;
+    display: block;
+    padding: $thumbnail-padding;
+    margin-bottom: $line-height-computed;
+    line-height: $line-height-base;
+    background-color: $thumbnail-bg;
+    border: 1px solid $thumbnail-border;
+    border-radius: $thumbnail-border-radius;
+    @include transition(border .2s ease-in-out);
+    min-height: 60px;
+
+    img {
+      @include img-responsive;
+      margin-right: 10px;
+      float: left;
+    }
+
+    .title {
+      line-height: 28px;
+      font-size: $font-size-h4;
+    }
+
+    .date {
+      color: $text-muted;
+    }
+  }
+}
+
+.dataTable {
+  > thead {
+    > tr {
+      > th {
+        line-height: 30px;
+        border-bottom: 2px solid $gray-lighter;
+      }
+    }
+  }
+
+  > tbody {
+    > tr {
+      > td {
+        line-height: 62px;
+        border-bottom: 1px solid $gray-lighter;
+      }
+    }
+  }
+
+
+  border-bottom: 1px solid $gray-lighter !important;
+  border-top: 1px solid $gray-lighter !important;
+}
+
+.datatables-disable-top-padding-margin {
+  .dataTables_wrapper {
+    padding-top: 0 !important;
+  }
+
+  table {
+    margin-top: 0 !important;
+    border-top: none !important;
+  }
+}
+
+table {
+  th,
+  td {
+    &.thumb-column {
+      width: 45px;
+    }
+
+    &.message-column {
+      width: 160px;
+      text-align: center;
+    }
+
+    &.date-column {
+      width: 200px;
+      text-align: center;
+    }
+
+    &.actions-column {
+      text-align: right;
+    }
+
+    &.accounts-column {
+      width: 300px;
+      text-align: center;
+    }
+
+    &.gender-column {
+      width: 15px;
+      text-align: center;
+    }
+
+    &.recipient-chat-status {
+      width: 52px;
+      text-align: center;
+    }
+  }
+}
+
+.dataTables_filter {
+  padding-top: 10px;
+}

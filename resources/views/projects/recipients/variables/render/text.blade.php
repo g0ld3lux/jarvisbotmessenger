@@ -1,0 +1,1 @@
+{{ $recipientVariable->getParamValue('text') }}

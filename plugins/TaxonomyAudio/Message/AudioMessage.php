@@ -1,0 +1,51 @@
+<?php
+
+namespace Plugins\TaxonomyAudio\Message;
+
+class AudioMessage
+{
+    /**
+     * @var integer|null
+     */
+    protected $recipient = null;
+
+    /**
+     * @var string
+     */
+    protected $text = null;
+
+    /**
+     * Message constructor.
+     *
+     * @param $recipient
+     * @param $file
+     */
+    public function __construct($recipient, $file)
+    {
+        $this->recipient = $recipient;
+        $this->text = $file;
+
+    }
+
+    /**
+     * Get message data
+     *
+     * @return array
+     */
+    public function getData()
+    {
+        return [
+            'recipient' =>  [
+                'id' => $this->recipient,
+            ],
+            'message' => [
+                'attachment' => [
+                    'type' => 'audio',
+                    'payload' => [
+                        'url' => $this->text,
+                    ],
+                ],
+            ],
+        ];
+    }
+}
