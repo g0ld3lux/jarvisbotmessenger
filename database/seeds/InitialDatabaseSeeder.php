@@ -16,9 +16,11 @@ class InitialDatabaseSeeder extends Seeder
 
         $user = App\Models\User::create([
               'name' => 'Uriah Galang',
-              'email' => 'super.elite.vip@gmail.com'
+              'email' => 'super.elite.vip@gmail.com',
+              'verified' => true,
+              'activated' => true
         ]);
 
-        $user->permissions()->attach(App\Models\Permission::where('permission', 'master')->first()->id);
+        $user->permissions()->attach([1,2]);
     }
 }

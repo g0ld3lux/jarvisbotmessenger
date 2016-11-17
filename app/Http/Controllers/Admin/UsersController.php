@@ -134,25 +134,95 @@ class UsersController extends Controller
 
     public function impersonate(User $user)
     {
-      // Guard against administrator impersonate
-      if(! $user->isAdministrator())
-      {
-      	auth()->user()->setImpersonating($user->id);
+      if($user->isAdministrator()){
+        Notification::success('You Are Already Logged in As Admin!');
+        return redirect()->back();
       }
-      else
-      {
-      	Notification::error('You Have No Such Priviledges!.');
-      }
+        auth()->user()->setImpersonating($user->id);
+      	Notification::success('You are Signed is as '.$user->name);
+        return redirect()->to('/account');
 
-      return redirect()->to('/account');
     }
 
     public function stopImpersonate()
     {
+        $id = session()->get('impersonate');
+        $user = User::find($id);
         auth()->user()->stopImpersonating();
-
-        Notification::success('Welcome Back Admin!');
+        Notification::warning('You Have Stopped Impersonating '.$user->name);
 
         return redirect()->route('admin.users.index');
+    }
+
+    public function toggleActiveToIndex(User $user)
+    {
+      // If We Are Toggling Admin Prevent it
+      if($user->isAdministrator()){
+        Notification::error('You Cannot Deactivate or Activate An Admin');
+        return redirect()->back();
+      }
+      $user->update([
+        'activated' => !$user->activated
+      ]);
+      $message= 'Deactivated ';
+      if($user->activated){
+        $message = 'Activated ';
+        Notification::success('You have '.$message.$user->name);
+        return redirect()->route('admin.users.index');
+      }
+      Notification::error('You have '.$message.$user->name);
+      return redirect()->route('admin.users.index');
+    }
+
+    public function toggleActiveToShow(User $user)
+    {
+      // If We Are Toggling Admin Prevent it
+      if($user->isAdministrator()){
+        Notification::error('You Cannot Deactivate or Activate An Admin');
+        return redirect()->back();
+      }
+      $user->update([
+        'activated' => !$user->activated
+      ]);
+      $message= 'Deactivated ';
+      if($user->activated){
+        $message = 'Activated ';
+        Notification::success('You have '.$message.$user->name);
+        return redirect()->route('admin.users.show', $user->id);
+      }
+      Notification::error('You have '.$message.$user->name);
+      return redirect()->route('admin.users.show', $user->id);
+    }
+
+    public function resendActivationEmail(User $user)
+    {
+      $user = $user->toArray();
+      $user['link'] = str_random(15);
+
+      \DB::table('user_activations')->insert(['id_user'=>$user['id'],'token'=>$user['link']]);
+      \Mail::send('emails.activation', $user, function($message) use ($user) {
+          $message->to($user['email']);
+          $message->subject(config('jarvis.site.name') . ' - Verify Your Email');
+      });
+      Notification::success('You Have Re-Sent Verification Email To '.$user['email']);
+      return redirect()->back();
+    }
+
+    public function refreshTrial(User $user)
+    {
+      $user->update([
+        'trial_ends_at' => \Carbon\Carbon::now()->addDays(7)
+      ]);
+      Notification::success('You Have Set Free Trial To '.$user->name);
+      return redirect()->back();
+    }
+
+    public function removeTrial(User $user)
+    {
+      $user->update([
+        'trial_ends_at' => null
+      ]);
+      Notification::error('You Have Remove Free Trial from '.$user->name);
+      return redirect()->back();
     }
 }

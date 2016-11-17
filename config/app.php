@@ -157,6 +157,7 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Recca0120\LaravelPayum\ServiceProvider::class,
 
         /*
          * Application Service Providers...

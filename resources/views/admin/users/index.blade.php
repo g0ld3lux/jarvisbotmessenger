@@ -44,8 +44,11 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Projects</th>
-                                    <th>Created</th>
+                                    <th>Verified</th>
+                                    <th>Status</th>
+                                    <th>Trial</th>
+                                    <th>Subscription</th>
+
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
@@ -55,8 +58,91 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->display_name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>{{ $user->projects()->count() }}</td>
-                                        <td>{{ $user->created_at->format('F j, Y, g:i A') }}</td>
+                                        <td>
+                                          @if($user->verified)
+                                            <span class="button-checkbox">
+                                            <button type="submit" class="btn btn-success">Verified</button>
+                                            </span>
+                                          @else
+                                            <span class="button-checkbox">
+                                            <button type="submit" class="btn btn-info">Pending</button>
+                                            </span>
+                                          @endif
+                                        </td>
+                                        <td>
+
+                                          <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.users.toggleActiveToIndex', $user->id) }}">
+                                          {!! csrf_field() !!}
+                                          <span class="button-checkbox">
+                                          <button type="submit" class="btn {{ ($user->activated) ? 'btn-success' : 'btn-default' }}" {{ ($user->activated) ? 'checked' : '' }}>{{ ($user->activated) ? 'Active' : 'Inactive' }}</button>
+                                          </span>
+                                        </form>
+
+                                        </td>
+                                        <td>
+                                          <span class="button-checkbox">
+                                          <button type="submit" class="btn
+                                          @if(is_null($user->trialExpired()))
+                                            btn-default
+                                          @elseif($user->trialExpired())
+                                            btn-danger
+                                          @else
+                                            btn-success
+                                          @endif
+                                          "
+                                          class="
+                                          @if(is_null($user->trialExpired()))
+                                            default
+                                          @elseif($user->trialExpired())
+                                            danger
+                                          @else
+                                            success
+                                          @endif
+                                          ">
+                                          @if(is_null($user->trialExpired()))
+                                            Inactive
+                                          @elseif($user->trialExpired())
+                                            Expired
+                                          @else
+                                            On-Trial
+                                          @endif
+                                        </button>
+                                          </span>
+
+                                        </td>
+                                        <td>
+                                          <span class="button-checkbox">
+                                          <button type="submit" class="btn
+                                          @if(is_null($user->subscriptionExpired()))
+                                            btn-default
+                                          @elseif($user->subscriptionExpired())
+                                            btn-danger
+                                          @else
+                                            btn-success
+                                          @endif
+                                          "
+                                          class="
+                                          @if(is_null($user->subscriptionExpired()))
+                                            default
+                                          @elseif($user->subscriptionExpired())
+                                            danger
+                                          @else
+                                            success
+                                          @endif
+                                          ">
+                                          @if(is_null($user->subscriptionExpired()))
+                                            Inactive
+                                          @elseif($user->subscriptionExpired())
+                                            Expired
+                                          @else
+                                            Active
+                                          @endif
+                                        </button>
+                                          </span>
+
+                                        </td>
+
+
                                         <td class="text-right">
                                             <form action="{{ route('admin.users.delete', $user->id) }}" method="POST">
                                                 {!! csrf_field() !!}

@@ -74,7 +74,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('site.logo') }}
+                    <img src="{{ config('site.logo') }}" alt="{{ config('site.brand') }}" height="50" style="position:absolute; top:5px;">
                 </a>
             </div>
 

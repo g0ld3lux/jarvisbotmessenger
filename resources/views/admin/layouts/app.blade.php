@@ -28,6 +28,9 @@
                 <ul class="nav navbar-nav">
                     <li{!! array_get($__rp, 'menu') == 'dashboard' ? ' class="active"' : '' !!}><a href="{{ route('admin.dashboard') }}"><i class="fa fa-btn fa-dashboard"></i>Dashboard</a></li>
                     <li{!! array_get($__rp, 'menu') == 'users' ? ' class="active"' : '' !!}><a href="{{ route('admin.users.index') }}"><i class="fa fa-btn fa-users"></i>Users</a></li>
+                    <li{!! array_get($__rp, 'menu') == 'features' ? ' class="active"' : '' !!}><a href="{{ route('admin.features.index') }}"><i class="fa fa-btn fa-star"></i>Features</a></li>
+                    <li{!! array_get($__rp, 'menu') == 'packages' ? ' class="active"' : '' !!}><a href="{{ route('admin.packages.index') }}"><i class="fa fa-btn fa-dropbox"></i>Packages</a></li>
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->

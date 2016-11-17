@@ -51,6 +51,8 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'impersonate' => \App\Http\Middleware\Impersonate::class
+        'impersonate' => \App\Http\Middleware\Impersonate::class,
+        'active' => \App\Http\Middleware\Activated::class,
+        'prevent-back-history' => \App\Http\Middleware\PreventBackHistory::class,
     ];
 }

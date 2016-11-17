@@ -19,7 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('google2fa_secret')->unique()->nullable()->default(null);
             $table->boolean('google2fa_on')->default(0);
-            $table->boolean('verified');
+            $table->boolean('verified')->default(0);
+            $table->boolean('activated')->default(0);
+            $table->timestamp('trial_ends_at')->nullable();
+            $table->timestamp('subscription_ends_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

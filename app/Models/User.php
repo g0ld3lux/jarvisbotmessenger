@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
 use Session;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -14,17 +15,28 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'activated','trial_ends_at',
     ];
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes excluded from the model's json form.
      *
      * @var array
      */
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $cast = [
+      'activated' => 'boolean',
+    ];
+
+    protected $dates = [
+       'created_at',
+       'updated_at',
+       'trial_ends_at',
+       'subscription_ends_at',
+   ];
 
     /**
      * Boot the model.
@@ -37,6 +49,8 @@ class User extends Authenticatable
         static::creating(function ($user) {
           $google2fa = app()->make('PragmaRX\Google2FA\Contracts\Google2FA');
             $user->google2fa_secret = $google2fa->generateSecretKey(32);
+            // Add 7 Days Trial to Newly Created Account
+            $user->trial_ends_at = Carbon::now()->addDays(7);
         });
     }
 
@@ -99,10 +113,45 @@ class User extends Authenticatable
 
     public function isAdministrator()
     {
-      if($this->id==1)
+      if($this->permissions()->where('permission', 'access.admin')->first() && $this->permissions()->where('permission', 'master')->first())
       {
         return true;
       }
       return false;
+    }
+
+    public function trialExpired()
+    {
+      $date =$this->trial_ends_at;
+      if(is_null($date))
+      {
+        return null;
+      }
+      elseif($date >= Carbon::now())
+      {
+        // Not Yet Expired
+        return false;
+      }else{
+        // Expired
+        return true;
+      }
+    }
+
+    public function subscriptionExpired()
+    {
+      $date = $this->subscription_ends_at;
+      if(is_null($date))
+      {
+        return null;
+      }
+      elseif($date >= Carbon::now())
+      {
+        // Not Yet Expired
+        return false;
+      }else{
+        // Expired
+        return true;
+      }
+
     }
 }

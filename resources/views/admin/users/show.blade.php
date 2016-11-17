@@ -27,7 +27,7 @@
                         #{{ $user->id }} {{ $user->display_name }}
                     </div>
                     <div class="panel-body">
-                        <form class="form-horizontal">
+                        <div class="form-horizontal">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -48,18 +48,118 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Created at</label>
+                                        <label class="col-md-4 control-label">Account Status</label>
 
                                         <div class="col-md-6">
-                                            <p class="form-control-static">{{ $user->created_at->format('F j, Y, g:i A') }}</p>
+
+                                            <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.users.toggleActiveToShow', $user->id) }}">
+                                            {!! csrf_field() !!}
+                                            <span class="button-checkbox">
+                                            <button type="submit" class="btn {{ ($user->activated) ? 'btn-success' : 'btn-default' }}" {{ ($user->activated) ? 'checked' : '' }}>{{ ($user->activated) ? 'Active' : 'Inactive' }}</button>
+                                            </span>
+                                          </form>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Email Verified</label>
+
+                                        <div class="col-md-6">
+
+                                              @if($user->verified)
+                                                <span class="button-checkbox">
+                                                <button type="submit" class="btn btn-success">Verified</button>
+                                                </span>
+                                              @else
+
+                                                <form class="form-horizontal" role="form" method="GET" action="{{ route('admin.users.resendActivationEmail', $user->id) }}">
+                                                {!! csrf_field() !!}
+                                                <span class="label label-info">Pending</span>
+                                                <button type="submit" class="btn btn-warning confirm-action" data-toggle="tooltip" title="Resend Email"><i class="fa fa-envelope"></i></button>
+                                                </form>
+
+                                              @endif
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Trial Status</label>
+
+                                        <div class="col-md-6">
+
+                                              @if(is_null($user->trialExpired()))
+                                                <span class="button-checkbox">
+                                                <button type="submit" class="btn">Not Enroll</button>
+                                                </span>
+                                              @elseif($user->trialExpired())
+                                                <span class="button-checkbox">
+                                                <button type="submit" class="btn btn-danger">Expired</button>
+                                                </span>
+                                              @else
+                                                <span class="button-checkbox">
+                                                <button type="submit" class="btn btn-success">Enrolled</button>
+                                                </span>
+                                                <a href="{{ route('admin.users.removeTrial', $user->id) }}" class="btn btn-danger confirm-action" data-toggle="tooltip" title="Remove Free Trial"><i class="fa fa-ban"></i></a>
+                                              @endif
+
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Updated at</label>
+                                        <label class="col-md-4 control-label">Subscription Status</label>
 
                                         <div class="col-md-6">
-                                            <p class="form-control-static">{{ $user->updated_at->format('F j, Y, g:i A') }}</p>
+                                              @if(is_null($user->subscriptionExpired()))
+                                                <span class="button-checkbox">
+                                                <button type="submit" class="btn">Not Enroll</button>
+                                                </span>
+                                              @elseif($user->subscriptionExpired())
+                                                <span class="button-checkbox">
+                                                <button type="submit" class="btn btn-danger">Expired</button>
+                                                </span>
+                                              @else
+                                                <span class="button-checkbox">
+                                                <button type="submit" class="btn btn-success">Enrolled</button>
+                                                </span>
+                                              @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Trial Ends At</label>
+
+                                        <div class="col-md-6">
+
+                                              @if(is_null($user->trialExpired()))
+                                                <span class="label label-default">N/A</span>
+                                                <a href="{{ route('admin.users.refreshTrial', $user->id) }}" class="btn btn-success confirm-action" data-toggle="tooltip" title="Give Free Trial"><i class="fa fa-plus-square"></i></a>
+                                              @else
+                                                <p class="form-control-static">
+                                                <span class="label label-info">{{ $user->trial_ends_at->format('F j, Y, g:i A') }}</span>
+                                              </p>
+                                              @endif
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Subscription Ends At</label>
+
+                                        <div class="col-md-6">
+
+                                              @if(is_null($user->subscriptionExpired()))
+                                                <span class="button-checkbox">
+                                                <button type="submit" class="btn">N/A</button>
+                                                </span>
+                                              @else
+                                                <p class="form-control-static">
+                                                {{ $user->subscription_ends_at->format('F j, Y, g:i A') }}
+                                                </p>
+                                              @endif
+
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +181,7 @@
                                     </div>
                                 </div>
                             @endif
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

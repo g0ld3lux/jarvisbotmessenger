@@ -2,7 +2,7 @@
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
 
-    Route::group(['middleware' => ['admin']], function () {
+    Route::group(['middleware' => ['admin','prevent-back-history']], function () {
 
         Route::get('/', [
             'uses' => 'DashboardController@getIndex',
@@ -63,6 +63,31 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
                 Route::get('impersonate/stop', [
                     'as' => 'deimpersonate',
                     'uses' => 'UsersController@stopImpersonate'
+                ]);
+
+                Route::post('toggleActiveToIndex', [
+                    'as' => 'toggleActiveToIndex',
+                    'uses' => 'UsersController@toggleActiveToIndex'
+                ]);
+
+                Route::post('toggleActiveToShow', [
+                    'as' => 'toggleActiveToShow',
+                    'uses' => 'UsersController@toggleActiveToShow'
+                ]);
+
+                Route::get('resendActivationEmail', [
+                    'as' => 'resendActivationEmail',
+                    'uses' => 'UsersController@resendActivationEmail'
+                ]);
+
+                Route::get('refreshTrial', [
+                    'as' => 'refreshTrial',
+                    'uses' => 'UsersController@refreshTrial'
+                ]);
+
+                Route::get('removeTrial', [
+                    'as' => 'removeTrial',
+                    'uses' => 'UsersController@removeTrial'
                 ]);
             });
 

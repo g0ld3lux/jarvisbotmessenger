@@ -11,6 +11,7 @@ class Impersonate
      */
     public function handle($request, Closure $next)
     {
+      // Check if the User has Already Impersonate and Is Admin ...
         if($request->session()->has('impersonate'))
         {
             auth()->onceUsingId($request->session()->get('impersonate'));

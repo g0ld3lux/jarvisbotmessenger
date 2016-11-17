@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cabe22c058be0a16088130adeb0d73e9",
-    "content-hash": "e821f37adb91c3a5ef313cebbd510581",
+    "hash": "d0e3c63fcace071b537e0bdf6f078981",
+    "content-hash": "a38035303ba651aa68312a31058ee49d",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -265,6 +265,55 @@
             "time": "2016-09-16 12:50:15"
         },
         {
+            "name": "clue/stream-filter",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/php-stream-filter.git",
+                "reference": "e3bf9415da163d9ad6701dccb407ed501ae69785"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-stream-filter/zipball/e3bf9415da163d9ad6701dccb407ed501ae69785",
+                "reference": "e3bf9415da163d9ad6701dccb407ed501ae69785",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Clue\\StreamFilter\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "A simple and modern approach to stream filtering in PHP",
+            "homepage": "https://github.com/clue/php-stream-filter",
+            "keywords": [
+                "bucket brigade",
+                "callback",
+                "filter",
+                "php_user_filter",
+                "stream",
+                "stream_filter_append",
+                "stream_filter_register"
+            ],
+            "time": "2015-11-08 23:41:30"
+        },
+        {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
             "source": {
@@ -370,12 +419,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "8a6f952a60fdbfd326f38ca74ee69fe6d9d86843"
+                "reference": "0df18ff1ea178857fbc6f318738d162631bb53c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/8a6f952a60fdbfd326f38ca74ee69fe6d9d86843",
-                "reference": "8a6f952a60fdbfd326f38ca74ee69fe6d9d86843",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/0df18ff1ea178857fbc6f318738d162631bb53c9",
+                "reference": "0df18ff1ea178857fbc6f318738d162631bb53c9",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +473,7 @@
             ],
             "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
             "homepage": "https://github.com/dompdf/dompdf",
-            "time": "2016-10-11 01:58:40"
+            "time": "2016-10-21 03:32:19"
         },
         {
             "name": "edvinaskrucas/notification",
@@ -525,20 +574,20 @@
         },
         {
             "name": "facebook/php-sdk-v4",
-            "version": "dev-master",
+            "version": "5.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/php-graph-sdk.git",
-                "reference": "76b501f06370545338be285c8dafe5902e849832"
+                "reference": "a5a6b6cc493d8dc417f588c7c0bdfc6396198350"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/76b501f06370545338be285c8dafe5902e849832",
-                "reference": "76b501f06370545338be285c8dafe5902e849832",
+                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/a5a6b6cc493d8dc417f588c7c0bdfc6396198350",
+                "reference": "a5a6b6cc493d8dc417f588c7c0bdfc6396198350",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6|^7.0"
+                "php": "^5.4|^7.0"
             },
             "require-dev": {
                 "guzzlehttp/guzzle": "~5.0",
@@ -579,7 +628,7 @@
                 "sdk"
             ],
             "abandoned": "facebook/graph-sdk",
-            "time": "2016-10-12 19:10:54"
+            "time": "2016-10-18 19:19:03"
         },
         {
             "name": "fguillot/picofeed",
@@ -635,12 +684,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "9061956e6ad81cc90e7f36d54f2eaa944ae74065"
+                "reference": "0c15c11264d1feed731976b596dd74d1129a7cc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9061956e6ad81cc90e7f36d54f2eaa944ae74065",
-                "reference": "9061956e6ad81cc90e7f36d54f2eaa944ae74065",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0c15c11264d1feed731976b596dd74d1129a7cc6",
+                "reference": "0c15c11264d1feed731976b596dd74d1129a7cc6",
                 "shasum": ""
             },
             "require": {
@@ -689,7 +738,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-10-13 05:38:46"
+            "time": "2016-10-24 08:47:23"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1015,12 +1064,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeremeamia/super_closure.git",
-                "reference": "2b338315d54ea37aa6c5e97f4d75a33ccf303503"
+                "reference": "378cdc081c75f3024ee862d73272a52bc7e5f6b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/2b338315d54ea37aa6c5e97f4d75a33ccf303503",
-                "reference": "2b338315d54ea37aa6c5e97f4d75a33ccf303503",
+                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/378cdc081c75f3024ee862d73272a52bc7e5f6b5",
+                "reference": "378cdc081c75f3024ee862d73272a52bc7e5f6b5",
                 "shasum": ""
             },
             "require": {
@@ -1065,7 +1114,69 @@
                 "serialize",
                 "tokenizer"
             ],
-            "time": "2016-09-23 18:24:34"
+            "time": "2016-10-24 13:58:03"
+        },
+        {
+            "name": "jeremykendall/php-domain-parser",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeremykendall/php-domain-parser.git",
+                "reference": "896e7e70f02bd4fd77190052799bc61e4d779672"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeremykendall/php-domain-parser/zipball/896e7e70f02bd4fd77190052799bc61e4d779672",
+                "reference": "896e7e70f02bd4fd77190052799bc61e4d779672",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-intl": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "jeremykendall/debug-die": "0.0.1.*",
+                "mikey179/vfsstream": "~1.4",
+                "phpunit/phpunit": "~4.4"
+            },
+            "bin": [
+                "bin/parse",
+                "bin/update-psl"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pdp\\": "src/"
+                },
+                "files": [
+                    "src/pdp-parse-url.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Kendall",
+                    "homepage": "http://about.me/jeremykendall",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/jeremykendall/php-domain-parser/graphs/contributors"
+                }
+            ],
+            "description": "Public Suffix List based URL parsing implemented in PHP.",
+            "homepage": "https://github.com/jeremykendall/php-domain-parser",
+            "keywords": [
+                "Public Suffix List",
+                "domain parsing",
+                "url parsing"
+            ],
+            "time": "2015-03-30 12:49:45"
         },
         {
             "name": "laravel/framework",
@@ -1203,12 +1314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "9eb677acfa6e420e729059e5f3c916a255d7738d"
+                "reference": "4efbdb1e9e45ee0d21d1bc1ad35370c0eee5adb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/9eb677acfa6e420e729059e5f3c916a255d7738d",
-                "reference": "9eb677acfa6e420e729059e5f3c916a255d7738d",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/4efbdb1e9e45ee0d21d1bc1ad35370c0eee5adb2",
+                "reference": "4efbdb1e9e45ee0d21d1bc1ad35370c0eee5adb2",
                 "shasum": ""
             },
             "require": {
@@ -1249,7 +1360,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2016-10-09 16:32:05"
+            "time": "2016-10-24 13:06:51"
         },
         {
             "name": "laravelcollective/html",
@@ -1311,16 +1422,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "cd99222ea789d74e9a1c85f51bf33bbff4e6fddd"
+                "reference": "63c877e35ce8ad6d82d2a2249fbef5ff874e2d3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/cd99222ea789d74e9a1c85f51bf33bbff4e6fddd",
-                "reference": "cd99222ea789d74e9a1c85f51bf33bbff4e6fddd",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/63c877e35ce8ad6d82d2a2249fbef5ff874e2d3a",
+                "reference": "63c877e35ce8ad6d82d2a2249fbef5ff874e2d3a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.0"
+                "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
@@ -1386,7 +1497,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-10 07:45:55"
+            "time": "2016-10-19 21:24:27"
         },
         {
             "name": "league/fractal",
@@ -1515,17 +1626,84 @@
             "time": "2016-08-17 00:36:58"
         },
         {
+            "name": "league/uri",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/uri.git",
+                "reference": "1c02f4eb7e430f75c3edf69e52619429135f2882"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/uri/zipball/1c02f4eb7e430f75c3edf69e52619429135f2882",
+                "reference": "1c02f4eb7e430f75c3edf69e52619429135f2882",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "ext-intl": "*",
+                "ext-mbstring": "*",
+                "jeremykendall/php-domain-parser": "^3.0",
+                "php": ">=5.5.9",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.9",
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Uri\\": "src"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ignace Nyamagana Butera",
+                    "email": "nyamsprod@gmail.com",
+                    "homepage": "https://nyamsprod.com"
+                }
+            ],
+            "description": "URI manipulation library",
+            "homepage": "http://uri.thephpleague.com",
+            "keywords": [
+                "data-uri",
+                "ftp",
+                "http",
+                "https",
+                "parse_url",
+                "psr-7",
+                "rfc3986",
+                "uri",
+                "url",
+                "ws"
+            ],
+            "time": "2016-09-30 08:41:39"
+        },
+        {
             "name": "maatwebsite/excel",
             "version": "2.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "0a26cdfabb51bf6dc4a53d8fafae6b63a51083c6"
+                "reference": "55d18b6a99b30b9003c2f174cc3ecd9ca79f1bf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/0a26cdfabb51bf6dc4a53d8fafae6b63a51083c6",
-                "reference": "0a26cdfabb51bf6dc4a53d8fafae6b63a51083c6",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/55d18b6a99b30b9003c2f174cc3ecd9ca79f1bf5",
+                "reference": "55d18b6a99b30b9003c2f174cc3ecd9ca79f1bf5",
                 "shasum": ""
             },
             "require": {
@@ -1536,7 +1714,7 @@
                 "nesbot/carbon": "~1.0",
                 "php": ">=5.5",
                 "phpoffice/phpexcel": "1.8.*",
-                "tijsverkoyen/css-to-inline-styles": "~1.5"
+                "tijsverkoyen/css-to-inline-styles": "~2.0"
             },
             "require-dev": {
                 "mockery/mockery": "~0.9",
@@ -1579,7 +1757,7 @@
                 "import",
                 "laravel"
             ],
-            "time": "2016-09-26 11:11:04"
+            "time": "2016-10-18 16:43:26"
         },
         {
             "name": "maximebf/debugbar",
@@ -1962,6 +2140,302 @@
             "time": "2016-04-03 05:47:09"
         },
         {
+            "name": "payum/core",
+            "version": "dev-master",
+            "target-dir": "Payum/Core",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Payum/Core.git",
+                "reference": "fe690a69574b5c02cf53a7ae3d34e0909b66e206"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Payum/Core/zipball/fe690a69574b5c02cf53a7ae3d34e0909b66e206",
+                "reference": "fe690a69574b5c02cf53a7ae3d34e0909b66e206",
+                "shasum": ""
+            },
+            "require": {
+                "league/uri": "~4.0",
+                "payum/iso4217": "~1.0",
+                "php": "^5.5.0|^7.0",
+                "php-http/client-implementation": "^1.0",
+                "php-http/message": "^1.0",
+                "twig/twig": "~1.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "2.*",
+                "ext-curl": "*",
+                "ext-pdo_sqlite": "*",
+                "omnipay/dummy": "~2.0",
+                "payum/omnipay-bridge": "^1",
+                "php-http/guzzle6-adapter": "^1.0",
+                "phpunit/phpunit": "~4.0",
+                "propel/propel1": "~1.7",
+                "psr/log": "~1.0",
+                "symfony/dependency-injection": "~2.8|~3.0",
+                "symfony/form": "~2.8|~3.0",
+                "symfony/http-foundation": "~2.8|~3.0",
+                "symfony/http-kernel": "~2.8|~3.0",
+                "symfony/phpunit-bridge": "~2.8|~3.0",
+                "symfony/routing": "~2.8|~3.0",
+                "symfony/validator": "~2.8|~3.0",
+                "zendframework/zend-db": "~2"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "~1.1 If you want to store models to mongo doctrin2 ODM",
+                "doctrine/orm": "~2.3 If you want to store models to database using doctrin2 ORM",
+                "monolog/monolog": "~1.0 If you want to use PSR-3 logger",
+                "payum/authorize-net-aim": "self.version If you want to use Authorize.Net AIM payment gateway",
+                "payum/be2bill": "self.version If you want to use be2bill payment gateway",
+                "payum/omnipay-bridge": "self.version If you want to use omnipay's gateways",
+                "payum/payex": "self.version If you want to use payex payment gateway",
+                "payum/paypal-express-checkout-nvp": "self.version If you want to use paypal express checkout, digital goods or recurring payments",
+                "payum/paypal-ipn": "self.version If you want to use paypal instant payment notifications(Paypal IPN)",
+                "payum/paypal-pro-checkout-nvp": "self.version If you want to use paypal pro checkout",
+                "payum/paypal-rest": "self.version If you want to use paypal rest gateway",
+                "propel/propel": "If you want to store models to Propel2 ORM",
+                "propel/propel1": "~1.7 If you want to store models to Propel1 ORM",
+                "symfony/dependency-injection": "~2.8|~3.0 If you want to use container aware stuff",
+                "symfony/form": "~2.8|~3.0 If you want to use forms",
+                "symfony/http-foundation": "~2.8|~3.0 If you want to use HttpRequestVerifier or HttpResponse reply from symfony's bridge",
+                "symfony/http-kernel": "~2.8|~3.0 If you want to use HttpRequestVerifier from symfony's bridge",
+                "symfony/routing": "~2.8|~3.0 If you want to use TokenFactory from symfony's bridge",
+                "zendframework/zend-db": "~2.0 If you want to store models to Zend Db ORM"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Payum\\Core\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Payum/Payum/contributors"
+                },
+                {
+                    "name": "Kotlyar Maksim",
+                    "email": "kotlyar.maksim@gmail.com"
+                },
+                {
+                    "name": "Payum project",
+                    "homepage": "http://payum.org/"
+                }
+            ],
+            "description": "Payum offers everything you need to work with payments. From simplest use cases to very advanced ones.",
+            "homepage": "http://payum.org",
+            "keywords": [
+                "authorize",
+                "capture",
+                "notify",
+                "payment",
+                "payout",
+                "recurring payment",
+                "refund",
+                "subscription",
+                "withdrawal"
+            ],
+            "time": "2016-10-04 18:29:26"
+        },
+        {
+            "name": "payum/iso4217",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Payum/iso4217.git",
+                "reference": "6a45480e2818350dea58b7a076d0115aa7ff5789"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Payum/iso4217/zipball/6a45480e2818350dea58b7a076d0115aa7ff5789",
+                "reference": "6a45480e2818350dea58b7a076d0115aa7ff5789",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Payum\\ISO4217\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Payum/Payum/contributors"
+                },
+                {
+                    "name": "Kotlyar Maksim",
+                    "email": "kotlyar.maksim@gmail.com"
+                },
+                {
+                    "name": "Payum project",
+                    "homepage": "http://payum.org/"
+                }
+            ],
+            "description": "ISO 4217 PHP Library",
+            "homepage": "http://payum.org",
+            "keywords": [
+                "4217",
+                "ISO 4217",
+                "currencies",
+                "iso",
+                "library"
+            ],
+            "time": "2016-08-04 08:15:12"
+        },
+        {
+            "name": "payum/offline",
+            "version": "dev-master",
+            "target-dir": "Payum/Offline",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Payum/Offline.git",
+                "reference": "9f987daf61ba809ee14a9a660aa4bc11974e4117"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Payum/Offline/zipball/9f987daf61ba809ee14a9a660aa4bc11974e4117",
+                "reference": "9f987daf61ba809ee14a9a660aa4bc11974e4117",
+                "shasum": ""
+            },
+            "require": {
+                "payum/core": "^1.3"
+            },
+            "require-dev": {
+                "payum/core": "^1.3@dev",
+                "phpunit/phpunit": "~4.0",
+                "symfony/phpunit-bridge": "~2.8|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Payum\\Offline": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Payum/Offline/contributors"
+                },
+                {
+                    "name": "Kotlyar Maksim",
+                    "email": "kotlyar.maksim@gmail.com"
+                },
+                {
+                    "name": "Payum project",
+                    "homepage": "http://payum.org/"
+                }
+            ],
+            "description": "The Payum extension. It provides Offline payment integration.",
+            "homepage": "http://payum.org",
+            "keywords": [
+                "invoice",
+                "offlile",
+                "payment"
+            ],
+            "time": "2016-09-12 19:02:13"
+        },
+        {
+            "name": "payum/paypal-express-checkout-nvp",
+            "version": "dev-master",
+            "target-dir": "Payum/Paypal/ExpressCheckout/Nvp",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Payum/PaypalExpressCheckoutNvp.git",
+                "reference": "9f53df680991bebc1c5b29a123770ec88c79ccc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Payum/PaypalExpressCheckoutNvp/zipball/9f53df680991bebc1c5b29a123770ec88c79ccc5",
+                "reference": "9f53df680991bebc1c5b29a123770ec88c79ccc5",
+                "shasum": ""
+            },
+            "require": {
+                "payum/core": "^1.3"
+            },
+            "require-dev": {
+                "payum/core": "^1.3@dev",
+                "php-http/guzzle6-adapter": "^1.0",
+                "phpunit/phpunit": "~4.0",
+                "symfony/phpunit-bridge": "~2.8|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Payum\\Paypal\\ExpressCheckout\\Nvp": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Payum/PaypalExpressCheckoutNvp/contributors"
+                },
+                {
+                    "name": "Kotlyar Maksim",
+                    "email": "kotlyar.maksim@gmail.com"
+                },
+                {
+                    "name": "Payum project",
+                    "homepage": "http://payum.org/"
+                }
+            ],
+            "description": "The Payum extension. It provides Paypal ExpressCheckout payment integration.",
+            "homepage": "http://payum.org/",
+            "keywords": [
+                "digital goods",
+                "express checkout",
+                "payment",
+                "paypal",
+                "recurring payment"
+            ],
+            "time": "2016-09-15 11:51:23"
+        },
+        {
             "name": "phenx/php-font-lib",
             "version": "0.4",
             "source": {
@@ -2028,6 +2502,291 @@
             "description": "A library to read, parse and export to PDF SVG files.",
             "homepage": "https://github.com/PhenX/php-svg-lib",
             "time": "2015-05-06 18:49:49"
+        },
+        {
+            "name": "php-http/guzzle6-adapter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/guzzle6-adapter.git",
+                "reference": "c0168c6e5fa286c3837310d591114d2683b9b9a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/guzzle6-adapter/zipball/c0168c6e5fa286c3837310d591114d2683b9b9a5",
+                "reference": "c0168c6e5fa286c3837310d591114d2683b9b9a5",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0",
+                "php": "^5.5 || ^7.0",
+                "php-http/httplug": "^1.0"
+            },
+            "provide": {
+                "php-http/async-client-implementation": "1.0",
+                "php-http/client-implementation": "1.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "php-http/client-integration-tests": "^0.5.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Adapter\\Guzzle6\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                },
+                {
+                    "name": "David de Boer",
+                    "email": "david@ddeboer.nl"
+                }
+            ],
+            "description": "Guzzle 6 HTTP Adapter",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "Guzzle",
+                "http"
+            ],
+            "time": "2016-08-02 09:03:17"
+        },
+        {
+            "name": "php-http/httplug",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/httplug.git",
+                "reference": "88d48cadcd1dfd858fc372fd4c5c7be8ef74b731"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/httplug/zipball/88d48cadcd1dfd858fc372fd4c5c7be8ef74b731",
+                "reference": "88d48cadcd1dfd858fc372fd4c5c7be8ef74b731",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "php-http/promise": "^1.0",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "^1.0",
+                "phpspec/phpspec": "^2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric GELOEN",
+                    "email": "geloen.eric@gmail.com"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "HTTPlug, the HTTP client abstraction for PHP",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "client",
+                "http"
+            ],
+            "time": "2016-09-02 09:29:03"
+        },
+        {
+            "name": "php-http/message",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/message.git",
+                "reference": "1761cb666e9123dfd4ade509a5e6492a9e4bc9f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/message/zipball/1761cb666e9123dfd4ade509a5e6492a9e4bc9f2",
+                "reference": "1761cb666e9123dfd4ade509a5e6492a9e4bc9f2",
+                "shasum": ""
+            },
+            "require": {
+                "clue/stream-filter": "^1.3",
+                "php": ">=5.4",
+                "php-http/message-factory": "^1.0.2",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "akeneo/phpspec-skip-example-extension": "^1.0",
+                "coduo/phpspec-data-provider-extension": "^1.0",
+                "ext-zlib": "*",
+                "guzzlehttp/psr7": "^1.0",
+                "henrikbjorn/phpspec-code-coverage": "^1.0",
+                "phpspec/phpspec": "^2.4",
+                "slim/slim": "^3.0",
+                "zendframework/zend-diactoros": "^1.0"
+            },
+            "suggest": {
+                "ext-zlib": "Used with compressor/decompressor streams",
+                "guzzlehttp/psr7": "Used with Guzzle PSR-7 Factories",
+                "slim/slim": "Used with Slim Framework PSR-7 implementation",
+                "zendframework/zend-diactoros": "Used with Diactoros Factories"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Message\\": "src/"
+                },
+                "files": [
+                    "src/filters.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "HTTP Message related tools",
+            "homepage": "http://php-http.org",
+            "keywords": [
+                "http",
+                "message",
+                "psr-7"
+            ],
+            "time": "2016-10-24 15:20:59"
+        },
+        {
+            "name": "php-http/message-factory",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/message-factory.git",
+                "reference": "a2809d4fe294ebe8879aec8d4d5bf21faa029344"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/message-factory/zipball/a2809d4fe294ebe8879aec8d4d5bf21faa029344",
+                "reference": "a2809d4fe294ebe8879aec8d4d5bf21faa029344",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "psr/http-message": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "Factory interfaces for PSR-7 HTTP Message",
+            "homepage": "http://php-http.org",
+            "keywords": [
+                "factory",
+                "http",
+                "message",
+                "stream",
+                "uri"
+            ],
+            "time": "2016-02-03 08:16:31"
+        },
+        {
+            "name": "php-http/promise",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/promise.git",
+                "reference": "810b30da8bcf69e4b82c4b9bc6b31518234293ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/promise/zipball/810b30da8bcf69e4b82c4b9bc6b31518234293ab",
+                "reference": "810b30da8bcf69e4b82c4b9bc6b31518234293ab",
+                "shasum": ""
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "^1.0",
+                "phpspec/phpspec": "^2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Promise\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                },
+                {
+                    "name": "Joel Wurtz",
+                    "email": "joel.wurtz@gmail.com"
+                }
+            ],
+            "description": "Promise used for asynchronous HTTP requests",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-01-28 07:54:12"
         },
         {
             "name": "phpoffice/phpexcel",
@@ -2136,12 +2895,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/antonioribeiro/google2fa.git",
-                "reference": "ac2b66265d5fda38ce097782d47089bc3366683d"
+                "reference": "84cd5f6ab2d20aa92451f3ecacbce14627cf2a86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antonioribeiro/google2fa/zipball/ac2b66265d5fda38ce097782d47089bc3366683d",
-                "reference": "ac2b66265d5fda38ce097782d47089bc3366683d",
+                "url": "https://api.github.com/repos/antonioribeiro/google2fa/zipball/84cd5f6ab2d20aa92451f3ecacbce14627cf2a86",
+                "reference": "84cd5f6ab2d20aa92451f3ecacbce14627cf2a86",
                 "shasum": ""
             },
             "require": {
@@ -2189,7 +2948,7 @@
                 "google2fa",
                 "laravel"
             ],
-            "time": "2016-08-03 20:35:19"
+            "time": "2016-10-26 02:42:09"
         },
         {
             "name": "psr/http-message",
@@ -2359,6 +3118,82 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "recca0120/laravel-payum",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/recca0120/laravel-payum.git",
+                "reference": "c1d542a3c514f5d61741585f77214e15492fb08b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/recca0120/laravel-payum/zipball/c1d542a3c514f5d61741585f77214e15492fb08b",
+                "reference": "c1d542a3c514f5d61741585f77214e15492fb08b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cookie": "~5.1",
+                "illuminate/database": "~5.1",
+                "illuminate/encryption": "~5.1",
+                "illuminate/events": "~5.1",
+                "illuminate/filesystem": "~5.1",
+                "illuminate/routing": "~5.1",
+                "illuminate/session": "~5.1",
+                "illuminate/support": "~5.1",
+                "illuminate/view": "~5.1",
+                "payum/core": "^1.3",
+                "php": ">=5.5.9",
+                "php-http/guzzle6-adapter": "^1.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.4",
+                "nesbot/carbon": "~1.20",
+                "phpunit/phpunit": "~4.8|~5.4"
+            },
+            "suggest": {
+                "payum/authorize-net-aim": "If you want to use authorize.net gateway",
+                "payum/be2bill": "If you want to use be2bill gateway",
+                "payum/omnipay-bridge": "If you want to use omnipay provided gateways",
+                "payum/payex": "If you want to use payex gateway",
+                "payum/paypal-express-checkout-nvp": "If you want to use paypal express checkout nvp gateway",
+                "payum/paypal-pro-checkout-nvp": "If you want to use paypal pro checkout nvp gateway",
+                "payum/stripe": "If you want to use omnipay provided gateways"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Recca0120\\LaravelPayum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "recca0120",
+                    "email": "recca0120@gmail.com"
+                }
+            ],
+            "description": "Rich payment solutions for Laravel framework. Paypal, payex, authorize.net, be2bill, omnipay, recurring paymens, instant notifications and many more",
+            "keywords": [
+                "authorize.net",
+                "be2bill",
+                "instant notification",
+                "klarna",
+                "offline",
+                "omnipay",
+                "payex",
+                "payment",
+                "paypal",
+                "paypal express checkout",
+                "paypal pro checkout",
+                "recurring payment",
+                "stripe"
+            ],
+            "time": "2016-10-23 06:45:01"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3360,29 +4195,29 @@
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
-            "version": "1.5.5",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
-                "reference": "9753fc340726e327e4d48b7c0604f85475ae0bc3"
+                "reference": "ab03919dfd85a74ae0372f8baf9f3c7d5c03b04b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/9753fc340726e327e4d48b7c0604f85475ae0bc3",
-                "reference": "9753fc340726e327e4d48b7c0604f85475ae0bc3",
+                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/ab03919dfd85a74ae0372f8baf9f3c7d5c03b04b",
+                "reference": "ab03919dfd85a74ae0372f8baf9f3c7d5c03b04b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
-                "symfony/css-selector": "~2.1|~3.0"
+                "php": "^5.5 || ^7",
+                "symfony/css-selector": "^2.7|~3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.8|5.1.*"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -3392,7 +4227,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -3403,7 +4238,68 @@
             ],
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
-            "time": "2015-12-08 16:14:14"
+            "time": "2016-09-20 12:50:39"
+        },
+        {
+            "name": "twig/twig",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "3ff5abf75bf2fb9b9bffcc15c4384e08d0763c7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3ff5abf75bf2fb9b9bffcc15c4384e08d0763c7f",
+                "reference": "3ff5abf75bf2fb9b9bffcc15c4384e08d0763c7f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.7"
+            },
+            "require-dev": {
+                "symfony/debug": "~2.7",
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.27-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2016-10-25 19:28:14"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3457,16 +4353,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v6.20.0",
+            "version": "v6.21.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "233141e11129ba4729b3e719d5769126bed83834"
+                "reference": "baef845c998fd08f5315db17d96604382109bfcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/233141e11129ba4729b3e719d5769126bed83834",
-                "reference": "233141e11129ba4729b3e719d5769126bed83834",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/baef845c998fd08f5315db17d96604382109bfcd",
+                "reference": "baef845c998fd08f5315db17d96604382109bfcd",
                 "shasum": ""
             },
             "require": {
@@ -3477,7 +4373,7 @@
                 "illuminate/support": "~5.0",
                 "illuminate/view": "~5.0",
                 "laravelcollective/html": "~5.0",
-                "league/fractal": "~0.12",
+                "league/fractal": "~0.14",
                 "maatwebsite/excel": "^2.0",
                 "php": ">=5.5.9"
             },
@@ -3513,7 +4409,7 @@
                 "laravel4",
                 "laravel5"
             ],
-            "time": "2016-10-13 00:10:14"
+            "time": "2016-10-25 01:00:07"
         },
         {
             "name": "zendframework/zendxml",
@@ -3622,12 +4518,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "bb4be1c1878da6baf18a9cc3d9fad1e3ff73a4cd"
+                "reference": "f207b4a855fc971241d7084b923ff2e78096104b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/bb4be1c1878da6baf18a9cc3d9fad1e3ff73a4cd",
-                "reference": "bb4be1c1878da6baf18a9cc3d9fad1e3ff73a4cd",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/f207b4a855fc971241d7084b923ff2e78096104b",
+                "reference": "f207b4a855fc971241d7084b923ff2e78096104b",
                 "shasum": ""
             },
             "require": {
@@ -3664,7 +4560,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2016-10-13 12:34:10"
+            "time": "2016-10-24 07:55:38"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -4740,12 +5636,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "f3abbc0c63c0c7803db79a7398bb983e5b089f53"
+                "reference": "d2cab32980d8de786744fabdec95991a0ebd7ea8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/f3abbc0c63c0c7803db79a7398bb983e5b089f53",
-                "reference": "f3abbc0c63c0c7803db79a7398bb983e5b089f53",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/d2cab32980d8de786744fabdec95991a0ebd7ea8",
+                "reference": "d2cab32980d8de786744fabdec95991a0ebd7ea8",
                 "shasum": ""
             },
             "require": {
@@ -4787,7 +5683,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-28 14:20:56"
+            "time": "2016-10-24 18:44:12"
         },
         {
             "name": "webmozart/assert",
@@ -4795,12 +5691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "1a6cc8d09dd675802ca93de290ac483c10ef95e0"
+                "reference": "c0c92082a2ffef8fab7941d4f6fd6a6a72ed627c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/1a6cc8d09dd675802ca93de290ac483c10ef95e0",
-                "reference": "1a6cc8d09dd675802ca93de290ac483c10ef95e0",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/c0c92082a2ffef8fab7941d4f6fd6a6a72ed627c",
+                "reference": "c0c92082a2ffef8fab7941d4f6fd6a6a72ed627c",
                 "shasum": ""
             },
             "require": {
@@ -4837,7 +5733,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-10-10 07:45:47"
+            "time": "2016-10-17 06:50:33"
         }
     ],
     "aliases": [],
