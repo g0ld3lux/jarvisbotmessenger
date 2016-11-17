@@ -17,6 +17,8 @@ class PaymentController extends Controller
     }
     $package = Package::findByPlan($plan);
 
+
+
     // Return a View to Choose Payment Method...
     // Choose Either Paypal Or Credit Card or Offline Payment....
     // Send an email to User For Offline Payment ... Where They Need to Settle Payment
