@@ -9,6 +9,17 @@
 
     <!-- Styles -->
     <link href="{{ elixir('css/all.css') }}" rel="stylesheet">
+    <style>
+    .navbar-default {
+        background-color: #03a9f4;
+        border-color: transparent;
+        }
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ffcdd2;
+    background-color: transparent;
+    }
+   
+    </style>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -22,6 +33,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{ config('site.logo') }}" alt="{{ config('site.brand') }}" height="50" style="position:relative; margin-top:-15px;">
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
