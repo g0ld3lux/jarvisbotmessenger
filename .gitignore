@@ -2,6 +2,7 @@
 ###################
 #/vendor
 /node_modules
+/laradock
 #/public/storage
 #/storage/framework/
 #/storage/debugbar/
