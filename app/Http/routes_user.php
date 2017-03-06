@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['middleware' => ['auth', 'impersonate','prevent-back-history']], function () {
+Route::group(['middleware' => ['auth', 'impersonate']], function () {
 
     require_once __DIR__ . '/routes_api.php';
 
