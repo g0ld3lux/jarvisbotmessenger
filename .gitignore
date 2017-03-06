@@ -1,12 +1,12 @@
 # Project Related #
 ###################
-/vendor
+#/vendor
 /node_modules
-/public/storage
-/storage/framework/
-/storage/debugbar/
-/storage/app/
-/storage/logs/
+#/public/storage
+#/storage/framework/
+#/storage/debugbar/
+#/storage/app/
+#/storage/logs/
 /build
 Homestead.yaml
 Homestead.json
