@@ -32,6 +32,27 @@
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
             display: none !important;
         }
+        .navbar-default {
+        background-color: #03a9f4;
+        border-color: transparent;
+        }
+        .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        color: #ffcdd2;
+        background-color: transparent;
+        }
+
+        html {
+        height: 100%;
+        }
+        body {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        }
+        .container {
+        flex: 1;
+        }
+        
     </style>
 
     <script type="text/javascript">
@@ -74,7 +95,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ config('site.logo') }}" alt="{{ config('site.brand') }}" height="50" style="position:absolute; top:5px;">
+                    <img src="{{ config('site.logo') }}" alt="{{ config('site.brand') }}" height="50" style="position:relative; margin-top:-15px;">
                 </a>
             </div>
 
@@ -135,9 +156,9 @@
     @yield('content')
 
     <footer>
-        <div class="container">
+        <div class="footer">
             <hr>
-            <div class="text-right text-muted small">version: {{ config('version.number') }}</div>
+            <div class="text-right text-muted small">All Rights Reserve: {{ config('site.brand') }}</div>
         </div>
     </footer>
 
