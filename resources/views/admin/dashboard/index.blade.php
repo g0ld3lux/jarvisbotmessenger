@@ -13,20 +13,38 @@
         @notification()
 
         <div class="row">
-            <div class="col-md-3 col-md-push-3">
+            <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="text-center">
-                            <h3><i class="fa fa-btn fa-user"></i>{{ \App\Models\User::count() }}</h3>
+                        <div class="text-left">
+                            <h3><i class="fa fa-btn fa-user" style="color: #03a9f4;"></i>{{ \App\Models\User::count() }} Users</h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-md-push-3">
+            <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="text-center">
-                            <h3><i class="fa fa-btn fa-cubes"></i>{{ \App\Models\Project::count() }}</h3>
+                        <div class="text-left">
+                            <h3><i class="fa fa-btn fa-android" style="color: green;"></i>{{ \App\Models\Project::count() }} Bots</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-left">
+                            <h3><i class="fa fa-btn fa-dropbox" style="color: #009688;"></i>{{ \App\Models\Package::count() }} Packages</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-left">
+                            <h3><i class="fa fa-btn fa-plug" style="color: #009688;"></i>{{ \App\Models\Feature::count() }} Features</h3>
                         </div>
                     </div>
                 </div>
