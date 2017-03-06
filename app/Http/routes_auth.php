@@ -1,5 +1,5 @@
 <?php
-Route::group(['middleware' => 'prevent-back-history', 'namespace' => 'Auth', 'as' => 'auth.'], function () {
+Route::group(['namespace' => 'Auth', 'as' => 'auth.'], function () {
   Route::get('password/reset/{token?}', ['as' => 'showResetForm', 'uses' =>'PasswordController@showResetForm']);
   Route::post('password/email', ['as' => 'sendResetLinkEmail', 'uses' =>'PasswordController@sendResetLinkEmail']);
   Route::post('password/reset', ['as' => 'reset', 'uses' =>'PasswordController@reset']);
