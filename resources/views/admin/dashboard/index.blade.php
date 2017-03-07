@@ -68,7 +68,7 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Projects</th>
+                                    <th>Bots</th>
                                     <th>Created</th>
                                     <th>&nbsp;</th>
                                 </tr>

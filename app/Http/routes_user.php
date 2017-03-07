@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth', 'impersonate']], function () {
 
     });
 
-    Route::group(['middleware' => 'active','prefix' => 'projects', 'as' => 'projects.'], function () {
+    Route::group(['middleware' => 'active','prefix' => 'bots', 'as' => 'projects.'], function () {
 
         Route::get('/', [
             'uses' => 'ProjectsController@index',

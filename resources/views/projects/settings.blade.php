@@ -20,7 +20,7 @@
                 <ul class="nav nav-tabs">
                     <li class="{{ old('tab', 'general') == 'general' ? 'active' : '' }}"><a href="#general" data-toggle="tab" aria-expanded="true">General</a></li>
                     <li class="{{ old('tab', 'general') == 'thread' ? 'active' : '' }}"><a href="#thread" data-toggle="tab" aria-expanded="true">Thread settings</a></li>
-                    <li class="{{ old('tab', 'general') == 'delete' ? 'active' : '' }}"><a href="#delete" data-toggle="tab" aria-expanded="false">Delete project</a></li>
+                    <li class="{{ old('tab', 'general') == 'delete' ? 'active' : '' }}"><a href="#delete" data-toggle="tab" aria-expanded="false">Delete Bot</a></li>
                 </ul>
                 <div class="panel panel-default">
                     <div class="panel-body">

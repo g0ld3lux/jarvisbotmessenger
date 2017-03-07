@@ -4,7 +4,7 @@
     <div class="content-header">
         <div class="container">
             <div class="clearfix">
-                <div class="pull-left content-header-title"><a href="{{ route('projects.index') }}">Projects</a> &raquo; Add project</div>
+                <div class="pull-left content-header-title"><a href="{{ route('projects.index') }}">Bots</a> &raquo; Add Bot</div>
             </div>
         </div>
     </div>

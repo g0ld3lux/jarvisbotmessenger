@@ -64,7 +64,7 @@ class ProjectsController extends Controller
 
         $project->save();
 
-        Notification::success('Project created successfully.');
+        Notification::success('Bot created successfully.');
 
         return redirect()->route('projects.show', $project->id);
     }
@@ -142,7 +142,7 @@ class ProjectsController extends Controller
 
         $project->save();
 
-        Notification::success('Project updated successfully.');
+        Notification::success('Bot updated successfully.');
 
         return redirect()->route('projects.settings', $project->id);
     }
@@ -166,7 +166,7 @@ class ProjectsController extends Controller
 
         $message = $project->dashboard_active ? 'enabled' : 'disabled';
 
-        Notification::success('Project dashboard '.$message.' successfully.');
+        Notification::success('Bot dashboard '.$message.' successfully.');
 
         return redirect()->route('projects.settings', $project->id)->withInput(['tab' => 'dashboard']);
     }
@@ -204,7 +204,7 @@ class ProjectsController extends Controller
 
         $settings->save();
 
-        Notification::success('Project thread settings updated successfully.');
+        Notification::success('Bot thread settings updated successfully.');
 
         return redirect()->route('projects.settings', $project->id)->withInput(['tab' => 'thread']);
     }
@@ -223,7 +223,7 @@ class ProjectsController extends Controller
 
         $project->delete();
 
-        Notification::success('Project deleted successfully.');
+        Notification::success('Bot deleted successfully.');
 
         return redirect()->route('home');
     }

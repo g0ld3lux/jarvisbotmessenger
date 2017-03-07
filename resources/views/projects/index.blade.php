@@ -4,9 +4,9 @@
     <div class="content-header">
         <div class="container">
             <div class="clearfix">
-                <div class="pull-left content-header-title">Projects</div>
+                <div class="pull-left content-header-title">Bots</div>
                 <div class="pull-right content-header-actions">
-                    <a href="{{ route('projects.create') }}" class="btn btn-primary"><i class="fa fa-btn fa-plus"></i>Add project</a>
+                    <a href="{{ route('projects.create') }}" class="btn btn-primary"><i class="fa fa-btn fa-plus"></i>Add Bot</a>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
                 <div class="panel panel-default">
                     @if(count($projects) <= 0)
                         <div class="panel-body">
-                            You have no projects! <a href="{{ route('projects.create') }}">Create</a> new project.
+                            You have no Bots! <a href="{{ route('projects.create') }}">Create</a> new Bot
                         </div>
                     @else
                         <table class="table custom-table">

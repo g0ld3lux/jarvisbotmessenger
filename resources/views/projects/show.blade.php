@@ -25,7 +25,7 @@
             <uib-tabset active="0">
                 <uib-tab index="0">
                     <uib-tab-heading>
-                        <i class="fa fa-info fa-btn"></i>Project details
+                        <i class="fa fa-info fa-btn"></i>Bot details
                     </uib-tab-heading>
                     <div>
                         <div class="panel panel-default">
@@ -33,7 +33,7 @@
                                 <p class="text-center">
                                     Connected Facebook page:
                                     <span ng-show="projectLoading">Initializing...</span>
-                                    <span ng-show="!projectLoading && !project.id">Failed to load project...</span>
+                                    <span ng-show="!projectLoading && !project.id">Failed to load Bot Data...</span>
                                     <span ng-show="!projectLoading && project.id">
                                         <a ng-href="http://www.facebook.com/@{{ project.page_id }}" ng-show="project.page_id" target="_blank"><strong>@{{ project.page_title }}</strong></a>
                                         <button class="btn btn-info btn-xs" ng-click="connectPage(project)" ng-show="!project.page_id"><i class="fa fa-plug fa-btn"></i>Connect Facebook page</button>
@@ -57,7 +57,7 @@
                                             </div>
                                         </div>
                                         <div class="panel-body">
-                                            <p class="text-center" ng-show="analyticsLoading">Initializing project analytics...</p>
+                                            <p class="text-center" ng-show="analyticsLoading">Initializing Messages Analytics...</p>
                                             <canvas ng-cloak ng-show="!analyticsLoading" height="282" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-colors="colors"></canvas>
                                         </div>
                                     </div>

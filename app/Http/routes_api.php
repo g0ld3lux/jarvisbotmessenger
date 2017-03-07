@@ -7,63 +7,63 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
         'as' => 'api.validate.matcher',
     ]);
 
-    Route::get('/project/{project}/analytics', [
+    Route::get('bot/analytics', [
         'uses' => 'ProjectController@analytics',
         'as' => 'api.project.analytics',
     ]);
 
-    Route::resource('project', 'ProjectController', [
+    Route::resource('bot', 'ProjectController', [
         'only' => ['show'],
     ]);
 
-    Route::post('/project/{project}/page/connect', [
+    Route::post('/bot/{bot}/page/connect', [
         'uses' => 'ProjectController@connectPage',
         'as' => 'api.project.page.connect',
     ]);
 
-    Route::delete('/project/{project}/page/disconnect', [
+    Route::delete('/bot/{bot}/page/disconnect', [
         'uses' => 'ProjectController@disconnectPage',
         'as' => 'api.project.page.disconnect',
     ]);
 
-    Route::resource('project.respond', 'ProjectRespondController', [
+    Route::resource('bot.respond', 'ProjectRespondController', [
         'only' => ['index', 'destroy'],
     ]);
 
-    Route::get('/project/{project}/flow/export', [
+    Route::get('/bot/{bot}/flow/export', [
         'uses' => 'ProjectFlowController@export',
         'as' => 'api.project.flow.export',
     ]);
 
-    Route::post('/project/{project}/flow/import', [
+    Route::post('/bot/{bot}/flow/import', [
         'uses' => 'ProjectFlowController@import',
         'as' => 'api.project.flow.import',
     ]);
 
-    Route::post('/project/{project}/flow/sort', [
+    Route::post('/bot/{bot}/flow/sort', [
         'uses' => 'ProjectFlowController@updateSort',
         'as' => 'api.project.flow.sort',
     ]);
 
-    Route::resource('project.flow', 'ProjectFlowController', [
+    Route::resource('bot.flow', 'ProjectFlowController', [
         'only' => ['show', 'index', 'store', 'destroy', 'update'],
     ]);
 
-    Route::post('/project/{project}/flow/{flow}/default', [
+    Route::post('/bot/{bot}/flow/{flow}/default', [
         'uses' => 'ProjectFlowController@makeDefault',
         'as' => 'api.project.flow.default',
     ]);
 
-    Route::delete('/project/{project}/flow/{flow}/default', [
+    Route::delete('/bot/{bot}/flow/{flow}/default', [
         'uses' => 'ProjectFlowController@deleteDefault',
         'as' => 'api.project.flow.default.delete',
     ]);
 
-    Route::resource('project.flow.matcher', 'ProjectFlowMatcherController', [
+    Route::resource('bot.flow.matcher', 'ProjectFlowMatcherController', [
         'only' => ['destroy', 'store', 'update'],
     ]);
 
-    Route::group(['prefix' => '/project/{project}/subscription'], function () {
+    Route::group(['prefix' => '/bot/{bot}/subscription'], function () {
         Route::resource('channel', 'Project\Subscription\ChannelController', [
             'only' => ['index', 'store', 'show', 'update', 'destroy'],
         ]);
@@ -86,38 +86,38 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
         ]);
     });
 
-    Route::resource('project.recipient', 'Project\RecipientController', [
+    Route::resource('bot.recipient', 'Project\RecipientController', [
         'only' => ['index', 'show'],
     ]);
 
-    Route::resource('project.message', 'Project\MessageController', [
+    Route::resource('bot.message', 'Project\MessageController', [
         'only' => ['index', 'store', 'show', 'destroy'],
     ]);
 
-    Route::resource('project.message.schedule', 'Project\Message\ScheduleController', [
+    Route::resource('bot.message.schedule', 'Project\Message\ScheduleController', [
         'only' => ['index'],
     ]);
 
-    Route::post('/project/{project}/recipient/{recipient}/chat/disable', [
+    Route::post('/bot/{bot}/recipient/{recipient}/chat/disable', [
         'uses' => 'Project\RecipientController@disableChat',
         'as' => 'api.project.recipient.chat.disable',
     ]);
 
-    Route::post('/project/{project}/recipient/{recipient}/chat/enable', [
+    Route::post('/bot/{bot}/recipient/{recipient}/chat/enable', [
         'uses' => 'Project\RecipientController@enableChat',
         'as' => 'api.project.recipient.chat.enable',
     ]);
 
-    Route::post('/project/{project}/recipient/{recipient}/refresh', [
+    Route::post('/bot/{bot}/recipient/{recipient}/refresh', [
         'uses' => 'Project\RecipientController@refresh',
         'as' => 'api.project.recipient.refresh',
     ]);
 
-    Route::resource('project.recipient.channel', 'Project\Recipient\ChannelController', [
+    Route::resource('bot.recipient.channel', 'Project\Recipient\ChannelController', [
         'only' => ['index', 'destroy', 'store'],
     ]);
 
-    Route::resource('project.recipient.history', 'Project\Recipient\HistoryController', [
+    Route::resource('bot.recipient.history', 'Project\Recipient\HistoryController', [
         'only' => ['index'],
     ]);
 

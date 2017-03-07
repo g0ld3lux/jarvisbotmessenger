@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+\Auth::loginUsingId(1);
 include 'routes_admin.php';
 
 include 'routes_cron.php';

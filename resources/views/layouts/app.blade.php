@@ -107,7 +107,7 @@
                     @if(count($__menu_projects) > 0)
                         <li class="dropdown{{ array_get($__rp, 'menu') == 'projects' ? ' active' : '' }}">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Projects <span class="caret"></span>
+                                Bots <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">

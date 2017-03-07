@@ -133,7 +133,7 @@
                                         <label class="control-label col-md-4">&nbsp;</label>
                                         <div class="col-md-6">
                                             <select name="timezone" class="form-control" ng-model="message.timezone">
-                                                <option value="project">by Project timezone</option>
+                                                <option value="project">by Bot timezone</option>
                                                 <option value="recipient">by Recipient timezone</option>
                                             </select>
                                             <span class="help-block" ng-show="errors.timezone.length > 0">
