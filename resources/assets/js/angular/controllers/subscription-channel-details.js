@@ -57,7 +57,7 @@ angular
             ApiUtils
                 .subscription
                 .channel
-                .update(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.channelCopy)
+                .update(BOT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.channelCopy)
                 .then(function (response) {
                     $scope.$emit("channel.update.success", response.data);
                     $scope.editMode = false;
@@ -93,9 +93,9 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    ApiUtils.subscription.channel.delete(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID).then(function () {
+                    ApiUtils.subscription.channel.delete(BOT_ID, SUBSCRIPTION_CHANNEL_ID).then(function () {
                         toastr.success("Channel deleted successfully.");
-                        $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels";
+                        $window.location.href = BASE_URL + "/bots/" + BOT_ID + "/subscriptions/channels";
                     }, function () {
                         toastr.error("Failed to delete channel.");
                     });

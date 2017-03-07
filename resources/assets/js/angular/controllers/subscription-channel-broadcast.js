@@ -22,7 +22,7 @@ angular
             .subscription
             .channel
             .broadcast
-            .show(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID, BROADCAST_ID)
+            .show(BOT_ID, SUBSCRIPTION_CHANNEL_ID, BROADCAST_ID)
             .then(function (response) {
                 $scope.broadcast = response.data;
             })
@@ -48,10 +48,10 @@ angular
                         .subscription
                         .channel
                         .broadcast
-                        .delete(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.broadcast.id)
+                        .delete(BOT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.broadcast.id)
                         .then(function () {
                             toastr.success("Broadcast deleted successfully.");
-                            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels/" + SUBSCRIPTION_CHANNEL_ID;
+                            $window.location.href = BASE_URL + "/bots/" + BOT_ID + "/subscriptions/channels/" + SUBSCRIPTION_CHANNEL_ID;
                         }, function () {
                             toastr.error("Failed to delete broadcast.");
                         });

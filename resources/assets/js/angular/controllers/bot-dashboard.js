@@ -51,7 +51,7 @@ angular
         /**
          * Load active bot.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID).then(function (response) {
             $scope.bot = response.data;
 
             $scope.botLoading = false;

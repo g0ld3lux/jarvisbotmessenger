@@ -25,7 +25,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -101,7 +101,7 @@ angular
                 controller: "SubscriptionChannelAddBroadcastController",
                 resolve: {
                     botId: function () {
-                        return PROJECT_ID;
+                        return BOT_ID;
                     },
                     channelId: function () {
                         return SUBSCRIPTION_CHANNEL_ID;

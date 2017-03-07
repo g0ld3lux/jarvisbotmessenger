@@ -25,7 +25,7 @@ angular
         /**
          * Load active bot.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID).then(function (response) {
             $scope.bot = response.data;
 
             $scope.botLoading = false;
@@ -39,7 +39,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/recipient",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {

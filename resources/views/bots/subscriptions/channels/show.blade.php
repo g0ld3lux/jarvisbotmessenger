@@ -3,7 +3,7 @@
 @push('head_scripts')
     <script type="text/javascript">
         var SUBSCRIPTION_CHANNEL_ID = {{ $channel->id }};
-        var PROJECT_ID = {{ $bot->id }};
+        var BOT_ID = {{ $bot->id }};
         var PROJECT_TIMEZONE = "{{ $bot->timezone }}";
     </script>
 @endpush

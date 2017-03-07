@@ -19568,7 +19568,7 @@ angular
                 });
 
                 $http
-                    .post(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/sort", { sort: positions })
+                    .post(BASE_URL + "/api/bot/" + BOT_ID + "/flow/sort", { sort: positions })
                     .then(function (response) {
                         if (response.data.success) {
                             toastr.success("Flow order changed.");
@@ -19602,7 +19602,7 @@ angular
             });
 
             modalInstance.result.then(function (flow) {
-                $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
+                $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/flow/" + flow.id).then(function (response) {
                     if ($scope.flows.filter(function (item) { return item.id == response.data.id }).length <= 0) {
                         $scope.flows.push(response.data);
                     } else {
@@ -19626,7 +19626,7 @@ angular
         var loadFlows = function () {
             $scope.flowsLoading = true;
 
-            $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow").then(function (response) {
+            $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/flow").then(function (response) {
                 $scope.flows = response.data;
             }).finally(function () {
                 $scope.flowsLoading = false;
@@ -19651,7 +19651,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    $http.delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
+                    $http.delete(BASE_URL + "/api/bot/" + BOT_ID + "/flow/" + flow.id).then(function (response) {
                         if (response.data.success) {
                             toastr.success("Flow deleted successfully.");
                             $scope.flows = $scope.flows.filter(function (item) {
@@ -19676,7 +19676,7 @@ angular
          */
         $scope.makeDefault = function (flow) {
             $http
-                .post(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
+                .post(BASE_URL + "/api/bot/" + BOT_ID + "/flow/" + flow.id + "/default", {})
                 .then(function (response) {
                     if (response.data.success) {
                         toastr.success("Default flow changed.");
@@ -19701,7 +19701,7 @@ angular
          */
         $scope.removeDefault = function (flow) {
             $http
-                .delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
+                .delete(BASE_URL + "/api/bot/" + BOT_ID + "/flow/" + flow.id + "/default", {})
                 .then(function (response) {
                     if (response.data.success) {
                         toastr.success("Default flow removed.");
@@ -19737,7 +19737,7 @@ angular
          * @returns {string}
          */
         $scope.respondHref = function (respond) {
-            return BASE_URL + "/bots/" + PROJECT_ID + "/responds/" + respond.id + "/edit";
+            return BASE_URL + "/bots/" + BOT_ID + "/responds/" + respond.id + "/edit";
         };
 
         /**
@@ -19749,7 +19749,7 @@ angular
                 controller: "FlowsExportController",
                 resolve: {
                     botId: function () {
-                        return PROJECT_ID;
+                        return BOT_ID;
                     }
                 }
             });
@@ -19764,7 +19764,7 @@ angular
                 controller: "FlowsImportController",
                 resolve: {
                     botId: function () {
-                        return PROJECT_ID;
+                        return BOT_ID;
                     }
                 }
             });
@@ -19830,7 +19830,7 @@ angular
         /**
          * Load active bot.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID).then(function (response) {
             $scope.bot = response.data;
 
             $scope.botLoading = false;
@@ -20361,7 +20361,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/message/" + MESSAGE_ID + "/schedule",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/message/" + MESSAGE_ID + "/schedule",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -20454,7 +20454,7 @@ angular
          */
         ApiUtils
             .message
-            .show(PROJECT_ID, MESSAGE_ID)
+            .show(BOT_ID, MESSAGE_ID)
             .then(function (response) {
                 $scope.message = response.data;
             })
@@ -20478,10 +20478,10 @@ angular
                 if (confirm) {
                     ApiUtils
                         .message
-                        .delete(PROJECT_ID, $scope.message.id)
+                        .delete(BOT_ID, $scope.message.id)
                         .then(function () {
                             toastr.success("Message deleted successfully.");
-                            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/messages";
+                            $window.location.href = BASE_URL + "/bots/" + BOT_ID + "/messages";
                         }, function () {
                             toastr.error("Failed to delete message.");
                         });
@@ -20520,7 +20520,7 @@ angular
             $scope.analyticsLoading = true;
 
             ApiUtils.bot.analytics(
-                PROJECT_ID,
+                BOT_ID,
                 _.map(fields, function(value, key) {
                     return key;
                 }),
@@ -20705,7 +20705,7 @@ angular
         /**
          * Load responds.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/respond").then(function (response) {
             $scope.responds = response.data;
         }).finally(function () {
             $scope.respondsLoading = false;
@@ -20714,7 +20714,7 @@ angular
         /**
          * Load recipients.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient?all=1").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/recipient?all=1").then(function (response) {
             $scope.recipients = response.data;
         }).finally(function () {
             $scope.recipientsLoading = false;
@@ -20742,10 +20742,10 @@ angular
 
             ApiUtils
                 .message
-                .store(PROJECT_ID, clone)
+                .store(BOT_ID, clone)
                 .then(function (response) {
                     toastr.success("Message scheduled successfully.");
-                    $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/messages/" + response.data.id;
+                    $window.location.href = BASE_URL + "/bots/" + BOT_ID + "/messages/" + response.data.id;
                 }, function (response) {
                     $scope.errors = response.data;
                 }).finally(function () {
@@ -20822,7 +20822,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/message",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/message",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -21115,7 +21115,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID + "/channel",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/recipient/" + RECIPIENT_ID + "/channel",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -21193,7 +21193,7 @@ angular
                 controller: "RecipientAddToChannelController",
                 resolve: {
                     botId: function () {
-                        return PROJECT_ID;
+                        return BOT_ID;
                     },
                     recipientId: function () {
                         return RECIPIENT_ID;
@@ -21275,7 +21275,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID + "/history",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/recipient/" + RECIPIENT_ID + "/history",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -21343,7 +21343,7 @@ angular
         /**
          * Load bot.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/recipient/" + RECIPIENT_ID).then(function (response) {
             $scope.recipient = response.data;
 
             $scope.$broadcast("recipient.loaded", $scope.recipient);
@@ -21536,7 +21536,7 @@ angular
         /**
          * Load active bot.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID).then(function (response) {
             $scope.bot = response.data;
 
             $scope.botLoading = false;
@@ -21550,7 +21550,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/recipient",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -21626,7 +21626,7 @@ angular
         /**
          * Load accounts.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/respond").then(function (response) {
             $scope.responds = response.data;
         }, function () {
             toastr.error("Failed to load responds.");
@@ -21650,7 +21650,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    $http.delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond/" + respond.id).then(function (response) {
+                    $http.delete(BASE_URL + "/api/bot/" + BOT_ID + "/respond/" + respond.id).then(function (response) {
                         if (response.data.success) {
                             toastr.success("Respond deleted successfully.");
                             $scope.responds = $scope.responds.filter(function (item) {
@@ -21672,7 +21672,7 @@ angular
          * Add new respond.
          */
         $scope.addRespond = function () {
-            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/responds/create";
+            $window.location.href = BASE_URL + "/bots/" + BOT_ID + "/responds/create";
         };
     });
 angular
@@ -21962,7 +21962,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast/" + BROADCAST_ID + "/schedule",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast/" + BROADCAST_ID + "/schedule",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -22057,7 +22057,7 @@ angular
             .subscription
             .channel
             .broadcast
-            .show(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID, BROADCAST_ID)
+            .show(BOT_ID, SUBSCRIPTION_CHANNEL_ID, BROADCAST_ID)
             .then(function (response) {
                 $scope.broadcast = response.data;
             })
@@ -22083,10 +22083,10 @@ angular
                         .subscription
                         .channel
                         .broadcast
-                        .delete(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.broadcast.id)
+                        .delete(BOT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.broadcast.id)
                         .then(function () {
                             toastr.success("Broadcast deleted successfully.");
-                            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels/" + SUBSCRIPTION_CHANNEL_ID;
+                            $window.location.href = BASE_URL + "/bots/" + BOT_ID + "/subscriptions/channels/" + SUBSCRIPTION_CHANNEL_ID;
                         }, function () {
                             toastr.error("Failed to delete broadcast.");
                         });
@@ -22125,7 +22125,7 @@ angular
             $scope.analyticsLoading = true;
 
             ApiUtils.bot.analytics(
-                PROJECT_ID,
+                BOT_ID,
                 _.map(fields, function(value, key) {
                     return key;
                 }),
@@ -22259,7 +22259,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -22335,7 +22335,7 @@ angular
                 controller: "SubscriptionChannelAddBroadcastController",
                 resolve: {
                     botId: function () {
-                        return PROJECT_ID;
+                        return BOT_ID;
                     },
                     channelId: function () {
                         return SUBSCRIPTION_CHANNEL_ID;
@@ -22409,7 +22409,7 @@ angular
             ApiUtils
                 .subscription
                 .channel
-                .update(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.channelCopy)
+                .update(BOT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.channelCopy)
                 .then(function (response) {
                     $scope.$emit("channel.update.success", response.data);
                     $scope.editMode = false;
@@ -22445,9 +22445,9 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    ApiUtils.subscription.channel.delete(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID).then(function () {
+                    ApiUtils.subscription.channel.delete(BOT_ID, SUBSCRIPTION_CHANNEL_ID).then(function () {
                         toastr.success("Channel deleted successfully.");
-                        $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels";
+                        $window.location.href = BASE_URL + "/bots/" + BOT_ID + "/subscriptions/channels";
                     }, function () {
                         toastr.error("Failed to delete channel.");
                     });
@@ -22486,7 +22486,7 @@ angular
             $scope.analyticsLoading = true;
 
             ApiUtils.bot.analytics(
-                PROJECT_ID,
+                BOT_ID,
                 _.map(fields, function(value, key) {
                     return key;
                 }),
@@ -22609,7 +22609,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/recipient",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/recipient",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -22713,7 +22713,7 @@ angular
                 size: "lg",
                 resolve: {
                     botId: function () {
-                        return PROJECT_ID;
+                        return BOT_ID;
                     },
                     channelId: function () {
                         return SUBSCRIPTION_CHANNEL_ID;
@@ -22746,7 +22746,7 @@ angular
         /**
          * Load bot.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID).then(function (response) {
             $scope.channel = response.data;
 
             $scope.$broadcast("channel.loaded", $scope.channel);
@@ -22791,7 +22791,7 @@ angular
             $scope.analyticsLoading = true;
 
             ApiUtils.bot.analytics(
-                PROJECT_ID,
+                BOT_ID,
                 _.map(fields, function(value, key) {
                     return key;
                 }),
@@ -22931,10 +22931,10 @@ angular
             ApiUtils
                 .subscription
                 .channel
-                .store(PROJECT_ID, $scope.channel)
+                .store(BOT_ID, $scope.channel)
                 .then(function (response) {
                     toastr.success("Subscription channel created successfully.");
-                    $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels/" + response.data.id;
+                    $window.location.href = BASE_URL + "/bots/" + BOT_ID + "/subscriptions/channels/" + response.data.id;
                 }, function (response) {
                     $scope.errors = response.data;
                     toastr.error("Failed to save channel.");
@@ -22966,7 +22966,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel",
+                url: BASE_URL + "/api/bot/" + BOT_ID + "/subscription/channel",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -23840,7 +23840,7 @@ angular
             link: function (scope, element) {
                 element.attr(
                     "href",
-                    BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels/" + scope.broadcast.channel_id + "/broadcasts/" + scope.broadcast.id
+                    BASE_URL + "/bots/" + BOT_ID + "/subscriptions/channels/" + scope.broadcast.channel_id + "/broadcasts/" + scope.broadcast.id
                 );
             }
         }

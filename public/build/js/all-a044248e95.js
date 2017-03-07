@@ -19505,7 +19505,7 @@ angular
                 });
 
                 $http
-                    .post(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/sort", { sort: positions })
+                    .post(BASE_URL + "/api/bot/" + BOT_ID + "/flow/sort", { sort: positions })
                     .then(function (response) {
                         if (response.data.success) {
                             toastr.success("Flow order changed.");
@@ -19539,7 +19539,7 @@ angular
             });
 
             modalInstance.result.then(function (flow) {
-                $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
+                $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/flow/" + flow.id).then(function (response) {
                     if ($scope.flows.filter(function (item) { return item.id == response.data.id }).length <= 0) {
                         $scope.flows.push(response.data);
                     } else {
@@ -19560,7 +19560,7 @@ angular
         /**
          * Load flows.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/flow").then(function (response) {
             $scope.flows = response.data;
             $scope.flowsLoading = false;
         });
@@ -19581,7 +19581,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    $http.delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
+                    $http.delete(BASE_URL + "/api/bot/" + BOT_ID + "/flow/" + flow.id).then(function (response) {
                         if (response.data.success) {
                             toastr.success("Flow deleted successfully.");
                             $scope.flows = $scope.flows.filter(function (item) {
@@ -19606,7 +19606,7 @@ angular
          */
         $scope.makeDefault = function (flow) {
             $http
-                .post(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
+                .post(BASE_URL + "/api/bot/" + BOT_ID + "/flow/" + flow.id + "/default", {})
                 .then(function (response) {
                     if (response.data.success) {
                         toastr.success("Default flow changed.");
@@ -19631,7 +19631,7 @@ angular
          */
         $scope.removeDefault = function (flow) {
             $http
-                .delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
+                .delete(BASE_URL + "/api/bot/" + BOT_ID + "/flow/" + flow.id + "/default", {})
                 .then(function (response) {
                     if (response.data.success) {
                         toastr.success("Default flow removed.");
@@ -19667,7 +19667,7 @@ angular
          * @returns {string}
          */
         $scope.respondHref = function (respond) {
-            return BASE_URL + "/bots/" + PROJECT_ID + "/responds/" + respond.id + "/edit";
+            return BASE_URL + "/bots/" + BOT_ID + "/responds/" + respond.id + "/edit";
         };
     });
 angular
@@ -19723,7 +19723,7 @@ angular
         /**
          * Load active bot.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID).then(function (response) {
             $scope.bot = response.data;
 
             $scope.botLoading = false;
@@ -19831,7 +19831,7 @@ angular
         /**
          * Load accounts.
          */
-        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + BOT_ID + "/respond").then(function (response) {
             $scope.responds = response.data;
         }, function () {
             toastr.error("Failed to load responds.");
@@ -19855,7 +19855,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    $http.delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond/" + respond.id).then(function (response) {
+                    $http.delete(BASE_URL + "/api/bot/" + BOT_ID + "/respond/" + respond.id).then(function (response) {
                         if (response.data.success) {
                             toastr.success("Respond deleted successfully.");
                             $scope.responds = $scope.responds.filter(function (item) {

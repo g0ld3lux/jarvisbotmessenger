@@ -27,7 +27,7 @@ angular
             $scope.analyticsLoading = true;
 
             ApiUtils.bot.analytics(
-                PROJECT_ID,
+                BOT_ID,
                 _.map(fields, function(value, key) {
                     return key;
                 }),

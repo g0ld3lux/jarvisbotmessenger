@@ -20,7 +20,7 @@ angular
          */
         ApiUtils
             .message
-            .show(PROJECT_ID, MESSAGE_ID)
+            .show(BOT_ID, MESSAGE_ID)
             .then(function (response) {
                 $scope.message = response.data;
             })
@@ -44,10 +44,10 @@ angular
                 if (confirm) {
                     ApiUtils
                         .message
-                        .delete(PROJECT_ID, $scope.message.id)
+                        .delete(BOT_ID, $scope.message.id)
                         .then(function () {
                             toastr.success("Message deleted successfully.");
-                            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/messages";
+                            $window.location.href = BASE_URL + "/bots/" + BOT_ID + "/messages";
                         }, function () {
                             toastr.error("Failed to delete message.");
                         });

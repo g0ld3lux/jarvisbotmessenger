@@ -2,7 +2,7 @@
 
 @push('head_scripts')
     <script type="text/javascript">
-        var PROJECT_ID = "{{ $bot->id }}";
+        var BOT_ID = "{{ $bot->id }}";
     </script>
 @endpush
 
