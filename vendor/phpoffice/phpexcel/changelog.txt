@@ -72,7 +72,7 @@ Planned for 1.8.2
                                                     Support for row and column ranges
                                                     Improved handling for next/prev
 - Security: (MBaker)                            - XML filescan in XML-based Readers to prevent XML Entity Expansion (XEE)
-                                                    (see http://bots.webappsec.org/w/page/13247002/XML%20Entity%20Expansion for an explanation of XEE injection) attacks
+                                                    (see http://projects.webappsec.org/w/page/13247002/XML%20Entity%20Expansion for an explanation of XEE injection) attacks
                                                   Reference CVE-2015-3542 - Identification of problem courtesy of Dawid Golunski (Pentest Ltd.)
 
 2014-03-02 (v1.8.0):
@@ -262,7 +262,7 @@ Planned for 1.8.2
 - General:  (MBaker)    Work item 16923 - Datatype.php & constant TYPE_NULL
 - General:  (MBaker)    Ensure use of system temp directory for all temporary work files, unless explicitly specified
 - General:  (char101)   Work item 16359 - [Patch] faster stringFromColumnIndex()
-- General:  (whit1206)  Work item 16028 - Fix for bots that still use old autoloaders
+- General:  (whit1206)  Work item 16028 - Fix for projects that still use old autoloaders
 - General:  (atz)       Work item 17024 - Unknown codepage: 10007
                         Additional Mac codepages
 
@@ -1384,8 +1384,8 @@ documentation for more information on entering dates into a cell.
 
 
 2007/01/31 (v 1.0.0 RC):
-- Bot name has been changed to PHPExcel
-- Bot homepage is now http://www.codeplex.com/PHPExcel
+- Project name has been changed to PHPExcel
+- Project homepage is now http://www.codeplex.com/PHPExcel
 - Started versioning at number: PHPExcel 1.0.0 RC
 
 

@@ -126,7 +126,7 @@ class CheckPublicSuffixTest extends \PHPUnit_Framework_TestCase
 
     /**
      * This is my version of the checkPublicSuffix function referred to in the
-     * test instructions at the Public Suffix List bot.
+     * test instructions at the Public Suffix List project.
      *
      * "You will need to define a checkPublicSuffix() function which takes as a
      * parameter a domain name and the public suffix, runs your implementation

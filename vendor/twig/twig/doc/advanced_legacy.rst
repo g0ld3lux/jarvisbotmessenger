@@ -14,7 +14,7 @@ itself with node visitors.
 .. note::
 
     The first section of this chapter describes how to extend Twig easily. If
-    you want to reuse your changes in different bots or if you want to
+    you want to reuse your changes in different projects or if you want to
     share them with others, you should then create an extension as described
     in the following section.
 
@@ -197,17 +197,17 @@ Let's say I now want to be able to add a prefix before the converted string:
 As the PHP ``str_rot13()`` function does not support this requirement, let's
 create a new PHP function::
 
-    function bot_compute_rot13($string, $prefix = '')
+    function project_compute_rot13($string, $prefix = '')
     {
         return $prefix.str_rot13($string);
     }
 
 As you can see, the ``prefix`` argument of the filter is passed as an extra
-argument to the ``bot_compute_rot13()`` function.
+argument to the ``project_compute_rot13()`` function.
 
 Adding this filter is as easy as before::
 
-    $twig->addFilter('rot13', new Twig_Filter_Function('bot_compute_rot13'));
+    $twig->addFilter('rot13', new Twig_Filter_Function('project_compute_rot13'));
 
 For better encapsulation, a filter can also be defined as a static method of a
 class. The ``Twig_Filter_Function`` class can also be used to register such
@@ -398,14 +398,14 @@ Adding a tag is as simple as calling the ``addTokenParser`` method on the
 ``Twig_Environment`` instance::
 
     $twig = new Twig_Environment($loader);
-    $twig->addTokenParser(new Bot_Set_TokenParser());
+    $twig->addTokenParser(new Project_Set_TokenParser());
 
 Defining a Token Parser
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Now, let's see the actual code of this class::
 
-    class Bot_Set_TokenParser extends Twig_TokenParser
+    class Project_Set_TokenParser extends Twig_TokenParser
     {
         public function parse(Twig_Token $token)
         {
@@ -416,7 +416,7 @@ Now, let's see the actual code of this class::
 
             $this->parser->getStream()->expect(Twig_Token::BLOCK_END_TYPE);
 
-            return new Bot_Set_Node($name, $value, $lineno, $this->getTag());
+            return new Project_Set_Node($name, $value, $lineno, $this->getTag());
         }
 
         public function getTag()
@@ -429,7 +429,7 @@ The ``getTag()`` method must return the tag we want to parse, here ``set``.
 
 The ``parse()`` method is invoked whenever the parser encounters a ``set``
 tag. It should return a ``Twig_Node`` instance that represents the node (the
-``Bot_Set_Node`` calls creating is explained in the next section).
+``Project_Set_Node`` calls creating is explained in the next section).
 
 The parsing process is simplified thanks to a bunch of methods you can call
 from the token stream (``$this->parser->getStream()``):
@@ -459,9 +459,9 @@ the ``set`` tag.
 Defining a Node
 ~~~~~~~~~~~~~~~
 
-The ``Bot_Set_Node`` class itself is rather simple::
+The ``Project_Set_Node`` class itself is rather simple::
 
-    class Bot_Set_Node extends Twig_Node
+    class Project_Set_Node extends Twig_Node
     {
         public function __construct($name, Twig_Node_Expression $value, $lineno, $tag = null)
         {
@@ -517,7 +517,7 @@ Creating an extension also makes for a better separation of code that is
 executed at compilation time and code needed at runtime. As such, it makes
 your code faster.
 
-Most of the time, it is useful to create a single extension for your bot,
+Most of the time, it is useful to create a single extension for your project,
 to host all the specific tags and filters you want to add to Twig.
 
 .. tip::
@@ -609,11 +609,11 @@ The ``getName()`` method must return a unique identifier for your extension.
 Now, with this information in mind, let's create the most basic extension
 possible::
 
-    class Bot_Twig_Extension extends Twig_Extension
+    class Project_Twig_Extension extends Twig_Extension
     {
         public function getName()
         {
-            return 'bot';
+            return 'project';
         }
     }
 
@@ -629,7 +629,7 @@ You can register an extension by using the ``addExtension()`` method on your
 main ``Environment`` object::
 
     $twig = new Twig_Environment($loader);
-    $twig->addExtension(new Bot_Twig_Extension());
+    $twig->addExtension(new Project_Twig_Extension());
 
 Of course, you need to first load the extension file by either using
 ``require_once()`` or by using an autoloader (see `spl_autoload_register()`_).
@@ -644,7 +644,7 @@ Globals
 Global variables can be registered in an extension via the ``getGlobals()``
 method::
 
-    class Bot_Twig_Extension extends Twig_Extension
+    class Project_Twig_Extension extends Twig_Extension
     {
         public function getGlobals()
         {
@@ -662,7 +662,7 @@ Functions
 Functions can be registered in an extension via the ``getFunctions()``
 method::
 
-    class Bot_Twig_Extension extends Twig_Extension
+    class Project_Twig_Extension extends Twig_Extension
     {
         public function getFunctions()
         {
@@ -681,7 +681,7 @@ To add a filter to an extension, you need to override the ``getFilters()``
 method. This method must return an array of filters to add to the Twig
 environment::
 
-    class Bot_Twig_Extension extends Twig_Extension
+    class Project_Twig_Extension extends Twig_Extension
     {
         public function getFilters()
         {
@@ -700,12 +700,12 @@ definition of the filter (``new Twig_Filter_Function('str_rot13')``).
 As seen in the previous chapter, you can also define filters as static methods
 on the extension class::
 
-$twig->addFilter('rot13', new Twig_Filter_Function('Bot_Twig_Extension::rot13Filter'));
+$twig->addFilter('rot13', new Twig_Filter_Function('Project_Twig_Extension::rot13Filter'));
 
 You can also use ``Twig_Filter_Method`` instead of ``Twig_Filter_Function``
 when defining a filter to use a method::
 
-    class Bot_Twig_Extension extends Twig_Extension
+    class Project_Twig_Extension extends Twig_Extension
     {
         public function getFilters()
         {
@@ -754,7 +754,7 @@ want to override::
 
         public function getName()
         {
-            return 'bot';
+            return 'project';
         }
     }
 
@@ -772,18 +772,18 @@ Adding a tag in an extension can be done by overriding the
 ``getTokenParsers()`` method. This method must return an array of tags to add
 to the Twig environment::
 
-    class Bot_Twig_Extension extends Twig_Extension
+    class Project_Twig_Extension extends Twig_Extension
     {
         public function getTokenParsers()
         {
-            return array(new Bot_Set_TokenParser());
+            return array(new Project_Set_TokenParser());
         }
 
         // ...
     }
 
 In the above code, we have added a single new tag, defined by the
-``Bot_Set_TokenParser`` class. The ``Bot_Set_TokenParser`` class is
+``Project_Set_TokenParser`` class. The ``Project_Set_TokenParser`` class is
 responsible for parsing the tag and compiling it to PHP.
 
 Operators
@@ -792,7 +792,7 @@ Operators
 The ``getOperators()`` methods allows to add new operators. Here is how to add
 ``!``, ``||``, and ``&&`` operators::
 
-    class Bot_Twig_Extension extends Twig_Extension
+    class Project_Twig_Extension extends Twig_Extension
     {
         public function getOperators()
         {
@@ -815,7 +815,7 @@ Tests
 
 The ``getTests()`` methods allows to add new test functions::
 
-    class Bot_Twig_Extension extends Twig_Extension
+    class Project_Twig_Extension extends Twig_Extension
     {
         public function getTests()
         {
@@ -853,13 +853,13 @@ following file structure in your test directory::
 
 The ``IntegrationTest.php`` file should look like this::
 
-    class Bot_Tests_IntegrationTest extends Twig_Test_IntegrationTestCase
+    class Project_Tests_IntegrationTest extends Twig_Test_IntegrationTestCase
     {
         public function getExtensions()
         {
             return array(
-                new Bot_Twig_Extension1(),
-                new Bot_Twig_Extension2(),
+                new Project_Twig_Extension1(),
+                new Project_Twig_Extension2(),
             );
         }
 

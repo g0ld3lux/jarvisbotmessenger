@@ -1,7 +1,7 @@
 Lexer component documentation
 =============================
 
-The lexer is responsible for providing tokens to the parser. The bot comes with two lexers: `PhpParser\Lexer` and
+The lexer is responsible for providing tokens to the parser. The project comes with two lexers: `PhpParser\Lexer` and
 `PhpParser\Lexer\Emulative`. The latter is an extension of the former, which adds the ability to emulate tokens of
 newer PHP versions and thus allows parsing of new code on older versions.
 

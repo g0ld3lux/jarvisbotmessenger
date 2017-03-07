@@ -16,7 +16,7 @@ find the last day of the month, L to find the last given weekday of a month, and
 Installing
 ==========
 
-Add the dependency to your bot:
+Add the dependency to your project:
 
 ```bash
 composer require mtdowling/cron-expression

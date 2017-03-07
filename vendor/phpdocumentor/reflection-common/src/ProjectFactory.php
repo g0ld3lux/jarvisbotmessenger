@@ -11,17 +11,17 @@
 namespace phpDocumentor\Reflection;
 
 /**
- * Interface for bot factories. A bot factory shall convert a set of files
- * into an object implementing the Bot interface.
+ * Interface for project factories. A project factory shall convert a set of files
+ * into an object implementing the Project interface.
  */
-interface BotFactory
+interface ProjectFactory
 {
     /**
-     * Creates a bot from the set of files.
+     * Creates a project from the set of files.
      *
      * @param string $name
      * @param File[] $files
-     * @return Bot
+     * @return Project
      */
     public function create($name, array $files);
 }

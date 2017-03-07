@@ -150,14 +150,14 @@ parent's full, unambiguous template path in the extends tag:
 .. note::
 
     This recipe was inspired by the following Django wiki page:
-    http://code.djangobot.com/wiki/ExtendingTemplates
+    http://code.djangoproject.com/wiki/ExtendingTemplates
 
 Customizing the Syntax
 ----------------------
 
 Twig allows some syntax customization for the block delimiters. It's not
 recommended to use this feature as templates will be tied with your custom
-syntax. But for specific bots, it can make sense to change the defaults.
+syntax. But for specific projects, it can make sense to change the defaults.
 
 To change the block delimiters, you need to create your own lexer object::
 

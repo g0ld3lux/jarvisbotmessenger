@@ -141,11 +141,11 @@ class Stylesheet
      * Accepted CSS media types
      * List of types and parsing rules for future extensions:
      * http://www.w3.org/TR/REC-html40/types.html
-     *   screen, tty, tv, botion, handheld, print, braille, aural, all
+     *   screen, tty, tv, projection, handheld, print, braille, aural, all
      * The following are non standard extensions for undocumented specific environments.
      *   static, visual, bitmap, paged, dompdf
      * Note, even though the generated pdf file is intended for print output,
-     * the desired content might be different (e.g. screen or botion view of html file).
+     * the desired content might be different (e.g. screen or projection view of html file).
      * Therefore allow specification of content by dompdf setting Options::defaultMediaType.
      * If given, replace media "print" by Options::defaultMediaType.
      * (Previous version $ACCEPTED_MEDIA_TYPES = $ACCEPTED_GENERIC_MEDIA_TYPES + $ACCEPTED_DEFAULT_MEDIA_TYPE)

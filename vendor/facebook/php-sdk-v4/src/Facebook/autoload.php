@@ -45,7 +45,7 @@ require_once __DIR__ . '/polyfills.php';
  * @return void
  */
 spl_autoload_register(function ($class) {
-    // bot-specific namespace prefix
+    // project-specific namespace prefix
     $prefix = 'Facebook\\';
 
     // For backwards compatibility

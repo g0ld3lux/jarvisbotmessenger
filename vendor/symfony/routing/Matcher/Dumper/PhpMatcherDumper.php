@@ -47,7 +47,7 @@ class PhpMatcherDumper extends MatcherDumper
     public function dump(array $options = array())
     {
         $options = array_replace(array(
-            'class' => 'BotUrlMatcher',
+            'class' => 'ProjectUrlMatcher',
             'base_class' => 'Symfony\\Component\\Routing\\Matcher\\UrlMatcher',
         ), $options);
 

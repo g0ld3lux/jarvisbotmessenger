@@ -71,11 +71,11 @@ class PHPExcel_Writer_Excel2007_ContentTypes extends PHPExcel_Writer_Excel2007_W
         if ($pPHPExcel->hasMacros()) { //Macros in workbook ?
             // Yes : not standard content but "macroEnabled"
             $this->writeOverrideContentType($objWriter, '/xl/workbook.xml', 'application/vnd.ms-excel.sheet.macroEnabled.main+xml');
-            //... and define a new type for the VBA bot
-            $this->writeDefaultContentType($objWriter, 'bin', 'application/vnd.ms-office.vbaBot');
+            //... and define a new type for the VBA project
+            $this->writeDefaultContentType($objWriter, 'bin', 'application/vnd.ms-office.vbaProject');
             if ($pPHPExcel->hasMacrosCertificate()) {// signed macros ?
                 // Yes : add needed information
-                $this->writeOverrideContentType($objWriter, '/xl/vbaBotSignature.bin', 'application/vnd.ms-office.vbaBotSignature');
+                $this->writeOverrideContentType($objWriter, '/xl/vbaProjectSignature.bin', 'application/vnd.ms-office.vbaProjectSignature');
             }
         } else {// no macros in workbook, so standard type
             $this->writeOverrideContentType($objWriter, '/xl/workbook.xml', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml');

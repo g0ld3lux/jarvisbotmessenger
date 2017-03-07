@@ -30,14 +30,14 @@ class PHP_CodeCoverage_Report_Clover
         $xmlCoverage->setAttribute('generated', (int) $_SERVER['REQUEST_TIME']);
         $xmlDocument->appendChild($xmlCoverage);
 
-        $xmlBot = $xmlDocument->createElement('bot');
-        $xmlBot->setAttribute('timestamp', (int) $_SERVER['REQUEST_TIME']);
+        $xmlProject = $xmlDocument->createElement('project');
+        $xmlProject->setAttribute('timestamp', (int) $_SERVER['REQUEST_TIME']);
 
         if (is_string($name)) {
-            $xmlBot->setAttribute('name', $name);
+            $xmlProject->setAttribute('name', $name);
         }
 
-        $xmlCoverage->appendChild($xmlBot);
+        $xmlCoverage->appendChild($xmlProject);
 
         $packages = array();
         $report   = $coverage->getReport();
@@ -218,7 +218,7 @@ class PHP_CodeCoverage_Report_Clover
             $xmlFile->appendChild($xmlMetrics);
 
             if ($namespace == 'global') {
-                $xmlBot->appendChild($xmlFile);
+                $xmlProject->appendChild($xmlFile);
             } else {
                 if (!isset($packages[$namespace])) {
                     $packages[$namespace] = $xmlDocument->createElement(
@@ -226,7 +226,7 @@ class PHP_CodeCoverage_Report_Clover
                     );
 
                     $packages[$namespace]->setAttribute('name', $namespace);
-                    $xmlBot->appendChild($packages[$namespace]);
+                    $xmlProject->appendChild($packages[$namespace]);
                 }
 
                 $packages[$namespace]->appendChild($xmlFile);
@@ -269,7 +269,7 @@ class PHP_CodeCoverage_Report_Clover
             /* + coveredconditionals */
         );
 
-        $xmlBot->appendChild($xmlMetrics);
+        $xmlProject->appendChild($xmlMetrics);
 
         if ($target !== null) {
             if (!is_dir(dirname($target))) {

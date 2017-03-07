@@ -5,11 +5,11 @@ namespace Faker\Provider\nl_NL;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * Bot Gutenberg's Dichtertje - De Uitvreter - Titaantjes, by Nescio
+     * Project Gutenberg's Dichtertje - De Uitvreter - Titaantjes, by Nescio
      *
      * This eBook is for the use of anyone anywhere at no cost and with
      * almost no restrictions whatsoever.  You may copy it, give it away or
-     * re-use it under the terms of the Bot Gutenberg License included
+     * re-use it under the terms of the Project Gutenberg License included
      * with this eBook or online at www.gutenberg.org
      *
      * Title: Dichtertje - De Uitvreter - Titaantjes
@@ -20,7 +20,7 @@ class Text extends \Faker\Provider\Text
      *
      * Language: Dutch
      *
-     * *** START OF THIS BOT GUTENBERG EBOOK DICHTERTJE - DE UITVRETER  ***
+     * *** START OF THIS PROJECT GUTENBERG EBOOK DICHTERTJE - DE UITVRETER  ***
      *
      * Produced by Mark C. Orton and the Online Distributed
      * Proofreading Team at http://www.pgdp.net/

@@ -18,7 +18,7 @@
  * {% endsandbox %}
  * </pre>
  *
- * @see http://www.twig-bot.org/doc/api.html#sandbox-extension for details
+ * @see http://www.twig-project.org/doc/api.html#sandbox-extension for details
  */
 class Twig_TokenParser_Sandbox extends Twig_TokenParser
 {

@@ -472,20 +472,20 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
                             case "http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet":
                                 $worksheets[(string) $ele["Id"]] = $ele["Target"];
                                 break;
-                            // a vbaBot ? (: some macros)
-                            case "http://schemas.microsoft.com/office/2006/relationships/vbaBot":
+                            // a vbaProject ? (: some macros)
+                            case "http://schemas.microsoft.com/office/2006/relationships/vbaProject":
                                 $macros = $ele["Target"];
                                 break;
                         }
                     }
 
                     if (!is_null($macros)) {
-                        $macrosCode = $this->getFromZipArchive($zip, 'xl/vbaBot.bin');//vbaBot.bin always in 'xl' dir and always named vbaBot.bin
+                        $macrosCode = $this->getFromZipArchive($zip, 'xl/vbaProject.bin');//vbaProject.bin always in 'xl' dir and always named vbaProject.bin
                         if ($macrosCode !== false) {
                             $excel->setMacrosCode($macrosCode);
                             $excel->setHasMacros(true);
-                            //short-circuit : not reading vbaBot.bin.rel to get Signature =>allways vbaBotSignature.bin in 'xl' dir
-                            $Certificate = $this->getFromZipArchive($zip, 'xl/vbaBotSignature.bin');
+                            //short-circuit : not reading vbaProject.bin.rel to get Signature =>allways vbaProjectSignature.bin in 'xl' dir
+                            $Certificate = $this->getFromZipArchive($zip, 'xl/vbaProjectSignature.bin');
                             if ($Certificate !== false) {
                                 $excel->setMacrosCertificate($Certificate);
                             }

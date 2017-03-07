@@ -1,7 +1,7 @@
 <?php
 /**
  * Random_* Compatibility Library
- * for using the new PHP 7 random_* API in PHP 5 bots
+ * for using the new PHP 7 random_* API in PHP 5 projects
  * 
  * @version 1.4.1
  * @released 2016-03-18

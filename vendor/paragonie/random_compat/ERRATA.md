@@ -17,7 +17,7 @@ fallbacks are available.
 Next, we read `/dev/urandom` (if it exists). This is the preferred file to read
 for random data for cryptographic purposes for BSD and Linux.
 
-Despite [strongly urging people not to use mcrypt in their bots](https://paragonie.com/blog/2015/05/if-you-re-typing-word-mcrypt-into-your-code-you-re-doing-it-wrong),
+Despite [strongly urging people not to use mcrypt in their projects](https://paragonie.com/blog/2015/05/if-you-re-typing-word-mcrypt-into-your-code-you-re-doing-it-wrong),
 because libmcrypt is abandonware and the API puts too much responsibility on the
 implementor, we prioritize `mcrypt_create_iv()` with `MCRYPT_DEV_URANDOM` above
 the remaining implementations.

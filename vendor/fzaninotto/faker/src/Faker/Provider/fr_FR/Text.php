@@ -5,11 +5,11 @@ namespace Faker\Provider\fr_FR;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * The Bot Gutenberg EBook of Madame Bovary, by Gustave Flaubert
+     * The Project Gutenberg EBook of Madame Bovary, by Gustave Flaubert
      *
      * This eBook is for the use of anyone anywhere at no cost and with
      * almost no restrictions whatsoever.  You may copy it, give it away or
-     * re-use it under the terms of the Bot Gutenberg License included
+     * re-use it under the terms of the Project Gutenberg License included
      * with this eBook or online at www.gutenberg.net
      *
      * Title: Madame Bovary
@@ -18,7 +18,7 @@ class Text extends \Faker\Provider\Text
      * [Last updated: November 28, 2011]
      * Language: French
      *
-     * *** START OF THIS BOT GUTENBERG EBOOK MADAME BOVARY ***
+     * *** START OF THIS PROJECT GUTENBERG EBOOK MADAME BOVARY ***
      *
      * Produced by Ebooks libres et gratuits at http://www.ebooksgratuits.com
      *
@@ -15174,9 +15174,9 @@ Il vient de recevoir la croix d'honneur.
 EOT;
 
     /*
-    End of the Bot Gutenberg EBook of Madame Bovary, by Gustave Flaubert
+    End of the Project Gutenberg EBook of Madame Bovary, by Gustave Flaubert
 
-    *** END OF THIS BOT GUTENBERG EBOOK MADAME BOVARY ***
+    *** END OF THIS PROJECT GUTENBERG EBOOK MADAME BOVARY ***
 
     ***** This file should be named 14155-8.txt or 14155-8.zip *****
     This and all associated files of various formats will be found in:
@@ -15192,8 +15192,8 @@ EOT;
     (and you!) can copy and distribute it in the United States without
     permission and without paying copyright royalties.  Special rules,
     set forth in the General Terms of Use part of this license, apply to
-    copying and distributing Bot Gutenberg-tm electronic works to
-    protect the BOT GUTENBERG-tm concept and trademark.  Bot
+    copying and distributing Project Gutenberg-tm electronic works to
+    protect the PROJECT GUTENBERG-tm concept and trademark.  Project
     Gutenberg is a registered trademark, and may not be used if you
     charge for the eBooks, unless you receive specific permission.  If you
     do not charge anything for copies of this eBook, complying with the
@@ -15206,54 +15206,54 @@ EOT;
 
     *** START: FULL LICENSE ***
 
-    THE FULL BOT GUTENBERG LICENSE
+    THE FULL PROJECT GUTENBERG LICENSE
     PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
 
-    To protect the Bot Gutenberg-tm mission of promoting the free
+    To protect the Project Gutenberg-tm mission of promoting the free
     distribution of electronic works, by using or distributing this work
-    (or any other work associated in any way with the phrase "Bot
-    Gutenberg"), you agree to comply with all the terms of the Full Bot
+    (or any other work associated in any way with the phrase "Project
+    Gutenberg"), you agree to comply with all the terms of the Full Project
     Gutenberg-tm License (available with this file or online at
     http://gutenberg.net/license).
 
-    Section 1.  General Terms of Use and Redistributing Bot Gutenberg-tm
+    Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
     electronic works
 
-    1.A.  By reading or using any part of this Bot Gutenberg-tm
+    1.A.  By reading or using any part of this Project Gutenberg-tm
     electronic work, you indicate that you have read, understand, agree to
     and accept all the terms of this license and intellectual property
     (trademark/copyright) agreement.  If you do not agree to abide by all
     the terms of this agreement, you must cease using and return or destroy
-    all copies of Bot Gutenberg-tm electronic works in your possession.
-    If you paid a fee for obtaining a copy of or access to a Bot
+    all copies of Project Gutenberg-tm electronic works in your possession.
+    If you paid a fee for obtaining a copy of or access to a Project
     Gutenberg-tm electronic work and you do not agree to be bound by the
     terms of this agreement, you may obtain a refund from the person or
     entity to whom you paid the fee as set forth in paragraph 1.E.8.
 
-    1.B.  "Bot Gutenberg" is a registered trademark.  It may only be
+    1.B.  "Project Gutenberg" is a registered trademark.  It may only be
     used on or associated in any way with an electronic work by people who
     agree to be bound by the terms of this agreement.  There are a few
-    things that you can do with most Bot Gutenberg-tm electronic works
+    things that you can do with most Project Gutenberg-tm electronic works
     even without complying with the full terms of this agreement.  See
-    paragraph 1.C below.  There are a lot of things you can do with Bot
+    paragraph 1.C below.  There are a lot of things you can do with Project
     Gutenberg-tm electronic works if you follow the terms of this agreement
-    and help preserve free future access to Bot Gutenberg-tm electronic
+    and help preserve free future access to Project Gutenberg-tm electronic
     works.  See paragraph 1.E below.
 
-    1.C.  The Bot Gutenberg Literary Archive Foundation ("the Foundation"
-    or PGLAF), owns a compilation copyright in the collection of Bot
+    1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+    or PGLAF), owns a compilation copyright in the collection of Project
     Gutenberg-tm electronic works.  Nearly all the individual works in the
     collection are in the public domain in the United States.  If an
     individual work is in the public domain in the United States and you are
     located in the United States, we do not claim a right to prevent you from
     copying, distributing, performing, displaying or creating derivative
-    works based on the work as long as all references to Bot Gutenberg
-    are removed.  Of course, we hope that you will support the Bot
+    works based on the work as long as all references to Project Gutenberg
+    are removed.  Of course, we hope that you will support the Project
     Gutenberg-tm mission of promoting free access to electronic works by
-    freely sharing Bot Gutenberg-tm works in compliance with the terms of
-    this agreement for keeping the Bot Gutenberg-tm name associated with
+    freely sharing Project Gutenberg-tm works in compliance with the terms of
+    this agreement for keeping the Project Gutenberg-tm name associated with
     the work.  You can easily comply with the terms of this agreement by
-    keeping this work in the same format with its attached full Bot
+    keeping this work in the same format with its attached full Project
     Gutenberg-tm License when you share it without charge with others.
 
     1.D.  The copyright laws of the place where you are located also govern
@@ -15261,93 +15261,93 @@ EOT;
     a constant state of change.  If you are outside the United States, check
     the laws of your country in addition to the terms of this agreement
     before downloading, copying, displaying, performing, distributing or
-    creating derivative works based on this work or any other Bot
+    creating derivative works based on this work or any other Project
     Gutenberg-tm work.  The Foundation makes no representations concerning
     the copyright status of any work in any country outside the United
     States.
 
-    1.E.  Unless you have removed all references to Bot Gutenberg:
+    1.E.  Unless you have removed all references to Project Gutenberg:
 
     1.E.1.  The following sentence, with active links to, or other immediate
-    access to, the full Bot Gutenberg-tm License must appear prominently
-    whenever any copy of a Bot Gutenberg-tm work (any work on which the
-    phrase "Bot Gutenberg" appears, or with which the phrase "Bot
+    access to, the full Project Gutenberg-tm License must appear prominently
+    whenever any copy of a Project Gutenberg-tm work (any work on which the
+    phrase "Project Gutenberg" appears, or with which the phrase "Project
     Gutenberg" is associated) is accessed, displayed, performed, viewed,
     copied or distributed:
 
     This eBook is for the use of anyone anywhere at no cost and with
     almost no restrictions whatsoever.  You may copy it, give it away or
-    re-use it under the terms of the Bot Gutenberg License included
+    re-use it under the terms of the Project Gutenberg License included
     with this eBook or online at www.gutenberg.net
 
-    1.E.2.  If an individual Bot Gutenberg-tm electronic work is derived
+    1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
     from the public domain (does not contain a notice indicating that it is
     posted with permission of the copyright holder), the work can be copied
     and distributed to anyone in the United States without paying any fees
     or charges.  If you are redistributing or providing access to a work
-    with the phrase "Bot Gutenberg" associated with or appearing on the
+    with the phrase "Project Gutenberg" associated with or appearing on the
     work, you must comply either with the requirements of paragraphs 1.E.1
     through 1.E.7 or obtain permission for the use of the work and the
-    Bot Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+    Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
     1.E.9.
 
-    1.E.3.  If an individual Bot Gutenberg-tm electronic work is posted
+    1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
     with the permission of the copyright holder, your use and distribution
     must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
     terms imposed by the copyright holder.  Additional terms will be linked
-    to the Bot Gutenberg-tm License for all works posted with the
+    to the Project Gutenberg-tm License for all works posted with the
     permission of the copyright holder found at the beginning of this work.
 
-    1.E.4.  Do not unlink or detach or remove the full Bot Gutenberg-tm
+    1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
     License terms from this work, or any files containing a part of this
-    work or any other work associated with Bot Gutenberg-tm.
+    work or any other work associated with Project Gutenberg-tm.
 
     1.E.5.  Do not copy, display, perform, distribute or redistribute this
     electronic work, or any part of this electronic work, without
     prominently displaying the sentence set forth in paragraph 1.E.1 with
-    active links or immediate access to the full terms of the Bot
+    active links or immediate access to the full terms of the Project
     Gutenberg-tm License.
 
     1.E.6.  You may convert to and distribute this work in any binary,
     compressed, marked up, nonproprietary or proprietary form, including any
     word processing or hypertext form.  However, if you provide access to or
-    distribute copies of a Bot Gutenberg-tm work in a format other than
+    distribute copies of a Project Gutenberg-tm work in a format other than
     "Plain Vanilla ASCII" or other format used in the official version
-    posted on the official Bot Gutenberg-tm web site (www.gutenberg.net),
+    posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
     you must, at no additional cost, fee or expense to the user, provide a
     copy, a means of exporting a copy, or a means of obtaining a copy upon
     request, of the work in its original "Plain Vanilla ASCII" or other
-    form.  Any alternate format must include the full Bot Gutenberg-tm
+    form.  Any alternate format must include the full Project Gutenberg-tm
     License as specified in paragraph 1.E.1.
 
     1.E.7.  Do not charge a fee for access to, viewing, displaying,
-    performing, copying or distributing any Bot Gutenberg-tm works
+    performing, copying or distributing any Project Gutenberg-tm works
     unless you comply with paragraph 1.E.8 or 1.E.9.
 
     1.E.8.  You may charge a reasonable fee for copies of or providing
-    access to or distributing Bot Gutenberg-tm electronic works provided
+    access to or distributing Project Gutenberg-tm electronic works provided
     that
 
     - You pay a royalty fee of 20% of the gross profits you derive from
-         the use of Bot Gutenberg-tm works calculated using the method
+         the use of Project Gutenberg-tm works calculated using the method
          you already use to calculate your applicable taxes.  The fee is
-         owed to the owner of the Bot Gutenberg-tm trademark, but he
+         owed to the owner of the Project Gutenberg-tm trademark, but he
          has agreed to donate royalties under this paragraph to the
-         Bot Gutenberg Literary Archive Foundation.  Royalty payments
+         Project Gutenberg Literary Archive Foundation.  Royalty payments
          must be paid within 60 days following each date on which you
          prepare (or are legally required to prepare) your periodic tax
          returns.  Royalty payments should be clearly marked as such and
-         sent to the Bot Gutenberg Literary Archive Foundation at the
+         sent to the Project Gutenberg Literary Archive Foundation at the
          address specified in Section 4, "Information about donations to
-         the Bot Gutenberg Literary Archive Foundation."
+         the Project Gutenberg Literary Archive Foundation."
 
     - You provide a full refund of any money paid by a user who notifies
          you in writing (or by e-mail) within 30 days of receipt that s/he
-         does not agree to the terms of the full Bot Gutenberg-tm
+         does not agree to the terms of the full Project Gutenberg-tm
          License.  You must require such a user to return or
          destroy all copies of the works possessed in a physical medium
          and discontinue all use of and all access to other copies of
-         Bot Gutenberg-tm works.
+         Project Gutenberg-tm works.
 
     - You provide, in accordance with paragraph 1.F.3, a full refund of any
          money paid for a work or a replacement copy, if a defect in the
@@ -15355,21 +15355,21 @@ EOT;
          of receipt of the work.
 
     - You comply with all other terms of this agreement for free
-         distribution of Bot Gutenberg-tm works.
+         distribution of Project Gutenberg-tm works.
 
-    1.E.9.  If you wish to charge a fee or distribute a Bot Gutenberg-tm
+    1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
     electronic work or group of works on different terms than are set
     forth in this agreement, you must obtain permission in writing from
-    both the Bot Gutenberg Literary Archive Foundation and Michael
-    Hart, the owner of the Bot Gutenberg-tm trademark.  Contact the
+    both the Project Gutenberg Literary Archive Foundation and Michael
+    Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
     Foundation as set forth in Section 3 below.
 
     1.F.
 
-    1.F.1.  Bot Gutenberg volunteers and employees expend considerable
+    1.F.1.  Project Gutenberg volunteers and employees expend considerable
     effort to identify, do copyright research on, transcribe and proofread
-    public domain works in creating the Bot Gutenberg-tm
-    collection.  Despite these efforts, Bot Gutenberg-tm electronic
+    public domain works in creating the Project Gutenberg-tm
+    collection.  Despite these efforts, Project Gutenberg-tm electronic
     works, and the medium on which they may be stored, may contain
     "Defects," such as, but not limited to, incomplete, inaccurate or
     corrupt data, transcription errors, a copyright or other intellectual
@@ -15378,9 +15378,9 @@ EOT;
     your equipment.
 
     1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
-    of Replacement or Refund" described in paragraph 1.F.3, the Bot
-    Gutenberg Literary Archive Foundation, the owner of the Bot
-    Gutenberg-tm trademark, and any other party distributing a Bot
+    of Replacement or Refund" described in paragraph 1.F.3, the Project
+    Gutenberg Literary Archive Foundation, the owner of the Project
+    Gutenberg-tm trademark, and any other party distributing a Project
     Gutenberg-tm electronic work under this agreement, disclaim all
     liability to you for damages, costs and expenses, including legal
     fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
@@ -15419,43 +15419,43 @@ EOT;
 
     1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
     trademark owner, any agent or employee of the Foundation, anyone
-    providing copies of Bot Gutenberg-tm electronic works in accordance
+    providing copies of Project Gutenberg-tm electronic works in accordance
     with this agreement, and any volunteers associated with the production,
-    promotion and distribution of Bot Gutenberg-tm electronic works,
+    promotion and distribution of Project Gutenberg-tm electronic works,
     harmless from all liability, costs and expenses, including legal fees,
     that arise directly or indirectly from any of the following which you do
-    or cause to occur: (a) distribution of this or any Bot Gutenberg-tm
+    or cause to occur: (a) distribution of this or any Project Gutenberg-tm
     work, (b) alteration, modification, or additions or deletions to any
-    Bot Gutenberg-tm work, and (c) any Defect you cause.
+    Project Gutenberg-tm work, and (c) any Defect you cause.
 
-    Section  2.  Information about the Mission of Bot Gutenberg-tm
+    Section  2.  Information about the Mission of Project Gutenberg-tm
 
-    Bot Gutenberg-tm is synonymous with the free distribution of
+    Project Gutenberg-tm is synonymous with the free distribution of
     electronic works in formats readable by the widest variety of computers
     including obsolete, old, middle-aged and new computers.  It exists
     because of the efforts of hundreds of volunteers and donations from
     people in all walks of life.
 
     Volunteers and financial support to provide volunteers with the
-    assistance they need, is critical to reaching Bot Gutenberg-tm's
-    goals and ensuring that the Bot Gutenberg-tm collection will
-    remain freely available for generations to come.  In 2001, the Bot
+    assistance they need, is critical to reaching Project Gutenberg-tm's
+    goals and ensuring that the Project Gutenberg-tm collection will
+    remain freely available for generations to come.  In 2001, the Project
     Gutenberg Literary Archive Foundation was created to provide a secure
-    and permanent future for Bot Gutenberg-tm and future generations.
-    To learn more about the Bot Gutenberg Literary Archive Foundation
+    and permanent future for Project Gutenberg-tm and future generations.
+    To learn more about the Project Gutenberg Literary Archive Foundation
     and how your efforts and donations can help, see Sections 3 and 4
     and the Foundation web page at http://www.pglaf.org.
 
 
-    Section 3.  Information about the Bot Gutenberg Literary Archive
+    Section 3.  Information about the Project Gutenberg Literary Archive
     Foundation
 
-    The Bot Gutenberg Literary Archive Foundation is a non profit
+    The Project Gutenberg Literary Archive Foundation is a non profit
     501(c)(3) educational corporation organized under the laws of the
     state of Mississippi and granted tax exempt status by the Internal
     Revenue Service.  The Foundation's EIN or federal tax identification
     number is 64-6221541.  Its 501(c)(3) letter is posted at
-    http://pglaf.org/fundraising.  Contributions to the Bot Gutenberg
+    http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
     Literary Archive Foundation are tax deductible to the full extent
     permitted by U.S. federal laws and your state's laws.
 
@@ -15472,10 +15472,10 @@ EOT;
          Chief Executive and Director
          gbnewby@pglaf.org
 
-    Section 4.  Information about Donations to the Bot Gutenberg
+    Section 4.  Information about Donations to the Project Gutenberg
     Literary Archive Foundation
 
-    Bot Gutenberg-tm depends upon and cannot survive without wide
+    Project Gutenberg-tm depends upon and cannot survive without wide
     spread public support and donations to carry out its mission of
     increasing the number of public domain and licensed works that can be
     freely distributed in machine readable form accessible by the widest
@@ -15501,20 +15501,20 @@ EOT;
     any statements concerning tax treatment of donations received from
     outside the United States.  U.S. laws alone swamp our small staff.
 
-    Please check the Bot Gutenberg Web pages for current donation
+    Please check the Project Gutenberg Web pages for current donation
     methods and addresses.  Donations are accepted in a number of other
     ways including including checks, online payments and credit card
     donations.  To donate, please visit: http://pglaf.org/donate
 
-    Section 5.  General Information About Bot Gutenberg-tm electronic
+    Section 5.  General Information About Project Gutenberg-tm electronic
     works.
 
-    Professor Michael S. Hart is the originator of the Bot Gutenberg-tm
+    Professor Michael S. Hart is the originator of the Project Gutenberg-tm
     concept of a library of electronic works that could be freely shared
-    with anyone.  For thirty years, he produced and distributed Bot
+    with anyone.  For thirty years, he produced and distributed Project
     Gutenberg-tm eBooks with only a loose network of volunteer support.
 
-    Bot Gutenberg-tm eBooks are often created from several printed
+    Project Gutenberg-tm eBooks are often created from several printed
     editions, all of which are confirmed as Public Domain in the U.S.
     unless a copyright notice is included.  Thus, we do not necessarily
     keep eBooks in compliance with any particular paper edition.
@@ -15523,8 +15523,8 @@ EOT;
 
          http://www.gutenberg.net
 
-    This Web site includes information about Bot Gutenberg-tm,
-    including how to make donations to the Bot Gutenberg Literary
+    This Web site includes information about Project Gutenberg-tm,
+    including how to make donations to the Project Gutenberg Literary
     Archive Foundation, how to help produce our new eBooks, and how to
     subscribe to our email newsletter to hear about new eBooks.
     */

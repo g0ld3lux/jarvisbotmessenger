@@ -1,7 +1,7 @@
 Introduction
 ============
 
-This bot is a PHP 5.2 to PHP 7.0 parser **written in PHP itself**.
+This project is a PHP 5.2 to PHP 7.0 parser **written in PHP itself**.
 
 What is this for?
 -----------------

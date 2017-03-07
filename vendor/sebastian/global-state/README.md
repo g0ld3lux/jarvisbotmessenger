@@ -6,7 +6,7 @@ Snapshotting of global state, factored out of PHPUnit into a stand-alone compone
 
 ## Installation
 
-To add this package as a local, per-bot dependency to your bot, simply add a dependency on `sebastian/global-state` to your bot's `composer.json` file. Here is a minimal example of a `composer.json` file that just defines a dependency on GlobalState:
+To add this package as a local, per-project dependency to your project, simply add a dependency on `sebastian/global-state` to your project's `composer.json` file. Here is a minimal example of a `composer.json` file that just defines a dependency on GlobalState:
 
     {
         "require": {

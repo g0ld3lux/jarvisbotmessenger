@@ -23,7 +23,7 @@ easily achieved. Historically, Swift Mailer has supported both PHP 4 and PHP 5
 by following a parallel development workflow. Now in it's fourth major
 version, and Swift Mailer operates on servers running PHP 5.3.3 or higher.
 
-The library aims to work with as many PHP 5 bots as possible:
+The library aims to work with as many PHP 5 projects as possible:
 
 * PHP 5.3.3 or higher, with the SPL extension (standard)
 

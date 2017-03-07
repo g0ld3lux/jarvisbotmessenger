@@ -48,7 +48,7 @@ call_user_func(function () {
         if (is_file($path . '/composer.json')) {
             if ($cfg = json_decode(file_get_contents($path . '/composer.json'), true)) {
                 if (isset($cfg['name']) && $cfg['name'] === 'psy/psysh') {
-                    // We're inside the psysh bot. Let's use the local
+                    // We're inside the psysh project. Let's use the local
                     // Composer autoload.
                     if (is_file($path . '/vendor/autoload.php')) {
                         require $path . '/vendor/autoload.php';
@@ -64,7 +64,7 @@ call_user_func(function () {
             if ($cfg = json_decode(file_get_contents($path . '/composer.lock'), true)) {
                 foreach (array_merge($cfg['packages'], $cfg['packages-dev']) as $pkg) {
                     if (isset($pkg['name']) && $pkg['name'] === 'psy/psysh') {
-                        // We're inside a bot which requires psysh. We'll
+                        // We're inside a project which requires psysh. We'll
                         // use the local Composer autoload.
                         if (is_file($path . '/vendor/autoload.php')) {
                             require $path . '/vendor/autoload.php';

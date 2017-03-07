@@ -287,7 +287,7 @@ $ bin/propel --config-dir=path/where/you/created/propel.ext --schema-dir=src/Pay
 Then you can insert ```src/Payum/Core/Bridge/Propel2/Resources/install/order.sql``` and ```src/Payum/Core/Bridge/Propel2/Resources/install/token.sql```
 in your database(s).
 
-You can copy the ```schema.xml``` file into your bot resources and customize it.
+You can copy the ```schema.xml``` file into your project resources and customize it.
 If you customize your ```schema.xml``` you'll have to generate the table creation sql file.
 You only have to run:
 ```sh

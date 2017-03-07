@@ -30,7 +30,7 @@ Alternatively, you may use [Composer](https://getcomposer.org/) to download and 
 
 ## Contribute
 
-Please refer to [CONTRIBUTING.md](https://github.com/sebastianbergmann/phpunit/blob/master/CONTRIBUTING.md) for information on how to contribute to PHPUnit and its related bots.
+Please refer to [CONTRIBUTING.md](https://github.com/sebastianbergmann/phpunit/blob/master/CONTRIBUTING.md) for information on how to contribute to PHPUnit and its related projects.
 
 ## List of Contributors
 

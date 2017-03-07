@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bot name="phpunit" default="setup">
+<project name="phpunit" default="setup">
     <target name="setup" depends="clean,install-dependencies"/>
     <target name="validate" depends="php-syntax-check,validate-composer-json,validate-phpunit-xsd"/>
 
@@ -328,7 +328,7 @@
         </exec>
     </target>
 
-    <target name="generate-bot-documentation" depends="-phploc,-phpcs,-phpmd,-phpunit">
+    <target name="generate-project-documentation" depends="-phploc,-phpcs,-phpmd,-phpunit">
         <exec executable="${basedir}/build/tools/phpdox" dir="${basedir}/build" taskname="phpdox"/>
     </target>
 
@@ -368,5 +368,5 @@
             <arg path="${basedir}/build/phpunit.xml"/>
         </exec>
     </target>
-</bot>
+</project>
 

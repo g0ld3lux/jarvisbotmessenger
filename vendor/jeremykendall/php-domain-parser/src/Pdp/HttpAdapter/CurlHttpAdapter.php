@@ -15,7 +15,7 @@ namespace Pdp\HttpAdapter;
  * cURL http adapter.
  *
  * Lifted pretty much completely from William Durand's excellent Geocoder
- * bot
+ * project
  *
  * @link https://github.com/willdurand/Geocoder Geocoder on GitHub
  *

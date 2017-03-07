@@ -187,7 +187,7 @@ compatibility library possible. That this library has reached a stable release
 is more a reflection on the community than it is on PIE.
 
 We are confident that random_compat will serve as the simplest and most secure
-CSPRNG interface available for PHP5 bots.
+CSPRNG interface available for PHP5 projects.
 
 ### Version 0.9.7 (pre-release) - 2015-09-01
 

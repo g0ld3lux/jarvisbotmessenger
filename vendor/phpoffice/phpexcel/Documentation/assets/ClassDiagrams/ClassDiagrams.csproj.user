@@ -1,5 +1,5 @@
-﻿<Bot xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <BotView>ShowAllFiles</BotView>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
-</Bot>
+</Project>

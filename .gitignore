@@ -4,6 +4,8 @@
 /node_modules
 /laradock
 /public/storage
+/public/hot
+/storage/*.key
 /storage/framework/
 /storage/debugbar/
 /storage/app/
@@ -13,10 +15,10 @@ Homestead.yaml
 Homestead.json
 .env
 example.env
-.idea/
-public/js
-public/css
-.vagrant/
+/.idea
+/public/js
+/public/css
+/.vagrant
 _ide_helper.php
 # HEAD
 Envoy.blade.php

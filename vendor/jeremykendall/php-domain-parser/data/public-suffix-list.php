@@ -12127,7 +12127,7 @@ return array (
     'press' => 
     array (
     ),
-    'bot' => 
+    'project' => 
     array (
     ),
     'public' => 

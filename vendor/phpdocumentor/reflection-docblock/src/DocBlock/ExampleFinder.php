@@ -45,7 +45,7 @@ class ExampleFinder
     }
 
     /**
-     * Registers the bot's root directory where an 'examples' folder can be expected.
+     * Registers the project's root directory where an 'examples' folder can be expected.
      *
      * @param string $directory
      *
@@ -57,7 +57,7 @@ class ExampleFinder
     }
 
     /**
-     * Returns the bot's root directory where an 'examples' folder can be expected.
+     * Returns the project's root directory where an 'examples' folder can be expected.
      *
      * @return string
      */
@@ -127,7 +127,7 @@ class ExampleFinder
     }
 
     /**
-     * Get example filepath based on the example directory inside your bot.
+     * Get example filepath based on the example directory inside your project.
      *
      * @param string $file
      *

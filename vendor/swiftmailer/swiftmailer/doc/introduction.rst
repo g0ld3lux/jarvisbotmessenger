@@ -23,7 +23,7 @@ wish to learn about.
 
 Throughout this book you will be presented with code samples, which most
 people should find ample to implement Swift Mailer appropriately in their own
-bots. We will also use diagrams where appropriate, and where we believe
+projects. We will also use diagrams where appropriate, and where we believe
 readers may find it helpful we will discuss some related theory, including
 reference to certain documents you are able to find online.
 
@@ -65,13 +65,13 @@ kept concise so that you are not overwhelmed with information.
 History of Swift Mailer
 -----------------------
 
-Swift Mailer began back in 2005 as a one-class bot for sending mail over
+Swift Mailer began back in 2005 as a one-class project for sending mail over
 SMTP. It has since grown into the flexible component-based library that is in
 development today.
 
 Chris Corbyn first posted Swift Mailer on a web forum asking for comments from
 other developers. It was never intended as a fully supported open source
-bot, but members of the forum began to adopt it and make use of it.
+project, but members of the forum began to adopt it and make use of it.
 
 Very quickly feature requests were coming for the ability to add attachments
 and use SMTP authentication, along with a number of other "obvious" missing
@@ -81,7 +81,7 @@ more component based, PHP5-like approach unlike the existing single-class,
 legacy PHP4 approach taken by PHPMailer.
 
 Members of the forum offered a lot of advice and critique on the code as he
-worked through this bot and released versions 2 and 3 of the library in
+worked through this project and released versions 2 and 3 of the library in
 2005 and 2006, which by then had been broken down into smaller classes
 offering more flexibility and supporting plugins. To this day the Swift Mailer
 team still receive a lot of feature requests from users both on the forum and

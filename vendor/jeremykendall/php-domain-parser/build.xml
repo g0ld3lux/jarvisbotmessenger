@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bot name="PHP Domain Parser" default="build">
+<project name="PHP Domain Parser" default="build">
 
     <property file="build.properties" />
 
     <target name="clean" description="Clean build path">
-        <delete dir="${bot.basedir}/build" />
-        <mkdir dir="${bot.basedir}/build" />
-        <mkdir dir="${bot.basedir}/build/coverage" />
-        <mkdir dir="${bot.basedir}/build/docs" />
+        <delete dir="${project.basedir}/build" />
+        <mkdir dir="${project.basedir}/build" />
+        <mkdir dir="${project.basedir}/build/coverage" />
+        <mkdir dir="${project.basedir}/build/docs" />
     </target>
 
     <target name="phpunit" description="Running unit tests">
         <exec
             passthru="${passthru}"
-            dir="${bot.basedir}"
+            dir="${project.basedir}"
             command="phpunit" />
     </target>
 
@@ -27,8 +27,8 @@
         <exec
             passthru="${passthru}"
             command="phpdoc
-            -d ${bot.basedir}/src
-            -t ${bot.basedir}/build/docs
+            -d ${project.basedir}/src
+            -t ${project.basedir}/build/docs
             --title='PHP Domain Parser'
             --defaultpackagename='Pdp'
             --template='responsive-twig'
@@ -41,4 +41,4 @@
         <phingCall target="phpunit" />
         <phingCall target="phpdoc" />
     </target>
-</bot>
+</project>

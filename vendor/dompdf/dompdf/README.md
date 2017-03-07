@@ -94,7 +94,7 @@ composer require dompdf/dompdf
 Make sure that the autoload file from Composer is loaded.
 
 ```php
-// somewhere early in your bot's loading, require the Composer autoloader
+// somewhere early in your project's loading, require the Composer autoloader
 // see: http://getcomposer.org/doc/00-intro.md
 require 'vendor/autoload.php';
 
@@ -204,4 +204,4 @@ See [Dompdf\Options](src/Options.php) for a list of available options.
 
 [![Donate button](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](http://goo.gl/DSvWf)
 
-*If you find this bot useful, please consider making a donation. Any funds donated will be used to help further development on this bot.)*
+*If you find this project useful, please consider making a donation. Any funds donated will be used to help further development on this project.)*

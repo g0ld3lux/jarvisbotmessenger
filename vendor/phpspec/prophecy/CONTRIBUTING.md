@@ -1,7 +1,7 @@
 Contributing
 ------------
 
-Prophecy is an open source, community-driven bot. If you'd like to contribute,
+Prophecy is an open source, community-driven project. If you'd like to contribute,
 feel free to do this, but remember to follow these few simple rules:
 
 - Make your feature addition or bug fix,

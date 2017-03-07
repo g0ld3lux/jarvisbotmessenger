@@ -30,7 +30,7 @@ class FlowdockFormatterTest extends TestCase
             'subject' => 'in test_source: WARNING - test',
             'content' => 'test',
             'tags' => array('#logs', '#warning', '#test'),
-            'bot' => 'test_source',
+            'project' => 'test_source',
         );
         $formatted = $formatter->format($record);
 

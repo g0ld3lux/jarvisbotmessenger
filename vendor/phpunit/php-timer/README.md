@@ -6,7 +6,7 @@ Utility class for timing things, factored out of PHPUnit into a stand-alone comp
 
 ## Installation
 
-To add this package as a local, per-bot dependency to your bot, simply add a dependency on `phpunit/php-timer` to your bot's `composer.json` file. Here is a minimal example of a `composer.json` file that just defines a dependency on PHP_Timer:
+To add this package as a local, per-project dependency to your project, simply add a dependency on `phpunit/php-timer` to your project's `composer.json` file. Here is a minimal example of a `composer.json` file that just defines a dependency on PHP_Timer:
 
     {
         "require": {

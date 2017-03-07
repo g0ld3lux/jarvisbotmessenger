@@ -19,7 +19,7 @@ class MimeTypeExtensionGuesser implements ExtensionGuesserInterface
     /**
      * A map of mime types and their default extensions.
      *
-     * This list has been placed under the public domain by the Apache HTTPD bot.
+     * This list has been placed under the public domain by the Apache HTTPD project.
      * This list has been updated from upstream on 2013-04-23.
      *
      * @see http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
@@ -344,7 +344,7 @@ class MimeTypeExtensionGuesser implements ExtensionGuesserInterface
         'application/vnd.ms-powerpoint.slide.macroenabled.12' => 'sldm',
         'application/vnd.ms-powerpoint.slideshow.macroenabled.12' => 'ppsm',
         'application/vnd.ms-powerpoint.template.macroenabled.12' => 'potm',
-        'application/vnd.ms-bot' => 'mpp',
+        'application/vnd.ms-project' => 'mpp',
         'application/vnd.ms-word.document.macroenabled.12' => 'docm',
         'application/vnd.ms-word.template.macroenabled.12' => 'dotm',
         'application/vnd.ms-works' => 'wps',

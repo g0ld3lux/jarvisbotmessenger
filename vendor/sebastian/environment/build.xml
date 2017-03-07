@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bot name="environment">
+<project name="environment">
  <target name="clean" description="Cleanup build artifacts">
   <delete dir="${basedir}/vendor"/>
   <delete file="${basedir}/composer.lock"/>
@@ -23,4 +23,4 @@
    <arg value="install"/>
   </exec>
  </target>
-</bot>
+</project>

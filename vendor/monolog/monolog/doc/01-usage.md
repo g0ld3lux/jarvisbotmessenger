@@ -153,7 +153,7 @@ $logger->pushProcessor(function ($record) {
 });
 ```
 
-Monolog provides some built-in processors that can be used in your bot.
+Monolog provides some built-in processors that can be used in your project.
 Look at the [dedicated chapter](https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#processors) for the list.
 
 > Tip: processors can also be registered on a specific handler instead of

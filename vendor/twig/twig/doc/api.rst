@@ -210,7 +210,7 @@ Namespaced templates can be accessed via the special
     $twig->render('@admin/index.html', array());
 
 ``Twig_Loader_Filesystem`` support absolute and relative paths. Using relative
-paths is preferred as it makes the cache keys independent of the bot root
+paths is preferred as it makes the cache keys independent of the project root
 directory (for instance, it allows warming the cache from a build server where
 the directory might be different from the one used on production servers)::
 
@@ -235,7 +235,7 @@ of strings bound to template names::
     echo $twig->render('index.html', array('name' => 'Fabien'));
 
 This loader is very useful for unit testing. It can also be used for small
-bots where storing all templates in a single PHP file might make sense.
+projects where storing all templates in a single PHP file might make sense.
 
 .. tip::
 

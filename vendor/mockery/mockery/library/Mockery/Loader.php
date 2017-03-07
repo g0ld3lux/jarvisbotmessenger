@@ -14,7 +14,7 @@
  * @author Roman S. Borschel <roman@code-factory.org>
  * @author Matthew Weier O'Phinney <matthew@zend.com>
  * @author Kris Wallsmith <kris.wallsmith@gmail.com>
- * @author Fabien Potencier <fabien.potencier@symfony-bot.org>
+ * @author Fabien Potencier <fabien.potencier@symfony-project.org>
  */
 
 namespace Mockery;

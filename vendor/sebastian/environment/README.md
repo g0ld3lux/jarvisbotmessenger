@@ -7,7 +7,7 @@ This component provides functionality that helps writing PHP code that has runti
 
 ## Installation
 
-To add Environment as a local, per-bot dependency to your bot, simply add a dependency on `sebastian/environment` to your bot's `composer.json` file. Here is a minimal example of a `composer.json` file that just defines a dependency on Environment 1.0:
+To add Environment as a local, per-project dependency to your project, simply add a dependency on `sebastian/environment` to your project's `composer.json` file. Here is a minimal example of a `composer.json` file that just defines a dependency on Environment 1.0:
 
     {
         "require": {

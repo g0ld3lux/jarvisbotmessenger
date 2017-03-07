@@ -11,28 +11,28 @@
 /**
  * @since Class available since Release 2.0.0
  */
-class PHP_CodeCoverage_Report_XML_Bot extends PHP_CodeCoverage_Report_XML_Node
+class PHP_CodeCoverage_Report_XML_Project extends PHP_CodeCoverage_Report_XML_Node
 {
     public function __construct($name)
     {
         $this->init();
-        $this->setBotName($name);
+        $this->setProjectName($name);
     }
 
     private function init()
     {
         $dom = new DOMDocument;
-        $dom->loadXML('<?xml version="1.0" ?><phpunit xmlns="http://schema.phpunit.de/coverage/1.0"><bot/></phpunit>');
+        $dom->loadXML('<?xml version="1.0" ?><phpunit xmlns="http://schema.phpunit.de/coverage/1.0"><project/></phpunit>');
 
         $this->setContextNode(
             $dom->getElementsByTagNameNS(
                 'http://schema.phpunit.de/coverage/1.0',
-                'bot'
+                'project'
             )->item(0)
         );
     }
 
-    private function setBotName($name)
+    private function setProjectName($name)
     {
         $this->getContextNode()->setAttribute('name', $name);
     }

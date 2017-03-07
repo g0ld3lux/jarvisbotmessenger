@@ -19,9 +19,9 @@ class PHP_CodeCoverage_Report_XML
     private $target;
 
     /**
-     * @var PHP_CodeCoverage_Report_XML_Bot
+     * @var PHP_CodeCoverage_Report_XML_Project
      */
-    private $bot;
+    private $project;
 
     public function process(PHP_CodeCoverage $coverage, $target)
     {
@@ -34,14 +34,14 @@ class PHP_CodeCoverage_Report_XML
 
         $report = $coverage->getReport();
 
-        $this->bot = new PHP_CodeCoverage_Report_XML_Bot(
+        $this->project = new PHP_CodeCoverage_Report_XML_Project(
             $coverage->getReport()->getName()
         );
 
         $this->processTests($coverage->getTests());
-        $this->processDirectory($report, $this->bot);
+        $this->processDirectory($report, $this->project);
 
-        $index                     = $this->bot->asDom();
+        $index                     = $this->project->asDom();
         $index->formatOutput       = true;
         $index->preserveWhiteSpace = false;
         $index->save($target . '/index.xml');
@@ -188,7 +188,7 @@ class PHP_CodeCoverage_Report_XML
 
     private function processTests(array $tests)
     {
-        $testsObject = $this->bot->getTests();
+        $testsObject = $this->project->getTests();
 
         foreach ($tests as $test => $result) {
             if ($test == 'UNCOVERED_FILES_FROM_WHITELIST') {

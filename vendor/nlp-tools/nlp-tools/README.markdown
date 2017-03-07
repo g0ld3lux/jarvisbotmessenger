@@ -7,7 +7,7 @@ semi advanced natural language processing work.
 Documentation
 -------------
 
-You can find documentation and code examples at the bot's [homepage](http://php-nlp-tools.com/documentation/).
+You can find documentation and code examples at the project's [homepage](http://php-nlp-tools.com/documentation/).
 
 Contents
 ---------

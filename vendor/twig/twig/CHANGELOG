@@ -380,7 +380,7 @@
 * 1.8.3 (2012-06-17)
 
  * fixed paths in the filesystem loader when passing a path that ends with a slash or a backslash
- * fixed escaping when a bot defines a function named html or js
+ * fixed escaping when a project defines a function named html or js
  * fixed chmod mode to apply the umask correctly
 
 * 1.8.2 (2012-05-30)

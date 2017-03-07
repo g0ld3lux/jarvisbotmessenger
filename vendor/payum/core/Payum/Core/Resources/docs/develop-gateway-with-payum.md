@@ -1,12 +1,12 @@
 # Develop a custom Payum gateway.
 
 This chapter could be useful for a developer who wants to create a gateway on top of payum.
-The Payum provides a skeleton bot which helps us a lots.
+The Payum provides a skeleton project which helps us a lots.
 
-1. Create new bot
+1. Create new project
 
 ```bash
-$ composer create-bot payum/skeleton
+$ composer create-project payum/skeleton
 ```
 
 2. Replace all occurrences of `payum` with your vendor name. It may be your github name, for now let's say you choose: `acme`.

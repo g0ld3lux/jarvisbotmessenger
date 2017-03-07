@@ -2,16 +2,16 @@
 
 ## Contributor Code of Conduct
 
-Please note that this bot is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this bot you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 ## Workflow
 
-* Fork the bot.
+* Fork the project.
 * Make your bug fix or feature addition.
 * Add tests for it. This is important so we don't break it in a future version unintentionally.
 * Send a pull request. Bonus points for topic branches.
 
-Please make sure that you have [set up your user name and email address](http://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup) for use with Git. Strings such as `silly nick name <root@localhost>` look really stupid in the commit history of a bot.
+Please make sure that you have [set up your user name and email address](http://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup) for use with Git. Strings such as `silly nick name <root@localhost>` look really stupid in the commit history of a project.
 
 Pull requests for bug fixes must be based on the current stable branch whereas pull requests for new features must be based on the `master` branch.
 
@@ -21,7 +21,7 @@ Due to time constraints, we are not always able to respond as quickly as we woul
 
 ## Coding Guidelines
 
-This bot comes with a configuration file for [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) (`.php_cs`) that you can use to (re)format your sourcecode for compliance with this bot's coding guidelines:
+This project comes with a configuration file for [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) (`.php_cs`) that you can use to (re)format your sourcecode for compliance with this project's coding guidelines:
 
 ```bash
 $ wget http://get.sensiolabs.org/php-cs-fixer.phar

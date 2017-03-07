@@ -5,12 +5,12 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\RequestContext;
 
 /**
- * BotUrlMatcher.
+ * ProjectUrlMatcher.
  *
  * This class has been auto-generated
  * by the Symfony Routing Component.
  */
-class BotUrlMatcher extends Symfony\Component\Routing\Matcher\UrlMatcher
+class ProjectUrlMatcher extends Symfony\Component\Routing\Matcher\UrlMatcher
 {
     /**
      * Constructor.

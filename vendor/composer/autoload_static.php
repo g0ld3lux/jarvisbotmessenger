@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed
+class ComposerStaticInit5b17c3584fdbbc75a6b8fd590e47b2d2
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -13,9 +13,9 @@ class ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '50b81ffc01da30f98e463592787d7917' => __DIR__ . '/..' . '/jeremykendall/php-domain-parser/src/pdp-parse-url.php',
         'ddc0a4d7e61c0286f0f8593b1903e894' => __DIR__ . '/..' . '/clue/stream-filter/src/functions.php',
-        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'ee05f3eb6cd106ac99bfaf4d0d9829d8' => __DIR__ . '/..' . '/league/uri/src/functions_include.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -873,7 +873,6 @@ class ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed
         'PHP_CodeCoverage_Report_PHP' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/PHP.php',
         'PHP_CodeCoverage_Report_Text' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/Text.php',
         'PHP_CodeCoverage_Report_XML' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML.php',
-        'PHP_CodeCoverage_Report_XML_Bot' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Project.php',
         'PHP_CodeCoverage_Report_XML_Directory' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Directory.php',
         'PHP_CodeCoverage_Report_XML_File' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/File.php',
         'PHP_CodeCoverage_Report_XML_File_Coverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/File/Coverage.php',
@@ -881,6 +880,7 @@ class ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed
         'PHP_CodeCoverage_Report_XML_File_Report' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/File/Report.php',
         'PHP_CodeCoverage_Report_XML_File_Unit' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/File/Unit.php',
         'PHP_CodeCoverage_Report_XML_Node' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Node.php',
+        'PHP_CodeCoverage_Report_XML_Project' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Project.php',
         'PHP_CodeCoverage_Report_XML_Tests' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Tests.php',
         'PHP_CodeCoverage_Report_XML_Totals' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Totals.php',
         'PHP_CodeCoverage_Util' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Util.php',
@@ -1137,10 +1137,10 @@ class ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5b17c3584fdbbc75a6b8fd590e47b2d2::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5b17c3584fdbbc75a6b8fd590e47b2d2::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit5b17c3584fdbbc75a6b8fd590e47b2d2::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit5b17c3584fdbbc75a6b8fd590e47b2d2::$classMap;
 
         }, null, ClassLoader::class);
     }

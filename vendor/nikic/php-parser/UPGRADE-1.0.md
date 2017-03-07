@@ -95,7 +95,7 @@ strings.
 ### Miscellaneous
 
   * The classes `Template` and `TemplateLoader` have been removed. You should use some other [code generation][code_gen]
-    bot built on top of PHP-Parser instead.
+    project built on top of PHP-Parser instead.
 
   * The `PrettyPrinterAbstract::pStmts()` method now emits a leading newline if the statement list is not empty.
     Custom pretty printers should remove the explicit newline before `pStmts()` calls.
@@ -118,4 +118,4 @@ strings.
     }
     ```
 
-  [code_gen]: https://github.com/nikic/PHP-Parser/wiki/Bots-using-the-PHP-Parser#code-generation
+  [code_gen]: https://github.com/nikic/PHP-Parser/wiki/Projects-using-the-PHP-Parser#code-generation

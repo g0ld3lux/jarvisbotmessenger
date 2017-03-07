@@ -26,7 +26,7 @@ functions that wrap handlers (or are injected into a
   1. React promises (at the time of writing this) are recursive. Promise
      chaining and promise resolution will eventually blow the stack. Guzzle
      promises are not recursive as they use a sort of trampolining technique.
-     Note: there has been movement in the React bot to modify promises to
+     Note: there has been movement in the React project to modify promises to
      no longer utilize recursion.
   2. Guzzle needs to have the ability to synchronously block on a promise to
      wait for a result. Guzzle promises allows this functionality (and does

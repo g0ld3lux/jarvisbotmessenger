@@ -122,11 +122,11 @@ class Router implements RouterInterface, RequestMatcherInterface
             'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator',
             'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator',
             'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper',
-            'generator_cache_class' => 'BotUrlGenerator',
+            'generator_cache_class' => 'ProjectUrlGenerator',
             'matcher_class' => 'Symfony\\Component\\Routing\\Matcher\\UrlMatcher',
             'matcher_base_class' => 'Symfony\\Component\\Routing\\Matcher\\UrlMatcher',
             'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper',
-            'matcher_cache_class' => 'BotUrlMatcher',
+            'matcher_cache_class' => 'ProjectUrlMatcher',
             'resource_type' => null,
             'strict_requirements' => true,
         );

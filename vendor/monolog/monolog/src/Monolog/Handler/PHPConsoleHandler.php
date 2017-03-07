@@ -45,7 +45,7 @@ class PHPConsoleHandler extends AbstractProcessingHandler
         'debugTagsKeysInContext' => array(0, 'tag'), // bool Is PHP Console server enabled
         'useOwnErrorsHandler' => false, // bool Enable errors handling
         'useOwnExceptionsHandler' => false, // bool Enable exceptions handling
-        'sourcesBasePath' => null, // string Base path of all bot sources to strip in errors source paths
+        'sourcesBasePath' => null, // string Base path of all project sources to strip in errors source paths
         'registerHelper' => true, // bool Register PhpConsole\Helper that allows short debug calls like PC::debug($var, 'ta.g.s')
         'serverEncoding' => null, // string|null Server internal encoding
         'headersLimit' => null, // int|null Set headers size limit for your web-server

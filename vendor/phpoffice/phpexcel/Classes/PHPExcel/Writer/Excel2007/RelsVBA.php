@@ -28,7 +28,7 @@
 class PHPExcel_Writer_Excel2007_RelsVBA extends PHPExcel_Writer_Excel2007_WriterPart
 {
     /**
-     * Write relationships for a signed VBA Bot
+     * Write relationships for a signed VBA Project
      *
      * @param     PHPExcel    $pPHPExcel
      * @return     string         XML Output
@@ -52,8 +52,8 @@ class PHPExcel_Writer_Excel2007_RelsVBA extends PHPExcel_Writer_Excel2007_Writer
         $objWriter->writeAttribute('xmlns', 'http://schemas.openxmlformats.org/package/2006/relationships');
         $objWriter->startElement('Relationship');
         $objWriter->writeAttribute('Id', 'rId1');
-        $objWriter->writeAttribute('Type', 'http://schemas.microsoft.com/office/2006/relationships/vbaBotSignature');
-        $objWriter->writeAttribute('Target', 'vbaBotSignature.bin');
+        $objWriter->writeAttribute('Type', 'http://schemas.microsoft.com/office/2006/relationships/vbaProjectSignature');
+        $objWriter->writeAttribute('Target', 'vbaProjectSignature.bin');
         $objWriter->endElement();
         $objWriter->endElement();
 

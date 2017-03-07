@@ -11,7 +11,7 @@ Composer
 --------
 
 You can read more about Composer on `getcomposer.org <https://getcomposer.org>`_.
-To install Mockery using Composer, first install Composer for your bot
+To install Mockery using Composer, first install Composer for your project
 using the instructions on the `Composer download page <https://getcomposer.org/download/>`_.
 You can then define your development dependency on Mockery using the suggested
 parameters below. While every effort is made to keep the master branch stable,
@@ -52,7 +52,7 @@ Git
 
 The Git repository hosts the development version in its master branch. You can
 install this using Composer by referencing ``dev-master`` as your preferred
-version in your bot's ``composer.json`` file as the earlier example shows.
+version in your project's ``composer.json`` file as the earlier example shows.
 
 You may also install this development version using PEAR:
 
