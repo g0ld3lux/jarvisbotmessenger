@@ -11,6 +11,9 @@
 /storage/app/
 /storage/logs/
 /build
+/.vscode
+_.htaccess
+.htaccess
 Homestead.yaml
 Homestead.json
 .env
