@@ -7,7 +7,7 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
         'as' => 'api.validate.matcher',
     ]);
 
-    Route::get('bot/analytics', [
+    Route::get('bot/{bot}/analytics', [
         'uses' => 'BotController@analytics',
         'as' => 'api.bot.analytics',
     ]);
