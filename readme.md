@@ -61,7 +61,7 @@ Creating Different Types of Responds or Have a Easy Import Of the Type of Respon
 ##### User Profile Reference
 - first_name
 - last_name
-- profile_pic
+- profile_pic (note: add this in migrations)
 - locale
 - timezone
 - gender
@@ -132,7 +132,7 @@ Creating Different Types of Responds or Have a Easy Import Of the Type of Respon
     - [x] Subscribe to a Channel
 
 ### Administrative Functionalities
-- [ ] Manually Activate Paid Users
+- [x] Manually Activate Paid Users
 - [x] CRUD Users
 - [x] Impersonate User
 - [x] List All Users
@@ -143,6 +143,7 @@ Creating Different Types of Responds or Have a Easy Import Of the Type of Respon
 - [ ] Free Trial Period
 - [ ] Manually/Auto Activate Paid Users
 - [ ] Add Payment Gateway For Admin
+- [ ] Middleware for New Sign Up Tour
 ### TODO for Version 2.0.0
 - [ ] Add Receipt Template for Users (Business Package)
 - [ ] Add Product , Categories, Cart and Orders to Users (Business Package)
@@ -160,3 +161,16 @@ Please Read [Facebook Guidelines Pages](https://developers.facebook.com/docs/mes
 ### Jarvis Tutorial
 
 Please Visit Our Official Youtube Channel [Jarvis Bot Messenger](https://www.youtube.com/channel/UCDh23Q5AWaDMCutt3bS54nQ).
+
+
+### Server Side Requirement Needed For Invoice
+- [x] PHP7
+- [x] php7.0-gd
+- [x] php7.0-intl
+
+### Additioanl Server Extension
+- [x] PHP7 Redis
+
+### Set Up to Process Background Jobs
+- [x] php artisan messages:schedules:process
+- [x] php artisan broadcasts:schedules:process
