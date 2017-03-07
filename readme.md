@@ -146,7 +146,9 @@ Creating Different Types of Responds or Have a Easy Import Of the Type of Respon
 - [ ] Manually/Auto Activate Paid Users
 - [ ] Add Payment Gateway For Admin
 - [ ] Middleware for New Sign Up Tour
+
 ### TODO for Version 2.0.0
+
 - [ ] Add Receipt Template for Users (Business Package)
 - [ ] Add Product , Categories, Cart and Orders to Users (Business Package)
 - [ ] Add Many Payment Gateway for Users to Accept Payments
