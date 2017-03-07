@@ -21,7 +21,7 @@
  * {% block content %}{% endblock %}
  * </pre>
  *
- * @see http://www.twig-project.org/doc/templates.html#horizontal-reuse for details.
+ * @see http://www.twig-bot.org/doc/templates.html#horizontal-reuse for details.
  */
 class Twig_TokenParser_Use extends Twig_TokenParser
 {

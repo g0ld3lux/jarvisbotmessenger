@@ -21,7 +21,7 @@
                 <div class="col-md-6">
                     <p class="form-control-static">
                         <span ng-show="!broadcast.scheduled_at">-</span>
-                        <span ng-show="broadcast.scheduled_at" project-time time="broadcast.scheduled_at"></span>
+                        <span ng-show="broadcast.scheduled_at" bot-time time="broadcast.scheduled_at"></span>
                     </p>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="col-md-6">
                     <p class="form-control-static">
                         <span ng-show="!broadcast.finished_at">-</span>
-                        <span ng-show="broadcast.finished_at" project-time time="broadcast.finished_at"></span>
+                        <span ng-show="broadcast.finished_at" bot-time time="broadcast.finished_at"></span>
                     </p>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div class="col-md-6">
                     <p class="form-control-static">
                         <span ng-show="!broadcast.created_at">-</span>
-                        <span ng-show="broadcast.created_at" project-time time="broadcast.created_at"></span>
+                        <span ng-show="broadcast.created_at" bot-time time="broadcast.created_at"></span>
                     </p>
                 </div>
             </div>

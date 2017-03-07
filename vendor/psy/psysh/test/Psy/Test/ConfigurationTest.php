@@ -132,17 +132,17 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function testLoadLocalConfigFile()
     {
         $oldPwd = getenv('PWD');
-        putenv('PWD=' . realpath(__DIR__ . '/../../fixtures/project/'));
+        putenv('PWD=' . realpath(__DIR__ . '/../../fixtures/bot/'));
 
         $config = new Configuration();
 
-        // When no configuration file is specified local project config is merged
+        // When no configuration file is specified local bot config is merged
         $this->assertFalse($config->useReadline());
         $this->assertTrue($config->usePcntl());
 
         $config = new Configuration(array('configFile' => __DIR__ . '/../../fixtures/config.php'));
 
-        // Defining a configuration file skips loading local project config
+        // Defining a configuration file skips loading local bot config
         $this->assertTrue($config->useReadline());
         $this->assertFalse($config->usePcntl());
 

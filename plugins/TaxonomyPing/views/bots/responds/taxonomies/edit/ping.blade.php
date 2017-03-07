@@ -1,4 +1,4 @@
-@extends('projects.responds.taxonomies.edit._base')
+@extends('bots.responds.taxonomies.edit._base')
 
 @section('form')
     <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
@@ -13,7 +13,7 @@
                 </span>
             @else
                 <span class="help-block">
-                    <strong>Parameters with info about message, project, recipient and flow will be passed via query string.</strong>
+                    <strong>Parameters with info about message, bot, recipient and flow will be passed via query string.</strong>
                 </span>
             @endif
         </div>

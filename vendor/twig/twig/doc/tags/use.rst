@@ -7,7 +7,7 @@
 .. note::
 
     Horizontal reuse is an advanced Twig feature that is hardly ever needed in
-    regular templates. It is mainly used by projects that need to make
+    regular templates. It is mainly used by bots that need to make
     template blocks reusable without using inheritance.
 
 Template inheritance is one of the most powerful features of Twig but it is

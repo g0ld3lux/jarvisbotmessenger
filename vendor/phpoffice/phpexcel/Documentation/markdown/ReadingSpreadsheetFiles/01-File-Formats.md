@@ -21,7 +21,7 @@ Microsoft Excel™ 2007 shipped with a new file format, namely Microsoft Office 
 
 ### OOCalc
 
-aka Open Document Format (ODF) or OASIS, this is the OpenOffice.org XML File Format for spreadsheets. It comprises a zip archive including several components all of which are text files, most of these with markup in the eXtensible Markup Language (XML). It is the standard file format for OpenOffice.org Calc and StarCalc, and files typically have an extension of .ods. The published specification for the file format is available from the OASIS Open Office XML Format Technical Committee web page ([http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office#technical][5]). Other information is available from the OpenOffice.org XML File Format web page ([http://xml.openoffice.org/general.html][6]), part of the OpenOffice.org project.
+aka Open Document Format (ODF) or OASIS, this is the OpenOffice.org XML File Format for spreadsheets. It comprises a zip archive including several components all of which are text files, most of these with markup in the eXtensible Markup Language (XML). It is the standard file format for OpenOffice.org Calc and StarCalc, and files typically have an extension of .ods. The published specification for the file format is available from the OASIS Open Office XML Format Technical Committee web page ([http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office#technical][5]). Other information is available from the OpenOffice.org XML File Format web page ([http://xml.openoffice.org/general.html][6]), part of the OpenOffice.org bot.
 
 ### SYLK
 
@@ -29,7 +29,7 @@ This is the Microsoft Multiplan Symbolic Link Interchange (SYLK) file format. Mu
 
 ### Gnumeric
 
-The Gnumeric file format is used by the Gnome Gnumeric spreadsheet application, and typically files have an extension of .gnumeric. The file contents are stored using eXtensible Markup Language (XML) markup, and the file is then compressed using the GNU project's gzip compression library. [http://projects.gnome.org/gnumeric/doc/file-format-gnumeric.shtml][7]
+The Gnumeric file format is used by the Gnome Gnumeric spreadsheet application, and typically files have an extension of .gnumeric. The file contents are stored using eXtensible Markup Language (XML) markup, and the file is then compressed using the GNU bot's gzip compression library. [http://bots.gnome.org/gnumeric/doc/file-format-gnumeric.shtml][7]
 
 ### CSV
 
@@ -57,4 +57,4 @@ HyperText Markup Language (HTML) is the main markup language for creating web pa
   [4]: http://www.ecma-international.org/news/TC45_current_work/TC45_available_docs.htm
   [5]: http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office
   [6]: http://xml.openoffice.org/general.html
-  [7]: http://projects.gnome.org/gnumeric/doc/file-format-gnumeric.shtml
+  [7]: http://bots.gnome.org/gnumeric/doc/file-format-gnumeric.shtml

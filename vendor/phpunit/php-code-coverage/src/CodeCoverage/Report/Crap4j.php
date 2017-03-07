@@ -47,8 +47,8 @@ class PHP_CodeCoverage_Report_Crap4j
         $root = $document->createElement('crap_result');
         $document->appendChild($root);
 
-        $project = $document->createElement('project', is_string($name) ? $name : '');
-        $root->appendChild($project);
+        $bot = $document->createElement('bot', is_string($name) ? $name : '');
+        $root->appendChild($bot);
         $root->appendChild($document->createElement('timestamp', date('Y-m-d H:i:s', (int) $_SERVER['REQUEST_TIME'])));
 
         $stats       = $document->createElement('stats');

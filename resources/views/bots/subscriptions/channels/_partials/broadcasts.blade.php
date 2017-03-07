@@ -11,5 +11,5 @@
 </div>
 
 @push('ngTemplates')
-    @include('projects.subscriptions.channels._partials.channel_add_broadcast_modal')
+    @include('bots.subscriptions.channels._partials.channel_add_broadcast_modal')
 @endpush

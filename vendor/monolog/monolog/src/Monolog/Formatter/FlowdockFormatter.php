@@ -66,7 +66,7 @@ class FlowdockFormatter implements FormatterInterface
             'subject' => $subject,
             'content' => $record['message'],
             'tags' => $tags,
-            'project' => $this->source,
+            'bot' => $this->source,
         );
 
         return $record;

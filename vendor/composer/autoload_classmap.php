@@ -18,7 +18,7 @@ return array(
     'AddParentIdToTaxonomies' => $baseDir . '/database/migrations/2016_05_20_100253_add_parent_id_to_taxonomies.php',
     'AddPersistentMenuToThreadSettings' => $baseDir . '/database/migrations/2016_07_08_074149_add_persistent_menu_to_thread_settings.php',
     'AddPublishedAtToResponds' => $baseDir . '/database/migrations/2016_05_20_055607_add_published_at_to_responds.php',
-    'AddTimezoneToBots' => $baseDir . '/database/migrations/2016_06_22_084143_add_timezone_to_projects.php',
+    'AddTimezoneToBots' => $baseDir . '/database/migrations/2016_06_22_084143_add_timezone_to_bots.php',
     'AddTitleToFlows' => $baseDir . '/database/migrations/2016_05_25_095648_add_title_to_flows.php',
     'AddWelcomedAtToResponds' => $baseDir . '/database/migrations/2016_06_22_065348_add_welcomed_at_to_responds.php',
     'Cpdf' => $vendorDir . '/dompdf/dompdf/lib/Cpdf.php',
@@ -610,6 +610,6 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
-    'UpdateFieldsOnBotsTable' => $baseDir . '/database/migrations/2016_04_30_133812_update_fields_on_projects_table.php',
+    'UpdateFieldsOnBotsTable' => $baseDir . '/database/migrations/2016_04_30_133812_update_fields_on_bots_table.php',
     'UpdateRecipientOnCommunicationLogTable' => $baseDir . '/database/migrations/2016_05_02_054721_update_recipient_on_communication_log_table.php',
 );

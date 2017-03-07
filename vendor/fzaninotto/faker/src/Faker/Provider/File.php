@@ -145,7 +145,7 @@ class File extends Base
         'application/vnd.ms-powerpoint.slide.macroenabled.12'                       => 'sldm',
         'application/vnd.ms-powerpoint.slideshow.macroenabled.12'                   => 'ppsm',
         'application/vnd.ms-powerpoint.template.macroenabled.12'                    => 'potm',
-        'application/vnd.ms-project'                                                => array('mpp', 'mpt'),
+        'application/vnd.ms-bot'                                                => array('mpp', 'mpt'),
         'application/vnd.ms-word.document.macroenabled.12'                          => 'docm',
         'application/vnd.ms-word.template.macroenabled.12'                          => 'dotm',
         'application/vnd.ms-works'                                                  => array('wps', 'wks', 'wcm', 'wdb'),

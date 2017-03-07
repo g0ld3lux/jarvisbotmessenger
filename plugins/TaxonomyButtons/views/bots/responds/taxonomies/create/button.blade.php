@@ -1,4 +1,4 @@
-@extends('projects.responds.taxonomies.create._base')
+@extends('bots.responds.taxonomies.create._base')
 
 @section('form')
     <div class="form-group{{ $errors->has('option') ? ' has-error' : '' }}">
@@ -58,7 +58,7 @@
 
         <div class="col-md-6">
             <select class="form-control select2" name="responds[]" multiple style="width: 100%;">
-                @foreach($project->responds()->global()->get() as $respondValue)
+                @foreach($bot->responds()->global()->get() as $respondValue)
                     <option value="{{ $respondValue->id }}" @if(in_array($respondValue->id, (array) old('responds'))) selected @endif>{{ $respondValue->title }}</option>
                 @endforeach
             </select>

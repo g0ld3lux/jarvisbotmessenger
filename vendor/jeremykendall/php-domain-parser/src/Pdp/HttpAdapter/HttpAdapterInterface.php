@@ -15,7 +15,7 @@ namespace Pdp\HttpAdapter;
  * Interface for http adapters.
  *
  * Lifted pretty much completely from William Durand's excellent Geocoder
- * project
+ * bot
  *
  * @link https://github.com/willdurand/Geocoder Geocoder on GitHub
  *

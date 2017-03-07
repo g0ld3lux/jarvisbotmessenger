@@ -1,4 +1,4 @@
-@extends('projects.responds.taxonomies.create._base')
+@extends('bots.responds.taxonomies.create._base')
 
 @section('form')
     <div class="form-group{{ $errors->has('text') ? ' has-error' : '' }}">

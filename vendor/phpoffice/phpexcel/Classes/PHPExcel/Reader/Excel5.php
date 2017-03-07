@@ -39,7 +39,7 @@ if (!defined('PHPEXCEL_ROOT')) {
 // --------------------------------------------------------------------------------
 // Adapted from Excel_Spreadsheet_Reader developed by users bizon153,
 // trex005, and mmp11 (SourceForge.net)
-// http://sourceforge.net/projects/phpexcelreader/
+// http://sourceforge.net/bots/phpexcelreader/
 // Primary changes made by canyoncasa (dvc) for ParseXL 1.00 ...
 //     Modelled moreso after Perl Excel Parse/Write modules
 //     Added Parse_Excel_Spreadsheet object

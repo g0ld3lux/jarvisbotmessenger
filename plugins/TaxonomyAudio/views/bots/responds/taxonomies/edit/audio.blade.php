@@ -1,4 +1,4 @@
-@extends('projects.responds.taxonomies.edit._base')
+@extends('bots.responds.taxonomies.edit._base')
 
 @section('form')
     <input type="hidden" name="option" value="{{ $taxonomy->getParamValue('option') }}">

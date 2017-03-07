@@ -14,7 +14,7 @@
  *
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license. For more information, see
- * <http://www.doctrine-project.org>.
+ * <http://www.doctrine-bot.org>.
  */
 
 namespace Doctrine\Common\Inflector;
@@ -23,12 +23,12 @@ namespace Doctrine\Common\Inflector;
  * Doctrine inflector has static methods for inflecting text.
  *
  * The methods in these classes are from several different sources collected
- * across several different php projects and several different authors. The
+ * across several different php bots and several different authors. The
  * original author names and emails are not known.
  *
  * Pluralize & Singularize implementation are borrowed from CakePHP with some modifications.
  *
- * @link   www.doctrine-project.org
+ * @link   www.doctrine-bot.org
  * @since  1.0
  * @author Konsta Vesterinen <kvesteri@cc.hut.fi>
  * @author Jonathan H. Wage <jonwage@gmail.com>

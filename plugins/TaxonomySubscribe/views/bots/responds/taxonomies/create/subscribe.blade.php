@@ -1,4 +1,4 @@
-@extends('projects.responds.taxonomies.create._base')
+@extends('bots.responds.taxonomies.create._base')
 
 @section('form')
     <div class="form-group{{ $errors->has('channel') ? ' has-error' : '' }}">
@@ -7,7 +7,7 @@
         <div class="col-md-6">
             <select class="form-control" name="channel">
                 <option></option>
-                @foreach($project->subscriptionsChannels()->ordered()->get() as $channel)
+                @foreach($bot->subscriptionsChannels()->ordered()->get() as $channel)
                     <option value="{{ $channel->id }}" @if(old('channel') == $channel->id) selected @endif>{{ $channel->name }}</option>
                 @endforeach
             </select>

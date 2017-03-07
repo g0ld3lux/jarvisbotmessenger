@@ -34,14 +34,14 @@ class PHP_CodeCoverage_Report_HTML_Renderer_Dashboard extends PHP_CodeCoverage_R
         $complexity           = $this->complexity($classes, $baseLink);
         $coverageDistribution = $this->coverageDistribution($classes);
         $insufficientCoverage = $this->insufficientCoverage($classes, $baseLink);
-        $projectRisks         = $this->projectRisks($classes, $baseLink);
+        $botRisks         = $this->botRisks($classes, $baseLink);
 
         $template->setVar(
             array(
                 'insufficient_coverage_classes' => $insufficientCoverage['class'],
                 'insufficient_coverage_methods' => $insufficientCoverage['method'],
-                'project_risks_classes'         => $projectRisks['class'],
-                'project_risks_methods'         => $projectRisks['method'],
+                'bot_risks_classes'         => $botRisks['class'],
+                'bot_risks_methods'         => $botRisks['method'],
                 'complexity_class'              => $complexity['class'],
                 'complexity_method'             => $complexity['method'],
                 'class_coverage_distribution'   => $coverageDistribution['class'],
@@ -225,13 +225,13 @@ class PHP_CodeCoverage_Report_HTML_Renderer_Dashboard extends PHP_CodeCoverage_R
     }
 
     /**
-     * Returns the project risks according to the CRAP index.
+     * Returns the bot risks according to the CRAP index.
      *
      * @param  array  $classes
      * @param  string $baseLink
      * @return array
      */
-    protected function projectRisks(array $classes, $baseLink)
+    protected function botRisks(array $classes, $baseLink)
     {
         $classRisks  = array();
         $methodRisks = array();

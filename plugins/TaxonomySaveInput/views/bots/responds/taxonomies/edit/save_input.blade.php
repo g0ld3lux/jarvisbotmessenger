@@ -1,4 +1,4 @@
-@extends('projects.responds.taxonomies.edit._base')
+@extends('bots.responds.taxonomies.edit._base')
 
 @section('form')
     <div class="form-group{{ $errors->has('variable') ? ' has-error' : '' }}">
@@ -7,7 +7,7 @@
         <div class="col-md-6">
             <select class="form-control" name="variable">
                 <option></option>
-                @foreach($project->recipientsVariables()->orderBy('name', 'asc')->get() as $variable)
+                @foreach($bot->recipientsVariables()->orderBy('name', 'asc')->get() as $variable)
                     <option value="{{ $variable->id }}" @if(old('variable', $taxonomy->getParamValue('variable')) == $variable->id) selected @endif>{{ $variable->name }}</option>
                 @endforeach
             </select>

@@ -20,7 +20,7 @@ use Doctrine\ORM\EntityManager;
 /**
  * Collects Doctrine queries
  *
- * http://doctrine-project.org
+ * http://doctrine-bot.org
  *
  * Uses the DebugStack logger to collects data about queries
  *

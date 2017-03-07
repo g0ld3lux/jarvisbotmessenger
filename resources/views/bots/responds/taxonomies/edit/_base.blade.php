@@ -4,9 +4,9 @@
     <div class="content-header">
         <div class="container">
             <div class="clearfix">
-                <div class="pull-left content-header-title"><a href="{{ route('projects.show', $project->id) }}">{{ $project->title }}</a> &raquo; <a href="{{ route('projects.responds.index', $project->id) }}">Responds</a> &raquo; {{ $respond->title }} &raquo; <a href="{{ route('projects.responds.edit', [$project->id, $respond->id]) }}">Edit</a> &raquo; Elements</div>
+                <div class="pull-left content-header-title"><a href="{{ route('bots.show', $bot->id) }}">{{ $bot->title }}</a> &raquo; <a href="{{ route('bots.responds.index', $bot->id) }}">Responds</a> &raquo; {{ $respond->title }} &raquo; <a href="{{ route('bots.responds.edit', [$bot->id, $respond->id]) }}">Edit</a> &raquo; Elements</div>
                 <div class="pull-right">
-                    @include('projects._partials.menu')
+                    @include('bots._partials.menu')
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('projects.responds.edit.taxonomies.update', [$project->id, $respond->id, $taxonomy->id]) }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('bots.responds.edit.taxonomies.update', [$bot->id, $respond->id, $taxonomy->id]) }}" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
                             <input type="hidden" name="type" value="{{ $taxonomy->type }}">

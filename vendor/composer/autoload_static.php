@@ -538,7 +538,7 @@ class ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed
         'AddParentIdToTaxonomies' => __DIR__ . '/../..' . '/database/migrations/2016_05_20_100253_add_parent_id_to_taxonomies.php',
         'AddPersistentMenuToThreadSettings' => __DIR__ . '/../..' . '/database/migrations/2016_07_08_074149_add_persistent_menu_to_thread_settings.php',
         'AddPublishedAtToResponds' => __DIR__ . '/../..' . '/database/migrations/2016_05_20_055607_add_published_at_to_responds.php',
-        'AddTimezoneToBots' => __DIR__ . '/../..' . '/database/migrations/2016_06_22_084143_add_timezone_to_projects.php',
+        'AddTimezoneToBots' => __DIR__ . '/../..' . '/database/migrations/2016_06_22_084143_add_timezone_to_bots.php',
         'AddTitleToFlows' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_095648_add_title_to_flows.php',
         'AddWelcomedAtToResponds' => __DIR__ . '/../..' . '/database/migrations/2016_06_22_065348_add_welcomed_at_to_responds.php',
         'Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
@@ -1130,7 +1130,7 @@ class ComposerStaticInitf8f727d1edf8ccf3db40a007655cb0ed
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
-        'UpdateFieldsOnBotsTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_30_133812_update_fields_on_projects_table.php',
+        'UpdateFieldsOnBotsTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_30_133812_update_fields_on_bots_table.php',
         'UpdateRecipientOnCommunicationLogTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_02_054721_update_recipient_on_communication_log_table.php',
     );
 
