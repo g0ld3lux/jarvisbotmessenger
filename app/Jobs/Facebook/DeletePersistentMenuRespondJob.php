@@ -3,7 +3,7 @@
 namespace App\Jobs\Facebook;
 
 use App\Jobs\Job;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -20,17 +20,17 @@ class DeletePersistentMenuRespondJob extends Job implements ShouldQueue
     protected $url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token={token}';
 
     /**
-     * @var Project
+     * @var Bot
      */
-    protected $project;
+    protected $bot;
 
     /**
-     * SubscribeProjectJob constructor.
-     * @param Project $project
+     * SubscribeBotJob constructor.
+     * @param Bot $bot
      */
-    public function __construct(Project $project)
+    public function __construct(Bot $bot)
     {
-        $this->project = $project;
+        $this->bot = $bot;
     }
 
     /**
@@ -64,6 +64,6 @@ class DeletePersistentMenuRespondJob extends Job implements ShouldQueue
      */
     protected function url()
     {
-        return str_replace('{token}', $this->project->page_token, $this->url);
+        return str_replace('{token}', $this->bot->page_token, $this->url);
     }
 }

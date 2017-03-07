@@ -13,7 +13,7 @@
 namespace phpDocumentor\Reflection;
 
 /**
- * Interface for files processed by the ProjectFactory
+ * Interface for files processed by the BotFactory
  */
 interface File
 {

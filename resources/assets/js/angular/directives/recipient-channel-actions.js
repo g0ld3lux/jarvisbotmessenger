@@ -34,10 +34,10 @@ angular
                         closeOnConfirm: false
                     }, function (confirm){
                         if (confirm) {
-                            ApiUtils.recipient.channel.delete(channel.project_id, channel.recipient_id, channel.channel_id).then(function () {
-                                scope.$emit("recipient.channel.delete.success", channel.project_id, channel.recipient_id, channel.channel_id);
+                            ApiUtils.recipient.channel.delete(channel.bot_id, channel.recipient_id, channel.channel_id).then(function () {
+                                scope.$emit("recipient.channel.delete.success", channel.bot_id, channel.recipient_id, channel.channel_id);
                             }, function () {
-                                scope.$emit("recipient.channel.delete.fail", channel.project_id, channel.recipient_id, channel.channel_id);
+                                scope.$emit("recipient.channel.delete.fail", channel.bot_id, channel.recipient_id, channel.channel_id);
                             });
                         }
 
@@ -54,7 +54,7 @@ angular
 
                 buttons.push("<button type=\"button\" class=\"btn btn-danger\" uib-tooltip=\"Remove from channel\" tooltip-trigger=\"mouseenter\" ng-click=\"removeRecipientFromChannel(channel)\"><i class=\"fa fa-trash\"></i></button>");
 
-                buttons.push("<a class=\"btn btn-default\" uib-tooltip=\"Channel details\" tooltip-trigger=\"mouseenter\" ng-href=\"{{ BASE_URL }}/projects/{{ channel.project_id }}/subscriptions/channels/{{ channel.channel_id }}\"><i class=\"fa fa-arrow-right\"></i></a>");
+                buttons.push("<a class=\"btn btn-default\" uib-tooltip=\"Channel details\" tooltip-trigger=\"mouseenter\" ng-href=\"{{ BASE_URL }}/bots/{{ channel.bot_id }}/subscriptions/channels/{{ channel.channel_id }}\"><i class=\"fa fa-arrow-right\"></i></a>");
 
                 return buttons.join(" ");
             }

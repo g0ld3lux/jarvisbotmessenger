@@ -29,7 +29,7 @@ class SubscribeValidationRules implements TaxonomyValidationRules
     public function rules()
     {
         return [
-            'channel' => 'required|exists:subscriptions_channels,id,project_id,'.$this->request->route('project')->id,
+            'channel' => 'required|exists:subscriptions_channels,id,bot_id,'.$this->request->route('bot')->id,
             'option' => 'required|in:add,remove',
         ];
     }

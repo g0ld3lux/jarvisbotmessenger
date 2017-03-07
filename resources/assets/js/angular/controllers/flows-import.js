@@ -1,6 +1,6 @@
 angular
     .module("messengerBotApp")
-    .controller("FlowsImportController", function ($scope, $uibModalInstance, Upload, SweetAlert, projectId) {
+    .controller("FlowsImportController", function ($scope, $uibModalInstance, Upload, SweetAlert, botId) {
         /**
          * Set initial exporting state.
          *
@@ -31,7 +31,7 @@ angular
             $scope.errors = {};
 
             Upload.upload({
-                url: BASE_URL + "/api/project/" + projectId + "/flow/import",
+                url: BASE_URL + "/api/bot/" + botId + "/flow/import",
                 data: {
                     file: file
                 }

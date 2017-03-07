@@ -3,7 +3,7 @@
 namespace App\Models\Subscription;
 
 use App\Models\Flow\Matcher;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use App\Models\Statistic;
 use App\Models\Subscription\Channel\Broadcast;
@@ -40,13 +40,13 @@ class Channel extends Model
     }
 
     /**
-     * Return related project.
+     * Return related bot.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function project()
+    public function bot()
     {
-        return $this->belongsTo(Project::class, 'project_id');
+        return $this->belongsTo(Bot::class, 'bot_id');
     }
 
     /**

@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Jobs\Statistics\Projects\IncreaseRecipientsCount;
-use App\Models\Project;
+use App\Jobs\Statistics\Bots\IncreaseRecipientsCount;
+use App\Models\Bot;
 use App\Models\Recipient;
 use Illuminate\Contracts\Bus\Dispatcher;
 
@@ -26,46 +26,46 @@ class RecipientProvider
     /**
      * Get recipient.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param $reference
      * @return \App\Models\Recipient
      */
-    public function get(Project $project, $reference)
+    public function get(Bot $bot, $reference)
     {
         try {
-            return $this->find($project, $reference);
+            return $this->find($bot, $reference);
         } catch (\Exception $e) {
         }
 
-        return $this->create($project, $reference);
+        return $this->create($bot, $reference);
     }
 
     /**
      * Find recipient.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param $reference
      * @return \App\Models\Recipient
      */
-    protected function find(Project $project, $reference)
+    protected function find(Bot $bot, $reference)
     {
-        return Recipient::where('project_id', $project->id)->where('reference', $reference)->firstOrFail();
+        return Recipient::where('bot_id', $bot->id)->where('reference', $reference)->firstOrFail();
     }
 
     /**
      * Create new recipient.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param $reference
      * @return \App\Models\Recipient
      */
-    protected function create(Project $project, $reference)
+    protected function create(Bot $bot, $reference)
     {
         $recipient = new Recipient(['reference' => $reference]);
-        $recipient->project()->associate($project);
+        $recipient->bot()->associate($bot);
         $recipient->save();
 
-        $this->dispatcher->dispatch(new IncreaseRecipientsCount($project));
+        $this->dispatcher->dispatch(new IncreaseRecipientsCount($bot));
 
         return $recipient;
     }

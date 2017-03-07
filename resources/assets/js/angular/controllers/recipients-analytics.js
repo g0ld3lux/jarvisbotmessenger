@@ -20,15 +20,15 @@ angular
         /**
          * Update analytics chart.
          *
-         * @param project
+         * @param bot
          * @param start
          * @param end
          */
-        var updateAnalytics = function (project, start, end) {
+        var updateAnalytics = function (bot, start, end) {
             $scope.analyticsLoading = true;
 
             $http
-                .get(BASE_URL + "/api/project/" + project.id + "/analytics", {
+                .get(BASE_URL + "/api/bot/" + bot.id + "/analytics", {
                     params: {
                         "fields[]": _.map(fields, function(value, key) {
                             return key;
@@ -70,7 +70,7 @@ angular
                 opens: "left",
                 eventHandlers: {
                     "apply.daterangepicker": function ($event) {
-                        updateAnalytics($scope.project, $event.model.startDate, $event.model.endDate);
+                        updateAnalytics($scope.bot, $event.model.startDate, $event.model.endDate);
                     }
                 }
             },
@@ -139,7 +139,7 @@ angular
         /**
          * Load analytics data.
          */
-        $scope.$on("project.loaded", function ($event, project) {
-            updateAnalytics(project, $scope.datePicker.date.startDate, $scope.datePicker.date.endDate);
+        $scope.$on("bot.loaded", function ($event, bot) {
+            updateAnalytics(bot, $scope.datePicker.date.startDate, $scope.datePicker.date.endDate);
         });
     });

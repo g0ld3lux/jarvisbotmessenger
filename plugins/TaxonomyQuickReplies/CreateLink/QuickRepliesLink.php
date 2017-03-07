@@ -3,7 +3,7 @@
 namespace Plugins\TaxonomyQuickReplies\CreateLink;
 
 use App\Contracts\TaxonomyCreateLink;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 
 class QuickRepliesLink implements TaxonomyCreateLink
@@ -41,12 +41,12 @@ class QuickRepliesLink implements TaxonomyCreateLink
     /**
      * Return link.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @return string
      */
-    public function link(Project $project, Respond $respond)
+    public function link(Bot $bot, Respond $respond)
     {
-        return route('projects.responds.edit.taxonomies.create', [$project->id, $respond->id, 'quick_replies']);
+        return route('bots.responds.edit.taxonomies.create', [$bot->id, $respond->id, 'quick_replies']);
     }
 }

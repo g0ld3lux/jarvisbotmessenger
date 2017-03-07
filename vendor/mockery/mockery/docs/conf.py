@@ -44,11 +44,11 @@ source_suffix = '.rst'
 # The master toctree document.
 master_doc = 'index'
 
-# General information about the project.
-project = u'Mockery Docs'
+# General information about the bot.
+bot = u'Mockery Docs'
 copyright = u'2014, Pádraic Brady, Dave Marshall, Wouter, Graham Campbell'
 
-# The version info for the project you're documenting, acts as replacement for
+# The version info for the bot you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
@@ -232,7 +232,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index2', 'MockeryDocs', u'Mockery Docs Documentation',
-   u'Pádraic Brady, Dave Marshall, Wouter, Graham Campbell', 'MockeryDocs', 'One line description of project.',
+   u'Pádraic Brady, Dave Marshall, Wouter, Graham Campbell', 'MockeryDocs', 'One line description of bot.',
    'Miscellaneous'),
 ]
 

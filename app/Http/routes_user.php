@@ -5,7 +5,7 @@ Route::group(['middleware' => ['auth', 'impersonate']], function () {
     require_once __DIR__ . '/routes_api.php';
 
     Route::get('/', [
-        'uses' => 'ProjectsController@index',
+        'uses' => 'BotsController@index',
         'as' => 'home',
         '__rp' => ['menu' => 'dashboard'],
     ]);
@@ -45,57 +45,57 @@ Route::group(['middleware' => ['auth', 'impersonate']], function () {
 
     });
 
-    Route::group(['middleware' => 'active','prefix' => 'bots', 'as' => 'projects.'], function () {
+    Route::group(['middleware' => 'active','prefix' => 'bots', 'as' => 'bots.'], function () {
 
         Route::get('/', [
-            'uses' => 'ProjectsController@index',
+            'uses' => 'BotsController@index',
             'as' => 'index',
             '__rp' => ['menu' => 'dashboard'],
         ]);
 
         Route::get('/create', [
-            'uses' => 'ProjectsController@create',
+            'uses' => 'BotsController@create',
             'as' => 'create',
             '__rp' => ['menu' => 'dashboard'],
         ]);
 
         Route::post('/store', [
-            'uses' => 'ProjectsController@store',
+            'uses' => 'BotsController@store',
             'as' => 'store',
             '__rp' => ['menu' => 'dashboard'],
         ]);
 
-        Route::group(['prefix' => '{project}', '__rp' => ['menu' => 'projects']], function () {
+        Route::group(['prefix' => '{bot}', '__rp' => ['menu' => 'bots']], function () {
 
             Route::get('/', [
-                'uses' => 'ProjectsController@show',
+                'uses' => 'BotsController@show',
                 'as' => 'show',
                 '__rp' => ['submenu' => 'dashboard'],
             ]);
 
             Route::get('/settings', [
-                'uses' => 'ProjectsController@settings',
+                'uses' => 'BotsController@settings',
                 'as' => 'settings',
                 '__rp' => ['submenu' => 'settings'],
             ]);
 
             Route::post('/update', [
-                'uses' => 'ProjectsController@update',
+                'uses' => 'BotsController@update',
                 'as' => 'update',
             ]);
 
             Route::post('/update/thread', [
-                'uses' => 'ProjectsController@updateThread',
+                'uses' => 'BotsController@updateThread',
                 'as' => 'update.thread',
             ]);
 
             Route::delete('/delete', [
-                'uses' => 'ProjectsController@delete',
+                'uses' => 'BotsController@delete',
                 'as' => 'delete',
             ]);
 
             Route::post('/welcomeMessage', [
-                'uses' => 'ProjectsController@setWelcomeMessage',
+                'uses' => 'BotsController@setWelcomeMessage',
                 'as' => 'welcomeMessage',
             ]);
 

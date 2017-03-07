@@ -13,7 +13,7 @@ class UpdateRequest extends Request
      */
     public function authorize()
     {
-        return Gate::allows('edit', [$this->route('recipientVariable'), $this->route('project')]);
+        return Gate::allows('edit', [$this->route('recipientVariable'), $this->route('bot')]);
     }
 
     /**
@@ -25,7 +25,7 @@ class UpdateRequest extends Request
     {
         return array_merge(parent::rules(), [
             'name' => 'required|'
-                .'recipient_variable_accessor:'.$this->route('project')->id.','.$this->route('recipientVariable')->id,
+                .'recipient_variable_accessor:'.$this->route('bot')->id.','.$this->route('recipientVariable')->id,
         ]);
     }
 }

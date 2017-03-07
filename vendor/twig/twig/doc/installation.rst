@@ -19,9 +19,9 @@ Installing from the tarball release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Download the most recent tarball from the `download page`_
-2. Verify the integrity of the tarball http://fabien.potencier.org/article/73/signing-project-releases
+2. Verify the integrity of the tarball http://fabien.potencier.org/article/73/signing-bot-releases
 3. Unpack the tarball
-4. Move the files somewhere in your project
+4. Move the files somewhere in your bot
 
 Installing the development version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,7 +40,7 @@ Installing the PEAR package
 
 .. code-block:: bash
 
-    pear channel-discover pear.twig-project.org
+    pear channel-discover pear.twig-bot.org
     pear install twig/Twig
 
 Installing the C extension
@@ -75,7 +75,7 @@ runtime engine; install it like any other PHP extensions:
 
     .. code-block:: bash
 
-        pear channel-discover pear.twig-project.org
+        pear channel-discover pear.twig-bot.org
         pear install twig/CTwig
 
 For Windows:

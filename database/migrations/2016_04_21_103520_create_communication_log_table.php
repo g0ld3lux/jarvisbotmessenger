@@ -14,15 +14,15 @@ class CreateCommunicationLogTable extends Migration
     {
         Schema::create('communication_log', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('project_id')->unsigned();
+            $table->integer('bot_id')->unsigned();
             $table->integer('respond_id')->unsigned()->nullable(true)->default(null);
             $table->text('sender');
             $table->text('message');
             $table->nullableTimestamps();
             $table
-                ->foreign('project_id')
+                ->foreign('bot_id')
                 ->references('id')
-                ->on('projects')
+                ->on('bots')
                 ->onDelete('cascade');
             $table
                 ->foreign('respond_id')

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="recursion-context">
+<bot name="recursion-context">
  <target name="clean" description="Cleanup build artifacts">
   <delete dir="${basedir}/vendor"/>
   <delete file="${basedir}/composer.lock"/>
@@ -23,5 +23,5 @@
    <arg value="install"/>
   </exec>
  </target>
-</project>
+</bot>
 

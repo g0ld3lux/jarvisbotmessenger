@@ -23,7 +23,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    ApiUtils.recipient.refresh(recipient.project_id, recipient.id).then(function (response) {
+                    ApiUtils.recipient.refresh(recipient.bot_id, recipient.id).then(function (response) {
                         $scope.$emit("recipient.refresh.success", response.data);
                     }, function (response) {
                         $scope.$emit("recipient.refresh.fail", response);

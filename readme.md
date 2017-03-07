@@ -22,7 +22,7 @@ It is Simple as...
 1.) Create an Account / Sign Up with Social Media Account...
 2.) Verify Email
 3.) Free Trial Access
-4.) Create a Project ...
+4.) Create a Bot ...
 5.) Create Your Flows or Import From Our Flows Library...
 6.) Connect Your Fanpage...
 7.) Start Sending Message...
@@ -90,13 +90,13 @@ Creating Different Types of Responds or Have a Easy Import Of the Type of Respon
     - [x] Change Password
     - [x] Delete Account
     - [x] Enable /Disable Google 2 Factor Authentication
-- [x] CRUD Project
-- [x] Connect Project with Fanpage
+- [x] CRUD Bot
+- [x] Connect Bot with Fanpage
 - [x] Analytics On Message Sent/Fail
 - [x] CRUD Flows
 - [x] Import and Export Flows
 - [x] Set General Settings
-    - [x] Update Project name
+    - [x] Update Bot name
     - [x] Time Zone For Fanpage (Cron)
 - [x] Set Thread Settings
     - [x] Set Greeting Message

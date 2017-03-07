@@ -2,7 +2,7 @@
 
 namespace Bot\FacebookMessenger\Executable;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use Bot\Core\Contract\Executable;
 use Bot\Core\Respond\Flow;
@@ -31,12 +31,12 @@ class Message implements Executable
      * @param $type
      * @param $text
      * @param null|Flow $flow
-     * @param Project $project
+     * @param Bot $bot
      * @param Recipient $recipient
      * @param FbBotApp $botApp
      * @return \Bot\Core\Jobs\Job
      */
-    public function job($type, $text, $flow, Project $project, Recipient $recipient, FbBotApp $botApp)
+    public function job($type, $text, $flow, Bot $bot, Recipient $recipient, FbBotApp $botApp)
     {
         return new SendMessageJob($this->message, $botApp);
     }

@@ -2,7 +2,7 @@
 /**
  * @package php-svg-lib
  * @link    http://github.com/PhenX/php-svg-lib
- * @author  Fabien Ménager <fabien.menager@gmail.com>
+ * @author  Fabien Mï¿½nager <fabien.menager@gmail.com>
  * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
  */
 
@@ -269,7 +269,7 @@ class SurfaceGmagick implements SurfaceInterface
             $opts[] = "linewidth=$style->strokeWidth";
         }
 
-        if (in_array($style->strokeLinecap, array("butt", "round", "projecting"))) {
+        if (in_array($style->strokeLinecap, array("butt", "round", "boting"))) {
             $opts[] = "linecap=$style->strokeLinecap";
         }
 

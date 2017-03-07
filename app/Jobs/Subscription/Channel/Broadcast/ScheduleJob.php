@@ -33,7 +33,7 @@ class ScheduleJob extends Job implements ShouldQueue
      * @param int $interval
      * @param string $timezone
      */
-    public function __construct(Broadcast $broadcast, $interval = 0, $timezone = 'project')
+    public function __construct(Broadcast $broadcast, $interval = 0, $timezone = 'bot')
     {
         $this->broadcast = $broadcast;
         $this->interval = $interval;

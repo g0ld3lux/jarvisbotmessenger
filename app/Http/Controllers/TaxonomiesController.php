@@ -8,7 +8,7 @@ use App\Jobs\Responds\Taxonomies\AssignParamsJob;
 use App\Jobs\Responds\Taxonomies\GetNextOrderJob;
 use App\Jobs\Responds\Taxonomies\MoveDownJob;
 use App\Jobs\Responds\Taxonomies\MoveUpJob;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Notification;
@@ -39,15 +39,15 @@ class TaxonomiesController extends Controller
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @param null $type
      * @param Respond\Taxonomy $parent
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create(Project $project, Respond $respond, $type = null, $parent = null)
+    public function create(Bot $bot, Respond $respond, $type = null, $parent = null)
     {
-        $this->authorize('edit', [$respond, $project]);
+        $this->authorize('edit', [$respond, $bot]);
 
         if (!is_null($parent)) {
             $parent = $respond->taxonomies()->findOrFail($parent);
@@ -59,13 +59,13 @@ class TaxonomiesController extends Controller
             if (array_has(static::$extensions, $extensionKey)) {
                 return call_user_func_array(
                     array_get(static::$extensions, $extensionKey),
-                    [$project, $respond, $type, $parent]
+                    [$bot, $respond, $type, $parent]
                 );
             }
         }
 
-        return view('projects.responds.taxonomies.create'.(is_null($type) ? '' : '.'.$type), [
-            'project' => $project,
+        return view('bots.responds.taxonomies.create'.(is_null($type) ? '' : '.'.$type), [
+            'bot' => $bot,
             'respond' => $respond,
             'type' => $type,
             'parent' => $parent,
@@ -75,13 +75,13 @@ class TaxonomiesController extends Controller
     /**
      * @param CreateRequest $request
      * @param Dispatcher $dispatcher
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CreateRequest $request, Dispatcher $dispatcher, Project $project, Respond $respond)
+    public function store(CreateRequest $request, Dispatcher $dispatcher, Bot $bot, Respond $respond)
     {
-        $this->authorize('edit', [$respond, $project]);
+        $this->authorize('edit', [$respond, $bot]);
 
         $taxonomy = new Respond\Taxonomy([
             'type' => $request->get('type'),
@@ -101,29 +101,29 @@ class TaxonomiesController extends Controller
         Notification::success('Element added successfully.');
 
         if ($taxonomy->parent) {
-            return redirect()->route('projects.responds.edit.taxonomies.edit', [
-                $project->id,
+            return redirect()->route('bots.responds.edit.taxonomies.edit', [
+                $bot->id,
                 $respond->id,
                 $taxonomy->parent_id
             ]);
         }
 
-        return redirect()->route('projects.responds.edit', [$project->id, $respond->id]);
+        return redirect()->route('bots.responds.edit', [$bot->id, $respond->id]);
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @param Respond\Taxonomy $taxonomy
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function edit(Project $project, Respond $respond, Respond\Taxonomy $taxonomy)
+    public function edit(Bot $bot, Respond $respond, Respond\Taxonomy $taxonomy)
     {
-        $this->authorize('edit', [$taxonomy, $respond, $project]);
+        $this->authorize('edit', [$taxonomy, $respond, $bot]);
 
-        return view('projects.responds.taxonomies.edit.'.$taxonomy->type, [
-            'project' => $project,
+        return view('bots.responds.taxonomies.edit.'.$taxonomy->type, [
+            'bot' => $bot,
             'respond' => $respond,
             'taxonomy' => $taxonomy,
         ]);
@@ -132,7 +132,7 @@ class TaxonomiesController extends Controller
     /**
      * @param UpdateRequest $request
      * @param Dispatcher $dispatcher
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @param Respond\Taxonomy $taxonomy
      * @return \Illuminate\Http\RedirectResponse
@@ -140,11 +140,11 @@ class TaxonomiesController extends Controller
     public function update(
         UpdateRequest $request,
         Dispatcher $dispatcher,
-        Project $project,
+        Bot $bot,
         Respond $respond,
         Respond\Taxonomy $taxonomy
     ) {
-        $this->authorize('edit', [$taxonomy, $respond, $project]);
+        $this->authorize('edit', [$taxonomy, $respond, $bot]);
 
         $taxonomy->touch();
 
@@ -152,41 +152,41 @@ class TaxonomiesController extends Controller
 
         Notification::success('Element added successfully.');
 
-        return redirect()->route('projects.responds.edit', [$project->id, $respond->id]);
+        return redirect()->route('bots.responds.edit', [$bot->id, $respond->id]);
     }
 
     /**
      * Delete link.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @param Respond\Taxonomy $taxonomy
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function delete(Project $project, Respond $respond, Respond\Taxonomy $taxonomy)
+    public function delete(Bot $bot, Respond $respond, Respond\Taxonomy $taxonomy)
     {
-        $this->authorize('delete', [$taxonomy, $respond, $project]);
+        $this->authorize('delete', [$taxonomy, $respond, $bot]);
 
         $taxonomy->delete();
 
         Notification::success('Element deleted successfully.');
 
-        return redirect()->route('projects.responds.edit', [$project->id, $respond->id]);
+        return redirect()->route('bots.responds.edit', [$bot->id, $respond->id]);
     }
 
     /**
      * Delete link.
      *
      * @param Dispatcher $dispatcher
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @param Respond\Taxonomy $taxonomy
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function moveUp(Dispatcher $dispatcher, Project $project, Respond $respond, Respond\Taxonomy $taxonomy)
+    public function moveUp(Dispatcher $dispatcher, Bot $bot, Respond $respond, Respond\Taxonomy $taxonomy)
     {
-        $this->authorize('edit', [$taxonomy, $respond, $project]);
+        $this->authorize('edit', [$taxonomy, $respond, $bot]);
 
         $dispatcher->dispatchNow(new MoveUpJob($taxonomy));
 
@@ -199,15 +199,15 @@ class TaxonomiesController extends Controller
      * Delete link.
      *
      * @param Dispatcher $dispatcher
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @param Respond\Taxonomy $taxonomy
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function moveDown(Dispatcher $dispatcher, Project $project, Respond $respond, Respond\Taxonomy $taxonomy)
+    public function moveDown(Dispatcher $dispatcher, Bot $bot, Respond $respond, Respond\Taxonomy $taxonomy)
     {
-        $this->authorize('edit', [$taxonomy, $respond, $project]);
+        $this->authorize('edit', [$taxonomy, $respond, $bot]);
 
         $dispatcher->dispatchNow(new MoveDownJob($taxonomy));
 

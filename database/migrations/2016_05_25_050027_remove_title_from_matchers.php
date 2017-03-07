@@ -25,7 +25,7 @@ class RemoveTitleFromMatchers extends Migration
     public function down()
     {
         Schema::table('matchers', function (Blueprint $table) {
-            $table->string('title')->after('project_id');
+            $table->string('title')->after('bot_id');
         });
     }
 }

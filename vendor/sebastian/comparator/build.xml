@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="comparator">
+<bot name="comparator">
  <target name="clean" description="Cleanup build artifacts">
   <delete dir="${basedir}/vendor"/>
   <delete file="${basedir}/composer.lock"/>
@@ -31,4 +31,4 @@
    <arg path="tests" />
   </exec>
  </target>
-</project>
+</bot>

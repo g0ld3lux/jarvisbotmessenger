@@ -3,7 +3,7 @@
 namespace App\Jobs\Facebook;
 
 use App\Jobs\Job;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use App\Models\Respond;
 use App\Services\RespondMatcher;
@@ -26,9 +26,9 @@ class SetPersistentMenuRespondJob extends Job implements ShouldQueue
     protected $url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token={token}';
 
     /**
-     * @var Project
+     * @var Bot
      */
-    protected $project;
+    protected $bot;
 
     /**
      * @var Respond
@@ -36,13 +36,13 @@ class SetPersistentMenuRespondJob extends Job implements ShouldQueue
     protected $respond;
 
     /**
-     * SubscribeProjectJob constructor.
-     * @param Project $project
+     * SubscribeBotJob constructor.
+     * @param Bot $bot
      * @param Respond $respond
      */
-    public function __construct(Project $project, Respond $respond)
+    public function __construct(Bot $bot, Respond $respond)
     {
-        $this->project = $project;
+        $this->bot = $bot;
         $this->respond = $respond;
     }
 
@@ -98,6 +98,6 @@ class SetPersistentMenuRespondJob extends Job implements ShouldQueue
      */
     protected function url()
     {
-        return str_replace('{token}', $this->project->page_token, $this->url);
+        return str_replace('{token}', $this->bot->page_token, $this->url);
     }
 }

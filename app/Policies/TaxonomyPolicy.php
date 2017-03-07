@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -12,31 +12,31 @@ class TaxonomyPolicy
     use HandlesAuthorization;
 
     /**
-     * Determine if user is owner of a project.
+     * Determine if user is owner of a bot.
      *
      * @param User $user
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isProjectOwner(User $user, Project $project)
+    protected function isBotOwner(User $user, Bot $bot)
     {
-        return $user->id == $project->user_id;
+        return $user->id == $bot->user_id;
     }
 
     /**
-     * Determine is related to project.
+     * Determine is related to bot.
      *
      * @param Respond $respond
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isRespondRelatedToProject(Respond $respond, Project $project)
+    protected function isRespondRelatedToBot(Respond $respond, Bot $bot)
     {
-        return $respond->project_id == $project->id;
+        return $respond->bot_id == $bot->id;
     }
 
     /**
-     * Determine is related to project.
+     * Determine is related to bot.
      *
      * @param Respond\Taxonomy $taxonomy
      * @param Respond $respond
@@ -53,13 +53,13 @@ class TaxonomyPolicy
      * @param User $user
      * @param Respond\Taxonomy $taxonomy
      * @param Respond $respond
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function edit(User $user, Respond\Taxonomy $taxonomy, Respond $respond, Project $project)
+    public function edit(User $user, Respond\Taxonomy $taxonomy, Respond $respond, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project)
-            && $this->isRespondRelatedToProject($respond, $project)
+        return $this->isBotOwner($user, $bot)
+            && $this->isRespondRelatedToBot($respond, $bot)
             && $this->isTaxonomyRelatedToRespond($taxonomy, $respond);
     }
 
@@ -69,13 +69,13 @@ class TaxonomyPolicy
      * @param User $user
      * @param Respond\Taxonomy $taxonomy
      * @param Respond $respond
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function delete(User $user, Respond\Taxonomy $taxonomy, Respond $respond, Project $project)
+    public function delete(User $user, Respond\Taxonomy $taxonomy, Respond $respond, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project)
-            && $this->isRespondRelatedToProject($respond, $project)
+        return $this->isBotOwner($user, $bot)
+            && $this->isRespondRelatedToBot($respond, $bot)
             && $this->isTaxonomyRelatedToRespond($taxonomy, $respond);
     }
 }

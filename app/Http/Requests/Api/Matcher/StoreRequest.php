@@ -14,6 +14,6 @@ class StoreRequest extends MatcherRequest
      */
     public function authorize()
     {
-        return Gate::allows('edit', [$this->route('flow'), $this->route('project')]);
+        return Gate::allows('edit', [$this->route('flow'), $this->route('bot')]);
     }
 }

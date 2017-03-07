@@ -3,39 +3,39 @@
 namespace App\Http\Controllers\Subscriptions;
 
 use App\Http\Controllers\Controller;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Subscription\Channel;
 
 class BroadcastsController extends Controller
 {
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param Channel $channel
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create(Project $project, Channel $channel)
+    public function create(Bot $bot, Channel $channel)
     {
-        $this->authorize('view', [$channel, $project]);
+        $this->authorize('view', [$channel, $bot]);
 
-        return view('projects.subscriptions.channels.broadcasts.create', [
-            'project' => $project,
+        return view('bots.subscriptions.channels.broadcasts.create', [
+            'bot' => $bot,
             'channel' => $channel,
-            'responds' => $project->responds()->get(),
+            'responds' => $bot->responds()->get(),
         ]);
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param Channel $channel
      * @param Channel\Broadcast $broadcast
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Project $project, Channel $channel, Channel\Broadcast $broadcast)
+    public function show(Bot $bot, Channel $channel, Channel\Broadcast $broadcast)
     {
-        $this->authorize('view', [$broadcast, $channel, $project]);
+        $this->authorize('view', [$broadcast, $channel, $bot]);
 
-        return view('projects.subscriptions.channels.broadcasts.show', [
-            'project' => $project,
+        return view('bots.subscriptions.channels.broadcasts.show', [
+            'bot' => $bot,
             'channel' => $channel,
             'broadcast' => $broadcast,
         ]);

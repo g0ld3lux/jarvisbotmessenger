@@ -1,6 +1,6 @@
 angular
     .module("messengerBotApp")
-    .controller("FlowsExportController", function ($scope, $uibModalInstance, $http, $httpParamSerializer, projectId) {
+    .controller("FlowsExportController", function ($scope, $uibModalInstance, $http, $httpParamSerializer, botId) {
         /**
          * Set initial exporting state.
          *
@@ -32,7 +32,7 @@ angular
         /**
          * Load flows.
          */
-        $http.get(BASE_URL + "/api/project/" + projectId + "/flow").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + botId + "/flow").then(function (response) {
             $scope.flows = response.data;
         }).finally(function () {
             $scope.loading = false;
@@ -50,7 +50,7 @@ angular
          */
         $scope.export = function () {
             window.open(
-                BASE_URL + "/api/project/" + projectId + "/flow/export?" + $httpParamSerializer({
+                BASE_URL + "/api/bot/" + botId + "/flow/export?" + $httpParamSerializer({
                     "flows[]": _.map($scope.selected.flows, function (flow) {
                         return flow.id;
                     })

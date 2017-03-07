@@ -13,7 +13,7 @@ class AddTitleToFlows extends Migration
     public function up()
     {
         Schema::table('flows', function (Blueprint $table) {
-            $table->string('title')->after('project_id');
+            $table->string('title')->after('bot_id');
         });
     }
 

@@ -34,7 +34,7 @@ angular
                 .store(PROJECT_ID, $scope.channel)
                 .then(function (response) {
                     toastr.success("Subscription channel created successfully.");
-                    $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/subscriptions/channels/" + response.data.id;
+                    $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels/" + response.data.id;
                 }, function (response) {
                     $scope.errors = response.data;
                     toastr.error("Failed to save channel.");

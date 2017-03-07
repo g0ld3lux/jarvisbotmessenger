@@ -86,14 +86,14 @@ neighbor.
 
 There are two sides to this:
 
-1. Some have spammed projects with invalid bug reports hoping to collect
+1. Some have spammed bots with invalid bug reports hoping to collect
    bounties for pressing a button and running an automated analysis tool. This
    is not cool.
-2. There is a potential for the developers of a project to declare all security
+2. There is a potential for the developers of a bot to declare all security
    bug reports as invalid to save money.
 
 Our team members have an established history of reporting vulnerabilities to
-large open source projects. **We aren't in the business of ripping people off.**
+large open source bots. **We aren't in the business of ripping people off.**
 When in doubt, our policy is to err on the side of generosity.
 
 ### No Proof-of-Concept Required

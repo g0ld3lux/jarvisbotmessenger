@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateFieldsOnProjectsTable extends Migration
+class UpdateFieldsOnBotsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class UpdateFieldsOnProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::table('bots', function (Blueprint $table) {
             $table->dropColumn('app_token');
             $table->dropColumn('verification_token');
             $table->dropColumn('endpoint_token');
@@ -29,7 +29,7 @@ class UpdateFieldsOnProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::table('bots', function (Blueprint $table) {
             $table->dropColumn('page_title');
             $table->dropColumn('page_id');
             $table->dropColumn('page_token');

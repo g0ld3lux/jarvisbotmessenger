@@ -6,4 +6,4 @@ This library can be used to:
 
 You can find a demo GUI [here](http://pxd.me/php-font-lib/www/font_explorer.html).
 
-This project was initiated by the need to read font files in the [DOMPDF project](https://github.com/dompdf/dompdf).
+This bot was initiated by the need to read font files in the [DOMPDF bot](https://github.com/dompdf/dompdf).

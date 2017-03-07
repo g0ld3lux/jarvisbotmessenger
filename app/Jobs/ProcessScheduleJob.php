@@ -70,10 +70,10 @@ class ProcessScheduleJob extends Job implements ShouldQueue
                     'mass_message',
                     null,
                     null,
-                    $this->schedule->message->project,
+                    $this->schedule->message->bot,
                     $this->schedule->recipient,
                     $message,
-                    $bots->get($this->schedule->message->project->page_token)
+                    $bots->get($this->schedule->message->bot->page_token)
                 );
             }
 

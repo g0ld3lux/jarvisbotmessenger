@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use App\Models\Subscription\Channel;
 use App\Models\User;
@@ -14,54 +14,54 @@ class SubscriptionChannelPolicy
 
     /**
      * @param User $user
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isProjectOwner(User $user, Project $project)
+    protected function isBotOwner(User $user, Bot $bot)
     {
-        return $user->id == $project->user_id;
+        return $user->id == $bot->user_id;
     }
 
     /**
      * @param Channel $channel
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isChannelRelatedToProject(Channel $channel, Project $project)
+    protected function isChannelRelatedToBot(Channel $channel, Bot $bot)
     {
-        return $channel->project_id == $project->id;
-    }
-
-    /**
-     * @param User $user
-     * @param Channel $channel
-     * @param Project $project
-     * @return bool
-     */
-    public function view(User $user, Channel $channel, Project $project)
-    {
-        return $this->isProjectOwner($user, $project) && $this->isChannelRelatedToProject($channel, $project);
+        return $channel->bot_id == $bot->id;
     }
 
     /**
      * @param User $user
      * @param Channel $channel
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function edit(User $user, Channel $channel, Project $project)
+    public function view(User $user, Channel $channel, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project) && $this->isChannelRelatedToProject($channel, $project);
+        return $this->isBotOwner($user, $bot) && $this->isChannelRelatedToBot($channel, $bot);
     }
 
     /**
      * @param User $user
      * @param Channel $channel
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function delete(User $user, Channel $channel, Project $project)
+    public function edit(User $user, Channel $channel, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project) && $this->isChannelRelatedToProject($channel, $project);
+        return $this->isBotOwner($user, $bot) && $this->isChannelRelatedToBot($channel, $bot);
+    }
+
+    /**
+     * @param User $user
+     * @param Channel $channel
+     * @param Bot $bot
+     * @return bool
+     */
+    public function delete(User $user, Channel $channel, Bot $bot)
+    {
+        return $this->isBotOwner($user, $bot) && $this->isChannelRelatedToBot($channel, $bot);
     }
 }

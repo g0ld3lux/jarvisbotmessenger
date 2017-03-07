@@ -3136,7 +3136,7 @@ EOT;
      * this sets the line drawing style.
      * width, is the thickness of the line in user units
      * cap is the type of cap to put on the line, values can be 'butt','round','square'
-     *    where the diffference between 'square' and 'butt' is that 'square' projects a flat end past the
+     *    where the diffference between 'square' and 'butt' is that 'square' bots a flat end past the
      *    end of the line.
      * join can be 'miter', 'round', 'bevel'
      * dash is an array which sets the dash pattern, is a series of length values, which are the lengths of the

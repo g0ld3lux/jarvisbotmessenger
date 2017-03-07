@@ -1,6 +1,6 @@
 {
     "_readme": [
-        "This file locks the dependencies of your project to a known state",
+        "This file locks the dependencies of your bot to a known state",
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
@@ -333,7 +333,7 @@
             "require-dev": {
                 "phpunit/phpunit": "@stable"
             },
-            "type": "project",
+            "type": "bot",
             "autoload": {
                 "psr-4": {
                     "XdgBaseDir\\": "src/"
@@ -404,7 +404,7 @@
                 }
             ],
             "description": "Common String Manipulations with regard to casing and singular/plural rules.",
-            "homepage": "http://www.doctrine-project.org",
+            "homepage": "http://www.doctrine-bot.org",
             "keywords": [
                 "inflection",
                 "pluralize",
@@ -2228,7 +2228,7 @@
                     "email": "kotlyar.maksim@gmail.com"
                 },
                 {
-                    "name": "Payum project",
+                    "name": "Payum bot",
                     "homepage": "http://payum.org/"
                 }
             ],
@@ -2296,7 +2296,7 @@
                     "email": "kotlyar.maksim@gmail.com"
                 },
                 {
-                    "name": "Payum project",
+                    "name": "Payum bot",
                     "homepage": "http://payum.org/"
                 }
             ],
@@ -2359,7 +2359,7 @@
                     "email": "kotlyar.maksim@gmail.com"
                 },
                 {
-                    "name": "Payum project",
+                    "name": "Payum bot",
                     "homepage": "http://payum.org/"
                 }
             ],
@@ -2421,7 +2421,7 @@
                     "email": "kotlyar.maksim@gmail.com"
                 },
                 {
-                    "name": "Payum project",
+                    "name": "Payum bot",
                     "homepage": "http://payum.org/"
                 }
             ],
@@ -4287,7 +4287,7 @@
                 {
                     "name": "Armin Ronacher",
                     "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
+                    "role": "Bot Founder"
                 },
                 {
                     "name": "Twig Team",
@@ -5627,7 +5627,7 @@
                     "role": "lead"
                 }
             ],
-            "description": "Library that helps with managing the version number of Git-hosted PHP projects",
+            "description": "Library that helps with managing the version number of Git-hosted PHP bots",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2015-06-21 13:59:46"
         },

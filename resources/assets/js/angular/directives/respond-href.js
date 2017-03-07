@@ -20,7 +20,7 @@ angular
             link: function (scope, element) {
                 element.attr(
                     "href",
-                    BASE_URL + "/projects/" + scope.respond.project_id + "/responds/" + scope.respond.id + "/edit"
+                    BASE_URL + "/bots/" + scope.respond.bot_id + "/responds/" + scope.respond.id + "/edit"
                 );
             }
         }

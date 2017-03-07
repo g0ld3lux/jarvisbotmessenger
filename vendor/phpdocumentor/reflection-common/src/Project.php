@@ -12,12 +12,12 @@
 namespace phpDocumentor\Reflection;
 
 /**
- * Interface for project. Since the definition of a project can be different per factory this interface will be small.
+ * Interface for bot. Since the definition of a bot can be different per factory this interface will be small.
  */
-interface Project
+interface Bot
 {
     /**
-     * Returns the name of the project.
+     * Returns the name of the bot.
      *
      * @return string
      */

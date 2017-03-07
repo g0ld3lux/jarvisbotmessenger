@@ -18924,21 +18924,21 @@ $(function () {
                 $(this).closest("form").submit();
             });
 
-            var $newProjectSelectPageButton = $("#new-project-select-page"),
-                $newProjectClearPageButton = $("#new-project-clear-page");
+            var $newBotSelectPageButton = $("#new-bot-select-page"),
+                $newBotClearPageButton = $("#new-bot-clear-page");
 
-            $newProjectClearPageButton.on("click", function () {
+            $newBotClearPageButton.on("click", function () {
                 $("input[name='page_title']").val("");
                 $("input[name='page_id']").val("");
                 $("input[name='page_token']").val("");
 
                 $("#selected-page-name").html("- none -");
 
-                $newProjectSelectPageButton.show();
-                $newProjectClearPageButton.hide();
+                $newBotSelectPageButton.show();
+                $newBotClearPageButton.hide();
             });
 
-            $newProjectSelectPageButton.on("click", function () {
+            $newBotSelectPageButton.on("click", function () {
                 var $modalContainer = $("#select-page-modal");
 
                 function listPages(uid)
@@ -18974,8 +18974,8 @@ $(function () {
 
                             $modalContainer.modal("hide");
 
-                            $newProjectSelectPageButton.hide();
-                            $newProjectClearPageButton.show();
+                            $newBotSelectPageButton.hide();
+                            $newBotClearPageButton.show();
                         });
                     });
                 }
@@ -19052,7 +19052,7 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("FlowController", function ($scope, $uibModalInstance, $uibModal, $http, toastr, project, flow) {
+    .controller("FlowController", function ($scope, $uibModalInstance, $uibModal, $http, toastr, bot, flow) {
         /**
          * Set initial saving state.
          *
@@ -19082,11 +19082,11 @@ angular
         $scope.flow = flow;
 
         /**
-         * Set initial project.
+         * Set initial bot.
          *
          * @type {{}}
          */
-        $scope.project = project;
+        $scope.bot = bot;
 
         /**
          * Initial errors.
@@ -19171,7 +19171,7 @@ angular
         var deleteMatcher = function (flow, matcher) {
             if (matcher.id) {
                 $http
-                    .delete(BASE_URL + "/api/project/" + project.id + "/flow/" + flow.id + "/matcher/" + matcher.id)
+                    .delete(BASE_URL + "/api/bot/" + bot.id + "/flow/" + flow.id + "/matcher/" + matcher.id)
                     .then(function () {
                         $scope.$broadcast("matcher.processed");
                     }, function () {
@@ -19190,7 +19190,7 @@ angular
          * @param matcher
          */
         var saveMatcher = function (flow, matcher) {
-            var url = BASE_URL + "/api/project/" + project.id + "/flow/" + flow.id + "/matcher";
+            var url = BASE_URL + "/api/bot/" + bot.id + "/flow/" + flow.id + "/matcher";
 
             if (matcher.id) {
                 url += "/" + matcher.id;
@@ -19213,7 +19213,7 @@ angular
         /**
          * Load responds.
          */
-        $http.get(BASE_URL + "/api/project/" + project.id + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + bot.id + "/respond").then(function (response) {
             $scope.responds = response.data;
             $scope.respondsLoading = false;
         });
@@ -19224,7 +19224,7 @@ angular
         $scope.save = function () {
             $scope.saving = true;
 
-            var url = BASE_URL + "/api/project/" + project.id + "/flow";
+            var url = BASE_URL + "/api/bot/" + bot.id + "/flow";
 
             if ($scope.flow.id) {
                 url += "/" + $scope.flow.id;
@@ -19332,7 +19332,7 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("FlowsExportController", function ($scope, $uibModalInstance, $http, $httpParamSerializer, projectId) {
+    .controller("FlowsExportController", function ($scope, $uibModalInstance, $http, $httpParamSerializer, botId) {
         /**
          * Set initial exporting state.
          *
@@ -19364,7 +19364,7 @@ angular
         /**
          * Load flows.
          */
-        $http.get(BASE_URL + "/api/project/" + projectId + "/flow").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + botId + "/flow").then(function (response) {
             $scope.flows = response.data;
         }).finally(function () {
             $scope.loading = false;
@@ -19382,7 +19382,7 @@ angular
          */
         $scope.export = function () {
             window.open(
-                BASE_URL + "/api/project/" + projectId + "/flow/export?" + $httpParamSerializer({
+                BASE_URL + "/api/bot/" + botId + "/flow/export?" + $httpParamSerializer({
                     "flows[]": _.map($scope.selected.flows, function (flow) {
                         return flow.id;
                     })
@@ -19392,7 +19392,7 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("FlowsImportController", function ($scope, $uibModalInstance, Upload, SweetAlert, projectId) {
+    .controller("FlowsImportController", function ($scope, $uibModalInstance, Upload, SweetAlert, botId) {
         /**
          * Set initial exporting state.
          *
@@ -19423,7 +19423,7 @@ angular
             $scope.errors = {};
 
             Upload.upload({
-                url: BASE_URL + "/api/project/" + projectId + "/flow/import",
+                url: BASE_URL + "/api/bot/" + botId + "/flow/import",
                 data: {
                     file: file
                 }
@@ -19467,7 +19467,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/message/" + MESSAGE_ID + "/schedule",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/message/" + MESSAGE_ID + "/schedule",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -19587,7 +19587,7 @@ angular
                         .delete(PROJECT_ID, $scope.message.id)
                         .then(function () {
                             toastr.success("Message deleted successfully.");
-                            $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/messages";
+                            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/messages";
                         }, function () {
                             toastr.error("Failed to delete message.");
                         });
@@ -19625,7 +19625,7 @@ angular
         var updateAnalytics = function (start, end) {
             $scope.analyticsLoading = true;
 
-            ApiUtils.project.analytics(
+            ApiUtils.bot.analytics(
                 PROJECT_ID,
                 _.map(fields, function(value, key) {
                     return key;
@@ -19811,7 +19811,7 @@ angular
         /**
          * Load responds.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond").then(function (response) {
             $scope.responds = response.data;
         }).finally(function () {
             $scope.respondsLoading = false;
@@ -19820,7 +19820,7 @@ angular
         /**
          * Load recipients.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/recipient?all=1").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient?all=1").then(function (response) {
             $scope.recipients = response.data;
         }).finally(function () {
             $scope.recipientsLoading = false;
@@ -19851,7 +19851,7 @@ angular
                 .store(PROJECT_ID, clone)
                 .then(function (response) {
                     toastr.success("Message scheduled successfully.");
-                    $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/messages/" + response.data.id;
+                    $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/messages/" + response.data.id;
                 }, function (response) {
                     $scope.errors = response.data;
                 }).finally(function () {
@@ -19928,7 +19928,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/message",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/message",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -20111,7 +20111,7 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("ProjectAnalyticsController", function ($scope, $http) {
+    .controller("BotAnalyticsController", function ($scope, $http) {
         /**
          * Set initial loading state.
          *
@@ -20132,15 +20132,15 @@ angular
         /**
          * Update analytics chart.
          *
-         * @param project
+         * @param bot
          * @param start
          * @param end
          */
-        var updateAnalytics = function (project, start, end) {
+        var updateAnalytics = function (bot, start, end) {
             $scope.analyticsLoading = true;
 
             $http
-                .get(BASE_URL + "/api/project/" + project.id + "/analytics", {
+                .get(BASE_URL + "/api/bot/" + bot.id + "/analytics", {
                     params: {
                         "fields[]": _.map(fields, function(value, key) {
                             return key;
@@ -20182,7 +20182,7 @@ angular
                 opens: "left",
                 eventHandlers: {
                     "apply.daterangepicker": function ($event) {
-                        updateAnalytics($scope.project, $event.model.startDate, $event.model.endDate);
+                        updateAnalytics($scope.bot, $event.model.startDate, $event.model.endDate);
                     }
                 }
             },
@@ -20251,13 +20251,13 @@ angular
         /**
          * Load analytics data.
          */
-        $scope.$on("project.loaded", function ($event, project) {
-            updateAnalytics(project, $scope.datePicker.date.startDate, $scope.datePicker.date.endDate);
+        $scope.$on("bot.loaded", function ($event, bot) {
+            updateAnalytics(bot, $scope.datePicker.date.startDate, $scope.datePicker.date.endDate);
         });
     });
 angular
     .module("messengerBotApp")
-    .controller("ProjectDashboardFlowsController", function ($scope, toastr, $http, SweetAlert, $uibModal) {
+    .controller("BotDashboardFlowsController", function ($scope, toastr, $http, SweetAlert, $uibModal) {
         /**
          * Determine if flows are loading.
          *
@@ -20299,7 +20299,7 @@ angular
                 });
 
                 $http
-                    .post(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/sort", { sort: positions })
+                    .post(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/sort", { sort: positions })
                     .then(function (response) {
                         if (response.data.success) {
                             toastr.success("Flow order changed.");
@@ -20326,14 +20326,14 @@ angular
                     flow: function () {
                         return angular.copy(flow);
                     },
-                    project: function () {
-                        return $scope.project;
+                    bot: function () {
+                        return $scope.bot;
                     }
                 }
             });
 
             modalInstance.result.then(function (flow) {
-                $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
+                $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
                     if ($scope.flows.filter(function (item) { return item.id == response.data.id }).length <= 0) {
                         $scope.flows.push(response.data);
                     } else {
@@ -20357,7 +20357,7 @@ angular
         var loadFlows = function () {
             $scope.flowsLoading = true;
 
-            $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/flow").then(function (response) {
+            $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow").then(function (response) {
                 $scope.flows = response.data;
             }).finally(function () {
                 $scope.flowsLoading = false;
@@ -20382,7 +20382,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    $http.delete(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
+                    $http.delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
                         if (response.data.success) {
                             toastr.success("Flow deleted successfully.");
                             $scope.flows = $scope.flows.filter(function (item) {
@@ -20407,7 +20407,7 @@ angular
          */
         $scope.makeDefault = function (flow) {
             $http
-                .post(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
+                .post(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
                 .then(function (response) {
                     if (response.data.success) {
                         toastr.success("Default flow changed.");
@@ -20432,7 +20432,7 @@ angular
          */
         $scope.removeDefault = function (flow) {
             $http
-                .delete(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
+                .delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
                 .then(function (response) {
                     if (response.data.success) {
                         toastr.success("Default flow removed.");
@@ -20468,7 +20468,7 @@ angular
          * @returns {string}
          */
         $scope.respondHref = function (respond) {
-            return BASE_URL + "/projects/" + PROJECT_ID + "/responds/" + respond.id + "/edit";
+            return BASE_URL + "/bots/" + PROJECT_ID + "/responds/" + respond.id + "/edit";
         };
 
         /**
@@ -20479,7 +20479,7 @@ angular
                 templateUrl: "FlowsExportController.html",
                 controller: "FlowsExportController",
                 resolve: {
-                    projectId: function () {
+                    botId: function () {
                         return PROJECT_ID;
                     }
                 }
@@ -20494,7 +20494,7 @@ angular
                 templateUrl: "FlowsImportController.html",
                 controller: "FlowsImportController",
                 resolve: {
-                    projectId: function () {
+                    botId: function () {
                         return PROJECT_ID;
                     }
                 }
@@ -20510,20 +20510,20 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("ProjectDashboardController", function ($scope, $uibModal, FacebookService, $http, toastr, SweetAlert) {
+    .controller("BotDashboardController", function ($scope, $uibModal, FacebookService, $http, toastr, SweetAlert) {
         /**
-         * Set initial project.
+         * Set initial bot.
          *
          * @type {{}}
          */
-        $scope.project = {};
+        $scope.bot = {};
 
         /**
-         * Determine if project is loading.
+         * Determine if bot is loading.
          *
          * @type {boolean}
          */
-        $scope.projectLoading = true;
+        $scope.botLoading = true;
 
         /**
          * Show FB auth error.
@@ -20537,44 +20537,44 @@ angular
         };
 
         /**
-         * Execute page connection to a project.
+         * Execute page connection to a bot.
          *
-         * @param project
+         * @param bot
          * @param page
          */
-        var connectPage = function (project, page) {
+        var connectPage = function (bot, page) {
             $http
-                .post(BASE_URL + "/api/project/" + project.id + "/page/connect", { page: page })
+                .post(BASE_URL + "/api/bot/" + bot.id + "/page/connect", { page: page })
                 .then(function (response) {
-                    project.page_id = response.data.page_id;
-                    project.page_title = response.data.page_title;
-                    project.page_token = response.data.page_token;
-                    project.page_token_expires_at = response.data.page_token_expires_at;
-                    project.app_subscribed = response.data.app_subscribed;
+                    bot.page_id = response.data.page_id;
+                    bot.page_title = response.data.page_title;
+                    bot.page_token = response.data.page_token;
+                    bot.page_token_expires_at = response.data.page_token_expires_at;
+                    bot.app_subscribed = response.data.app_subscribed;
 
                     toastr.success("Facebook page \"" + page.name + "\" connected successfully.");
                 }, function () {
-                    toastr.error("Failed to connect facebook page to this project.");
+                    toastr.error("Failed to connect facebook page to this bot.");
                 });
         };
 
         /**
-         * Load active project.
+         * Load active bot.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID).then(function (response) {
-            $scope.project = response.data;
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID).then(function (response) {
+            $scope.bot = response.data;
 
-            $scope.projectLoading = false;
+            $scope.botLoading = false;
 
-            $scope.$broadcast("project.loaded", $scope.project);
+            $scope.$broadcast("bot.loaded", $scope.bot);
         });
 
         /**
          * Open modal with pages list.
          *
-         * @param project
+         * @param bot
          */
-        $scope.connectPage = function (project) {
+        $scope.connectPage = function (bot) {
             FacebookService.login().then(function () {
                 FacebookService.me().then(function (userResponse) {
                     FacebookService.pages(userResponse.id).then(function (pagesResponse) {
@@ -20590,7 +20590,7 @@ angular
                             });
 
                             modalInstance.result.then(function (page) {
-                                connectPage(project, page);
+                                connectPage(bot, page);
                             });
                         } else {
                             SweetAlert.swal({
@@ -20613,9 +20613,9 @@ angular
         /**
          * Disconnect facebook page.
          *
-         * @param project
+         * @param bot
          */
-        $scope.disconnectPage = function (project) {
+        $scope.disconnectPage = function (bot) {
             SweetAlert.swal({
                 title: "Are you sure?",
                 text: "You will not be able to recover this state!",
@@ -20627,21 +20627,21 @@ angular
             }, function (confirm){
                 if (confirm) {
                     $http
-                        .delete(BASE_URL + "/api/project/" + project.id + "/page/disconnect")
+                        .delete(BASE_URL + "/api/bot/" + bot.id + "/page/disconnect")
                         .then(function (response) {
                             if (response.data.success) {
-                                project.page_id = null;
-                                project.page_title = null;
-                                project.page_token = null;
-                                project.page_token_expires_at = null;
-                                project.app_subscribed = false;
+                                bot.page_id = null;
+                                bot.page_title = null;
+                                bot.page_token = null;
+                                bot.page_token_expires_at = null;
+                                bot.app_subscribed = false;
 
                                 toastr.success("Facebook page disconnected successfully.");
                             } else {
-                                toastr.error("Failed to disconnect facebook page to this project.");
+                                toastr.error("Failed to disconnect facebook page to this bot.");
                             }
                         }, function () {
-                            toastr.error("Failed to disconnect facebook page to this project.");
+                            toastr.error("Failed to disconnect facebook page to this bot.");
                         });
                 }
 
@@ -20651,7 +20651,7 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("RecipientAddToChannelController", function ($scope, toastr, $uibModalInstance, ApiUtils, $http, projectId, recipientId) {
+    .controller("RecipientAddToChannelController", function ($scope, toastr, $uibModalInstance, ApiUtils, $http, botId, recipientId) {
         /**
          * Set initial saving state.
          *
@@ -20690,12 +20690,12 @@ angular
         /**
          * Load all channels.
          */
-        ApiUtils.recipient.channel.index(projectId, recipientId).then(function (response) {
+        ApiUtils.recipient.channel.index(botId, recipientId).then(function (response) {
             var recipientChannels = _.map(response.data, function (value) {
                 return value.id;
             });
 
-            $http.get(BASE_URL + "/api/project/" + projectId + "/subscription/channel", { params: { all: true } }).then(function (allResponse) {
+            $http.get(BASE_URL + "/api/bot/" + botId + "/subscription/channel", { params: { all: true } }).then(function (allResponse) {
                 $scope.channels = allResponse.data.filter(function (channel) {
                     return recipientChannels.indexOf(channel.id) == -1;
                 });
@@ -20716,7 +20716,7 @@ angular
             $scope.saving = true;
 
             ApiUtils.recipient.channel.store(
-                projectId,
+                botId,
                 recipientId,
                 _.map($scope.relation.channels, function (value) {
                     return { id: value.id, type: "manual" };
@@ -20761,7 +20761,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID + "/channel",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID + "/channel",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -20838,7 +20838,7 @@ angular
                 templateUrl: "RecipientAddToChannelController.html",
                 controller: "RecipientAddToChannelController",
                 resolve: {
-                    projectId: function () {
+                    botId: function () {
                         return PROJECT_ID;
                     },
                     recipientId: function () {
@@ -20880,7 +20880,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    ApiUtils.recipient.refresh(recipient.project_id, recipient.id).then(function (response) {
+                    ApiUtils.recipient.refresh(recipient.bot_id, recipient.id).then(function (response) {
                         $scope.$emit("recipient.refresh.success", response.data);
                     }, function (response) {
                         $scope.$emit("recipient.refresh.fail", response);
@@ -20921,7 +20921,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID + "/history",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID + "/history",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -20987,9 +20987,9 @@ angular
         $scope.recipient = {};
 
         /**
-         * Load project.
+         * Load bot.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID).then(function (response) {
             $scope.recipient = response.data;
 
             $scope.$broadcast("recipient.loaded", $scope.recipient);
@@ -21032,15 +21032,15 @@ angular
         /**
          * Update analytics chart.
          *
-         * @param project
+         * @param bot
          * @param start
          * @param end
          */
-        var updateAnalytics = function (project, start, end) {
+        var updateAnalytics = function (bot, start, end) {
             $scope.analyticsLoading = true;
 
             $http
-                .get(BASE_URL + "/api/project/" + project.id + "/analytics", {
+                .get(BASE_URL + "/api/bot/" + bot.id + "/analytics", {
                     params: {
                         "fields[]": _.map(fields, function(value, key) {
                             return key;
@@ -21082,7 +21082,7 @@ angular
                 opens: "left",
                 eventHandlers: {
                     "apply.daterangepicker": function ($event) {
-                        updateAnalytics($scope.project, $event.model.startDate, $event.model.endDate);
+                        updateAnalytics($scope.bot, $event.model.startDate, $event.model.endDate);
                     }
                 }
             },
@@ -21151,8 +21151,8 @@ angular
         /**
          * Load analytics data.
          */
-        $scope.$on("project.loaded", function ($event, project) {
-            updateAnalytics(project, $scope.datePicker.date.startDate, $scope.datePicker.date.endDate);
+        $scope.$on("bot.loaded", function ($event, bot) {
+            updateAnalytics(bot, $scope.datePicker.date.startDate, $scope.datePicker.date.endDate);
         });
     });
 angular
@@ -21166,28 +21166,28 @@ angular
         $scope.recipientsLoading = true;
 
         /**
-         * Set initial project.
+         * Set initial bot.
          *
          * @type {{}}
          */
-        $scope.project = {};
+        $scope.bot = {};
 
         /**
-         * Determine if project is loading.
+         * Determine if bot is loading.
          *
          * @type {boolean}
          */
-        $scope.projectLoading = true;
+        $scope.botLoading = true;
 
         /**
-         * Load active project.
+         * Load active bot.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID).then(function (response) {
-            $scope.project = response.data;
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID).then(function (response) {
+            $scope.bot = response.data;
 
-            $scope.projectLoading = false;
+            $scope.botLoading = false;
 
-            $scope.$broadcast("project.loaded", $scope.project);
+            $scope.$broadcast("bot.loaded", $scope.bot);
         });
 
         /**
@@ -21196,7 +21196,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/recipient",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -21272,7 +21272,7 @@ angular
         /**
          * Load accounts.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond").then(function (response) {
             $scope.responds = response.data;
         }, function () {
             toastr.error("Failed to load responds.");
@@ -21296,7 +21296,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    $http.delete(BASE_URL + "/api/project/" + PROJECT_ID + "/respond/" + respond.id).then(function (response) {
+                    $http.delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond/" + respond.id).then(function (response) {
                         if (response.data.success) {
                             toastr.success("Respond deleted successfully.");
                             $scope.responds = $scope.responds.filter(function (item) {
@@ -21318,12 +21318,12 @@ angular
          * Add new respond.
          */
         $scope.addRespond = function () {
-            $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/responds/create";
+            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/responds/create";
         };
     });
 angular
     .module("messengerBotApp")
-    .controller("SubscriptionChannelAddBroadcastController", function ($scope, $uibModalInstance, $http, toastr, ApiUtils, projectId, channelId) {
+    .controller("SubscriptionChannelAddBroadcastController", function ($scope, $uibModalInstance, $http, toastr, ApiUtils, botId, channelId) {
         /**
          * Determine if responds are loading.
          *
@@ -21385,7 +21385,7 @@ angular
         /**
          * Load responds.
          */
-        $http.get(BASE_URL + "/api/project/" + projectId + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + botId + "/respond").then(function (response) {
             $scope.responds = response.data;
         }).finally(function () {
             $scope.respondsLoading = false;
@@ -21404,7 +21404,7 @@ angular
                 .subscription
                 .channel
                 .broadcast
-                .store(projectId, channelId, clone)
+                .store(botId, channelId, clone)
                 .then(function (response) {
                     toastr.success("Broadcast scheduled successfully.");
                     $uibModalInstance.close(response.data);
@@ -21459,7 +21459,7 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("SubscriptionChannelAddRecipientsController", function ($scope, $uibModalInstance, DTOptionsBuilder, DTColumnBuilder, RecipientsTableService, ApiUtils, $compile, toastr, projectId, channelId) {
+    .controller("SubscriptionChannelAddRecipientsController", function ($scope, $uibModalInstance, DTOptionsBuilder, DTColumnBuilder, RecipientsTableService, ApiUtils, $compile, toastr, botId, channelId) {
         /**
          * @type {boolean}
          */
@@ -21492,7 +21492,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/recipient/missing",
+                url: BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/recipient/missing",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -21576,7 +21576,7 @@ angular
                 .subscription
                 .channel
                 .recipient
-                .store(projectId, channelId, [{ id: id, type: 'manual' }])
+                .store(botId, channelId, [{ id: id, type: 'manual' }])
                 .then(function () {
                     $scope.dtInstance.reloadData(null, false);
                     toastr.success("Recipient successfully added to a channel.");
@@ -21608,7 +21608,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast/" + BROADCAST_ID + "/schedule",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast/" + BROADCAST_ID + "/schedule",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -21732,7 +21732,7 @@ angular
                         .delete(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.broadcast.id)
                         .then(function () {
                             toastr.success("Broadcast deleted successfully.");
-                            $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/subscriptions/channels/" + SUBSCRIPTION_CHANNEL_ID;
+                            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels/" + SUBSCRIPTION_CHANNEL_ID;
                         }, function () {
                             toastr.error("Failed to delete broadcast.");
                         });
@@ -21770,7 +21770,7 @@ angular
         var updateAnalytics = function (start, end) {
             $scope.analyticsLoading = true;
 
-            ApiUtils.project.analytics(
+            ApiUtils.bot.analytics(
                 PROJECT_ID,
                 _.map(fields, function(value, key) {
                     return key;
@@ -21905,7 +21905,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/broadcast",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -21980,7 +21980,7 @@ angular
                 templateUrl: "SubscriptionChannelAddBroadcastController.html",
                 controller: "SubscriptionChannelAddBroadcastController",
                 resolve: {
-                    projectId: function () {
+                    botId: function () {
                         return PROJECT_ID;
                     },
                     channelId: function () {
@@ -22093,7 +22093,7 @@ angular
                 if (confirm) {
                     ApiUtils.subscription.channel.delete(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID).then(function () {
                         toastr.success("Channel deleted successfully.");
-                        $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/subscriptions/channels";
+                        $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels";
                     }, function () {
                         toastr.error("Failed to delete channel.");
                     });
@@ -22131,7 +22131,7 @@ angular
         var updateAnalytics = function (start, end) {
             $scope.analyticsLoading = true;
 
-            ApiUtils.project.analytics(
+            ApiUtils.bot.analytics(
                 PROJECT_ID,
                 _.map(fields, function(value, key) {
                     return key;
@@ -22255,7 +22255,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/recipient",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID + "/recipient",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -22358,7 +22358,7 @@ angular
                 controller: "SubscriptionChannelAddRecipientsController",
                 size: "lg",
                 resolve: {
-                    projectId: function () {
+                    botId: function () {
                         return PROJECT_ID;
                     },
                     channelId: function () {
@@ -22390,9 +22390,9 @@ angular
         $scope.channel = {};
 
         /**
-         * Load project.
+         * Load bot.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID).then(function (response) {
             $scope.channel = response.data;
 
             $scope.$broadcast("channel.loaded", $scope.channel);
@@ -22436,7 +22436,7 @@ angular
         var updateAnalytics = function (start, end) {
             $scope.analyticsLoading = true;
 
-            ApiUtils.project.analytics(
+            ApiUtils.bot.analytics(
                 PROJECT_ID,
                 _.map(fields, function(value, key) {
                     return key;
@@ -22580,7 +22580,7 @@ angular
                 .store(PROJECT_ID, $scope.channel)
                 .then(function (response) {
                     toastr.success("Subscription channel created successfully.");
-                    $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/subscriptions/channels/" + response.data.id;
+                    $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels/" + response.data.id;
                 }, function (response) {
                     $scope.errors = response.data;
                     toastr.error("Failed to save channel.");
@@ -22612,7 +22612,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/subscription/channel",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -22798,20 +22798,20 @@ angular
     .service("ApiUtils", function ($http) {
         return {
             /**
-             * Project helpers.
+             * Bot helpers.
              */
-            project: {
+            bot: {
                 /**
                  * Fetch analytics data.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param fields
                  * @param start
                  * @param end
                  * @returns HttpPromise
                  */
-                analytics: function (projectId, fields, start, end) {
-                    return $http.get(BASE_URL + "/api/project/" + projectId + "/analytics", {
+                analytics: function (botId, fields, start, end) {
+                    return $http.get(BASE_URL + "/api/bot/" + botId + "/analytics", {
                         params: {
                             "fields[]": fields,
                             start: start,
@@ -22832,35 +22832,35 @@ angular
                     /**
                      * Disable recipient chat.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @returns HttpPromise
                      */
-                    disable: function (projectId, recipientId) {
-                        return $http.post(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/chat/disable");
+                    disable: function (botId, recipientId) {
+                        return $http.post(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/chat/disable");
                     },
 
                     /**
                      * Enable recipient chat.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @returns HttpPromise
                      */
-                    enable: function (projectId, recipientId) {
-                        return $http.post(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/chat/enable");
+                    enable: function (botId, recipientId) {
+                        return $http.post(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/chat/enable");
                     }
                 },
 
                 /**
                  * Refresh data from API.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param recipientId
                  * @returns HttpPromise
                  */
-                refresh: function (projectId, recipientId) {
-                    return $http.post(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/refresh");
+                refresh: function (botId, recipientId) {
+                    return $http.post(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/refresh");
                 },
 
                 /**
@@ -22870,12 +22870,12 @@ angular
                     /**
                      * Load all recipient channels.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @returns HttpPromise
                      */
-                    index: function (projectId, recipientId) {
-                        return $http.get(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/channel", {
+                    index: function (botId, recipientId) {
+                        return $http.get(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/channel", {
                             params: {
                                 all: true
                             }
@@ -22885,25 +22885,25 @@ angular
                     /**
                      * Remove recipient from channel.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @param channelId
                      * @returns HttpPromise
                      */
-                    delete: function (projectId, recipientId, channelId) {
-                        return $http.delete(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/channel/" + channelId);
+                    delete: function (botId, recipientId, channelId) {
+                        return $http.delete(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/channel/" + channelId);
                     },
 
                     /**
                      * Attach new channels.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @param channels
                      * @returns HttpPromise
                      */
-                    store: function (projectId, recipientId, channels) {
-                        return $http.post(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/channel", { channels: channels });
+                    store: function (botId, recipientId, channels) {
+                        return $http.post(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/channel", { channels: channels });
                     }
                 }
             },
@@ -22919,35 +22919,35 @@ angular
                     /**
                      * Store new channel.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param channel
                      * @returns HttpPromise
                      */
-                    store: function (projectId, channel) {
-                        return $http.post(BASE_URL + "/api/project/" + projectId + "/subscription/channel", channel);
+                    store: function (botId, channel) {
+                        return $http.post(BASE_URL + "/api/bot/" + botId + "/subscription/channel", channel);
                     },
 
                     /**
                      * Update existing channel.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param channelId
                      * @param channel
                      * @returns HttpPromise
                      */
-                    update: function (projectId, channelId, channel) {
-                        return $http.put(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId, channel);
+                    update: function (botId, channelId, channel) {
+                        return $http.put(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId, channel);
                     },
 
                     /**
                      * Delete channel.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param channelId
                      * @returns HttpPromise
                      */
-                    delete: function (projectId, channelId) {
-                        return $http.delete(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId);
+                    delete: function (botId, channelId) {
+                        return $http.delete(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId);
                     },
 
                     /**
@@ -22957,13 +22957,13 @@ angular
                         /**
                          * Store new recipients.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param recipients
                          * @returns HttpPromise
                          */
-                        store: function (projectId, channelId, recipients) {
-                            return $http.post(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/recipient", {
+                        store: function (botId, channelId, recipients) {
+                            return $http.post(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/recipient", {
                                 recipients: recipients
                             });
                         },
@@ -22971,13 +22971,13 @@ angular
                         /**
                          * Remove recipient from a channel.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param recipientId
                          * @returns HttpPromises
                          */
-                        delete: function (projectId, channelId, recipientId) {
-                            return $http.delete(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/recipient/" + recipientId);
+                        delete: function (botId, channelId, recipientId) {
+                            return $http.delete(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/recipient/" + recipientId);
                         }
                     },
 
@@ -22988,37 +22988,37 @@ angular
                         /**
                          * Retrieve single broadcast.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param broadcastId
                          * @returns HttpPromise
                          */
-                        show: function (projectId, channelId, broadcastId) {
-                            return $http.get(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/broadcast/" + broadcastId);
+                        show: function (botId, channelId, broadcastId) {
+                            return $http.get(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/broadcast/" + broadcastId);
                         },
 
                         /**
                          * Store new broadcast.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param broadcast
                          * @returns HttpPromise
                          */
-                        store: function (projectId, channelId, broadcast) {
-                            return $http.post(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/broadcast", broadcast);
+                        store: function (botId, channelId, broadcast) {
+                            return $http.post(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/broadcast", broadcast);
                         },
 
                         /**
                          * Remove recipient from a channel.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param broadcastId
                          * @returns HttpPromises
                          */
-                        delete: function (projectId, channelId, broadcastId) {
-                            return $http.delete(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/broadcast/" + broadcastId);
+                        delete: function (botId, channelId, broadcastId) {
+                            return $http.delete(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/broadcast/" + broadcastId);
                         }
                     }
                 }
@@ -23031,34 +23031,34 @@ angular
                 /**
                  * Retrieve single message.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param messageId
                  * @returns HttpPromise
                  */
-                show: function (projectId, messageId) {
-                    return $http.get(BASE_URL + "/api/project/" + projectId + "/message/" + messageId);
+                show: function (botId, messageId) {
+                    return $http.get(BASE_URL + "/api/bot/" + botId + "/message/" + messageId);
                 },
 
                 /**
                  * Remove message.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param messageId
                  * @returns HttpPromises
                  */
-                delete: function (projectId, messageId) {
-                    return $http.delete(BASE_URL + "/api/project/" + projectId + "/message/" + messageId);
+                delete: function (botId, messageId) {
+                    return $http.delete(BASE_URL + "/api/bot/" + botId + "/message/" + messageId);
                 },
 
                 /**
                  * Store new message.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param message
                  * @returns HttpPromise
                  */
-                store: function (projectId, message) {
-                    return $http.post(BASE_URL + "/api/project/" + projectId + "/message", message);
+                store: function (botId, message) {
+                    return $http.post(BASE_URL + "/api/bot/" + botId + "/message", message);
                 }
             }
         }
@@ -23091,7 +23091,7 @@ angular
              * @returns {string}
              */
             joinedAt: function (data, type, full, meta) {
-                return full.joined_at ? $filter("projectTime")(full.joined_at) : "-";
+                return full.joined_at ? $filter("botTime")(full.joined_at) : "-";
             },
 
             /**
@@ -23130,7 +23130,7 @@ angular
          * @returns {string}
          */
         this.createdAt = function (data, type, full, meta) {
-            return full.created_at ? $filter("projectTime")(full.created_at) : "-";
+            return full.created_at ? $filter("botTime")(full.created_at) : "-";
         };
 
         /**
@@ -23143,7 +23143,7 @@ angular
          * @returns {string}
          */
         this.scheduledAt = function (data, type, full, meta) {
-            return full.scheduled_at ? $filter("projectTime")(full.scheduled_at) : "-";
+            return full.scheduled_at ? $filter("botTime")(full.scheduled_at) : "-";
         };
 
         /**
@@ -23156,7 +23156,7 @@ angular
          * @returns {string}
          */
         this.finishedAt = function (data, type, full, meta) {
-            return full.finished_at ? $filter("projectTime")(full.finished_at) : "-";
+            return full.finished_at ? $filter("botTime")(full.finished_at) : "-";
         };
     });
 angular
@@ -23205,7 +23205,7 @@ angular
          * @returns {string}
          */
         this.scheduledAt = function (data, type, full, meta) {
-            return full.scheduled_at ? $filter("projectTime")(full.scheduled_at) : "-";
+            return full.scheduled_at ? $filter("botTime")(full.scheduled_at) : "-";
         };
 
         /**
@@ -23216,7 +23216,7 @@ angular
          * @returns {string}
          */
         this.sentAt = function (data, type, full, meta) {
-            return full.sent_at ? $filter("projectTime")(full.sent_at) : "not sent yet";
+            return full.sent_at ? $filter("botTime")(full.sent_at) : "not sent yet";
         }
     });
 angular
@@ -23418,7 +23418,7 @@ angular
          * @returns {string}
          */
         this.scheduledAt = function (data, type, full, meta) {
-            return full.scheduled_at ? $filter("projectTime")(full.scheduled_at) : "-";
+            return full.scheduled_at ? $filter("botTime")(full.scheduled_at) : "-";
         };
 
         /**
@@ -23429,7 +23429,7 @@ angular
          * @returns {string}
          */
         this.sentAt = function (data, type, full, meta) {
-            return full.sent_at ? $filter("projectTime")(full.sent_at) : "not sent yet";
+            return full.sent_at ? $filter("botTime")(full.sent_at) : "not sent yet";
         }
     });
 angular
@@ -23454,7 +23454,7 @@ angular
             link: function (scope, element) {
                 element.attr(
                     "href",
-                    BASE_URL + "/projects/" + PROJECT_ID + "/subscriptions/channels/" + scope.broadcast.channel_id + "/broadcasts/" + scope.broadcast.id
+                    BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels/" + scope.broadcast.channel_id + "/broadcasts/" + scope.broadcast.id
                 );
             }
         }
@@ -23481,7 +23481,7 @@ angular
             link: function (scope, element) {
                 element.attr(
                     "href",
-                    BASE_URL + "/projects/" + scope.channel.project_id + "/subscriptions/channels/" + scope.channel.id
+                    BASE_URL + "/bots/" + scope.channel.bot_id + "/subscriptions/channels/" + scope.channel.id
                 );
             }
         }
@@ -23522,10 +23522,10 @@ angular
                         closeOnConfirm: false
                     }, function (confirm){
                         if (confirm) {
-                            ApiUtils.subscription.channel.recipient.delete(recipient.project_id, recipient.channel_id, recipient.id).then(function () {
-                                scope.$emit("channel.recipient.delete.success", recipient.project_id, recipient.channel_id, recipient.id);
+                            ApiUtils.subscription.channel.recipient.delete(recipient.bot_id, recipient.channel_id, recipient.id).then(function () {
+                                scope.$emit("channel.recipient.delete.success", recipient.bot_id, recipient.channel_id, recipient.id);
                             }, function () {
-                                scope.$emit("channel.recipient.delete.fail", recipient.project_id, recipient.channel_id, recipient.id);
+                                scope.$emit("channel.recipient.delete.fail", recipient.bot_id, recipient.channel_id, recipient.id);
                             });
                         }
 
@@ -23590,14 +23590,14 @@ angular
             link: function (scope, element) {
                 element.attr(
                     "href",
-                    BASE_URL + "/projects/" + scope.message.project_id + "/messages/" + scope.message.id
+                    BASE_URL + "/bots/" + scope.message.bot_id + "/messages/" + scope.message.id
                 );
             }
         }
     });
 angular
     .module("messengerBotApp")
-    .directive("projectTime", function () {
+    .directive("botTime", function () {
         var defaultFormat = "MMM D, YYYY, h:mm A";
 
         return {
@@ -23610,7 +23610,7 @@ angular
              * Directive scope.
              */
             scope: {
-                project: "=projectTime",
+                bot: "=botTime",
                 format: "@format",
                 time: "=time"
             },
@@ -23621,7 +23621,7 @@ angular
             link: function (scope, element) {
                 element.text(
                     moment(scope.time)
-                        .tz(scope.project ? scope.project.timezone : PROJECT_TIMEZONE)
+                        .tz(scope.bot ? scope.bot.timezone : PROJECT_TIMEZONE)
                         .format(scope.format ? scope.format : defaultFormat)
                 );
             }
@@ -23663,10 +23663,10 @@ angular
                         closeOnConfirm: false
                     }, function (confirm){
                         if (confirm) {
-                            ApiUtils.recipient.channel.delete(channel.project_id, channel.recipient_id, channel.channel_id).then(function () {
-                                scope.$emit("recipient.channel.delete.success", channel.project_id, channel.recipient_id, channel.channel_id);
+                            ApiUtils.recipient.channel.delete(channel.bot_id, channel.recipient_id, channel.channel_id).then(function () {
+                                scope.$emit("recipient.channel.delete.success", channel.bot_id, channel.recipient_id, channel.channel_id);
                             }, function () {
-                                scope.$emit("recipient.channel.delete.fail", channel.project_id, channel.recipient_id, channel.channel_id);
+                                scope.$emit("recipient.channel.delete.fail", channel.bot_id, channel.recipient_id, channel.channel_id);
                             });
                         }
 
@@ -23683,7 +23683,7 @@ angular
 
                 buttons.push("<button type=\"button\" class=\"btn btn-danger\" uib-tooltip=\"Remove from channel\" tooltip-trigger=\"mouseenter\" ng-click=\"removeRecipientFromChannel(channel)\"><i class=\"fa fa-trash\"></i></button>");
 
-                buttons.push("<a class=\"btn btn-default\" uib-tooltip=\"Channel details\" tooltip-trigger=\"mouseenter\" ng-href=\"{{ BASE_URL }}/projects/{{ channel.project_id }}/subscriptions/channels/{{ channel.channel_id }}\"><i class=\"fa fa-arrow-right\"></i></a>");
+                buttons.push("<a class=\"btn btn-default\" uib-tooltip=\"Channel details\" tooltip-trigger=\"mouseenter\" ng-href=\"{{ BASE_URL }}/bots/{{ channel.bot_id }}/subscriptions/channels/{{ channel.channel_id }}\"><i class=\"fa fa-arrow-right\"></i></a>");
 
                 return buttons.join(" ");
             }
@@ -23737,7 +23737,7 @@ angular
                  * @param recipient
                  */
                 var disableChat = function (recipient) {
-                    ApiUtils.recipient.chat.disable(recipient.project_id, recipient.id).then(function () {
+                    ApiUtils.recipient.chat.disable(recipient.bot_id, recipient.id).then(function () {
                         recipient.chat_disabled = true;
                         scope.$emit("recipient.chat.disable.success", recipient);
                     }, function () {
@@ -23751,7 +23751,7 @@ angular
                  * @param recipient
                  */
                 var enableChat = function (recipient) {
-                    ApiUtils.recipient.chat.enable(recipient.project_id, recipient.id).then(function () {
+                    ApiUtils.recipient.chat.enable(recipient.bot_id, recipient.id).then(function () {
                         recipient.chat_disabled = false;
                         scope.$emit("recipient.chat.enable.success", recipient);
                     }, function () {
@@ -23790,7 +23790,7 @@ angular
             link: function (scope, element) {
                 element.attr(
                     "href",
-                    BASE_URL + "/projects/" + scope.recipient.project_id + "/recipients/" + scope.recipient.id
+                    BASE_URL + "/bots/" + scope.recipient.bot_id + "/recipients/" + scope.recipient.id
                 );
             }
         }
@@ -23923,18 +23923,18 @@ angular
             link: function (scope, element) {
                 element.attr(
                     "href",
-                    BASE_URL + "/projects/" + scope.respond.project_id + "/responds/" + scope.respond.id + "/edit"
+                    BASE_URL + "/bots/" + scope.respond.bot_id + "/responds/" + scope.respond.id + "/edit"
                 );
             }
         }
     });
 angular
     .module("messengerBotApp")
-    .filter("projectTime", function ($filter) {
+    .filter("botTime", function ($filter) {
         var defaultFormat = "MMM D, YYYY, h:mm A";
 
-        return function (input, project, format) {
-            return moment(input).tz(project ? project.timezone : PROJECT_TIMEZONE).format(format ? format : defaultFormat);
+        return function (input, bot, format) {
+            return moment(input).tz(bot ? bot.timezone : PROJECT_TIMEZONE).format(format ? format : defaultFormat);
         };
     });
 angular

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Respond\UpdateRequest;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use Carbon\Carbon;
 use Notification;
@@ -11,48 +11,48 @@ use Notification;
 class RespondsController extends Controller
 {
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @return \Illuminate\Http\Response
      */
-    public function index(Project $project)
+    public function index(Bot $bot)
     {
-        $this->authorize('view', $project);
+        $this->authorize('view', $bot);
 
-        return view('projects.responds.index', ['project' => $project]);
+        return view('bots.responds.index', ['bot' => $bot]);
     }
 
     /**
      * Show new link form.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create(Project $project)
+    public function create(Bot $bot)
     {
-        $this->authorize('view', $project);
+        $this->authorize('view', $bot);
 
         $respond = new Respond([
-            'title' => 'Draft v.'.adjust_project_timezone($project, new Carbon())->format('F j, Y, g:i A'),
+            'title' => 'Draft v.'.adjust_bot_timezone($bot, new Carbon())->format('F j, Y, g:i A'),
         ]);
-        $respond->project()->associate($project);
+        $respond->bot()->associate($bot);
         $respond->save();
 
-        return redirect()->route('projects.responds.edit', [$project->id, $respond->id]);
+        return redirect()->route('bots.responds.edit', [$bot->id, $respond->id]);
     }
 
     /**
      * Edit matcher.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(Project $project, Respond $respond)
+    public function edit(Bot $bot, Respond $respond)
     {
-        $this->authorize('edit', [$respond, $project]);
+        $this->authorize('edit', [$respond, $bot]);
 
-        return view('projects.responds.edit', [
-            'project' => $project,
+        return view('bots.responds.edit', [
+            'bot' => $bot,
             'respond' => $respond,
             'taxonomies' => $respond->taxonomies()->ofRoot()->ordered()->get(),
         ]);
@@ -62,13 +62,13 @@ class RespondsController extends Controller
      * Update matcher.
      *
      * @param UpdateRequest $request
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateRequest $request, Project $project, Respond $respond)
+    public function update(UpdateRequest $request, Bot $bot, Respond $respond)
     {
-        $this->authorize('edit', [$respond, $project]);
+        $this->authorize('edit', [$respond, $bot]);
 
         $respond->fill(['title' => $request->get('title')]);
 
@@ -76,25 +76,25 @@ class RespondsController extends Controller
 
         Notification::success('Respond updated successfully.');
 
-        return redirect()->route('projects.responds.edit', [$project->id, $respond->id]);
+        return redirect()->route('bots.responds.edit', [$bot->id, $respond->id]);
     }
 
     /**
      * Delete link.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function delete(Project $project, Respond $respond)
+    public function delete(Bot $bot, Respond $respond)
     {
-        $this->authorize('delete', [$respond, $project]);
+        $this->authorize('delete', [$respond, $bot]);
 
         $respond->delete();
 
         Notification::success('Respond deleted successfully.');
 
-        return redirect()->route('projects.responds.index', $project->id);
+        return redirect()->route('bots.responds.index', $bot->id);
     }
 }

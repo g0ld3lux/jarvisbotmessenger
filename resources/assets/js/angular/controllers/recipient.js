@@ -16,9 +16,9 @@ angular
         $scope.recipient = {};
 
         /**
-         * Load project.
+         * Load bot.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID).then(function (response) {
             $scope.recipient = response.data;
 
             $scope.$broadcast("recipient.loaded", $scope.recipient);

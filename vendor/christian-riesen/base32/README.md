@@ -35,7 +35,7 @@ About
 Use
 ---
 
-Initially created to work with the [one time password project](https://github.com/ChristianRiesen/otp), yet it can stand alone just as well as [Jordi Boggiano](http://seld.be/) kindly pointed out. It's the only Base32 implementation I could make work that passes the test vectors (and contains unit tests).
+Initially created to work with the [one time password bot](https://github.com/ChristianRiesen/otp), yet it can stand alone just as well as [Jordi Boggiano](http://seld.be/) kindly pointed out. It's the only Base32 implementation I could make work that passes the test vectors (and contains unit tests).
 
 Goal
 ----

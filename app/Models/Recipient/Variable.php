@@ -3,7 +3,7 @@
 namespace App\Models\Recipient;
 
 use App\Models\Communication;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,13 +28,13 @@ class Variable extends Model
     ];
 
     /**
-     * Return related project.
+     * Return related bot.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function project()
+    public function bot()
     {
-        return $this->belongsTo(Project::class, 'project_id');
+        return $this->belongsTo(Bot::class, 'bot_id');
     }
 
     /**

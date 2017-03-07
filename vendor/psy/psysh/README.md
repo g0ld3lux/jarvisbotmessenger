@@ -25,7 +25,7 @@ chmod +x psysh
 
 It's even awesomer if you put it somewhere in your system path (like `/usr/local/bin` or `~/bin`)!
 
-PsySH [is available via Composer](https://packagist.org/packages/psy/psysh), so you can use it in your project as well:
+PsySH [is available via Composer](https://packagist.org/packages/psy/psysh), so you can use it in your bot as well:
 
 ```
 composer require psy/psysh:@stable

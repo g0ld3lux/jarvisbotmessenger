@@ -39,7 +39,7 @@ Excel::create('Laravel Excel', function($excel) {
 [![Monthly Downloads](https://poser.pugx.org/maatwebsite/excel/d/monthly.png)](https://packagist.org/packages/maatwebsite/excel)
 [![Daily Downloads](https://poser.pugx.org/maatwebsite/excel/d/daily.png)](https://packagist.org/packages/maatwebsite/excel)
 
-[![Help the project](http://www.pledgie.com/campaigns/30385.png?skin_name=chrome)](http://pledgie.com/campaigns/30385)
+[![Help the bot](http://www.pledgie.com/campaigns/30385.png?skin_name=chrome)](http://pledgie.com/campaigns/30385)
 
 #Installation
 
@@ -91,4 +91,4 @@ More about contributing can be found at: [http://www.maatwebsite.nl/laravel-exce
 
 # License
 
-This package is licensed under LGPL. You are free to use it in personal and commercial projects. The code can be forked and modified, but the original copyright author should always be included!
+This package is licensed under LGPL. You are free to use it in personal and commercial bots. The code can be forked and modified, but the original copyright author should always be included!

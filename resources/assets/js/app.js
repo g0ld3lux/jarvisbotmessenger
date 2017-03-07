@@ -21,21 +21,21 @@ $(function () {
                 $(this).closest("form").submit();
             });
 
-            var $newProjectSelectPageButton = $("#new-project-select-page"),
-                $newProjectClearPageButton = $("#new-project-clear-page");
+            var $newBotSelectPageButton = $("#new-bot-select-page"),
+                $newBotClearPageButton = $("#new-bot-clear-page");
 
-            $newProjectClearPageButton.on("click", function () {
+            $newBotClearPageButton.on("click", function () {
                 $("input[name='page_title']").val("");
                 $("input[name='page_id']").val("");
                 $("input[name='page_token']").val("");
 
                 $("#selected-page-name").html("- none -");
 
-                $newProjectSelectPageButton.show();
-                $newProjectClearPageButton.hide();
+                $newBotSelectPageButton.show();
+                $newBotClearPageButton.hide();
             });
 
-            $newProjectSelectPageButton.on("click", function () {
+            $newBotSelectPageButton.on("click", function () {
                 var $modalContainer = $("#select-page-modal");
 
                 function listPages(uid)
@@ -71,8 +71,8 @@ $(function () {
 
                             $modalContainer.modal("hide");
 
-                            $newProjectSelectPageButton.hide();
-                            $newProjectClearPageButton.show();
+                            $newBotSelectPageButton.hide();
+                            $newBotClearPageButton.show();
                         });
                     });
                 }

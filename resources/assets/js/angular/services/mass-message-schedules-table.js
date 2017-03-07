@@ -44,7 +44,7 @@ angular
          * @returns {string}
          */
         this.scheduledAt = function (data, type, full, meta) {
-            return full.scheduled_at ? $filter("projectTime")(full.scheduled_at) : "-";
+            return full.scheduled_at ? $filter("botTime")(full.scheduled_at) : "-";
         };
 
         /**
@@ -55,6 +55,6 @@ angular
          * @returns {string}
          */
         this.sentAt = function (data, type, full, meta) {
-            return full.sent_at ? $filter("projectTime")(full.sent_at) : "not sent yet";
+            return full.sent_at ? $filter("botTime")(full.sent_at) : "not sent yet";
         }
     });

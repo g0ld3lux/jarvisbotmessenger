@@ -47,7 +47,7 @@ angular
                         .delete(PROJECT_ID, $scope.message.id)
                         .then(function () {
                             toastr.success("Message deleted successfully.");
-                            $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/messages";
+                            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/messages";
                         }, function () {
                             toastr.error("Failed to delete message.");
                         });

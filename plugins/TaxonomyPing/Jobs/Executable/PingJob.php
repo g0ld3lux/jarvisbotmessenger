@@ -2,7 +2,7 @@
 
 namespace Plugins\TaxonomyPing\Jobs\Executable;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use Bot\Core\Jobs\Job;
 use Bot\Core\Respond\Flow;
@@ -31,9 +31,9 @@ class PingJob extends Job
     protected $flow;
 
     /**
-     * @var Project
+     * @var Bot
      */
-    protected $project;
+    protected $bot;
 
     /**
      * @var Recipient
@@ -46,16 +46,16 @@ class PingJob extends Job
      * @param string $type
      * @param string $text
      * @param null|Flow $flow
-     * @param Project $project
+     * @param Bot $bot
      * @param Recipient $recipient
      */
-    public function __construct($url, $type, $text, $flow, Project $project, Recipient $recipient)
+    public function __construct($url, $type, $text, $flow, Bot $bot, Recipient $recipient)
     {
         $this->url = $url;
         $this->type = $type;
         $this->text = $text;
         $this->flow = $flow;
-        $this->project = $project;
+        $this->bot = $bot;
         $this->recipient = $recipient;
     }
 
@@ -78,7 +78,7 @@ class PingJob extends Job
 
         $query['incoming'] = $this->queryIncoming();
 
-        $query['project'] = $this->queryProject();
+        $query['bot'] = $this->queryBot();
 
         $query['flow'] = $this->queryFlow();
 
@@ -98,9 +98,9 @@ class PingJob extends Job
     /**
      * @return array
      */
-    protected function queryProject()
+    protected function queryBot()
     {
-        return ['id' => $this->project->id, 'title' => $this->project->title];
+        return ['id' => $this->bot->id, 'title' => $this->bot->title];
     }
 
     /**

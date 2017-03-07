@@ -1,6 +1,6 @@
 angular
     .module("messengerBotApp")
-    .controller("RecipientAddToChannelController", function ($scope, toastr, $uibModalInstance, ApiUtils, $http, projectId, recipientId) {
+    .controller("RecipientAddToChannelController", function ($scope, toastr, $uibModalInstance, ApiUtils, $http, botId, recipientId) {
         /**
          * Set initial saving state.
          *
@@ -39,12 +39,12 @@ angular
         /**
          * Load all channels.
          */
-        ApiUtils.recipient.channel.index(projectId, recipientId).then(function (response) {
+        ApiUtils.recipient.channel.index(botId, recipientId).then(function (response) {
             var recipientChannels = _.map(response.data, function (value) {
                 return value.id;
             });
 
-            $http.get(BASE_URL + "/api/project/" + projectId + "/subscription/channel", { params: { all: true } }).then(function (allResponse) {
+            $http.get(BASE_URL + "/api/bot/" + botId + "/subscription/channel", { params: { all: true } }).then(function (allResponse) {
                 $scope.channels = allResponse.data.filter(function (channel) {
                     return recipientChannels.indexOf(channel.id) == -1;
                 });
@@ -65,7 +65,7 @@ angular
             $scope.saving = true;
 
             ApiUtils.recipient.channel.store(
-                projectId,
+                botId,
                 recipientId,
                 _.map($scope.relation.channels, function (value) {
                     return { id: value.id, type: "manual" };

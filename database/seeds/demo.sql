@@ -1,4 +1,4 @@
-INSERT INTO `flows` (`id`, `project_id`, `title`, `order`, `defaulted_at`, `created_at`, `updated_at`)
+INSERT INTO `flows` (`id`, `bot_id`, `title`, `order`, `defaulted_at`, `created_at`, `updated_at`)
 VALUES
 	(1,1,'CodeCanyon Portfolio',1,NULL,'2016-05-25 12:58:20','2016-06-28 18:10:59'),
 	(4,1,'Bot features',2,NULL,'2016-05-25 14:07:45','2016-06-28 18:10:59'),
@@ -13,7 +13,7 @@ VALUES
 	(13,1,'Certifications',11,NULL,'2016-05-25 16:24:49','2016-06-28 18:10:59'),
 	(15,1,'Blog Link',12,NULL,'2016-05-25 17:14:45','2016-06-28 18:18:51'),
 	(16,1,'Portfolio',14,NULL,'2016-05-25 17:20:45','2016-06-28 18:22:18'),
-	(17,1,'Projects',15,NULL,'2016-05-26 04:50:23','2016-06-28 18:22:08'),
+	(17,1,'Bots',15,NULL,'2016-05-26 04:50:23','2016-06-28 18:22:08'),
 	(18,1,'Default',23,'2016-06-28 18:10:59','2016-05-26 04:50:37','2016-07-20 13:09:22'),
 	(19,1,'Disable Chat',16,NULL,'2016-06-28 18:13:01','2016-06-28 18:21:59'),
 	(20,1,'Enable Chat',17,NULL,'2016-06-28 18:15:37','2016-06-28 18:21:52'),
@@ -100,7 +100,7 @@ VALUES
 	(42,21,1,'case','insensitive','2016-05-25 17:02:36','2016-05-25 17:02:36'),
 	(45,23,0,'text','blog','2016-05-25 17:49:31','2016-05-25 17:49:31'),
 	(46,23,1,'case','insensitive','2016-05-25 17:49:31','2016-05-25 17:49:31'),
-	(47,24,0,'text','projects','2016-05-26 04:51:05','2016-05-26 04:51:05'),
+	(47,24,0,'text','bots','2016-05-26 04:51:05','2016-05-26 04:51:05'),
 	(48,24,1,'case','insensitive','2016-05-26 04:51:05','2016-05-26 04:51:05'),
 	(49,25,0,'text','portfolio','2016-05-26 04:51:30','2016-05-26 04:51:30'),
 	(50,25,1,'case','insensitive','2016-05-26 04:51:30','2016-05-26 04:51:30'),
@@ -128,12 +128,12 @@ VALUES
 	(72,37,0,'text','unsubscribe','2016-07-20 13:09:03','2016-07-20 13:09:03'),
 	(73,37,1,'case','insensitive','2016-07-20 13:09:03','2016-07-20 13:09:03');
 
-INSERT INTO `recipients_variables` (`id`, `project_id`, `name`, `type`, `accessor`, `created_at`, `updated_at`)
+INSERT INTO `recipients_variables` (`id`, `bot_id`, `name`, `type`, `accessor`, `created_at`, `updated_at`)
 VALUES
 	(6,1,'Email','text','email','2016-06-28 18:23:44','2016-06-28 18:23:44'),
 	(7,1,'Favorite Color','text','favorite-color','2016-07-12 05:47:42','2016-07-12 05:47:42');
 
-INSERT INTO `responds` (`id`, `project_id`, `title`, `label`, `published_at`, `created_at`, `updated_at`)
+INSERT INTO `responds` (`id`, `bot_id`, `title`, `label`, `published_at`, `created_at`, `updated_at`)
 VALUES
 	(1,1,'Bot features',NULL,'2016-05-25 12:55:20','2016-05-25 12:55:11','2016-06-28 18:48:55'),
 	(2,1,'Bot price',NULL,'2016-05-25 12:58:23','2016-05-25 12:55:23','2016-06-28 18:48:55'),
@@ -149,7 +149,7 @@ VALUES
 	(12,1,'CV',NULL,'2016-05-25 15:57:08','2016-05-25 15:48:51','2016-06-28 18:48:55'),
 	(13,1,'Certifications',NULL,'2016-05-25 16:02:11','2016-05-25 16:01:43','2016-06-28 18:48:55'),
 	(14,1,'Experience',NULL,'2016-05-25 16:12:02','2016-05-25 16:11:51','2016-06-28 18:48:55'),
-	(15,1,'Projects Portfolio',NULL,'2016-05-25 16:29:25','2016-05-25 16:29:16','2016-06-28 18:48:55'),
+	(15,1,'Bots Portfolio',NULL,'2016-05-25 16:29:25','2016-05-25 16:29:16','2016-06-28 18:48:55'),
 	(16,1,'Rinka Role',NULL,'2016-05-25 16:48:42','2016-05-25 16:40:22','2016-06-28 18:48:55'),
 	(17,1,'Rinka Tech',NULL,'2016-05-25 16:48:59','2016-05-25 16:48:51','2016-06-28 18:48:55'),
 	(18,1,'Open Source',NULL,'2016-05-25 16:59:08','2016-05-25 16:58:59','2016-06-28 18:48:55'),
@@ -332,8 +332,8 @@ VALUES
 	(10,4,2,'respond','1','2016-05-25 12:58:11','2016-05-25 12:58:11'),
 	(11,5,0,'text','Numerous buildable response types: Carousel, image, text, buttons, audio, video, file, quick replies, callbacks, RSS','2016-05-25 12:58:51','2016-07-12 05:41:21'),
 	(12,6,0,'text','GUI builder: Build responses with integrated GUI builder – no coding skills required','2016-05-25 12:59:04','2016-05-25 12:59:04'),
-	(13,7,0,'text','Projects: Handle as many projects as you need','2016-05-25 12:59:17','2016-05-25 12:59:17'),
-	(14,8,0,'text','One Facebook Application: One app for all projects – one facebook application is used for all projects','2016-05-25 12:59:32','2016-05-25 12:59:32'),
+	(13,7,0,'text','Bots: Handle as many bots as you need','2016-05-25 12:59:17','2016-05-25 12:59:17'),
+	(14,8,0,'text','One Facebook Application: One app for all bots – one facebook application is used for all bots','2016-05-25 12:59:32','2016-05-25 12:59:32'),
 	(15,9,0,'text','Communication Log: View log off incoming messages and responses','2016-05-25 12:59:47','2016-05-25 12:59:47'),
 	(16,10,0,'text','Modern: Application built on Laravel 5.2 framework','2016-05-25 13:00:00','2016-05-25 13:00:00'),
 	(17,11,0,'text','Sounds cool yeah? :)','2016-05-25 13:00:17','2016-05-25 13:00:17'),
@@ -520,13 +520,13 @@ VALUES
 	(220,97,0,'title','Rinka.lt','2016-05-25 16:39:57','2016-05-25 16:39:57'),
 	(221,97,1,'sub_title','Classifieds ads in Lithuania','2016-05-25 16:39:57','2016-05-25 16:39:57'),
 	(222,97,2,'image_url','http://rinka.lt/img/logo.png','2016-05-25 16:39:57','2016-05-25 16:39:57'),
-	(223,98,0,'text','I was a core developer for this project','2016-05-25 16:47:50','2016-05-25 16:47:50'),
+	(223,98,0,'text','I was a core developer for this bot','2016-05-25 16:47:50','2016-05-25 16:47:50'),
 	(224,99,0,'option','postback','2016-05-25 16:48:09','2016-05-25 16:48:09'),
 	(225,99,1,'title','Back to portfolio','2016-05-25 16:48:09','2016-05-25 17:12:12'),
 	(227,100,0,'option','web_url','2016-05-25 16:48:24','2016-05-25 16:48:24'),
 	(228,100,1,'title','Website','2016-05-25 16:48:24','2016-05-25 16:48:24'),
 	(229,100,2,'url','http://rinka.lt','2016-05-25 16:48:24','2016-05-25 16:48:24'),
-	(230,101,0,'text','We have used Laravel 5, ElasticSearch, MySQL, Redis, nginx for this project','2016-05-25 16:50:10','2016-05-25 16:50:10'),
+	(230,101,0,'text','We have used Laravel 5, ElasticSearch, MySQL, Redis, nginx for this bot','2016-05-25 16:50:10','2016-05-25 16:50:10'),
 	(231,102,0,'option','web_url','2016-05-25 16:50:20','2016-05-25 16:50:20'),
 	(232,102,1,'title','Website','2016-05-25 16:50:20','2016-05-25 16:50:20'),
 	(233,102,2,'url','http://rinka.lt','2016-05-25 16:50:20','2016-05-25 16:50:20'),
@@ -545,7 +545,7 @@ VALUES
 	(250,108,1,'title','Website','2016-05-25 16:52:55','2016-05-25 16:52:55'),
 	(251,108,2,'url','http://rinka.lt','2016-05-25 16:52:55','2016-05-25 16:52:55'),
 	(252,109,0,'option','postback','2016-05-25 16:53:26','2016-05-25 16:53:26'),
-	(253,109,1,'title','Recent projects','2016-05-25 16:53:26','2016-05-25 16:53:26'),
+	(253,109,1,'title','Recent bots','2016-05-25 16:53:26','2016-05-25 16:53:26'),
 	(254,109,2,'respond','15','2016-05-25 16:53:26','2016-05-25 16:53:26'),
 	(255,95,2,'respond','3','2016-05-25 16:53:36','2016-05-25 16:53:36'),
 	(256,105,2,'respond','17','2016-05-25 16:53:53','2016-05-25 16:53:53'),
@@ -563,7 +563,7 @@ VALUES
 	(269,114,1,'title','CodeCanyon portfolio','2016-05-25 17:10:19','2016-05-25 17:10:28'),
 	(271,114,2,'respond','3','2016-05-25 17:10:28','2016-05-25 17:10:28'),
 	(272,115,0,'option','postback','2016-05-25 17:10:41','2016-05-25 17:10:41'),
-	(273,115,1,'title','Recent projects','2016-05-25 17:10:41','2016-05-25 17:10:41'),
+	(273,115,1,'title','Recent bots','2016-05-25 17:10:41','2016-05-25 17:10:41'),
 	(274,115,2,'respond','15','2016-05-25 17:10:41','2016-05-25 17:10:41'),
 	(275,116,0,'option','postback','2016-05-25 17:10:56','2016-05-25 17:10:56'),
 	(276,116,1,'title','Open-source','2016-05-25 17:10:56','2016-05-25 17:10:56'),
@@ -594,7 +594,7 @@ VALUES
 	(302,132,0,'text','Your email was saved!','2016-06-28 18:27:14','2016-06-28 18:27:14'),
 	(304,134,0,'text','Hooks: execute actions after message received','2016-06-29 04:53:50','2016-06-29 04:53:50'),
 	(305,135,0,'text','Integrations: integrate your RSS feed or a custom website and send it directly to recipients','2016-06-29 04:55:04','2016-07-12 05:41:55'),
-	(306,136,0,'text','Timezones: rely on project or recipient timezone','2016-06-29 04:56:21','2016-06-29 04:56:21'),
+	(306,136,0,'text','Timezones: rely on bot or recipient timezone','2016-06-29 04:56:21','2016-06-29 04:56:21'),
 	(307,137,0,'url','http://www.krucas.com/sample-callback.json','2016-07-12 05:44:02','2016-07-12 05:44:02'),
 	(308,138,0,'text','What`s your favorite color?','2016-07-12 05:47:14','2016-07-12 05:49:14'),
 	(309,139,0,'variable','7','2016-07-12 05:48:26','2016-07-12 05:48:26'),
@@ -656,6 +656,6 @@ VALUES
 	(30,25,32,NULL,NULL),
 	(31,26,33,NULL,NULL);
 
-INSERT INTO `subscriptions_channels` (`id`, `project_id`, `name`, `created_at`, `updated_at`)
+INSERT INTO `subscriptions_channels` (`id`, `bot_id`, `name`, `created_at`, `updated_at`)
 VALUES
 	(1,1,'Test channel','2016-07-20 13:04:27','2016-07-20 13:04:27');

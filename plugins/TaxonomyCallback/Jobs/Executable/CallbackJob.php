@@ -2,7 +2,7 @@
 
 namespace Plugins\TaxonomyCallback\Jobs\Executable;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use Bot\Core\Contract\Executable;
 use Bot\Core\Executor;
@@ -44,9 +44,9 @@ class CallbackJob extends Job
     protected $flow;
 
     /**
-     * @var Project
+     * @var Bot
      */
-    protected $project;
+    protected $bot;
 
     /**
      * @var Recipient
@@ -64,17 +64,17 @@ class CallbackJob extends Job
      * @param string $type
      * @param string $text
      * @param null|Flow $flow
-     * @param Project $project
+     * @param Bot $bot
      * @param Recipient $recipient
      * @param FbBotApp $botApp
      */
-    public function __construct($url, $type, $text, $flow, Project $project, Recipient $recipient, FbBotApp $botApp)
+    public function __construct($url, $type, $text, $flow, Bot $bot, Recipient $recipient, FbBotApp $botApp)
     {
         $this->url = $url;
         $this->type = $type;
         $this->text = $text;
         $this->flow = $flow;
-        $this->project = $project;
+        $this->bot = $bot;
         $this->recipient = $recipient;
         $this->botApp = $botApp;
     }
@@ -108,7 +108,7 @@ class CallbackJob extends Job
                         $this->type,
                         $this->text,
                         $this->flow,
-                        $this->project,
+                        $this->bot,
                         $this->recipient,
                         $this->map($item),
                         $this->botApp
@@ -129,7 +129,7 @@ class CallbackJob extends Job
 
         $query['incoming'] = $this->queryIncoming();
 
-        $query['project'] = $this->queryProject();
+        $query['bot'] = $this->queryBot();
 
         $query['flow'] = $this->queryFlow();
 
@@ -149,9 +149,9 @@ class CallbackJob extends Job
     /**
      * @return array
      */
-    protected function queryProject()
+    protected function queryBot()
     {
-        return ['id' => $this->project->id, 'title' => $this->project->title];
+        return ['id' => $this->bot->id, 'title' => $this->bot->title];
     }
 
     /**

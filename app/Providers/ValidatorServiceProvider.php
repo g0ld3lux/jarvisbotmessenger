@@ -30,7 +30,7 @@ class ValidatorServiceProvider extends ServiceProvider
         $factory->extend('recipient_variable_accessor', function ($attribute, $value, $parameters) use ($request) {
             $accessor = Str::slug($value);
 
-            $query = Recipient\Variable::where('project_id', $parameters[0])->where('accessor', $accessor);
+            $query = Recipient\Variable::where('bot_id', $parameters[0])->where('accessor', $accessor);
 
             if (isset($parameters[1])) {
                 $query = $query->where('id', '<>', $parameters[1]);
@@ -62,15 +62,15 @@ class ValidatorServiceProvider extends ServiceProvider
 
             try {
                 try {
-                    Storage::delete('public/import/project_'.($request->route('project')->id).'.json');
+                    Storage::delete('public/import/bot_'.($request->route('bot')->id).'.json');
                 } catch (\Exception $e) {
                     // ignore
                 }
 
-                $file->move(storage_path('app/public/import/'), 'project_'.($request->route('project')->id).'.json');
+                $file->move(storage_path('app/public/import/'), 'bot_'.($request->route('bot')->id).'.json');
 
                 $content = json_decode(
-                    Storage::get('public/import/project_'.($request->route('project')->id).'.json')
+                    Storage::get('public/import/bot_'.($request->route('bot')->id).'.json')
                 );
 
                 if (!isset($content->meta->version)) {

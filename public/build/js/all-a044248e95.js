@@ -18793,21 +18793,21 @@ $(function () {
                 $(this).closest("form").submit();
             });
 
-            var $newProjectSelectPageButton = $("#new-project-select-page"),
-                $newProjectClearPageButton = $("#new-project-clear-page");
+            var $newBotSelectPageButton = $("#new-bot-select-page"),
+                $newBotClearPageButton = $("#new-bot-clear-page");
 
-            $newProjectClearPageButton.on("click", function () {
+            $newBotClearPageButton.on("click", function () {
                 $("input[name='page_title']").val("");
                 $("input[name='page_id']").val("");
                 $("input[name='page_token']").val("");
 
                 $("#selected-page-name").html("- none -");
 
-                $newProjectSelectPageButton.show();
-                $newProjectClearPageButton.hide();
+                $newBotSelectPageButton.show();
+                $newBotClearPageButton.hide();
             });
 
-            $newProjectSelectPageButton.on("click", function () {
+            $newBotSelectPageButton.on("click", function () {
                 var $modalContainer = $("#select-page-modal");
 
                 function listPages(uid)
@@ -18843,8 +18843,8 @@ $(function () {
 
                             $modalContainer.modal("hide");
 
-                            $newProjectSelectPageButton.hide();
-                            $newProjectClearPageButton.show();
+                            $newBotSelectPageButton.hide();
+                            $newBotClearPageButton.show();
                         });
                     });
                 }
@@ -18918,7 +18918,7 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("FlowController", function ($scope, $uibModalInstance, $uibModal, $http, toastr, project, flow) {
+    .controller("FlowController", function ($scope, $uibModalInstance, $uibModal, $http, toastr, bot, flow) {
         /**
          * Set initial saving state.
          *
@@ -18948,11 +18948,11 @@ angular
         $scope.flow = flow;
 
         /**
-         * Set initial project.
+         * Set initial bot.
          *
          * @type {{}}
          */
-        $scope.project = project;
+        $scope.bot = bot;
 
         /**
          * Initial errors.
@@ -19046,7 +19046,7 @@ angular
         var deleteMatcher = function (flow, matcher) {
             if (matcher.id) {
                 $http
-                    .delete(BASE_URL + "/api/project/" + project.id + "/flow/" + flow.id + "/matcher/" + matcher.id)
+                    .delete(BASE_URL + "/api/bot/" + bot.id + "/flow/" + flow.id + "/matcher/" + matcher.id)
                     .then(function () {
                         $scope.$broadcast("matcher.processed");
                     }, function () {
@@ -19065,7 +19065,7 @@ angular
          * @param matcher
          */
         var saveMatcher = function (flow, matcher) {
-            var url = BASE_URL + "/api/project/" + project.id + "/flow/" + flow.id + "/matcher";
+            var url = BASE_URL + "/api/bot/" + bot.id + "/flow/" + flow.id + "/matcher";
 
             if (matcher.id) {
                 url += "/" + matcher.id;
@@ -19088,7 +19088,7 @@ angular
         /**
          * Load responds.
          */
-        $http.get(BASE_URL + "/api/project/" + project.id + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + bot.id + "/respond").then(function (response) {
             $scope.responds = response.data;
             $scope.respondsLoading = false;
         });
@@ -19099,7 +19099,7 @@ angular
         $scope.save = function () {
             $scope.saving = true;
 
-            var url = BASE_URL + "/api/project/" + project.id + "/flow";
+            var url = BASE_URL + "/api/bot/" + bot.id + "/flow";
 
             if ($scope.flow.id) {
                 url += "/" + $scope.flow.id;
@@ -19317,7 +19317,7 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("ProjectAnalyticsController", function ($scope, $http) {
+    .controller("BotAnalyticsController", function ($scope, $http) {
         /**
          * Set initial loading state.
          *
@@ -19338,15 +19338,15 @@ angular
         /**
          * Update analytics chart.
          *
-         * @param project
+         * @param bot
          * @param start
          * @param end
          */
-        var updateAnalytics = function (project, start, end) {
+        var updateAnalytics = function (bot, start, end) {
             $scope.analyticsLoading = true;
 
             $http
-                .get(BASE_URL + "/api/project/" + project.id + "/analytics", {
+                .get(BASE_URL + "/api/bot/" + bot.id + "/analytics", {
                     params: {
                         "fields[]": _.map(fields, function(value, key) {
                             return key;
@@ -19388,7 +19388,7 @@ angular
                 opens: "left",
                 eventHandlers: {
                     "apply.daterangepicker": function ($event) {
-                        updateAnalytics($scope.project, $event.model.startDate, $event.model.endDate);
+                        updateAnalytics($scope.bot, $event.model.startDate, $event.model.endDate);
                     }
                 }
             },
@@ -19457,13 +19457,13 @@ angular
         /**
          * Load analytics data.
          */
-        $scope.$on("project.loaded", function ($event, project) {
-            updateAnalytics(project, $scope.datePicker.date.startDate, $scope.datePicker.date.endDate);
+        $scope.$on("bot.loaded", function ($event, bot) {
+            updateAnalytics(bot, $scope.datePicker.date.startDate, $scope.datePicker.date.endDate);
         });
     });
 angular
     .module("messengerBotApp")
-    .controller("ProjectDashboardFlowsController", function ($scope, toastr, $http, SweetAlert, $uibModal) {
+    .controller("BotDashboardFlowsController", function ($scope, toastr, $http, SweetAlert, $uibModal) {
         /**
          * Determine if flows are loading.
          *
@@ -19505,7 +19505,7 @@ angular
                 });
 
                 $http
-                    .post(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/sort", { sort: positions })
+                    .post(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/sort", { sort: positions })
                     .then(function (response) {
                         if (response.data.success) {
                             toastr.success("Flow order changed.");
@@ -19532,14 +19532,14 @@ angular
                     flow: function () {
                         return angular.copy(flow);
                     },
-                    project: function () {
-                        return $scope.project;
+                    bot: function () {
+                        return $scope.bot;
                     }
                 }
             });
 
             modalInstance.result.then(function (flow) {
-                $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
+                $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
                     if ($scope.flows.filter(function (item) { return item.id == response.data.id }).length <= 0) {
                         $scope.flows.push(response.data);
                     } else {
@@ -19560,7 +19560,7 @@ angular
         /**
          * Load flows.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/flow").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow").then(function (response) {
             $scope.flows = response.data;
             $scope.flowsLoading = false;
         });
@@ -19581,7 +19581,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    $http.delete(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
+                    $http.delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id).then(function (response) {
                         if (response.data.success) {
                             toastr.success("Flow deleted successfully.");
                             $scope.flows = $scope.flows.filter(function (item) {
@@ -19606,7 +19606,7 @@ angular
          */
         $scope.makeDefault = function (flow) {
             $http
-                .post(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
+                .post(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
                 .then(function (response) {
                     if (response.data.success) {
                         toastr.success("Default flow changed.");
@@ -19631,7 +19631,7 @@ angular
          */
         $scope.removeDefault = function (flow) {
             $http
-                .delete(BASE_URL + "/api/project/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
+                .delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/flow/" + flow.id + "/default", {})
                 .then(function (response) {
                     if (response.data.success) {
                         toastr.success("Default flow removed.");
@@ -19667,25 +19667,25 @@ angular
          * @returns {string}
          */
         $scope.respondHref = function (respond) {
-            return BASE_URL + "/projects/" + PROJECT_ID + "/responds/" + respond.id + "/edit";
+            return BASE_URL + "/bots/" + PROJECT_ID + "/responds/" + respond.id + "/edit";
         };
     });
 angular
     .module("messengerBotApp")
-    .controller("ProjectDashboardController", function ($scope, $uibModal, FacebookService, $http, toastr, SweetAlert) {
+    .controller("BotDashboardController", function ($scope, $uibModal, FacebookService, $http, toastr, SweetAlert) {
         /**
-         * Set initial project.
+         * Set initial bot.
          *
          * @type {{}}
          */
-        $scope.project = {};
+        $scope.bot = {};
 
         /**
-         * Determine if project is loading.
+         * Determine if bot is loading.
          *
          * @type {boolean}
          */
-        $scope.projectLoading = true;
+        $scope.botLoading = true;
 
         /**
          * Show FB auth error.
@@ -19699,44 +19699,44 @@ angular
         };
 
         /**
-         * Execute page connection to a project.
+         * Execute page connection to a bot.
          *
-         * @param project
+         * @param bot
          * @param page
          */
-        var connectPage = function (project, page) {
+        var connectPage = function (bot, page) {
             $http
-                .post(BASE_URL + "/api/project/" + project.id + "/page/connect", { page: page })
+                .post(BASE_URL + "/api/bot/" + bot.id + "/page/connect", { page: page })
                 .then(function (response) {
-                    project.page_id = response.data.page_id;
-                    project.page_title = response.data.page_title;
-                    project.page_token = response.data.page_token;
-                    project.page_token_expires_at = response.data.page_token_expires_at;
-                    project.app_subscribed = response.data.app_subscribed;
+                    bot.page_id = response.data.page_id;
+                    bot.page_title = response.data.page_title;
+                    bot.page_token = response.data.page_token;
+                    bot.page_token_expires_at = response.data.page_token_expires_at;
+                    bot.app_subscribed = response.data.app_subscribed;
 
                     toastr.success("Facebook page \"" + page.name + "\" connected successfully.");
                 }, function () {
-                    toastr.error("Failed to connect facebook page to this project.");
+                    toastr.error("Failed to connect facebook page to this bot.");
                 });
         };
 
         /**
-         * Load active project.
+         * Load active bot.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID).then(function (response) {
-            $scope.project = response.data;
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID).then(function (response) {
+            $scope.bot = response.data;
 
-            $scope.projectLoading = false;
+            $scope.botLoading = false;
 
-            $scope.$broadcast("project.loaded", $scope.project);
+            $scope.$broadcast("bot.loaded", $scope.bot);
         });
 
         /**
          * Open modal with pages list.
          *
-         * @param project
+         * @param bot
          */
-        $scope.connectPage = function (project) {
+        $scope.connectPage = function (bot) {
             FacebookService.login().then(function () {
                 FacebookService.me().then(function (userResponse) {
                     FacebookService.pages(userResponse.id).then(function (pagesResponse) {
@@ -19752,7 +19752,7 @@ angular
                             });
 
                             modalInstance.result.then(function (page) {
-                                connectPage(project, page);
+                                connectPage(bot, page);
                             });
                         } else {
                             SweetAlert.swal({
@@ -19775,9 +19775,9 @@ angular
         /**
          * Disconnect facebook page.
          *
-         * @param project
+         * @param bot
          */
-        $scope.disconnectPage = function (project) {
+        $scope.disconnectPage = function (bot) {
             SweetAlert.swal({
                 title: "Are you sure?",
                 text: "You will not be able to recover this state!",
@@ -19789,21 +19789,21 @@ angular
             }, function (confirm){
                 if (confirm) {
                     $http
-                        .delete(BASE_URL + "/api/project/" + project.id + "/page/disconnect")
+                        .delete(BASE_URL + "/api/bot/" + bot.id + "/page/disconnect")
                         .then(function (response) {
                             if (response.data.success) {
-                                project.page_id = null;
-                                project.page_title = null;
-                                project.page_token = null;
-                                project.page_token_expires_at = null;
-                                project.app_subscribed = false;
+                                bot.page_id = null;
+                                bot.page_title = null;
+                                bot.page_token = null;
+                                bot.page_token_expires_at = null;
+                                bot.app_subscribed = false;
 
                                 toastr.success("Facebook page disconnected successfully.");
                             } else {
-                                toastr.error("Failed to disconnect facebook page to this project.");
+                                toastr.error("Failed to disconnect facebook page to this bot.");
                             }
                         }, function () {
-                            toastr.error("Failed to disconnect facebook page to this project.");
+                            toastr.error("Failed to disconnect facebook page to this bot.");
                         });
                 }
 
@@ -19831,7 +19831,7 @@ angular
         /**
          * Load accounts.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond").then(function (response) {
             $scope.responds = response.data;
         }, function () {
             toastr.error("Failed to load responds.");
@@ -19855,7 +19855,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    $http.delete(BASE_URL + "/api/project/" + PROJECT_ID + "/respond/" + respond.id).then(function (response) {
+                    $http.delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond/" + respond.id).then(function (response) {
                         if (response.data.success) {
                             toastr.success("Respond deleted successfully.");
                             $scope.responds = $scope.responds.filter(function (item) {
@@ -20029,7 +20029,7 @@ angular
 
 angular
     .module("messengerBotApp")
-    .directive("projectTime", function () {
+    .directive("botTime", function () {
         var defaultFormat = "MMM D, YYYY, h:mm A";
 
         return {
@@ -20042,7 +20042,7 @@ angular
              * Directive scope.
              */
             scope: {
-                project: "=projectTime",
+                bot: "=botTime",
                 format: "@format",
                 time: "=time"
             },
@@ -20053,7 +20053,7 @@ angular
             link: function (scope, element) {
                 element.text(
                     moment(scope.time)
-                        .tz(scope.project ? scope.project.timezone : PROJECT_TIMEZONE)
+                        .tz(scope.bot ? scope.bot.timezone : PROJECT_TIMEZONE)
                         .format(scope.format ? scope.format : defaultFormat)
                 );
             }
@@ -20081,7 +20081,7 @@ angular
             link: function (scope, element) {
                 element.attr(
                     "href",
-                    BASE_URL + "/projects/" + scope.respond.project_id + "/responds/" + scope.respond.id + "/edit"
+                    BASE_URL + "/bots/" + scope.respond.bot_id + "/responds/" + scope.respond.id + "/edit"
                 );
             }
         }

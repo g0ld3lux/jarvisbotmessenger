@@ -2,18 +2,18 @@
 
 namespace App\Services\Flow\Contract;
 
-use App\Models\Project;
+use App\Models\Bot;
 
 interface Exchanger
 {
     /**
      * Import data.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param object $data
      * @return bool
      */
-    public function import(Project $project, $data);
+    public function import(Bot $bot, $data);
 
     /**
      * Export flows.

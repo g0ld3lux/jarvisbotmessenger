@@ -114,7 +114,7 @@ class Configuration
      *
      * If a config file is available, it will be loaded and merged with the current config.
      *
-     * If no custom config file was specified and a local project config file
+     * If no custom config file was specified and a local bot config file
      * is available, it will be loaded and merged with the current config.
      */
     public function init()
@@ -167,7 +167,7 @@ class Configuration
     /**
      * Get the local PsySH config file.
      *
-     * Searches for a project specific config file `.psysh.php` in the current
+     * Searches for a bot specific config file `.psysh.php` in the current
      * working directory.
      *
      * @return string

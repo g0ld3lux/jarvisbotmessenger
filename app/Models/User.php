@@ -55,13 +55,13 @@ class User extends Authenticatable
     }
 
     /**
-     * Get user projects.
+     * Get user bots.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function projects()
+    public function bots()
     {
-        return $this->hasMany(Project::class, 'user_id');
+        return $this->hasMany(Bot::class, 'user_id');
     }
 
     /**

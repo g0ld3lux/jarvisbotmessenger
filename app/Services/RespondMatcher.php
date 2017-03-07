@@ -6,7 +6,7 @@ use App\Models\Flow;
 use App\Models\Flow\Matcher as MatcherModel;
 use App\Models\Recipient;
 use Bot\Core\Matcher;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use Bot\Core\Respond\Taxonomy;
 use NlpTools\Similarity\CosineSimilarity;
@@ -31,16 +31,16 @@ class RespondMatcher
     /**
      * Match input and return respond object.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param Recipient $recipient
      * @param string $input
      * @return \Bot\Core\Respond\Flow
      * @throws \Exception
      */
-    public function match(Project $project, Recipient $recipient, $input)
+    public function match(Bot $bot, Recipient $recipient, $input)
     {
         $flows = Flow::with(['matchers', 'matchers.params', 'responds.taxonomies', 'responds'])
-        ->where('project_id', $project->id)
+        ->where('bot_id', $bot->id)
         ->ordered()
         ->get();
 
@@ -64,7 +64,7 @@ class RespondMatcher
             }
         }
 
-        if ($default = $this->defaultFlow($project)) {
+        if ($default = $this->defaultFlow($bot)) {
             return $this->flow($default, $recipient);
         }
 
@@ -72,13 +72,13 @@ class RespondMatcher
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @return Flow|null
      */
-    protected function defaultFlow(Project $project)
+    protected function defaultFlow(Bot $bot)
     {
         return Flow::with(['matchers', 'matchers.params', 'responds.taxonomies', 'responds'])
-        ->where('project_id', $project->id)
+        ->where('bot_id', $bot->id)
         ->whereNotNull('defaulted_at')
         ->ordered()
         ->first();

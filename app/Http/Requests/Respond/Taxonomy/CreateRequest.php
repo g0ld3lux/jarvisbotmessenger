@@ -13,6 +13,6 @@ class CreateRequest extends Request
      */
     public function authorize()
     {
-        return Gate::allows('view', $this->route('project'));
+        return Gate::allows('view', $this->route('bot'));
     }
 }

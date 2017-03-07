@@ -13,7 +13,7 @@ class AddFlowIdToLog extends Migration
     public function up()
     {
         Schema::table('communication_log', function (Blueprint $table) {
-            $table->integer('flow_id')->unsigned()->nullable(true)->default(null)->after('project_id');
+            $table->integer('flow_id')->unsigned()->nullable(true)->default(null)->after('bot_id');
             $table
                 ->foreign('flow_id')
                 ->references('id')

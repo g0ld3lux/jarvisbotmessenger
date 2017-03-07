@@ -3,7 +3,7 @@
 namespace App\Jobs\Facebook;
 
 use App\Jobs\Job;
-use App\Models\Project;
+use App\Models\Bot;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
@@ -19,9 +19,9 @@ class SetGreetingTextJob extends Job implements ShouldQueue
     protected $url = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token={token}';
 
     /**
-     * @var Project
+     * @var Bot
      */
-    protected $project;
+    protected $bot;
 
     /**
      * @var string
@@ -29,13 +29,13 @@ class SetGreetingTextJob extends Job implements ShouldQueue
     protected $text;
 
     /**
-     * SubscribeProjectJob constructor.
-     * @param Project $project
+     * SubscribeBotJob constructor.
+     * @param Bot $bot
      * @param $text
      */
-    public function __construct(Project $project, $text)
+    public function __construct(Bot $bot, $text)
     {
-        $this->project = $project;
+        $this->bot = $bot;
         $this->text = $text;
     }
 
@@ -72,6 +72,6 @@ class SetGreetingTextJob extends Job implements ShouldQueue
      */
     protected function url()
     {
-        return str_replace('{token}', $this->project->page_token, $this->url);
+        return str_replace('{token}', $this->bot->page_token, $this->url);
     }
 }

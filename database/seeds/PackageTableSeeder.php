@@ -15,7 +15,7 @@ class PackageTableSeeder extends Seeder
     {
         $features = [
           // Monthly
-          ['name'=> 'Create Projects', 'active' =>true], //1
+          ['name'=> 'Create Bots', 'active' =>true], //1
           ['name'=> 'Create Flows', 'active' =>true], //2
           ['name'=> 'Connect with Multi Fan Pages', 'active' =>true], //3
           ['name'=> 'Add Welcome Screen', 'active' =>true], //4

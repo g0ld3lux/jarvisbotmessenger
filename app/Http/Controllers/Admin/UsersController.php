@@ -50,7 +50,7 @@ class UsersController extends Controller
     {
         return view('admin.users.show', [
             'user' => $user,
-            'projects' => $user->projects,
+            'bots' => $user->bots,
         ]);
     }
 

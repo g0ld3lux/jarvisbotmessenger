@@ -35,7 +35,7 @@ class AuthController extends Controller
      * @var string
      */
      protected $username            = 'email';
-      protected $redirectTo          = '/projects';
+      protected $redirectTo          = '/bots';
       protected $redirectAfterLogout = 'login';
       protected $maxLoginAttempts    = 3;
       protected $lockoutTime         = 60;
@@ -162,7 +162,7 @@ class AuthController extends Controller
              DB::table('user_activations')->where('token',$token)->delete();
              Notification::success('You Have Successfully Verified Your Email.');
              auth()->loginUsingId($check->id_user);
-             return redirect()->intended('/projects');
+             return redirect()->intended('/bots');
          }
          return redirect()->to('login');
      }
@@ -193,7 +193,7 @@ class AuthController extends Controller
        $valid = $google2fa->verifyKey($user->google2fa_secret, $secret);
        if($valid){
          auth()->login($user);
-         return redirect()->intended('/projects');
+         return redirect()->intended('/bots');
        }else {
          Notification::error('Invalid Token!');
          return redirect()->route('auth.get2FA');

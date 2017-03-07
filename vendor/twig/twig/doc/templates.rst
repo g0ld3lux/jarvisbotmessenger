@@ -52,7 +52,7 @@ Many IDEs support syntax highlighting and auto-completion for Twig:
 * *PhpStorm* (native as of 2.1)
 * *Eclipse* via the `Twig plugin`_
 * *Sublime Text* via the `Twig bundle`_
-* *GtkSourceView* via the `Twig language definition`_ (used by gedit and other projects)
+* *GtkSourceView* via the `Twig language definition`_ (used by gedit and other bots)
 * *Coda* and *SubEthaEdit* via the `Twig syntax mode`_
 * *Coda 2* via the `other Twig syntax mode`_
 * *Komodo* and *Komodo Edit* via the Twig highlight/syntax check mode

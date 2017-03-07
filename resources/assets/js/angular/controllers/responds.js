@@ -18,7 +18,7 @@ angular
         /**
          * Load accounts.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond").then(function (response) {
             $scope.responds = response.data;
         }, function () {
             toastr.error("Failed to load responds.");
@@ -42,7 +42,7 @@ angular
                 closeOnConfirm: false
             }, function (confirm){
                 if (confirm) {
-                    $http.delete(BASE_URL + "/api/project/" + PROJECT_ID + "/respond/" + respond.id).then(function (response) {
+                    $http.delete(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond/" + respond.id).then(function (response) {
                         if (response.data.success) {
                             toastr.success("Respond deleted successfully.");
                             $scope.responds = $scope.responds.filter(function (item) {
@@ -64,6 +64,6 @@ angular
          * Add new respond.
          */
         $scope.addRespond = function () {
-            $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/responds/create";
+            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/responds/create";
         };
     });

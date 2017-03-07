@@ -190,15 +190,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    @if(count($projects) <= 0)
+                    @if(count($bots) <= 0)
                         <div class="panel-body">
-                            User has no projects!
+                            User has no bots!
                         </div>
                     @else
                         <table class="table custom-table">
                             <thead>
                                 <tr>
-                                    <th>Project</th>
+                                    <th>Bot</th>
                                     <th>Recipients</th>
                                     <th>Flows</th>
                                     <th>Created</th>
@@ -206,12 +206,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($projects as $project)
+                                @foreach($bots as $bot)
                                     <tr>
-                                        <td>{{ $project->title }}</td>
-                                        <td>{{ $project->recipients()->count() }}</td>
-                                        <td>{{ $project->flows()->count() }}</td>
-                                        <td>{{ $project->created_at->format('F j, Y, g:i A') }}</td>
+                                        <td>{{ $bot->title }}</td>
+                                        <td>{{ $bot->recipients()->count() }}</td>
+                                        <td>{{ $bot->flows()->count() }}</td>
+                                        <td>{{ $bot->created_at->format('F j, Y, g:i A') }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

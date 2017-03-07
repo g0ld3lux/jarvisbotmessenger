@@ -14,15 +14,15 @@ class CreateRespondsTable extends Migration
     {
         Schema::create('responds', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('project_id')->unsigned();
+            $table->integer('bot_id')->unsigned();
             $table->string('title');
             $table->string('type');
             $table->string('match_type');
             $table->nullableTimestamps();
             $table
-                ->foreign('project_id')
+                ->foreign('bot_id')
                 ->references('id')
-                ->on('projects')
+                ->on('bots')
                 ->onDelete('cascade');
         });
     }

@@ -16,9 +16,9 @@ angular
         $scope.channel = {};
 
         /**
-         * Load project.
+         * Load bot.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID).then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/subscription/channel/" + SUBSCRIPTION_CHANNEL_ID).then(function (response) {
             $scope.channel = response.data;
 
             $scope.$broadcast("channel.loaded", $scope.channel);

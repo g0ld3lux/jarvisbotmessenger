@@ -345,7 +345,7 @@ interfaces.
   cancelling a pool of requests or each outstanding future request individually.
 * Updated to "GuzzleHttp\Streams" 3.0.
     * `GuzzleHttp\Stream\StreamInterface::getContents()` no longer accepts a
-      `maxLen` parameter. This update makes the Guzzle streams project
+      `maxLen` parameter. This update makes the Guzzle streams bot
       compatible with the current PSR-7 proposal.
     * `GuzzleHttp\Stream\Stream::__construct`,
       `GuzzleHttp\Stream\Stream::factory`, and
@@ -976,7 +976,7 @@ interfaces.
     * Renamed `commands` to `operations`
     * Removed dot class notation
     * Removed custom types
-* Broke the project into smaller top-level namespaces to be more component friendly
+* Broke the bot into smaller top-level namespaces to be more component friendly
 * Removed support for XML configs and descriptions. Use arrays or JSON files.
 * Removed the Validation component and Inspector
 * Moved all cookie code to Guzzle\Plugin\Cookie

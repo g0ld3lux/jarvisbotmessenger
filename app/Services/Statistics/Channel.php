@@ -65,7 +65,7 @@ class Channel
     }
 
     /**
-     * Return min date for a given project.
+     * Return min date for a given bot.
      *
      * @param ChannelModel $channel
      * @return Carbon

@@ -14,7 +14,7 @@ class SortRequest extends Requests\Request
      */
     public function authorize()
     {
-        return Gate::allows('view', $this->route('project'));
+        return Gate::allows('view', $this->route('bot'));
     }
 
     /**
@@ -26,7 +26,7 @@ class SortRequest extends Requests\Request
     {
         return [
             'sort' => 'required|array',
-            'sort.*.flow' => 'required|exists:flows,id,project_id,'.$this->route('project')->id,
+            'sort.*.flow' => 'required|exists:flows,id,bot_id,'.$this->route('bot')->id,
             'sort.*.position' => 'required|integer',
         ];
     }

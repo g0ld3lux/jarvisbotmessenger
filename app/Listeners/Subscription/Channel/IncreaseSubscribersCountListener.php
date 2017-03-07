@@ -14,7 +14,7 @@ class IncreaseSubscribersCountListener
     protected $dispatcher;
 
     /**
-     * IncreaseProjectMessagesPostedCountListener constructor.
+     * IncreaseBotMessagesPostedCountListener constructor.
      * @param Dispatcher $dispatcher
      */
     public function __construct(Dispatcher $dispatcher)

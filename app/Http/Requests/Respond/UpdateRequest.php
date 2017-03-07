@@ -13,6 +13,6 @@ class UpdateRequest extends Request
      */
     public function authorize()
     {
-        return Gate::allows('edit', [$this->route('respond'), $this->route('project')]);
+        return Gate::allows('edit', [$this->route('respond'), $this->route('bot')]);
     }
 }

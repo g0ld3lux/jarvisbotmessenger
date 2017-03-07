@@ -14,15 +14,15 @@ class CreateRecipientsVariablesTable extends Migration
     {
         Schema::create('recipients_variables', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('project_id')->unsigned();
+            $table->integer('bot_id')->unsigned();
             $table->string('name');
             $table->string('type');
             $table->string('accessor');
             $table->nullableTimestamps();
             $table
-                ->foreign('project_id')
+                ->foreign('bot_id')
                 ->references('id')
-                ->on('projects')
+                ->on('bots')
                 ->onDelete('cascade');
         });
     }

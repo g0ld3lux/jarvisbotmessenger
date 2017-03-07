@@ -2,7 +2,7 @@
 
 namespace Bot\FacebookMessenger\Jobs;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use App\Services\GetStartedMatcher;
 use App\Services\RecipientProvider;
@@ -74,16 +74,16 @@ class ProcessGetStartedJob extends Job
 
         $payload = $this->payload();
 
-        $project = Project::where('page_id', $this->recipientId)->first();
+        $bot = Bot::where('page_id', $this->recipientId)->first();
 
-        if (is_null($project)) {
+        if (is_null($bot)) {
             return;
         }
 
-        $recipient = $recipientProvider->get($project, $this->senderId);
+        $recipient = $recipientProvider->get($bot, $this->senderId);
 
         try {
-            $responds = $matcher->match($project, $recipient, $payload);
+            $responds = $matcher->match($bot, $recipient, $payload);
 
             $messages = [];
 
@@ -96,10 +96,10 @@ class ProcessGetStartedJob extends Job
                     'getstarted',
                     $payload,
                     null,
-                    $project,
+                    $bot,
                     $recipient,
                     $message,
-                    $bots->get($project->page_token)
+                    $bots->get($bot->page_token)
                 );
             }
         } catch (\Exception $e) {

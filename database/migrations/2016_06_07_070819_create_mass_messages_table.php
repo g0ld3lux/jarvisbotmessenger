@@ -14,7 +14,7 @@ class CreateMassMessagesTable extends Migration
     {
         Schema::create('mass_messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('project_id')->unsigned();
+            $table->integer('bot_id')->unsigned();
             $table->string('name');
             $table->dateTime('scheduled_at');
             $table->dateTime('started_at')->nullable()->default(null);
@@ -22,9 +22,9 @@ class CreateMassMessagesTable extends Migration
             $table->dateTime('finished_at')->nullable()->default(null);
             $table->nullableTimestamps();
             $table
-                ->foreign('project_id')
+                ->foreign('bot_id')
                 ->references('id')
-                ->on('projects')
+                ->on('bots')
                 ->onDelete('cascade');
         });
     }

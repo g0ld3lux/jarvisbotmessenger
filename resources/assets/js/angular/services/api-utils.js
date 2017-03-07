@@ -3,20 +3,20 @@ angular
     .service("ApiUtils", function ($http) {
         return {
             /**
-             * Project helpers.
+             * Bot helpers.
              */
-            project: {
+            bot: {
                 /**
                  * Fetch analytics data.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param fields
                  * @param start
                  * @param end
                  * @returns HttpPromise
                  */
-                analytics: function (projectId, fields, start, end) {
-                    return $http.get(BASE_URL + "/api/project/" + projectId + "/analytics", {
+                analytics: function (botId, fields, start, end) {
+                    return $http.get(BASE_URL + "/api/bot/" + botId + "/analytics", {
                         params: {
                             "fields[]": fields,
                             start: start,
@@ -37,35 +37,35 @@ angular
                     /**
                      * Disable recipient chat.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @returns HttpPromise
                      */
-                    disable: function (projectId, recipientId) {
-                        return $http.post(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/chat/disable");
+                    disable: function (botId, recipientId) {
+                        return $http.post(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/chat/disable");
                     },
 
                     /**
                      * Enable recipient chat.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @returns HttpPromise
                      */
-                    enable: function (projectId, recipientId) {
-                        return $http.post(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/chat/enable");
+                    enable: function (botId, recipientId) {
+                        return $http.post(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/chat/enable");
                     }
                 },
 
                 /**
                  * Refresh data from API.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param recipientId
                  * @returns HttpPromise
                  */
-                refresh: function (projectId, recipientId) {
-                    return $http.post(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/refresh");
+                refresh: function (botId, recipientId) {
+                    return $http.post(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/refresh");
                 },
 
                 /**
@@ -75,12 +75,12 @@ angular
                     /**
                      * Load all recipient channels.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @returns HttpPromise
                      */
-                    index: function (projectId, recipientId) {
-                        return $http.get(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/channel", {
+                    index: function (botId, recipientId) {
+                        return $http.get(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/channel", {
                             params: {
                                 all: true
                             }
@@ -90,25 +90,25 @@ angular
                     /**
                      * Remove recipient from channel.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @param channelId
                      * @returns HttpPromise
                      */
-                    delete: function (projectId, recipientId, channelId) {
-                        return $http.delete(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/channel/" + channelId);
+                    delete: function (botId, recipientId, channelId) {
+                        return $http.delete(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/channel/" + channelId);
                     },
 
                     /**
                      * Attach new channels.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param recipientId
                      * @param channels
                      * @returns HttpPromise
                      */
-                    store: function (projectId, recipientId, channels) {
-                        return $http.post(BASE_URL + "/api/project/" + projectId + "/recipient/" + recipientId + "/channel", { channels: channels });
+                    store: function (botId, recipientId, channels) {
+                        return $http.post(BASE_URL + "/api/bot/" + botId + "/recipient/" + recipientId + "/channel", { channels: channels });
                     }
                 }
             },
@@ -124,35 +124,35 @@ angular
                     /**
                      * Store new channel.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param channel
                      * @returns HttpPromise
                      */
-                    store: function (projectId, channel) {
-                        return $http.post(BASE_URL + "/api/project/" + projectId + "/subscription/channel", channel);
+                    store: function (botId, channel) {
+                        return $http.post(BASE_URL + "/api/bot/" + botId + "/subscription/channel", channel);
                     },
 
                     /**
                      * Update existing channel.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param channelId
                      * @param channel
                      * @returns HttpPromise
                      */
-                    update: function (projectId, channelId, channel) {
-                        return $http.put(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId, channel);
+                    update: function (botId, channelId, channel) {
+                        return $http.put(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId, channel);
                     },
 
                     /**
                      * Delete channel.
                      *
-                     * @param projectId
+                     * @param botId
                      * @param channelId
                      * @returns HttpPromise
                      */
-                    delete: function (projectId, channelId) {
-                        return $http.delete(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId);
+                    delete: function (botId, channelId) {
+                        return $http.delete(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId);
                     },
 
                     /**
@@ -162,13 +162,13 @@ angular
                         /**
                          * Store new recipients.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param recipients
                          * @returns HttpPromise
                          */
-                        store: function (projectId, channelId, recipients) {
-                            return $http.post(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/recipient", {
+                        store: function (botId, channelId, recipients) {
+                            return $http.post(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/recipient", {
                                 recipients: recipients
                             });
                         },
@@ -176,13 +176,13 @@ angular
                         /**
                          * Remove recipient from a channel.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param recipientId
                          * @returns HttpPromises
                          */
-                        delete: function (projectId, channelId, recipientId) {
-                            return $http.delete(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/recipient/" + recipientId);
+                        delete: function (botId, channelId, recipientId) {
+                            return $http.delete(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/recipient/" + recipientId);
                         }
                     },
 
@@ -193,37 +193,37 @@ angular
                         /**
                          * Retrieve single broadcast.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param broadcastId
                          * @returns HttpPromise
                          */
-                        show: function (projectId, channelId, broadcastId) {
-                            return $http.get(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/broadcast/" + broadcastId);
+                        show: function (botId, channelId, broadcastId) {
+                            return $http.get(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/broadcast/" + broadcastId);
                         },
 
                         /**
                          * Store new broadcast.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param broadcast
                          * @returns HttpPromise
                          */
-                        store: function (projectId, channelId, broadcast) {
-                            return $http.post(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/broadcast", broadcast);
+                        store: function (botId, channelId, broadcast) {
+                            return $http.post(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/broadcast", broadcast);
                         },
 
                         /**
                          * Remove recipient from a channel.
                          *
-                         * @param projectId
+                         * @param botId
                          * @param channelId
                          * @param broadcastId
                          * @returns HttpPromises
                          */
-                        delete: function (projectId, channelId, broadcastId) {
-                            return $http.delete(BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/broadcast/" + broadcastId);
+                        delete: function (botId, channelId, broadcastId) {
+                            return $http.delete(BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/broadcast/" + broadcastId);
                         }
                     }
                 }
@@ -236,34 +236,34 @@ angular
                 /**
                  * Retrieve single message.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param messageId
                  * @returns HttpPromise
                  */
-                show: function (projectId, messageId) {
-                    return $http.get(BASE_URL + "/api/project/" + projectId + "/message/" + messageId);
+                show: function (botId, messageId) {
+                    return $http.get(BASE_URL + "/api/bot/" + botId + "/message/" + messageId);
                 },
 
                 /**
                  * Remove message.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param messageId
                  * @returns HttpPromises
                  */
-                delete: function (projectId, messageId) {
-                    return $http.delete(BASE_URL + "/api/project/" + projectId + "/message/" + messageId);
+                delete: function (botId, messageId) {
+                    return $http.delete(BASE_URL + "/api/bot/" + botId + "/message/" + messageId);
                 },
 
                 /**
                  * Store new message.
                  *
-                 * @param projectId
+                 * @param botId
                  * @param message
                  * @returns HttpPromise
                  */
-                store: function (projectId, message) {
-                    return $http.post(BASE_URL + "/api/project/" + projectId + "/message", message);
+                store: function (botId, message) {
+                    return $http.post(BASE_URL + "/api/bot/" + botId + "/message", message);
                 }
             }
         }

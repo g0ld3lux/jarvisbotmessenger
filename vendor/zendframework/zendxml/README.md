@@ -19,7 +19,7 @@ Notice that this library doesn't have any external dependencies, the usage of co
 ZendXml\Security
 ----------------
 
-This is a security component to prevent [XML eXternal Entity](https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing) (XXE) and [XML Entity Expansion](http://projects.webappsec.org/w/page/13247002/XML%20Entity%20Expansion) (XEE) attacks on XML documents.
+This is a security component to prevent [XML eXternal Entity](https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing) (XXE) and [XML Entity Expansion](http://bots.webappsec.org/w/page/13247002/XML%20Entity%20Expansion) (XEE) attacks on XML documents.
 
 The XXE attack is prevented disabling the load of external entities in the libxml library used by PHP, using the function [libxml_disable_entity_loader](http://www.php.net/manual/en/function.libxml-disable-entity-loader.php).
 

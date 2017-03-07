@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="php-token-stream">
+<bot name="php-token-stream">
  <target name="clean" description="Cleanup build artifacts">
   <delete dir="${basedir}/vendor"/>
   <delete file="${basedir}/composer.lock"/>
@@ -30,4 +30,4 @@
    <arg path="${basedir}/build/phpunit.xml"/>
   </exec>
  </target>
-</project>
+</bot>

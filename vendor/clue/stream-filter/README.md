@@ -30,7 +30,7 @@ Its API is [*difficult to work with*](http://php.net/manual/en/php-user-filter.f
 and its documentation is [*subpar*](http://stackoverflow.com/questions/27103269/what-is-a-bucket-brigade).
 This combined means its powerful features are often neglected.
 
-This project aims to make these features more accessible to a broader audience.
+This bot aims to make these features more accessible to a broader audience.
 * **Lightweight, SOLID design** -
   Provides a thin abstraction that is [*just good enough*](http://en.wikipedia.org/wiki/Principle_of_good_enough)
   and does not get in your way.

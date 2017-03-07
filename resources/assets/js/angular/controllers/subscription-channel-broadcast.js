@@ -51,7 +51,7 @@ angular
                         .delete(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID, $scope.broadcast.id)
                         .then(function () {
                             toastr.success("Broadcast deleted successfully.");
-                            $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/subscriptions/channels/" + SUBSCRIPTION_CHANNEL_ID;
+                            $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels/" + SUBSCRIPTION_CHANNEL_ID;
                         }, function () {
                             toastr.error("Failed to delete broadcast.");
                         });

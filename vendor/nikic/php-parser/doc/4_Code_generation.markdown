@@ -2,7 +2,7 @@ Code generation
 ===============
 
 It is also possible to generate code using the parser, by first creating an Abstract Syntax Tree and then using the
-pretty printer to convert it to PHP code. To simplify code generation, the project comes with builders which allow
+pretty printer to convert it to PHP code. To simplify code generation, the bot comes with builders which allow
 creating node trees using a fluid interface, instead of instantiating all nodes manually. Builders are available for
 the following syntactic elements:
 

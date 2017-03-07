@@ -10,7 +10,7 @@ domain parser implemented in PHP.
 ## Motivation
 
 While there are plenty of excellent URL parsers and builders available, there
-are very few projects that can accurately parse a url into its component
+are very few bots that can accurately parse a url into its component
 subdomain, registerable domain, and public suffix parts.
 
 Consider the domain www.pref.okinawa.jp.  In this domain, the
@@ -27,7 +27,7 @@ beginning, adding a URL object simply for the sake of completeness.
 The only (currently) supported method of installation is via
 [Composer](http://getcomposer.org).
 
-Create a `composer.json` file in the root of your project:
+Create a `composer.json` file in the root of your bot:
 
 ``` json
 {
@@ -39,7 +39,7 @@ Create a `composer.json` file in the root of your project:
 
 And then run: `composer install`
 
-Add the autoloader to your project:
+Add the autoloader to your bot:
 
 ``` php
 <?php
@@ -281,7 +281,7 @@ A suffix is considered invalid if it is not contained in the
 
 > Huge thanks to [@SmellyFish](https://github.com/SmellyFish) for submitting
 > [Add a way to validate TLDs](https://github.com/jeremykendall/php-domain-parser/pull/36)
-> to add public suffix validation to the project.
+> to add public suffix validation to the bot.
 
 ### Retrieving Domain Components Only ###
 
@@ -307,7 +307,7 @@ string(5) "co.uk"
 ### Sanity Check
 
 You can quickly parse a url from the command line with the provided `parse`
-vendor binary.  From the root of your project, simply call:
+vendor binary.  From the root of your bot, simply call:
 
 ``` bash
 $ ./vendor/bin/parse <url>
@@ -354,7 +354,7 @@ While a cached PHP copy of the Public Suffix List is provided for you in the
 to keep up with changes to the list). Please use the provided vendor binary to
 refresh your cached copy of the Public Suffix List.
 
-From the root of your project, simply call:
+From the root of your bot, simply call:
 
 ``` bash
 $ ./vendor/bin/update-psl
@@ -399,7 +399,7 @@ I apologize for any issues you may have encountered due my
 
 The HTTP adapter interface and the cURL HTTP adapter were inspired by (er,
 lifted from) Will Durand's excellent
-[Geocoder](https://github.com/willdurand/Geocoder) project.  His MIT license and
+[Geocoder](https://github.com/willdurand/Geocoder) bot.  His MIT license and
 copyright notice are below.
 
 ```
@@ -428,4 +428,4 @@ Portions of the PublicSuffixListManager and the DomainParser are derivative
 works of the PHP
 [registered-domain-libs](https://github.com/usrflo/registered-domain-libs).
 Those parts of this codebase are heavily commented, and I've included a copy of
-the Apache Software Foundation License 2.0 in this project.
+the Apache Software Foundation License 2.0 in this bot.

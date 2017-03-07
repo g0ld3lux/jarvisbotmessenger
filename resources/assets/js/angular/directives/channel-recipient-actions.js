@@ -34,10 +34,10 @@ angular
                         closeOnConfirm: false
                     }, function (confirm){
                         if (confirm) {
-                            ApiUtils.subscription.channel.recipient.delete(recipient.project_id, recipient.channel_id, recipient.id).then(function () {
-                                scope.$emit("channel.recipient.delete.success", recipient.project_id, recipient.channel_id, recipient.id);
+                            ApiUtils.subscription.channel.recipient.delete(recipient.bot_id, recipient.channel_id, recipient.id).then(function () {
+                                scope.$emit("channel.recipient.delete.success", recipient.bot_id, recipient.channel_id, recipient.id);
                             }, function () {
-                                scope.$emit("channel.recipient.delete.fail", recipient.project_id, recipient.channel_id, recipient.id);
+                                scope.$emit("channel.recipient.delete.fail", recipient.bot_id, recipient.channel_id, recipient.id);
                             });
                         }
 

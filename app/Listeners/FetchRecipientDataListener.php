@@ -30,7 +30,7 @@ class FetchRecipientDataListener
     {
         $data = $this->dispatcher->dispatchNow(new FetchRecipientDataJob(
             $recipient->reference,
-            $recipient->project->page_token
+            $recipient->bot->page_token
         ));
 
         $recipient->fill([

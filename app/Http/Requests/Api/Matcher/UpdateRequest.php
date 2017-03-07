@@ -14,6 +14,6 @@ class UpdateRequest extends MatcherRequest
      */
     public function authorize()
     {
-        return Gate::allows('view', [$this->route('flow'), $this->route('project')]);
+        return Gate::allows('view', [$this->route('flow'), $this->route('bot')]);
     }
 }

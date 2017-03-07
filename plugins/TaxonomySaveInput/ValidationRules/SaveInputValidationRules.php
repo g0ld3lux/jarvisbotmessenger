@@ -29,7 +29,7 @@ class SaveInputValidationRules implements TaxonomyValidationRules
     public function rules()
     {
         return [
-            'variable' => 'required|exists:recipients_variables,id,project_id,'.$this->request->route('project')->id,
+            'variable' => 'required|exists:recipients_variables,id,bot_id,'.$this->request->route('bot')->id,
         ];
     }
 }

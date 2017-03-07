@@ -1,9 +1,0 @@
-<ul class="nav nav-tabs">
-    <li role="presentation"{!! array_get($__rp, 'submenu') == 'dashboard' ? ' class="active"' : '' !!}><a href="{{ route('projects.show', $project->id) }}" data-toggle="tooltip" title="Dashboard"><i class="fa fa-dashboard"></i></a></li>
-    <li role="presentation"{!! array_get($__rp, 'submenu') == 'settings' ? ' class="active"' : '' !!}><a href="{{ route('projects.settings', $project->id) }}" data-toggle="tooltip" title="Settings"><i class="fa fa-cog"></i></a></li>
-    <li role="presentation"{!! array_get($__rp, 'submenu') == 'recipients' ? ' class="active"' : '' !!}><a href="{{ route('projects.recipients.index', $project->id) }}" data-toggle="tooltip" title="Recipients"><i class="fa fa-users"></i></a></li>
-    <li role="presentation"{!! array_get($__rp, 'submenu') == 'recipients_variables' ? ' class="active"' : '' !!}><a href="{{ route('projects.recipients.variables.index', $project->id) }}" data-toggle="tooltip" title="Recipients variables"><i class="fa fa-i-cursor"></i></a></li>
-    <li role="presentation"{!! array_get($__rp, 'submenu') == 'responds' ? ' class="active"' : '' !!}><a href="{{ route('projects.responds.index', $project->id) }}" data-toggle="tooltip" title="Responds"><i class="fa fa-comment"></i></a></li>
-    <li role="presentation"{!! array_get($__rp, 'submenu') == 'messages' ? ' class="active"' : '' !!}><a href="{{ route('projects.messages.index', $project->id) }}" data-toggle="tooltip" title="Mass messages"><i class="fa fa-envelope"></i></a></li>
-    <li role="presentation"{!! array_get($__rp, 'submenu') == 'subscriptions_channels' ? ' class="active"' : '' !!}><a href="{{ route('projects.subscriptions.channels.index', $project->id) }}" data-toggle="tooltip" title="Subscription channels"><i class="fa fa-rss"></i></a></li>
-</ul>

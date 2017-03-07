@@ -46,7 +46,7 @@ angular
                  * @param recipient
                  */
                 var disableChat = function (recipient) {
-                    ApiUtils.recipient.chat.disable(recipient.project_id, recipient.id).then(function () {
+                    ApiUtils.recipient.chat.disable(recipient.bot_id, recipient.id).then(function () {
                         recipient.chat_disabled = true;
                         scope.$emit("recipient.chat.disable.success", recipient);
                     }, function () {
@@ -60,7 +60,7 @@ angular
                  * @param recipient
                  */
                 var enableChat = function (recipient) {
-                    ApiUtils.recipient.chat.enable(recipient.project_id, recipient.id).then(function () {
+                    ApiUtils.recipient.chat.enable(recipient.bot_id, recipient.id).then(function () {
                         recipient.chat_disabled = false;
                         scope.$emit("recipient.chat.enable.success", recipient);
                     }, function () {

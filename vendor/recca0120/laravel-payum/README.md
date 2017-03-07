@@ -11,7 +11,7 @@
 
 ## Installing
 
-To get the latest version of Laravel Exceptions, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version of Laravel Exceptions, simply require the bot using [Composer](https://getcomposer.org):
 
 ```bash
 composer require recca0120/laravel-payum

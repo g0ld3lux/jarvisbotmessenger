@@ -19,9 +19,9 @@ class EventServiceProvider extends ServiceProvider
         'eloquent.created: App\Models\Recipient' => [
             Listeners\FetchRecipientDataListener::class,
         ],
-        'eloquent.created: App\Models\Project' => [
-            Listeners\Projects\InitialVariablesListener::class,
-            Listeners\Projects\ProjectCreatedListener::class,
+        'eloquent.created: App\Models\Bot' => [
+            Listeners\Bots\InitialVariablesListener::class,
+            Listeners\Bots\BotCreatedListener::class,
         ],
         'eloquent.saved: App\Models\Recipient\Variable\Value' => [
             Listeners\Recipients\Variables\Values\ChangeListener::class,
@@ -29,13 +29,13 @@ class EventServiceProvider extends ServiceProvider
         'eloquent.saved: App\Models\Recipient' => [
             Listeners\Recipients\ChangeListener::class,
         ],
-        'eloquent.saved: App\Models\Project' => [
-            Listeners\Projects\PageTokenUpdatedListener::class,
+        'eloquent.saved: App\Models\Bot' => [
+            Listeners\Bots\PageTokenUpdatedListener::class,
         ],
-        'eloquent.saved: App\Models\Project\Settings\Thread' => [
-            Listeners\Projects\Settings\Thread\GreetingText\SavedListener::class,
-            Listeners\Projects\Settings\Thread\GetStartedRespond\SavedListener::class,
-            Listeners\Projects\Settings\Thread\PersistentMenuRespond\SavedListener::class,
+        'eloquent.saved: App\Models\Bot\Settings\Thread' => [
+            Listeners\Bots\Settings\Thread\GreetingText\SavedListener::class,
+            Listeners\Bots\Settings\Thread\GetStartedRespond\SavedListener::class,
+            Listeners\Bots\Settings\Thread\PersistentMenuRespond\SavedListener::class,
         ],
         Events\ScheduleProcessedEvent::class => [
             Listeners\IncreaseMessagesSentCountListener::class,

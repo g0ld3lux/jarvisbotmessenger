@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 
 interface TaxonomyCreateLink
@@ -31,9 +31,9 @@ interface TaxonomyCreateLink
     /**
      * Return link.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param Respond $respond
      * @return string
      */
-    public function link(Project $project, Respond $respond);
+    public function link(Bot $bot, Respond $respond);
 }

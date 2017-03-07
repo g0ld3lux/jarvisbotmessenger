@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\Flow;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -13,31 +13,31 @@ class MatcherPolicy
     use HandlesAuthorization;
 
     /**
-     * Determine if user is owner of a project.
+     * Determine if user is owner of a bot.
      *
      * @param User $user
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isProjectOwner(User $user, Project $project)
+    protected function isBotOwner(User $user, Bot $bot)
     {
-        return $user->id == $project->user_id;
+        return $user->id == $bot->user_id;
     }
 
     /**
-     * Determine is related to project.
+     * Determine is related to bot.
      *
      * @param Flow $flow
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isFlowRelatedToProject(Flow $flow, Project $project)
+    protected function isFlowRelatedToBot(Flow $flow, Bot $bot)
     {
-        return $flow->project_id == $project->id;
+        return $flow->bot_id == $bot->id;
     }
 
     /**
-     * Determine is related to project.
+     * Determine is related to bot.
      *
      * @param Flow\Matcher $matcher
      * @param Flow $flow
@@ -54,13 +54,13 @@ class MatcherPolicy
      * @param User $user
      * @param Flow\Matcher $matcher
      * @param Flow $flow
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function edit(User $user, Flow\Matcher $matcher, Flow $flow, Project $project)
+    public function edit(User $user, Flow\Matcher $matcher, Flow $flow, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project)
-            && $this->isFlowRelatedToProject($flow, $project)
+        return $this->isBotOwner($user, $bot)
+            && $this->isFlowRelatedToBot($flow, $bot)
             && $this->isMatcherRelatedToFlow($matcher, $flow);
     }
 
@@ -70,13 +70,13 @@ class MatcherPolicy
      * @param User $user
      * @param Flow\Matcher $matcher
      * @param Flow $flow
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function delete(User $user, Flow\Matcher $matcher, Flow $flow, Project $project)
+    public function delete(User $user, Flow\Matcher $matcher, Flow $flow, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project)
-            && $this->isFlowRelatedToProject($flow, $project)
+        return $this->isBotOwner($user, $bot)
+            && $this->isFlowRelatedToBot($flow, $bot)
             && $this->isMatcherRelatedToFlow($matcher, $flow);
     }
 }

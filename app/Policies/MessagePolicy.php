@@ -4,7 +4,7 @@ namespace App\Policies;
 
 use App\Models\Flow;
 use App\Models\Mass\Message;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -14,45 +14,45 @@ class MessagePolicy
 
     /**
      * @param User $user
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isProjectOwner(User $user, Project $project)
+    protected function isBotOwner(User $user, Bot $bot)
     {
-        return $user->id == $project->user_id;
+        return $user->id == $bot->user_id;
     }
 
     /**
      * @param Message $message
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isMessageRelatedToProject(Message $message, Project $project)
+    protected function isMessageRelatedToBot(Message $message, Bot $bot)
     {
-        return $message->project_id == $project->id;
-    }
-
-    /**
-     * @param User $user
-     * @param Message $message
-     * @param Project $project
-     * @return bool
-     */
-    public function view(User $user, Message $message, Project $project)
-    {
-        return $this->isProjectOwner($user, $project) && $this->isMessageRelatedToProject($message, $project);
+        return $message->bot_id == $bot->id;
     }
 
     /**
      * @param User $user
      * @param Message $message
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function delete(User $user, Message $message, Project $project)
+    public function view(User $user, Message $message, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project)
-            && $this->isMessageRelatedToProject($message, $project)
+        return $this->isBotOwner($user, $bot) && $this->isMessageRelatedToBot($message, $bot);
+    }
+
+    /**
+     * @param User $user
+     * @param Message $message
+     * @param Bot $bot
+     * @return bool
+     */
+    public function delete(User $user, Message $message, Bot $bot)
+    {
+        return $this->isBotOwner($user, $bot)
+            && $this->isMessageRelatedToBot($message, $bot)
             && !$message->is_started
             && !$message->is_finished;
     }

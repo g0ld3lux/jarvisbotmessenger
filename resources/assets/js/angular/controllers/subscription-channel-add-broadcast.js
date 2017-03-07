@@ -1,6 +1,6 @@
 angular
     .module("messengerBotApp")
-    .controller("SubscriptionChannelAddBroadcastController", function ($scope, $uibModalInstance, $http, toastr, ApiUtils, projectId, channelId) {
+    .controller("SubscriptionChannelAddBroadcastController", function ($scope, $uibModalInstance, $http, toastr, ApiUtils, botId, channelId) {
         /**
          * Determine if responds are loading.
          *
@@ -62,7 +62,7 @@ angular
         /**
          * Load responds.
          */
-        $http.get(BASE_URL + "/api/project/" + projectId + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + botId + "/respond").then(function (response) {
             $scope.responds = response.data;
         }).finally(function () {
             $scope.respondsLoading = false;
@@ -81,7 +81,7 @@ angular
                 .subscription
                 .channel
                 .broadcast
-                .store(projectId, channelId, clone)
+                .store(botId, channelId, clone)
                 .then(function (response) {
                     toastr.success("Broadcast scheduled successfully.");
                     $uibModalInstance.close(response.data);

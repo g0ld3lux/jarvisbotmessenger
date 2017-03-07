@@ -95,7 +95,7 @@ angular
                 if (confirm) {
                     ApiUtils.subscription.channel.delete(PROJECT_ID, SUBSCRIPTION_CHANNEL_ID).then(function () {
                         toastr.success("Channel deleted successfully.");
-                        $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/subscriptions/channels";
+                        $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/subscriptions/channels";
                     }, function () {
                         toastr.error("Failed to delete channel.");
                     });

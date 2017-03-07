@@ -1,7 +1,7 @@
 <?php
 /**
  * Random_* Compatibility Library 
- * for using the new PHP 7 random_* API in PHP 5 projects
+ * for using the new PHP 7 random_* API in PHP 5 bots
  * 
  * The MIT License (MIT)
  * 
@@ -30,7 +30,7 @@
  * If the libsodium PHP extension is loaded, we'll use it above any other
  * solution.
  *
- * libsodium-php project:
+ * libsodium-php bot:
  * @ref https://github.com/jedisct1/libsodium-php
  *
  * @param int $bytes

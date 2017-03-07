@@ -9,28 +9,28 @@ angular
         $scope.recipientsLoading = true;
 
         /**
-         * Set initial project.
+         * Set initial bot.
          *
          * @type {{}}
          */
-        $scope.project = {};
+        $scope.bot = {};
 
         /**
-         * Determine if project is loading.
+         * Determine if bot is loading.
          *
          * @type {boolean}
          */
-        $scope.projectLoading = true;
+        $scope.botLoading = true;
 
         /**
-         * Load active project.
+         * Load active bot.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID).then(function (response) {
-            $scope.project = response.data;
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID).then(function (response) {
+            $scope.bot = response.data;
 
-            $scope.projectLoading = false;
+            $scope.botLoading = false;
 
-            $scope.$broadcast("project.loaded", $scope.project);
+            $scope.$broadcast("bot.loaded", $scope.bot);
         });
 
         /**
@@ -39,7 +39,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/recipient",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {

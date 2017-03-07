@@ -1,17 +1,17 @@
 # Version
 
-**Version** is a library that helps with managing the version number of Git-hosted PHP projects.
+**Version** is a library that helps with managing the version number of Git-hosted PHP bots.
 
 ## Installation
 
-Simply add a dependency on `sebastian/version` to your project's `composer.json` file if you use [Composer](http://getcomposer.org/) to manage the dependencies of your project.
+Simply add a dependency on `sebastian/version` to your bot's `composer.json` file if you use [Composer](http://getcomposer.org/) to manage the dependencies of your bot.
 
 ## Usage
 
 The constructor of the `SebastianBergmann\Version` class expects two parameters:
 
 * `$release` is the version number of the latest release (`X.Y.Z`, for instance) or the name of the release series (`X.Y`) when no release has been made from that branch / for that release series yet.
-* `$path` is the path to the directory (or a subdirectory thereof) where the sourcecode of the project can be found. Simply passing `__DIR__` here usually suffices.
+* `$path` is the path to the directory (or a subdirectory thereof) where the sourcecode of the bot can be found. Simply passing `__DIR__` here usually suffices.
 
 Apart from the constructor, the `SebastianBergmann\Version` class has a single public method: `getVersion()`.
 

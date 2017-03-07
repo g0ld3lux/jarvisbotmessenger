@@ -14,7 +14,7 @@ class StoreRequest extends Request
      */
     public function authorize()
     {
-        return Gate::allows('view', $this->route('project'));
+        return Gate::allows('view', $this->route('bot'));
     }
 
     /**
@@ -26,7 +26,7 @@ class StoreRequest extends Request
     {
         return [
             'title' => 'required',
-            'responds.*.id' => 'exists:responds,id,label,NULL,project_id,'.$this->route('project')->id,
+            'responds.*.id' => 'exists:responds,id,label,NULL,bot_id,'.$this->route('bot')->id,
         ];
     }
 }

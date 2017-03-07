@@ -13,7 +13,7 @@ class DemoDatabaseSeeder extends Seeder
     {
         $user = \App\Models\User::create(['name' => 'demo', 'email' => 'demo@demo.com', 'password' => bcrypt('demo')]);
 
-        $user->projects()->create([
+        $user->bots()->create([
             'title' => 'demo',
         ]);
 

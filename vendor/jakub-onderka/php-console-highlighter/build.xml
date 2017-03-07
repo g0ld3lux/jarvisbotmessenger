@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="build">
+<bot default="build">
     <!-- Set executables according to OS -->
     <condition property="phpunit" value="${basedir}/vendor/bin/phpunit.bat" else="${basedir}/vendor/bin/phpunit">
         <os family="windows" />
@@ -90,4 +90,4 @@
 
     <target name="build" depends="phplint,var-dump-check,phpcs,phpunit" />
 
-</project>
+</bot>

@@ -4,7 +4,7 @@ namespace Plugins\TaxonomyCarousel;
 
 use App\Http\Controllers\TaxonomiesController;
 use App\Jobs\Responds\Taxonomies\GetNextOrderJob;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use App\Services\Taxonomies\CreateLinkRegistry;
 use App\Services\Taxonomies\ParamAssignerRegistry;
@@ -36,7 +36,7 @@ class Provider extends AbstractServiceProvider
         TaxonomiesController::extend(
             TaxonomiesController::ACTION_CREATE,
             'carousel',
-            function (Project $project, Respond $respond, $type, Respond\Taxonomy $parent = null) {
+            function (Bot $bot, Respond $respond, $type, Respond\Taxonomy $parent = null) {
                 $taxonomy = new Respond\Taxonomy([
                     'type' => $type,
                     'order' => app(Dispatcher::class)->dispatchNow(new GetNextOrderJob($respond)),
@@ -46,8 +46,8 @@ class Provider extends AbstractServiceProvider
 
                 $taxonomy->save();
 
-                return redirect()->route('projects.responds.edit.taxonomies.edit', [
-                    $project->id,
+                return redirect()->route('bots.responds.edit.taxonomies.edit', [
+                    $bot->id,
                     $respond->id,
                     $taxonomy->id
                 ]);

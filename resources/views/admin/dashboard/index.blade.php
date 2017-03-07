@@ -26,7 +26,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="text-left">
-                            <h3><i class="fa fa-btn fa-android" style="color: green;"></i>{{ \App\Models\Project::count() }} Bots</h3>
+                            <h3><i class="fa fa-btn fa-android" style="color: green;"></i>{{ \App\Models\Bot::count() }} Bots</h3>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->display_name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>{{ $user->projects()->count() }}</td>
+                                        <td>{{ $user->bots()->count() }}</td>
                                         <td>{{ $user->created_at->format('F j, Y, g:i A') }}</td>
                                         <td class="text-right">
                                             <form action="{{ route('admin.users.delete', $user->id) }}" method="POST">

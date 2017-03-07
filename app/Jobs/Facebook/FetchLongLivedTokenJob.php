@@ -24,7 +24,7 @@ class FetchLongLivedTokenJob extends Job implements ShouldQueue
     protected $accessToken;
 
     /**
-     * SubscribeProjectJob constructor.
+     * SubscribeBotJob constructor.
      * @param string $accessToken
      */
     public function __construct($accessToken)

@@ -2,7 +2,7 @@
 
 namespace App\Services\Flow;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Services\Flow\Contract\Exchanger;
 use Carbon\Carbon;
 
@@ -40,14 +40,14 @@ class Exchange
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param object $data
      * @param $version
      * @return bool
      */
-    public function import(Project $project, $data, $version)
+    public function import(Bot $bot, $data, $version)
     {
-        return $this->exchanger($version)->import($project, $data);
+        return $this->exchanger($version)->import($bot, $data);
     }
 
     /**

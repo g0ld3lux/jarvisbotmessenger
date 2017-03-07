@@ -3,34 +3,34 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mass\Message;
-use App\Models\Project;
+use App\Models\Bot;
 
 class MassMessagesController extends Controller
 {
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @return \Illuminate\Http\Response
      */
-    public function index(Project $project)
+    public function index(Bot $bot)
     {
-        $this->authorize('view', $project);
+        $this->authorize('view', $bot);
 
-        return view('projects.messages.index', [
-            'project' => $project,
+        return view('bots.messages.index', [
+            'bot' => $bot,
         ]);
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param Message $message
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Project $project, Message $message)
+    public function show(Bot $bot, Message $message)
     {
-        $this->authorize('view', [$message, $project]);
+        $this->authorize('view', [$message, $bot]);
 
-        return view('projects.messages.show', [
-            'project' => $project,
+        return view('bots.messages.show', [
+            'bot' => $bot,
             'message' => $message,
         ]);
     }

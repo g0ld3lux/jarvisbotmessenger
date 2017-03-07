@@ -4,7 +4,7 @@ namespace App\Models\Mass;
 
 use App\Models\Flow\Matcher;
 use App\Models\Mass\Message\Schedule;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use Illuminate\Database\Eloquent\Model;
 
@@ -48,13 +48,13 @@ class Message extends Model
     ];
 
     /**
-     * Return related project.
+     * Return related bot.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function project()
+    public function bot()
     {
-        return $this->belongsTo(Project::class, 'project_id');
+        return $this->belongsTo(Bot::class, 'bot_id');
     }
 
     /**

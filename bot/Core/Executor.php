@@ -3,7 +3,7 @@
 namespace Bot\Core;
 
 use App\Models\Recipient;
-use App\Models\Project;
+use App\Models\Bot;
 use Bot\Core\Contract\Executable;
 use Bot\Core\Respond\Flow;
 use Illuminate\Contracts\Bus\Dispatcher;
@@ -28,7 +28,7 @@ class Executor
      * @param $type
      * @param $text
      * @param null|Flow $flow
-     * @param Project $project
+     * @param Bot $bot
      * @param Recipient $recipient
      * @param Executable $executable
      * @param FbBotApp $botApp
@@ -37,13 +37,13 @@ class Executor
         $type,
         $text,
         $flow,
-        Project $project,
+        Bot $bot,
         Recipient $recipient,
         Executable $executable,
         FbBotApp $botApp
     ) {
         try {
-            $this->dispatcher->dispatch($executable->job($type, $text, $flow, $project, $recipient, $botApp));
+            $this->dispatcher->dispatch($executable->job($type, $text, $flow, $bot, $recipient, $botApp));
         } catch (\Exception $e) {
             logger($e);
         }

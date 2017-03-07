@@ -32,8 +32,8 @@ class Fetch extends Command
     {
         $query = Recipient::select('*');
 
-        if ($this->option('project-id')) {
-            $query = $query->where('project_id', $this->option('project-id'));
+        if ($this->option('bot-id')) {
+            $query = $query->where('bot_id', $this->option('bot-id'));
         }
 
         if ($this->option('recipient-id')) {
@@ -48,7 +48,7 @@ class Fetch extends Command
             foreach ($recipients as $recipient) {
                 $data = $dispatcher->dispatchNow(new FetchRecipientDataJob(
                     $recipient->reference,
-                    $recipient->project->page_token
+                    $recipient->bot->page_token
                 ));
 
                 $recipient->fill([
@@ -85,7 +85,7 @@ class Fetch extends Command
     protected function getOptions()
     {
         return [
-            ['project-id', null, InputOption::VALUE_OPTIONAL, 'Project ID'],
+            ['bot-id', null, InputOption::VALUE_OPTIONAL, 'Bot ID'],
             ['recipient-id', null, InputOption::VALUE_OPTIONAL, 'Recipient ID'],
             ['sleep', null, InputOption::VALUE_OPTIONAL, 'Sleep in seconds'],
         ];

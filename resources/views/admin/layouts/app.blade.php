@@ -61,7 +61,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('projects.index') }}"><i class="fa fa-btn fa-arrow-left"></i>Back to application</a></li>
+                                <li><a href="{{ route('bots.index') }}"><i class="fa fa-btn fa-arrow-left"></i>Back to application</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
 
                                 @can('access.admin')

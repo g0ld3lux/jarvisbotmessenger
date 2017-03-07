@@ -39,7 +39,7 @@ class ScheduleJob extends Job implements ShouldQueue
      * @param int $interval
      * @param string $timezone
      */
-    public function __construct(Message $message, array $recipients = [], $interval = 0, $timezone = 'project')
+    public function __construct(Message $message, array $recipients = [], $interval = 0, $timezone = 'bot')
     {
         $this->message = $message;
         $this->interval = $interval;
@@ -95,7 +95,7 @@ class ScheduleJob extends Job implements ShouldQueue
     protected function getRecipients()
     {
         if (count($this->recipients) <= 0) {
-            foreach ($this->message->project->recipients as $recipient) {
+            foreach ($this->message->bot->recipients as $recipient) {
                 $this->addRecipient($recipient);
             }
         }

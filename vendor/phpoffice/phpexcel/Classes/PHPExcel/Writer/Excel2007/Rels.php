@@ -159,14 +159,14 @@ class PHPExcel_Writer_Excel2007_Rels extends PHPExcel_Writer_Excel2007_WriterPar
                 'worksheets/sheet' . ($i + 1) . '.xml'
             );
         }
-        // Relationships for vbaProject if needed
+        // Relationships for vbaBot if needed
         // id : just after the last sheet
         if ($pPHPExcel->hasMacros()) {
             $this->writeRelationShip(
                 $objWriter,
                 ($i + 1 + 3),
-                'http://schemas.microsoft.com/office/2006/relationships/vbaProject',
-                'vbaProject.bin'
+                'http://schemas.microsoft.com/office/2006/relationships/vbaBot',
+                'vbaBot.bin'
             );
             ++$i;//increment i if needed for an another relation
         }

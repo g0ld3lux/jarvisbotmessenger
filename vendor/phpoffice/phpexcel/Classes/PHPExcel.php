@@ -111,13 +111,13 @@ class PHPExcel
     private $hasMacros = false;
 
     /**
-    * macrosCode : all macros code (the vbaProject.bin file, this include form, code,  etc.), null if no macro
+    * macrosCode : all macros code (the vbaBot.bin file, this include form, code,  etc.), null if no macro
     *
     * @var binary
     */
     private $macrosCode;
     /**
-    * macrosCertificate : if macros are signed, contains vbaProjectSignature.bin file, null if not signed
+    * macrosCertificate : if macros are signed, contains vbaBotSignature.bin file, null if not signed
     *
     * @var binary
     */
@@ -190,7 +190,7 @@ class PHPExcel
     }
 
     /**
-    * Is the project signed ?
+    * Is the bot signed ?
     *
     * @return boolean true|false
     */

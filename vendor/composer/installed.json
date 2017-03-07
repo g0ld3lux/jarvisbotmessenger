@@ -933,7 +933,7 @@
             "phpunit/phpunit": "@stable"
         },
         "time": "2014-10-24 07:27:01",
-        "type": "project",
+        "type": "bot",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
@@ -1356,7 +1356,7 @@
             }
         ],
         "description": "Common String Manipulations with regard to casing and singular/plural rules.",
-        "homepage": "http://www.doctrine-project.org",
+        "homepage": "http://www.doctrine-bot.org",
         "keywords": [
             "inflection",
             "pluralize",
@@ -2269,7 +2269,7 @@
                 "email": "kotlyar.maksim@gmail.com"
             },
             {
-                "name": "Payum project",
+                "name": "Payum bot",
                 "homepage": "http://payum.org/"
             }
         ],
@@ -2374,7 +2374,7 @@
                 "email": "kotlyar.maksim@gmail.com"
             },
             {
-                "name": "Payum project",
+                "name": "Payum bot",
                 "homepage": "http://payum.org/"
             }
         ],
@@ -3654,7 +3654,7 @@
                 "email": "kotlyar.maksim@gmail.com"
             },
             {
-                "name": "Payum project",
+                "name": "Payum bot",
                 "homepage": "http://payum.org/"
             }
         ],
@@ -3719,7 +3719,7 @@
                 "email": "kotlyar.maksim@gmail.com"
             },
             {
-                "name": "Payum project",
+                "name": "Payum bot",
                 "homepage": "http://payum.org/"
             }
         ],
@@ -3994,7 +3994,7 @@
                 "role": "lead"
             }
         ],
-        "description": "Library that helps with managing the version number of Git-hosted PHP projects",
+        "description": "Library that helps with managing the version number of Git-hosted PHP bots",
         "homepage": "https://github.com/sebastianbergmann/version"
     },
     {
@@ -5797,7 +5797,7 @@
             {
                 "name": "Armin Ronacher",
                 "email": "armin.ronacher@active-4.com",
-                "role": "Project Founder"
+                "role": "Bot Founder"
             },
             {
                 "name": "Twig Team",

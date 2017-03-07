@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -17,27 +17,27 @@ class RecipientVariablePolicy
     protected $skipNames = ['first-name', 'last-name', 'gender', 'timezone', 'locale'];
 
     /**
-     * Determine if user is owner of a project.
+     * Determine if user is owner of a bot.
      *
      * @param User $user
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isProjectOwner(User $user, Project $project)
+    protected function isBotOwner(User $user, Bot $bot)
     {
-        return $user->id == $project->user_id;
+        return $user->id == $bot->user_id;
     }
 
     /**
-     * Determine is related to project.
+     * Determine is related to bot.
      *
      * @param Recipient\Variable $variable
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isVariableRelatedToProject(Recipient\Variable $variable, Project $project)
+    protected function isVariableRelatedToBot(Recipient\Variable $variable, Bot $bot)
     {
-        return $variable->project_id == $project->id;
+        return $variable->bot_id == $bot->id;
     }
 
     /**
@@ -52,26 +52,26 @@ class RecipientVariablePolicy
     /**
      * @param User $user
      * @param Recipient\Variable $variable
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function edit(User $user, Recipient\Variable $variable, Project $project)
+    public function edit(User $user, Recipient\Variable $variable, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project)
-            && $this->isVariableRelatedToProject($variable, $project)
+        return $this->isBotOwner($user, $bot)
+            && $this->isVariableRelatedToBot($variable, $bot)
             && !$this->isSkipped($variable);
     }
 
     /**
      * @param User $user
      * @param Recipient\Variable $variable
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function delete(User $user, Recipient\Variable $variable, Project $project)
+    public function delete(User $user, Recipient\Variable $variable, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project)
-        && $this->isVariableRelatedToProject($variable, $project)
+        return $this->isBotOwner($user, $bot)
+        && $this->isVariableRelatedToBot($variable, $bot)
         && !$this->isSkipped($variable);
     }
 }

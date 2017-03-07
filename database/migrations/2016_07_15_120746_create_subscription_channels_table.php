@@ -14,13 +14,13 @@ class CreateSubscriptionChannelsTable extends Migration
     {
         Schema::create('subscriptions_channels', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('project_id')->unsigned();
+            $table->integer('bot_id')->unsigned();
             $table->text('name');
             $table->nullableTimestamps();
             $table
-                ->foreign('project_id')
+                ->foreign('bot_id')
                 ->references('id')
-                ->on('projects')
+                ->on('bots')
                 ->onDelete('cascade');
         });
     }

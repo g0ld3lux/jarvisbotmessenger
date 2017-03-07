@@ -76,7 +76,7 @@ angular
         /**
          * Load responds.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/respond").then(function (response) {
             $scope.responds = response.data;
         }).finally(function () {
             $scope.respondsLoading = false;
@@ -85,7 +85,7 @@ angular
         /**
          * Load recipients.
          */
-        $http.get(BASE_URL + "/api/project/" + PROJECT_ID + "/recipient?all=1").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient?all=1").then(function (response) {
             $scope.recipients = response.data;
         }).finally(function () {
             $scope.recipientsLoading = false;
@@ -116,7 +116,7 @@ angular
                 .store(PROJECT_ID, clone)
                 .then(function (response) {
                     toastr.success("Message scheduled successfully.");
-                    $window.location.href = BASE_URL + "/projects/" + PROJECT_ID + "/messages/" + response.data.id;
+                    $window.location.href = BASE_URL + "/bots/" + PROJECT_ID + "/messages/" + response.data.id;
                 }, function (response) {
                     $scope.errors = response.data;
                 }).finally(function () {

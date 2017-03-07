@@ -1,6 +1,6 @@
 angular
     .module("messengerBotApp")
-    .controller("FlowController", function ($scope, $uibModalInstance, $uibModal, $http, toastr, project, flow) {
+    .controller("FlowController", function ($scope, $uibModalInstance, $uibModal, $http, toastr, bot, flow) {
         /**
          * Set initial saving state.
          *
@@ -30,11 +30,11 @@ angular
         $scope.flow = flow;
 
         /**
-         * Set initial project.
+         * Set initial bot.
          *
          * @type {{}}
          */
-        $scope.project = project;
+        $scope.bot = bot;
 
         /**
          * Initial errors.
@@ -119,7 +119,7 @@ angular
         var deleteMatcher = function (flow, matcher) {
             if (matcher.id) {
                 $http
-                    .delete(BASE_URL + "/api/project/" + project.id + "/flow/" + flow.id + "/matcher/" + matcher.id)
+                    .delete(BASE_URL + "/api/bot/" + bot.id + "/flow/" + flow.id + "/matcher/" + matcher.id)
                     .then(function () {
                         $scope.$broadcast("matcher.processed");
                     }, function () {
@@ -138,7 +138,7 @@ angular
          * @param matcher
          */
         var saveMatcher = function (flow, matcher) {
-            var url = BASE_URL + "/api/project/" + project.id + "/flow/" + flow.id + "/matcher";
+            var url = BASE_URL + "/api/bot/" + bot.id + "/flow/" + flow.id + "/matcher";
 
             if (matcher.id) {
                 url += "/" + matcher.id;
@@ -161,7 +161,7 @@ angular
         /**
          * Load responds.
          */
-        $http.get(BASE_URL + "/api/project/" + project.id + "/respond").then(function (response) {
+        $http.get(BASE_URL + "/api/bot/" + bot.id + "/respond").then(function (response) {
             $scope.responds = response.data;
             $scope.respondsLoading = false;
         });
@@ -172,7 +172,7 @@ angular
         $scope.save = function () {
             $scope.saving = true;
 
-            var url = BASE_URL + "/api/project/" + project.id + "/flow";
+            var url = BASE_URL + "/api/bot/" + bot.id + "/flow";
 
             if ($scope.flow.id) {
                 url += "/" + $scope.flow.id;

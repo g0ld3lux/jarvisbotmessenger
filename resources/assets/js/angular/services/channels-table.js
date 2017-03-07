@@ -26,7 +26,7 @@ angular
              * @returns {string}
              */
             joinedAt: function (data, type, full, meta) {
-                return full.joined_at ? $filter("projectTime")(full.joined_at) : "-";
+                return full.joined_at ? $filter("botTime")(full.joined_at) : "-";
             },
 
             /**

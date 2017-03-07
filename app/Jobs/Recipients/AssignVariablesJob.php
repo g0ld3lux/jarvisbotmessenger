@@ -36,7 +36,7 @@ class AssignVariablesJob extends Job
     public function handle(Dispatcher $dispatcher)
     {
         foreach ($this->variables as $variable => $value) {
-            $model = Recipient\Variable::where('project_id', $this->recipient->project_id)
+            $model = Recipient\Variable::where('bot_id', $this->recipient->bot_id)
                 ->where('accessor', $variable)
                 ->first();
 

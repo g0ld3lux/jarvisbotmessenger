@@ -103,16 +103,16 @@
                 <!-- Left Side Of Navbar -->
                 @if(Auth::user())
                 <ul class="nav navbar-nav">
-                    <li{!! array_get($__rp, 'menu') == 'dashboard' ? ' class="active"' : '' !!}><a href="{{ route('projects.index') }}">Dashboard</a></li>
-                    @if(count($__menu_projects) > 0)
-                        <li class="dropdown{{ array_get($__rp, 'menu') == 'projects' ? ' active' : '' }}">
+                    <li{!! array_get($__rp, 'menu') == 'dashboard' ? ' class="active"' : '' !!}><a href="{{ route('bots.index') }}">Dashboard</a></li>
+                    @if(count($__menu_bots) > 0)
+                        <li class="dropdown{{ array_get($__rp, 'menu') == 'bots' ? ' active' : '' }}">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 Bots <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                @foreach($__menu_projects as $__menu_project)
-                                    <li><a href="{{ route('projects.show', $__menu_project->id) }}">{{ $__menu_project->title }}</a></li>
+                                @foreach($__menu_bots as $__menu_bot)
+                                    <li><a href="{{ route('bots.show', $__menu_bot->id) }}">{{ $__menu_bot->title }}</a></li>
                                 @endforeach
                             </ul>
                         </li>

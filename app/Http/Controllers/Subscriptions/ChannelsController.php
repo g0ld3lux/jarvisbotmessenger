@@ -3,34 +3,34 @@
 namespace App\Http\Controllers\Subscriptions;
 
 use App\Http\Controllers\Controller;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Subscription\Channel;
 use Notification;
 
 class ChannelsController extends Controller
 {
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(Project $project)
+    public function index(Bot $bot)
     {
-        $this->authorize('view', $project);
+        $this->authorize('view', $bot);
 
-        return view('projects.subscriptions.channels.index', ['project' => $project]);
+        return view('bots.subscriptions.channels.index', ['bot' => $bot]);
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param Channel $channel
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Project $project, Channel $channel)
+    public function show(Bot $bot, Channel $channel)
     {
-        $this->authorize('view', [$channel, $project]);
+        $this->authorize('view', [$channel, $bot]);
 
-        return view('projects.subscriptions.channels.show', [
-            'project' => $project,
+        return view('bots.subscriptions.channels.show', [
+            'bot' => $bot,
             'channel' => $channel,
             'broadcasts' => $channel->broadcasts()->ordered()->take(10)->get(),
             'recipients' => $channel->recipients()->orderBy('pivot_created_at', 'desc')->take(10)->get(),
@@ -38,19 +38,19 @@ class ChannelsController extends Controller
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param Channel $channel
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function delete(Project $project, Channel $channel)
+    public function delete(Bot $bot, Channel $channel)
     {
-        $this->authorize('delete', [$channel, $project]);
+        $this->authorize('delete', [$channel, $bot]);
 
         $channel->delete();
 
         Notification::success('Subscription channel deleted successfully.');
 
-        return redirect()->route('projects.subscriptions.channels.index', $project->id);
+        return redirect()->route('bots.subscriptions.channels.index', $bot->id);
     }
 }

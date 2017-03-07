@@ -3,7 +3,7 @@
 namespace App\Models\Communication;
 
 use App\Models\Flow;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use App\Models\Respond;
 use Illuminate\Database\Eloquent\Model;
@@ -27,13 +27,13 @@ class Log extends Model
     ];
 
     /**
-     * Return related project.
+     * Return related bot.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function project()
+    public function bot()
     {
-        return $this->belongsTo(Project::class, 'project_id');
+        return $this->belongsTo(Bot::class, 'bot_id');
     }
 
     /**

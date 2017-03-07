@@ -2,9 +2,9 @@
 
 namespace Bot\FacebookMessenger\Jobs;
 
-use App\Jobs\Statistics\Projects\IncreaseMissedRespondCount;
-use App\Jobs\Statistics\Projects\IncreasePassedRespondCount;
-use App\Models\Project;
+use App\Jobs\Statistics\Bots\IncreaseMissedRespondCount;
+use App\Jobs\Statistics\Bots\IncreasePassedRespondCount;
+use App\Models\Bot;
 use App\Models\Recipient;
 use App\Services\RecipientProvider;
 use App\Services\RespondMatcher;
@@ -79,9 +79,9 @@ class ProcessMessageJob extends Job
 
         $text = $this->text();
 
-        $project = Project::where('page_id', $this->recipientId)->first();
+        $bot = Bot::where('page_id', $this->recipientId)->first();
 
-        if (is_null($project)) {
+        if (is_null($bot)) {
             return;
         }
 
@@ -89,13 +89,13 @@ class ProcessMessageJob extends Job
             'message' => $text,
         ]);
 
-        $recipient = $recipientProvider->get($project, $this->senderId);
+        $recipient = $recipientProvider->get($bot, $this->senderId);
 
-        $communicationLog->project()->associate($project);
+        $communicationLog->bot()->associate($bot);
         $communicationLog->recipient()->associate($recipient);
 
         try {
-            $flow = $matcher->match($project, $recipient, $text);
+            $flow = $matcher->match($bot, $recipient, $text);
             $communicationLog->flow()->associate($flow->getOriginal());
 
             $messages = $mapper->map($flow, $this->senderId);
@@ -109,18 +109,18 @@ class ProcessMessageJob extends Job
                     'message',
                     $text,
                     $flow,
-                    $project,
+                    $bot,
                     $recipient,
                     $message,
-                    $bots->get($project->page_token)
+                    $bots->get($bot->page_token)
                 );
             }
 
-            $dispatcher->dispatch(new IncreasePassedRespondCount($project));
+            $dispatcher->dispatch(new IncreasePassedRespondCount($bot));
         } catch (\Exception $e) {
             logger($e);
 
-            $dispatcher->dispatch(new IncreaseMissedRespondCount($project));
+            $dispatcher->dispatch(new IncreaseMissedRespondCount($bot));
         }
 
         $communicationLog->save();

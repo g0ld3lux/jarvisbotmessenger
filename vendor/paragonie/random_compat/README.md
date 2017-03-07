@@ -50,13 +50,13 @@ release on Github.
 **Manual Installation:**
 
 1. Download [a stable release](https://github.com/paragonie/random_compat/releases/latest).
-2. Extract the files into your project.
+2. Extract the files into your bot.
 3. `require_once "/path/to/random_compat/lib/random.php";`
 
 ## Usage
 
 This library exposes the [CSPRNG functions added in PHP 7](https://secure.php.net/manual/en/ref.csprng.php)
-for use in PHP 5 projects. Their behavior should be identical.
+for use in PHP 5 bots. Their behavior should be identical.
 
 ### Generate a string of random bytes
 
@@ -138,7 +138,7 @@ try {
 
 ## Contributors
 
-This project would not be anywhere near as excellent as it is today if it 
+This bot would not be anywhere near as excellent as it is today if it 
 weren't for the contributions of the following individuals:
 
 * [@AndrewCarterUK (Andrew Carter)](https://github.com/AndrewCarterUK)

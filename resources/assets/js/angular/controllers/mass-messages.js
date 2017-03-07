@@ -25,7 +25,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/message",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/message",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {

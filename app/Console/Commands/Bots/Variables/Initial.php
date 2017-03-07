@@ -1,0 +1,65 @@
+<?php
+
+namespace App\Console\Commands\Bots\Variables;
+
+use App\Jobs\Bots\AddInitialVariables;
+use App\Models\Bot;
+use App\Models\Recipient;
+use Illuminate\Console\Command;
+use Illuminate\Contracts\Bus\Dispatcher;
+use Symfony\Component\Console\Input\InputOption;
+
+class Initial extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $name = 'bots:variables:initial';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Add initial variables for a bot';
+
+    /**
+     * @param Dispatcher $dispatcher
+     */
+    public function handle(Dispatcher $dispatcher)
+    {
+        $query = Bot::select('*');
+
+        if ($this->option('bot-id')) {
+            $query = $query->where('id', $this->option('bot-id'));
+        }
+
+        $this->output->progressStart($query->count());
+
+        $query->chunk(20, function ($bots) use ($dispatcher) {
+            foreach ($bots as $bot) {
+                $dispatcher->dispatchNow(new AddInitialVariables($bot));
+
+                $this->output->progressAdvance(1);
+            }
+        });
+
+        $this->output->progressFinish();
+
+        $this->info('Done');
+    }
+
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        return [
+            ['bot-id', null, InputOption::VALUE_OPTIONAL, 'Bot ID'],
+        ];
+    }
+}

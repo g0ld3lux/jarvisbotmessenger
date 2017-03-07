@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTimezoneToProjects extends Migration
+class AddTimezoneToBots extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class AddTimezoneToProjects extends Migration
      */
     public function up()
     {
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::table('bots', function (Blueprint $table) {
             $table->string('timezone')->default(config('app.timezone'))->after('title');
         });
     }
@@ -24,7 +24,7 @@ class AddTimezoneToProjects extends Migration
      */
     public function down()
     {
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::table('bots', function (Blueprint $table) {
             $table->dropColumn('timezone');
         });
     }

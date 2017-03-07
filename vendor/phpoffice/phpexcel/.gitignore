@@ -4,6 +4,6 @@ analysis
 
 ## IDE support
 *.buildpath
-*.project
+*.bot
 /.settings
 /.idea

@@ -1,6 +1,6 @@
 <?php namespace App\Providers;
 
-use App\Http\ViewComposers\MenuProjectsComposer;
+use App\Http\ViewComposers\MenuBotsComposer;
 use App\Http\ViewComposers\RouteParamsComposer;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\ServiceProvider;
@@ -15,7 +15,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot(Factory $factory)
     {
         $factory->composer(['*'], RouteParamsComposer::class);
-        $factory->composer(['layouts.*'], MenuProjectsComposer::class);
+        $factory->composer(['layouts.*'], MenuBotsComposer::class);
     }
 
     /**

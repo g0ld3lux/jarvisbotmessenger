@@ -57,10 +57,10 @@ class ProcessScheduleJob extends Job implements ShouldQueue
                     'broadcast',
                     null,
                     null,
-                    $this->schedule->broadcast->channel->project,
+                    $this->schedule->broadcast->channel->bot,
                     $this->schedule->recipient,
                     $message,
-                    $bots->get($this->schedule->broadcast->channel->project->page_token)
+                    $bots->get($this->schedule->broadcast->channel->bot->page_token)
                 );
             }
 

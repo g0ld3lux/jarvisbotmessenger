@@ -3,7 +3,7 @@
 namespace App\Services\Flow;
 
 use App\Models\Flow;
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Respond;
 use App\Services\Flow\Contract\Exchanger;
 use Carbon\Carbon;
@@ -29,17 +29,17 @@ class Exchanger1 implements Exchanger
     /**
      * Import data.
      *
-     * @param Project $project
+     * @param Bot $bot
      * @param object $data
      * @return bool
      */
-    public function import(Project $project, $data)
+    public function import(Bot $bot, $data)
     {
         DB::beginTransaction();
 
         if (isset($data->responds)) {
             foreach ($data->responds as $respond) {
-                $this->importRespond($project, (array) $respond);
+                $this->importRespond($bot, (array) $respond);
             }
         }
 
@@ -76,13 +76,13 @@ class Exchanger1 implements Exchanger
 
         if (isset($data->flows)) {
             foreach ($data->flows as $flow) {
-                $this->importFlow($project, (array) $flow);
+                $this->importFlow($bot, (array) $flow);
             }
 
-            if ($project->flows()->whereNotNull('defaulted_at')->count() <= 0) {
+            if ($bot->flows()->whereNotNull('defaulted_at')->count() <= 0) {
                 foreach ($data->flows as $flow) {
                     if ($flow->is_default) {
-                        $project->flows()->update(['defaulted_at' => null]);
+                        $bot->flows()->update(['defaulted_at' => null]);
                         $model = array_get($this->import, 'flows.'.$flow->id);
                         $model->defaulted_at = new Carbon();
                         $model->save();
@@ -119,16 +119,16 @@ class Exchanger1 implements Exchanger
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param array $respond
      */
-    protected function importRespond(Project $project, array $respond)
+    protected function importRespond(Bot $bot, array $respond)
     {
         $model = new Respond([
             'title' => array_get($respond, 'title'),
             'label' => array_get($respond, 'label'),
         ]);
-        $model->project()->associate($project);
+        $model->bot()->associate($bot);
         $model->save();
 
         array_set($this->import, 'responds.'.array_get($respond, 'id'), $model);
@@ -181,18 +181,18 @@ class Exchanger1 implements Exchanger
     }
 
     /**
-     * @param Project $project
+     * @param Bot $bot
      * @param array $flow
      */
-    protected function importFlow(Project $project, array $flow)
+    protected function importFlow(Bot $bot, array $flow)
     {
-        $order = $project->flows()->max('order') + array_get($flow, 'order') - count(array_get($this->import, 'flows'));
+        $order = $bot->flows()->max('order') + array_get($flow, 'order') - count(array_get($this->import, 'flows'));
 
         $model = new Flow([
             'title' => array_get($flow, 'title'),
             'order' => $order,
         ]);
-        $model->project()->associate($project);
+        $model->bot()->associate($bot);
         $model->save();
 
         foreach ((array) array_get($flow, 'responds', []) as $respond) {

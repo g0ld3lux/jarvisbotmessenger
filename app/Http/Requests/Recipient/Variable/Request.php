@@ -17,7 +17,7 @@ abstract class Request extends Requests\Request
     {
         return [
             'type' => 'required|in:text',
-            'name' => 'required|recipient_variable_accessor:'.$this->route('project')->id,
+            'name' => 'required|recipient_variable_accessor:'.$this->route('bot')->id,
         ];
     }
 }

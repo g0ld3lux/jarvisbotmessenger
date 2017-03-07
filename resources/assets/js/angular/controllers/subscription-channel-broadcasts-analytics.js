@@ -26,7 +26,7 @@ angular
         var updateAnalytics = function (start, end) {
             $scope.analyticsLoading = true;
 
-            ApiUtils.project.analytics(
+            ApiUtils.bot.analytics(
                 PROJECT_ID,
                 _.map(fields, function(value, key) {
                     return key;

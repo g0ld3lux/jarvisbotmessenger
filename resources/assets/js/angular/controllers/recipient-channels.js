@@ -14,7 +14,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID + "/channel",
+                url: BASE_URL + "/api/bot/" + PROJECT_ID + "/recipient/" + RECIPIENT_ID + "/channel",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -91,7 +91,7 @@ angular
                 templateUrl: "RecipientAddToChannelController.html",
                 controller: "RecipientAddToChannelController",
                 resolve: {
-                    projectId: function () {
+                    botId: function () {
                         return PROJECT_ID;
                     },
                     recipientId: function () {

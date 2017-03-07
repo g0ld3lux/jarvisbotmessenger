@@ -26,7 +26,7 @@ class RemoveRespondIdFromLog extends Migration
     public function down()
     {
         Schema::table('communication_log', function (Blueprint $table) {
-            $table->integer('respond_id')->unsigned()->nullable(true)->default(null)->after('project_id');
+            $table->integer('respond_id')->unsigned()->nullable(true)->default(null)->after('bot_id');
             $table
                 ->foreign('respond_id')
                 ->references('id')

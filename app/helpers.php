@@ -4,12 +4,12 @@ if (!function_exists('recipient_variables_list')) {
     /**
      * Return list of available variables.
      *
-     * @param \App\Models\Project $project
+     * @param \App\Models\Bot $bot
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    function recipient_variables_list(\App\Models\Project $project)
+    function recipient_variables_list(\App\Models\Bot $bot)
     {
-        return \App\Models\Recipient\Variable::where('project_id', $project->id)->orderBy('name', 'asc')->get();
+        return \App\Models\Recipient\Variable::where('bot_id', $bot->id)->orderBy('name', 'asc')->get();
     }
 }
 
@@ -82,16 +82,16 @@ if (!function_exists('format_timezone_name')) {
     }
 }
 
-if (!function_exists('adjust_project_timezone')) {
+if (!function_exists('adjust_bot_timezone')) {
     /**
-     * @param \App\Models\Project $project
+     * @param \App\Models\Bot $bot
      * @param \Carbon\Carbon $date
      * @return \Carbon\Carbon
      */
-    function adjust_project_timezone(\App\Models\Project $project, \Carbon\Carbon $date)
+    function adjust_bot_timezone(\App\Models\Bot $bot, \Carbon\Carbon $date)
     {
         $clone = clone $date;
-        $clone->setTimezone($project->timezone);
+        $clone->setTimezone($bot->timezone);
 
         return $clone;
     }

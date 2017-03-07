@@ -11,7 +11,7 @@ angular
          * @returns {string}
          */
         this.createdAt = function (data, type, full, meta) {
-            return full.created_at ? $filter("projectTime")(full.created_at) : "-";
+            return full.created_at ? $filter("botTime")(full.created_at) : "-";
         };
 
         /**
@@ -24,7 +24,7 @@ angular
          * @returns {string}
          */
         this.scheduledAt = function (data, type, full, meta) {
-            return full.scheduled_at ? $filter("projectTime")(full.scheduled_at) : "-";
+            return full.scheduled_at ? $filter("botTime")(full.scheduled_at) : "-";
         };
 
         /**
@@ -37,6 +37,6 @@ angular
          * @returns {string}
          */
         this.finishedAt = function (data, type, full, meta) {
-            return full.finished_at ? $filter("projectTime")(full.finished_at) : "-";
+            return full.finished_at ? $filter("botTime")(full.finished_at) : "-";
         };
     });

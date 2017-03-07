@@ -3,7 +3,7 @@
 namespace App\Listeners\Subscription\Channel\Broadcast;
 
 use App\Events\Subscription\Channel\Broadcast\ScheduleProcessedEvent;
-use App\Jobs\Statistics\Projects\IncreaseBroadcastMessageSentCount;
+use App\Jobs\Statistics\Bots\IncreaseBroadcastMessageSentCount;
 use App\Jobs\Subscription\Channel\IncreaseMessagesSentCount;
 use Illuminate\Contracts\Bus\Dispatcher;
 
@@ -15,7 +15,7 @@ class IncreaseMessagesSentCountListener
     protected $dispatcher;
 
     /**
-     * IncreaseProjectMessagesPostedCountListener constructor.
+     * IncreaseBotMessagesPostedCountListener constructor.
      * @param Dispatcher $dispatcher
      */
     public function __construct(Dispatcher $dispatcher)
@@ -33,8 +33,8 @@ class IncreaseMessagesSentCountListener
         if ($broadcast && $broadcast->channel) {
             $this->dispatcher->dispatch(new IncreaseMessagesSentCount($broadcast->channel));
 
-            if ($broadcast->channel->project) {
-                $this->dispatcher->dispatch(new IncreaseBroadcastMessageSentCount($broadcast->channel->project));
+            if ($broadcast->channel->bot) {
+                $this->dispatcher->dispatch(new IncreaseBroadcastMessageSentCount($broadcast->channel->bot));
             }
         }
     }

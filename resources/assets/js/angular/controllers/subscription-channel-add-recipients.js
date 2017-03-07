@@ -1,6 +1,6 @@
 angular
     .module("messengerBotApp")
-    .controller("SubscriptionChannelAddRecipientsController", function ($scope, $uibModalInstance, DTOptionsBuilder, DTColumnBuilder, RecipientsTableService, ApiUtils, $compile, toastr, projectId, channelId) {
+    .controller("SubscriptionChannelAddRecipientsController", function ($scope, $uibModalInstance, DTOptionsBuilder, DTColumnBuilder, RecipientsTableService, ApiUtils, $compile, toastr, botId, channelId) {
         /**
          * @type {boolean}
          */
@@ -33,7 +33,7 @@ angular
         $scope.dtOptions = DTOptionsBuilder
             .newOptions()
             .withOption('ajax', {
-                url: BASE_URL + "/api/project/" + projectId + "/subscription/channel/" + channelId + "/recipient/missing",
+                url: BASE_URL + "/api/bot/" + botId + "/subscription/channel/" + channelId + "/recipient/missing",
                 type: "GET"
             })
             .withOption('createdRow', function(row, data, dataIndex) {
@@ -117,7 +117,7 @@ angular
                 .subscription
                 .channel
                 .recipient
-                .store(projectId, channelId, [{ id: id, type: 'manual' }])
+                .store(botId, channelId, [{ id: id, type: 'manual' }])
                 .then(function () {
                     $scope.dtInstance.reloadData(null, false);
                     toastr.success("Recipient successfully added to a channel.");

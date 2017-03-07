@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\Messages\Schedules\Process::class,
-        Commands\Projects\Variables\Initial::class,
+        Commands\Bots\Variables\Initial::class,
         Commands\Recipients\Variables\Fetch::class,
         Commands\Broadcasts\Schedules\Process::class,
     ];

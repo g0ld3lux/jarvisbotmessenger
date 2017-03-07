@@ -5,21 +5,21 @@ namespace Faker\Provider\pl_PL;
 class Text extends \Faker\Provider\Text
 {
     /**
-     * The Project Gutenberg EBook of Sklepy cynamonowe, by Bruno Schulz
+     * The Bot Gutenberg EBook of Sklepy cynamonowe, by Bruno Schulz
      *
      * Copyright laws are changing all over the world. Be sure to check the
      * copyright laws for your country before downloading or redistributing
-     * this or any other Project Gutenberg eBook.
+     * this or any other Bot Gutenberg eBook.
      *
-     * This header should be the first thing seen when viewing this Project
+     * This header should be the first thing seen when viewing this Bot
      * Gutenberg file.  Please do not remove it.  Do not change or edit the
      * header without written permission.
      *
      * Please read the "legal small print," and other information about the
-     * eBook and Project Gutenberg at the bottom of this file.  Included is
+     * eBook and Bot Gutenberg at the bottom of this file.  Included is
      * important information about your specific rights and restrictions in
      * how the file may be used.  You can also find out about how to make a
-     * donation to Project Gutenberg, and how to get involved.
+     * donation to Bot Gutenberg, and how to get involved.
      *
      *
      * **Welcome To The World of Free Plain Vanilla Electronic Texts**
@@ -2544,7 +2544,7 @@ piersi, od której ziarna nabierały blasku i gorąca. Kot mył się w
 EOT;
 
     /*
-    End of the Project Gutenberg EBook of Sklepy cynamonowe, by Bruno Schulz
+    End of the Bot Gutenberg EBook of Sklepy cynamonowe, by Bruno Schulz
 
     *** END OF THE PROJECT GUTENBERG EBOOK SKLEPY CYNAMONOWE ***
 
@@ -2555,7 +2555,7 @@ EOT;
     Produced by Pawel Sobkowiak - Scanned and proofread by
     Polska Biblioteka Internetowa
 
-    Project Gutenberg eBooks are often created from several printed
+    Bot Gutenberg eBooks are often created from several printed
     editions, all of which are confirmed as Public Domain in the US
     unless a copyright notice is included.  Thus, we usually do not
     keep eBooks in compliance with any particular paper edition.
@@ -2567,7 +2567,7 @@ EOT;
 
     Please note neither this listing nor its contents are final til
     midnight of the last day of the month of any such announcement.
-    The official release date of all Project Gutenberg eBooks is at
+    The official release date of all Bot Gutenberg eBooks is at
     Midnight, Central Time, of the last day of the stated month.  A
     preliminary version may often be posted for suggestion, comment
     and editing by those who wish to do so.
@@ -2576,7 +2576,7 @@ EOT;
     http://gutenberg.net or
     http://promo.net/pg
 
-    These Web sites include award-winning information about Project
+    These Web sites include award-winning information about Bot
     Gutenberg, including how to donate, how to help produce our new
     eBooks, and how to subscribe to our email newsletter (free!).
 
@@ -2584,7 +2584,7 @@ EOT;
     can get to them as follows, and just download by date.  This is
     also a good way to get them instantly upon announcement, as the
     indexes our cataloguers produce obviously take a while after an
-    announcement goes out in the Project Gutenberg Newsletter.
+    announcement goes out in the Bot Gutenberg Newsletter.
 
     http://www.ibiblio.org/gutenberg/etext03 or
     ftp://ftp.ibiblio.org/pub/docs/books/gutenberg/etext03
@@ -2594,13 +2594,13 @@ EOT;
     Just search by the first five letters of the filename you want,
     as it appears in our Newsletters.
 
-    Information about Project Gutenberg (one page)
+    Information about Bot Gutenberg (one page)
 
     We produce about two million dollars for each hour we work.  The
     time it takes us, a rather conservative estimate, is fifty hours
     to get any eBook selected, entered, proofread, edited, copyright
     searched and analyzed, the copyright letters written, etc.   Our
-    projected audience is one hundred million readers.  If the value
+    boted audience is one hundred million readers.  If the value
     per text is nominally estimated at one dollar then we produce $2
     million dollars per hour in 2002 as we release over 100 new text
     files per month:  1240 more eBooks in 2001 for a total of 4000+
@@ -2608,7 +2608,7 @@ EOT;
     If they reach just 1-2% of the world's population then the total
     will reach over half a trillion eBooks given away by year's end.
 
-    The Goal of Project Gutenberg is to Give Away 1 Trillion eBooks!
+    The Goal of Bot Gutenberg is to Give Away 1 Trillion eBooks!
     This is ten thousand titles each to one hundred million readers,
     which is only about 4% of the present number of computer users.
 
@@ -2629,8 +2629,8 @@ EOT;
      9000  2003 November*
     10000  2004 January*
 
-    The Project Gutenberg Literary Archive Foundation has been created
-    to secure a future for Project Gutenberg into the next millennium.
+    The Bot Gutenberg Literary Archive Foundation has been created
+    to secure a future for Bot Gutenberg into the next millennium.
 
     We need your donations more than ever!
 
@@ -2670,7 +2670,7 @@ EOT;
 
     Donations by check or money order may be sent to:
 
-    Project Gutenberg Literary Archive Foundation
+    Bot Gutenberg Literary Archive Foundation
     PMB 113
     1739 University Ave.
     Oxford, MS 38655-4109
@@ -2678,7 +2678,7 @@ EOT;
     Contact us if you want to arrange for a wire transfer or payment
     method other than by check or money order.
 
-    The Project Gutenberg Literary Archive Foundation has been approved by
+    The Bot Gutenberg Literary Archive Foundation has been approved by
     the US Internal Revenue Service as a 501(c)(3) organization with EIN
     [Employee Identification Number] 64-622154.  Donations are
     tax-deductible to the maximum extent permitted by law.  As fund-raising
@@ -2693,7 +2693,7 @@ EOT;
 
     ***
 
-    If you can't reach Project Gutenberg,
+    If you can't reach Bot Gutenberg,
     you can always email directly to:
 
     Michael S. Hart <hart@pobox.com>
@@ -2729,9 +2729,9 @@ EOT;
     ABOUT PROJECT GUTENBERG-TM EBOOKS
     This PROJECT GUTENBERG-tm eBook, like most PROJECT GUTENBERG-tm eBooks,
     is a "public domain" work distributed by Professor Michael S. Hart
-    through the Project Gutenberg Association (the "Project").
+    through the Bot Gutenberg Association (the "Bot").
     Among other things, this means that no one owns a United States copyright
-    on or for this work, so the Project (and you!) can copy and
+    on or for this work, so the Bot (and you!) can copy and
     distribute it in the United States without permission and
     without paying copyright royalties. Special rules, set forth
     below, apply if you wish to copy and distribute this eBook
@@ -2740,9 +2740,9 @@ EOT;
     Please do not use the "PROJECT GUTENBERG" trademark to market
     any commercial products without permission.
 
-    To create these eBooks, the Project expends considerable
+    To create these eBooks, the Bot expends considerable
     efforts to identify, transcribe and proofread public domain
-    works. Despite these efforts, the Project's eBooks and any
+    works. Despite these efforts, the Bot's eBooks and any
     medium they may be on may contain "Defects". Among other
     things, Defects may take the form of incomplete, inaccurate or
     corrupt data, transcription errors, a copyright or other
@@ -2785,7 +2785,7 @@ EOT;
     INDEMNITY
     You will indemnify and hold Michael Hart, the Foundation,
     and its trustees and agents, and any volunteers associated
-    with the production and distribution of Project Gutenberg-tm
+    with the production and distribution of Bot Gutenberg-tm
     texts harmless, from all liability, cost and expense, including
     legal fees, that arise directly or indirectly from any of the
     following that you do or cause:  [1] distribution of this eBook,
@@ -2795,7 +2795,7 @@ EOT;
     DISTRIBUTION UNDER "PROJECT GUTENBERG-tm"
     You may distribute copies of this eBook electronically, or by
     disk, book or any other medium if you either delete this
-    "Small Print!" and all other references to Project Gutenberg,
+    "Small Print!" and all other references to Bot Gutenberg,
     or:
 
     [1]  Only give exact copies of it.  Among other things, this
@@ -2833,21 +2833,21 @@ EOT;
          gross profits you derive calculated using the method you
          already use to calculate your applicable taxes.  If you
          don't derive profits, no royalty is due.  Royalties are
-         payable to "Project Gutenberg Literary Archive Foundation"
+         payable to "Bot Gutenberg Literary Archive Foundation"
          the 60 days following each date you prepare (or were
          legally required to prepare) your annual (or equivalent
          periodic) tax return.  Please contact us beforehand to
          let us know your plans and to work out the details.
 
     WHAT IF YOU *WANT* TO SEND MONEY EVEN IF YOU DON'T HAVE TO?
-    Project Gutenberg is dedicated to increasing the number of
+    Bot Gutenberg is dedicated to increasing the number of
     public domain and licensed works that can be freely distributed
     in machine readable form.
 
-    The Project gratefully accepts contributions of money, time,
+    The Bot gratefully accepts contributions of money, time,
     public domain materials, or royalty free copyright licenses.
     Money should be paid to the:
-    "Project Gutenberg Literary Archive Foundation."
+    "Bot Gutenberg Literary Archive Foundation."
 
     If you are interested in contributing scanning equipment or
     software or other items, please contact Michael Hart at:
@@ -2855,8 +2855,8 @@ EOT;
 
     [Portions of this eBook's header and trailer may be reprinted only
     when distributed free of all fees.  Copyright (C) 2001, 2002 by
-    Michael S. Hart.  Project Gutenberg is a TradeMark and may not be
-    used in any sales of Project Gutenberg eBooks or other materials be
+    Michael S. Hart.  Bot Gutenberg is a TradeMark and may not be
+    used in any sales of Bot Gutenberg eBooks or other materials be
     they hardware or software or any other related product without
     express permission.]
 

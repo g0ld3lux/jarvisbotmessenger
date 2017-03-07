@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Project;
+use App\Models\Bot;
 use App\Models\Recipient;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -12,27 +12,27 @@ class RecipientPolicy
     use HandlesAuthorization;
 
     /**
-     * Determine if user is owner of a project.
+     * Determine if user is owner of a bot.
      *
      * @param User $user
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isProjectOwner(User $user, Project $project)
+    protected function isBotOwner(User $user, Bot $bot)
     {
-        return $user->id == $project->user_id;
+        return $user->id == $bot->user_id;
     }
 
     /**
-     * Determine is related to project.
+     * Determine is related to bot.
      *
      * @param Recipient $recipient
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    protected function isRecipientRelatedToProject(Recipient $recipient, Project $project)
+    protected function isRecipientRelatedToBot(Recipient $recipient, Bot $bot)
     {
-        return $recipient->project_id == $project->id;
+        return $recipient->bot_id == $bot->id;
     }
 
     /**
@@ -40,22 +40,22 @@ class RecipientPolicy
      *
      * @param User $user
      * @param Recipient $recipient
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function view(User $user, Recipient $recipient, Project $project)
+    public function view(User $user, Recipient $recipient, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project) && $this->isRecipientRelatedToProject($recipient, $project);
+        return $this->isBotOwner($user, $bot) && $this->isRecipientRelatedToBot($recipient, $bot);
     }
 
     /**
      * @param User $user
      * @param Recipient $recipient
-     * @param Project $project
+     * @param Bot $bot
      * @return bool
      */
-    public function edit(User $user, Recipient $recipient, Project $project)
+    public function edit(User $user, Recipient $recipient, Bot $bot)
     {
-        return $this->isProjectOwner($user, $project) && $this->isRecipientRelatedToProject($recipient, $project);
+        return $this->isBotOwner($user, $bot) && $this->isRecipientRelatedToBot($recipient, $bot);
     }
 }

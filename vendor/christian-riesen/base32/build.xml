@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="christianriesen-base32" default="build">
+<bot name="christianriesen-base32" default="build">
  <target name="build" depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpcb"/>
 
  <target name="build-parallel" depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
@@ -54,7 +54,7 @@
   </apply>
  </target>
 
- <target name="phploc" description="Measure project size using PHPLOC">
+ <target name="phploc" description="Measure bot size using PHPLOC">
   <exec executable="phploc">
    <arg value="--log-csv"/>
    <arg value="${basedir}/build/logs/phploc.csv"/>
@@ -71,7 +71,7 @@
   </exec>
  </target>
 
- <target name="phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
+ <target name="phpmd" description="Perform bot mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
   <exec executable="phpmd">
    <arg path="${basedir}/src"/>
    <arg value="text"/>
@@ -79,7 +79,7 @@
   </exec>
  </target>
 
- <target name="phpmd-ci" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
+ <target name="phpmd-ci" description="Perform bot mess detection using PHPMD creating a log file for the continuous integration server">
   <exec executable="phpmd">
    <arg path="${basedir}/src"/>
    <arg value="xml"/>
@@ -127,4 +127,4 @@
    <arg path="${basedir}/build/code-browser"/>
   </exec>
  </target>
-</project>
+</bot>

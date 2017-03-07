@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ScheduleProcessedEvent;
-use App\Jobs\Statistics\Projects\IncreaseMessageSentCount;
+use App\Jobs\Statistics\Bots\IncreaseMessageSentCount;
 use Illuminate\Contracts\Bus\Dispatcher;
 
 class IncreaseMessagesSentCountListener
@@ -14,7 +14,7 @@ class IncreaseMessagesSentCountListener
     protected $dispatcher;
 
     /**
-     * IncreaseProjectMessagesPostedCountListener constructor.
+     * IncreaseBotMessagesPostedCountListener constructor.
      * @param Dispatcher $dispatcher
      */
     public function __construct(Dispatcher $dispatcher)
@@ -29,8 +29,8 @@ class IncreaseMessagesSentCountListener
     {
         $message = $event->getSchedule()->message;
 
-        if ($message && $message->project) {
-            $this->dispatcher->dispatch(new IncreaseMessageSentCount($message->project));
+        if ($message && $message->bot) {
+            $this->dispatcher->dispatch(new IncreaseMessageSentCount($message->bot));
         }
     }
 }

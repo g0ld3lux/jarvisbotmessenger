@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ScheduleProcessedEvent;
-use App\Jobs\Statistics\Projects\IncreaseMessageSentCount;
+use App\Jobs\Statistics\Bots\IncreaseMessageSentCount;
 use Carbon\Carbon;
 use Illuminate\Contracts\Bus\Dispatcher;
 
@@ -15,7 +15,7 @@ class FinishMessageListener
     protected $dispatcher;
 
     /**
-     * IncreaseProjectMessagesPostedCountListener constructor.
+     * IncreaseBotMessagesPostedCountListener constructor.
      * @param Dispatcher $dispatcher
      */
     public function __construct(Dispatcher $dispatcher)
