@@ -18,7 +18,7 @@ class Text extends \Faker\Provider\Text
      * [Last updated: November 28, 2011]
      * Language: French
      *
-     * *** START OF THIS PROJECT GUTENBERG EBOOK MADAME BOVARY ***
+     * *** START OF THIS BOT GUTENBERG EBOOK MADAME BOVARY ***
      *
      * Produced by Ebooks libres et gratuits at http://www.ebooksgratuits.com
      *
@@ -15176,7 +15176,7 @@ EOT;
     /*
     End of the Bot Gutenberg EBook of Madame Bovary, by Gustave Flaubert
 
-    *** END OF THIS PROJECT GUTENBERG EBOOK MADAME BOVARY ***
+    *** END OF THIS BOT GUTENBERG EBOOK MADAME BOVARY ***
 
     ***** This file should be named 14155-8.txt or 14155-8.zip *****
     This and all associated files of various formats will be found in:
@@ -15193,7 +15193,7 @@ EOT;
     permission and without paying copyright royalties.  Special rules,
     set forth in the General Terms of Use part of this license, apply to
     copying and distributing Bot Gutenberg-tm electronic works to
-    protect the PROJECT GUTENBERG-tm concept and trademark.  Bot
+    protect the BOT GUTENBERG-tm concept and trademark.  Bot
     Gutenberg is a registered trademark, and may not be used if you
     charge for the eBooks, unless you receive specific permission.  If you
     do not charge anything for copies of this eBook, complying with the
@@ -15206,7 +15206,7 @@ EOT;
 
     *** START: FULL LICENSE ***
 
-    THE FULL PROJECT GUTENBERG LICENSE
+    THE FULL BOT GUTENBERG LICENSE
     PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
 
     To protect the Bot Gutenberg-tm mission of promoting the free

@@ -43,7 +43,7 @@ class Text extends \Faker\Provider\Text
      *
      * Character set encoding: Codepage 1250
      *
-     * *** START OF THE PROJECT GUTENBERG EBOOK SKLEPY CYNAMONOWE ***
+     * *** START OF THE BOT GUTENBERG EBOOK SKLEPY CYNAMONOWE ***
      *
      *
      *
@@ -2546,7 +2546,7 @@ EOT;
     /*
     End of the Bot Gutenberg EBook of Sklepy cynamonowe, by Bruno Schulz
 
-    *** END OF THE PROJECT GUTENBERG EBOOK SKLEPY CYNAMONOWE ***
+    *** END OF THE BOT GUTENBERG EBOOK SKLEPY CYNAMONOWE ***
 
     This file should be named sklep10.txt or sklep10.zip
     Corrected EDITIONS of our eBooks get a new NUMBER, sklep11.txt
@@ -2718,7 +2718,7 @@ EOT;
     you may distribute copies of this eBook if you want to.
 
     *BEFORE!* YOU USE OR READ THIS EBOOK
-    By using or reading any part of this PROJECT GUTENBERG-tm
+    By using or reading any part of this BOT GUTENBERG-tm
     eBook, you indicate that you understand, agree to and accept
     this "Small Print!" statement. If you do not, you can receive
     a refund of the money (if any) you paid for this eBook by
@@ -2726,8 +2726,8 @@ EOT;
     you got it from. If you received this eBook on a physical
     medium (such as a disk), you must return it with your request.
 
-    ABOUT PROJECT GUTENBERG-TM EBOOKS
-    This PROJECT GUTENBERG-tm eBook, like most PROJECT GUTENBERG-tm eBooks,
+    ABOUT BOT GUTENBERG-TM EBOOKS
+    This BOT GUTENBERG-tm eBook, like most BOT GUTENBERG-tm eBooks,
     is a "public domain" work distributed by Professor Michael S. Hart
     through the Bot Gutenberg Association (the "Bot").
     Among other things, this means that no one owns a United States copyright
@@ -2735,9 +2735,9 @@ EOT;
     distribute it in the United States without permission and
     without paying copyright royalties. Special rules, set forth
     below, apply if you wish to copy and distribute this eBook
-    under the "PROJECT GUTENBERG" trademark.
+    under the "BOT GUTENBERG" trademark.
 
-    Please do not use the "PROJECT GUTENBERG" trademark to market
+    Please do not use the "BOT GUTENBERG" trademark to market
     any commercial products without permission.
 
     To create these eBooks, the Bot expends considerable
@@ -2753,7 +2753,7 @@ EOT;
     LIMITED WARRANTY; DISCLAIMER OF DAMAGES
     But for the "Right of Replacement or Refund" described below,
     [1] Michael Hart and the Foundation (and any other party you may
-    receive this eBook from as a PROJECT GUTENBERG-tm eBook) disclaims
+    receive this eBook from as a BOT GUTENBERG-tm eBook) disclaims
     all liability to you for damages, costs and expenses, including
     legal fees, and [2] YOU HAVE NO REMEDIES FOR NEGLIGENCE OR
     UNDER STRICT LIABILITY, OR FOR BREACH OF WARRANTY OR CONTRACT,
@@ -2792,7 +2792,7 @@ EOT;
     [2] alteration, modification, or addition to the eBook,
     or [3] any Defect.
 
-    DISTRIBUTION UNDER "PROJECT GUTENBERG-tm"
+    DISTRIBUTION UNDER "BOT GUTENBERG-tm"
     You may distribute copies of this eBook electronically, or by
     disk, book or any other medium if you either delete this
     "Small Print!" and all other references to Bot Gutenberg,

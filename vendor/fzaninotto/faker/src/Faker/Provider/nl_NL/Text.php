@@ -20,7 +20,7 @@ class Text extends \Faker\Provider\Text
      *
      * Language: Dutch
      *
-     * *** START OF THIS PROJECT GUTENBERG EBOOK DICHTERTJE - DE UITVRETER  ***
+     * *** START OF THIS BOT GUTENBERG EBOOK DICHTERTJE - DE UITVRETER  ***
      *
      * Produced by Mark C. Orton and the Online Distributed
      * Proofreading Team at http://www.pgdp.net/

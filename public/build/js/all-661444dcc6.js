@@ -20687,7 +20687,7 @@ angular
                 startDate: null
             },
             options: {
-                minDate: moment().tz(PROJECT_TIMEZONE),
+                minDate: moment().tz(BOT_TIMEZONE),
                 timePicker: true,
                 singleDatePicker: true,
                 timePickerSeconds: false,
@@ -21721,7 +21721,7 @@ angular
                 startDate: null
             },
             options: {
-                minDate: moment().tz(PROJECT_TIMEZONE),
+                minDate: moment().tz(BOT_TIMEZONE),
                 timePicker: true,
                 singleDatePicker: true,
                 timePickerSeconds: false,
@@ -23812,7 +23812,7 @@ angular
             link: function (scope, element) {
                 element.text(
                     moment(scope.time)
-                        .tz(scope.bot ? scope.bot.timezone : PROJECT_TIMEZONE)
+                        .tz(scope.bot ? scope.bot.timezone : BOT_TIMEZONE)
                         .format(scope.format ? scope.format : defaultFormat)
                 );
             }
@@ -24288,7 +24288,7 @@ angular
         var defaultFormat = "MMM D, YYYY, h:mm A";
 
         return function (input, bot, format) {
-            return moment(input).tz(bot ? bot.timezone : PROJECT_TIMEZONE).format(format ? format : defaultFormat);
+            return moment(input).tz(bot ? bot.timezone : BOT_TIMEZONE).format(format ? format : defaultFormat);
         };
     });
 angular

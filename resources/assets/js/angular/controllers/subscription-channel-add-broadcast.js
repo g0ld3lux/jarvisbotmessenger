@@ -44,7 +44,7 @@ angular
                 startDate: null
             },
             options: {
-                minDate: moment().tz(PROJECT_TIMEZONE),
+                minDate: moment().tz(BOT_TIMEZONE),
                 timePicker: true,
                 singleDatePicker: true,
                 timePickerSeconds: false,

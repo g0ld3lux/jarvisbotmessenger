@@ -5,7 +5,7 @@
         var BROADCAST_ID = {{ $broadcast->id }};
         var SUBSCRIPTION_CHANNEL_ID = {{ $channel->id }};
         var BOT_ID = {{ $bot->id }};
-        var PROJECT_TIMEZONE = "{{ $bot->timezone }}";
+        var BOT_TIMEZONE = "{{ $bot->timezone }}";
     </script>
 @endpush
 

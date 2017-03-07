@@ -22,7 +22,7 @@ class Text extends \Faker\Provider\Text
      *
      * Language: German
      *
-     * *** START OF THIS PROJECT GUTENBERG EBOOK DIE LEIDEN DES JUNGEN WERTHER ***
+     * *** START OF THIS BOT GUTENBERG EBOOK DIE LEIDEN DES JUNGEN WERTHER ***
      *
      * Produced by Michael Pullen, globaltraveler5565@yahoo.com
      * with proofreading and correction by Dr. Mary Cicora,
@@ -1679,7 +1679,7 @@ EOT;
     End of the Bot Gutenberg EBook of Die Leiden des jungen Werther--Buch 1, by
     Johann Wolfgang von Goethe
 
-    *** END OF THIS PROJECT GUTENBERG EBOOK DIE LEIDEN DES JUNGEN WERTHER ***
+    *** END OF THIS BOT GUTENBERG EBOOK DIE LEIDEN DES JUNGEN WERTHER ***
 
     ***** This file should be named 2407-8.txt or 2407-8.zip *****
     This and all associated files of various formats will be found in:
@@ -1698,7 +1698,7 @@ EOT;
     permission and without paying copyright royalties.  Special rules,
     set forth in the General Terms of Use part of this license, apply to
     copying and distributing Bot Gutenberg-tm electronic works to
-    protect the PROJECT GUTENBERG-tm concept and trademark.  Bot
+    protect the BOT GUTENBERG-tm concept and trademark.  Bot
     Gutenberg is a registered trademark, and may not be used if you
     charge for the eBooks, unless you receive specific permission.  If you
     do not charge anything for copies of this eBook, complying with the
@@ -1711,7 +1711,7 @@ EOT;
 
     *** START: FULL LICENSE ***
 
-    THE FULL PROJECT GUTENBERG LICENSE
+    THE FULL BOT GUTENBERG LICENSE
     PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
 
     To protect the Bot Gutenberg-tm mission of promoting the free

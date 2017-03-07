@@ -24,7 +24,7 @@ angular
             link: function (scope, element) {
                 element.text(
                     moment(scope.time)
-                        .tz(scope.bot ? scope.bot.timezone : PROJECT_TIMEZONE)
+                        .tz(scope.bot ? scope.bot.timezone : BOT_TIMEZONE)
                         .format(scope.format ? scope.format : defaultFormat)
                 );
             }

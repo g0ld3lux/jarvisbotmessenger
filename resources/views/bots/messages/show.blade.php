@@ -4,7 +4,7 @@
     <script type="text/javascript">
         var MESSAGE_ID = {{ $message->id }};
         var BOT_ID = {{ $bot->id }};
-        var PROJECT_TIMEZONE = "{{ $bot->timezone }}";
+        var BOT_TIMEZONE = "{{ $bot->timezone }}";
     </script>
 @endpush
 
