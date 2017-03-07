@@ -142,10 +142,10 @@ Creating Different Types of Responds or Have a Easy Import Of the Type of Respon
 ### TODO for Version 1.5.0
 
 - [ ] Middleware for Premium Subscriber
-- [ ] Free Trial Period
+- [x] Free Trial Period
 - [ ] Manually/Auto Activate Paid Users
 - [ ] Add Payment Gateway For Admin
-- [ ] Middleware for New Sign Up Tour
+- [ ] Middleware Tour For New Sign Up
 
 ### TODO for Version 2.0.0
 
