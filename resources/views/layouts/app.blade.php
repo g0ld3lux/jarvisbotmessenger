@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('site.title') }}</title>
+    <title>{{ config('site.title') }} &raquo; @yield('page.title')</title>
 
     <!-- Styles -->
     <link href="{{ elixir('css/all.css') }}" rel="stylesheet">

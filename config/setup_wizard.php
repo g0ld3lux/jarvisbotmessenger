@@ -59,17 +59,17 @@ return [
         // Create A Bot
         'create-bot'       => \App\Wizard\Steps\CreateANewBot::class,
         // Get Permission For Facebook To Manage Page -> javascript related
-        'connect-fanpage' => \App\Wizard\Steps\CreateANewBot::class,
+        'connect-fanpage' => \App\Wizard\Steps\ManageFanPage::class,
         // Ask if You Want to Import A Template or Blank Template
-        'choose-bot-template' => \App\Wizard\Steps\CreateANewBot::class,
+        'choose-bot-template' => \App\Wizard\Steps\ChooseTemplate::class,
         // Add Greetings Text
-        'add-greetings' => \App\Wizard\Steps\CreateANewBot::class,
+        'add-greetings' => \App\Wizard\Steps\AddGreetings::class,
         // Add Get Started Responds
-        'add-get-started-message' => \App\Wizard\Steps\CreateANewBot::class,
+        'add-get-started-message' => \App\Wizard\Steps\AddGetStartedMessage::class,
         // Add Persistent Menu
-        'add-persistent-menu'   => \App\Wizard\Steps\CreateANewBot::class,
+        'add-persistent-menu'   => \App\Wizard\Steps\AddPersistentMenu::class,
         // Start Talking to A Bot
-        'completed'        => \App\Wizard\Steps\CreateANewBot::class,
+        'completed'        => \App\Wizard\Steps\Completed::class,
         
         
     ],

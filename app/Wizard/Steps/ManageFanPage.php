@@ -12,9 +12,9 @@ class ManageFanPage extends BaseStep
 
     public function getFormData()
     {
-
-        $formData = ['fanpage' => []];
-
+        $bot =  request()->user()->bots()->latest()->first();
+        $formData['bot'] = $bot;
+        // This will be return as $bot variable in your view
         return $formData;
     }
 

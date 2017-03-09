@@ -32,7 +32,7 @@ class WizardController extends Controller
      */
     public function showStep()
     {
-        return view()->make('wizard::steps.default');
+        return view()->make('wizard::steps.extend');
     }
 
     /**
@@ -67,7 +67,7 @@ class WizardController extends Controller
         // Apply the current step. If success, we can redirect to next one
         $currentStep = \SetupWizard::currentStep();
         if (!$currentStep->apply($request->all())) {
-            return view()->make('wizard::steps.default', ['errors' => $currentStep->getMessageBag()]);
+            return view()->make('wizard::steps.extend', ['errors' => $currentStep->getMessageBag()]);
         }
 
         // If we have a next step, go for it. Else we redirect to somewhere else
@@ -92,7 +92,7 @@ class WizardController extends Controller
             // Undo the previous step. If success, we can redirect to its form
             $previousStep = \SetupWizard::previousStep();
             if (!$previousStep->undo()) {
-                return view()->make('wizard::steps.default', ['errors' => $previousStep->getMessageBag()]);
+                return view()->make('wizard::steps.extend', ['errors' => $previousStep->getMessageBag()]);
             }
 
             return redirect()->route('setup_wizard.show', ['slug' => $previousStep->getSlug()]);
