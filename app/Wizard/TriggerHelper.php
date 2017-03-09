@@ -3,6 +3,7 @@
 namespace App\Wizard;
 
 use App\Contracts\Wizard\WizardTrigger;
+use App\Exceptions\StepNotFoundException;
 
 /**
  * Class TriggerHelper
@@ -33,9 +34,15 @@ class TriggerHelper
      */
     public static function hasWizardCompleted()
     {
-  
-        $done = request()->user()->wizard;
+        
+        // Check For Authenticated User!
+        try{
+            $done = request()->user()->wizard;
+            return $done;
+        }catch(\Exception $e) {
+            throw new \Exception('No Authorize User, Please Log In First!');
+        }
 
-        return $done;
+        
     }
 }
