@@ -22,6 +22,15 @@ use Socialite;
 
 class BotsController extends Controller
 {
+
+    /**
+     * Add a Middleware to Trigger when New User Sign Up!
+     *
+     */
+    public function __construct()
+    {
+        $this->middleware('setup_wizard.trigger', ['only' => 'index']);
+    }
     /**
      * Show the application dashboard.
      *

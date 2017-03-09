@@ -35,6 +35,12 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
         ],
+
+        'setup_wizard' => [
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        'setup_wizard.initializer',
+        ]
     ];
 
     /**
@@ -54,5 +60,7 @@ class Kernel extends HttpKernel
         'impersonate' => \App\Http\Middleware\Impersonate::class,
         'active' => \App\Http\Middleware\Activated::class,
         'prevent-back-history' => \App\Http\Middleware\PreventBackHistory::class,
+        'setup_wizard.initializer' => \App\Http\Middleware\SetupWizardInitializer::class,
+        'setup_wizard.trigger'     => \App\Http\Middleware\SetupWizardTrigger::class,
     ];
 }

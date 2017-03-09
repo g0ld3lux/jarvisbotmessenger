@@ -34,7 +34,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-     protected $username            = 'email';
+      protected $username            = 'email';
       protected $redirectTo          = '/bots';
       protected $redirectAfterLogout = 'login';
       protected $maxLoginAttempts    = 3;

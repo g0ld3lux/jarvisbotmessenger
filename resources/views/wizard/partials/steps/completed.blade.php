@@ -1,0 +1,1 @@
+<p>{!! trans('wizard::steps.completed.view.ready_to_go') !!}</p>

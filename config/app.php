@@ -158,6 +158,7 @@ return [
         PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Recca0120\LaravelPayum\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -169,6 +170,7 @@ return [
         App\Providers\ValidatorServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
         App\Providers\PluginsServiceProvider::class,
+        App\Providers\WizardServiceProvider::class,
 
     ],
 
@@ -221,6 +223,9 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Google2FA' => PragmaRX\Google2FA\Vendor\Laravel\Facade::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'SetupWizard' => App\Facades\SetupWizard::class,
 
     ],
 

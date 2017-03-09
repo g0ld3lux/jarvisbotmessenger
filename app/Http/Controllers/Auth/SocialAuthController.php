@@ -30,6 +30,6 @@ class SocialAuthController extends Controller
         return redirect()->route('auth.get2FA');
       }
 
-    return redirect()->to('/');
+    return redirect()->to('/bots');
   }
 }

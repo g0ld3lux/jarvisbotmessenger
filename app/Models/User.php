@@ -29,6 +29,7 @@ class User extends Authenticatable
 
     protected $cast = [
       'activated' => 'boolean',
+      'wizard'    => 'boolean'
     ];
 
     protected $dates = [
