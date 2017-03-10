@@ -51,7 +51,6 @@ angular
          */
         $scope.cloneTemplates = function () {
             $scope.loading = true;
-            console.log($scope.choosen);
             $scope.errors = {};
             var data = JSON.stringify({templates: $scope.choosen});
 

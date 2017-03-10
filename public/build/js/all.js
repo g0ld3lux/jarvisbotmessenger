@@ -23016,17 +23016,33 @@ angular
     });
 angular
     .module("messengerBotApp")
-    .controller("TemplateLoaderController", function ($scope, toastr, $http, SweetAlert, $uibModal) {
-     
+    .controller("TemplatesClonerController", function ($scope, $http, $uibModalInstance, toastr, botId) {
         /**
-         * Determine if flows are loading.
+         * Set initial exporting state.
          *
          * @type {boolean}
          */
-         $scope.templatesLoading = false;
-    
+        $scope.loading = false;
+
         $scope.templates = [];
 
+        $scope.choosen = [];
+
+
+
+        /**
+         * Load Templates.
+         */
+        var loadTemplates = function () {
+            // If templates are loaded then dont make an ajax call
+            $scope.loading = true;
+            $http.get(BASE_URL + "/api/templates/").then(function (response) {
+                $scope.templates = response.data;
+            }).finally(function () {
+                $scope.loading = true;
+            });
+        };
+        loadTemplates();
         /**
          * Dismiss modal.
          */
@@ -23034,39 +23050,61 @@ angular
             $uibModalInstance.dismiss('cancel');
         };
 
+        $scope.choose = function (template) {
+            var found = _.indexOf($scope.choosen, template.id);
+            if(found != -1) {
+                $scope.choosen.splice(found, 1);
+                toastr.warning("Unchecked: " + template.name);
+            } else {
+                $scope.choosen.push(template.id);
+                toastr.success("Choosen: " + template.name);
+            }
+        };
+
 
         /**
-         * Load Templates.
+         * Clone Templates
          */
-        var loadTemplates = function () {
-            $scope.templatesLoading = true;
-            console.log('power');
-            $http.get(BASE_URL + "/api/templates/").then(function (response) {
-                $scope.templates = response.data;
-            }).finally(function () {
-                $scope.templatesLoading = false;
-                $uibModalInstance.close(true);
+        $scope.cloneTemplates = function () {
+            $scope.loading = true;
+            $scope.errors = {};
+            var data = JSON.stringify({templates: $scope.choosen});
+
+            $http.post(BASE_URL + "/api/loadTemplateToFlows/" + botId, data).then(function successCallback(response) {
+                toastr.success("Templates Was Copied to Your Bot");
+            }, function errorCallback(response) {
+               toastr.error("Failed to Clone Templates");
             });
+            $uibModalInstance.dismiss('cancel');
+
         };
 
-        loadTemplates();
-
-        var select = function (template) {
-            console.log(template.name + ' is Selected');
-        };
-
-        var modalInstance = $uibModal.open({
-                                templateUrl: "TemplateLoaderController.html",
-                                controller: "TemplateLoaderController",
-                                size: "lg",
-                                resolve: {
-                                    templates: function () {
-                                        return pagesResponse.data;
-                                    }
-                                }
-                            });
 
     });
+angular
+    .module("messengerBotApp")
+    .controller("TemplatesModalController", function ($scope, toastr, $uibModal) {
+
+         /**
+         * Show Template modal.
+         */
+        $scope.openModalTemplates = function () {
+            var modalInstance = $uibModal.open({
+                templateUrl: "TemplatesClonerController.html",
+                controller: "TemplatesClonerController",
+                resolve: {
+                    botId: function () {
+                        return BOT_ID;
+                    }
+                }
+            });
+            modalInstance.result.then(function (result) {
+                if (result) {
+                    toastr.success("Fetching All Templates...");
+                }
+            });
+        };
+});
 angular
     .module("messengerBotApp.global.facebookService", [])
     .factory("FacebookService", ["$q", function ($q) {
