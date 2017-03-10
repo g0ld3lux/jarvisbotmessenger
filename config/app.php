@@ -159,6 +159,8 @@ return [
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Recca0120\LaravelPayum\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Conner\Tagging\Providers\TaggingServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
 
         /*
          * Application Service Providers...

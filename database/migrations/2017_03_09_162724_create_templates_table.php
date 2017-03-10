@@ -15,9 +15,11 @@ class CreateTemplatesTable extends Migration
         Schema::create('templates', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('category_id')->nullable();
-            $table->integer('tag_id')->nullable();
-            $table->longText('flows');
+            $table->string('slug')
+                  ->unique();
+            $table->longText('flows')->nullable();
+            $table->boolean('approved')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
