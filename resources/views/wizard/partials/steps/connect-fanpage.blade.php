@@ -19,6 +19,7 @@
         </p>
     </div>
 </div>
+<div style="padding-top: 170px;"></div>
 @endpush
 @push('ngTemplates')
 @include('bots._partials.connect_facebook_page_modal')
