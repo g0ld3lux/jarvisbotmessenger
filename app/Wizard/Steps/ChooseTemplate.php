@@ -12,7 +12,8 @@ class ChooseTemplate extends BaseStep
 
     public function getFormData()
     {
-        $formData = ['template' => []];
+        $bot =  request()->user()->bots()->latest()->first();
+        $formData['bot'] = $bot;
 
         return $formData;
     }

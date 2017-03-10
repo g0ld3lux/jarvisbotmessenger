@@ -8,7 +8,7 @@
     <title>{{ config('site.title') }} &raquo; @yield('page.title')</title>
 
     <!-- Styles -->
-    <link href="{{ elixir('css/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('apple-icon-60x60.png') }}">
@@ -165,7 +165,7 @@
     @stack('modals')
 
     <!-- JavaScripts -->
-    <script src="{{ elixir('js/all.js') }}"></script>
+    <script src="{{ asset('js/all.js') }}"></script>
 
     @stack('scripts')
 </body>

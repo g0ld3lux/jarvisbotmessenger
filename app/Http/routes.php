@@ -25,4 +25,6 @@ include 'routes_features.php';
 
 include 'routes_plan.php';
 
+include 'routes_templates.php';
+
 Route::get('/privacy', ['as'  => 'privacy', 'uses' => 'HomeController@privacy']);
