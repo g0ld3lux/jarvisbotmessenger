@@ -41,7 +41,7 @@ class TriggerHelper
             if($done){
             return $done;
             }
-            
+            dd($done);
         }catch(\Exception $e) {
             throw new \Exception('No Authorize User, Please Log In First!');
         }
