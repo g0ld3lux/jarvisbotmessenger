@@ -25,6 +25,7 @@ class NewUserSignUp implements WizardTrigger
         if(!$done){
             return true;
         }
+        return false;
    
     }
 }

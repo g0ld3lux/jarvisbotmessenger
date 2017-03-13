@@ -14,7 +14,7 @@ return [
     'routing' => [
         // Load the routes specified by the package, if not, you have to create
         // the routes by yourself in your project's route file
-        'load_default'  => false,
+        'load_default'  => true,
 
         // When using default routes, here are some ways to customize them
         'prefix'        => 'bot-wizard',
