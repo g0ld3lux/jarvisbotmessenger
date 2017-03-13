@@ -34,14 +34,15 @@ class TriggerHelper
      */
     public static function hasWizardCompleted()
     {
-        
+        $user = \Auth::user();
+        $done = $user->wizard;
         // Check For Authenticated User!
         try{
-            $user = \Auth::user();
-            $done = $user->wizard;
+            
             if($done) return $done;
-            dd($done);
-
+            
+        }
+        dd($done);
         
     }
 }
