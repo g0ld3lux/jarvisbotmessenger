@@ -12,13 +12,29 @@ class AddGetStartedMessage extends BaseStep
 
     public function getFormData()
     {
-        $formData = ['get_started_message' => []];
+        $bot =  request()->user()->bots()->latest()->first();
+        $formData['bot'] = $bot;
 
+        $responds =  $bot->responds()->global()->get();
+
+        $formData['responds'] = $responds;
         return $formData;
     }
 
     public function apply($formData)
     {
+        $bot =  request()->user()->bots()->latest()->first();
+        $settings = $bot->threadSettings;
+
+        try {
+            $settings->getStartedRespond()->associate(
+                $bot->responds()->findOrFail(request()->input('get_started_respond_id'))
+            );
+        } catch (\Exception $e) {
+            $settings->get_started_respond_id = null;
+        }
+
+        $settings->save();
         return true;
     }
 
