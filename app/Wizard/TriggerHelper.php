@@ -37,11 +37,9 @@ class TriggerHelper
         $user = \Auth::user();
         $done = $user->wizard;
         // Check For Authenticated User!
-        try{
             
             if($done) return $done;
             
-        }
         dd($done);
         
     }
