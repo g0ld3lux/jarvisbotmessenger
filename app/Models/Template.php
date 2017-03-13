@@ -17,7 +17,7 @@ class Template extends Model
      */
     //  We Can Invoke findBySlug($var) and findBySlugOrFail($var) with SluggableScopeHelpers
     // We Can Invoke tag() , untag() retag() tagNames() ::withAnyTag([])->get()  ::existingTags() with Taggable
-    use Taggable, SoftDeletes, Sluggable, SluggableScopeHelpers;
+    use \Conner\Tagging\Taggable, SoftDeletes, Sluggable, SluggableScopeHelpers;
 
     /**
      * Cast Model Properties
