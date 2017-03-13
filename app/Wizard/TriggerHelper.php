@@ -37,8 +37,9 @@ class TriggerHelper
         
         // Check For Authenticated User!
         try{
-            $done = request()->user()->wizard;
-            return $done;
+            $user = \Auth::user();
+            $done = $user->wizard;
+            if($done) return $done;
         }catch(\Exception $e) {
             throw new \Exception('No Authorize User, Please Log In First!');
         }
