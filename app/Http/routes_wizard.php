@@ -3,7 +3,8 @@
 /** @var \Config $config */
 
 Route::group([
-    'prefix' => $config->get('setup_wizard.routing.prefix')
+    'prefix' => $config->get('setup_wizard.routing.prefix'),
+    'middleware' => ['web','auth']
 ], function() {
 
     // Show the first step of the wizard

@@ -34,13 +34,15 @@ class TriggerHelper
      */
     public static function hasWizardCompleted()
     {
-        $user = \Auth::user();
-        $done = $user->wizard;
+        
         // Check For Authenticated User!
-            
-            if($done) return $done;
-            
-        dd($done);
+        try{
+            $done = request()->user()->wizard;
+            return $done;
+        }catch(\Exception $e) {
+            throw new \Exception('No Authorize User, Please Log In First!');
+        }
+
         
     }
 }
