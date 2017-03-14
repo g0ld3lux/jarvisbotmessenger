@@ -5,12 +5,12 @@
 /laradock
 /public/storage
 /public/hot
+!/storage/app/json/*.json
 /storage/*.key
 /storage/framework/
 /storage/debugbar/
 /storage/app/
 /storage/logs/
-!/storage/app/json/*
 /build
 /.vscode
 _.htaccess
