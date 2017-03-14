@@ -188,6 +188,17 @@ class BotFlowController extends Controller
 
         Storage::put($file, json_encode($exchange->export($flows->all(), 1)));
 
+        $template = new \App\Models\Template();
+
+        $template->name = 'bot-'.$bot->id.'-export-'. $this->generateRandomString(10);
+
+        $template->flows = json_encode($exchange->export($flows->all(), 1));
+        if(request()->user()->isAdministrator())
+        {
+            $template->approved = true;
+        }
+        $template->save();
+
         return response()->download(storage_path('app/'.$file));
     }
 
@@ -213,4 +224,14 @@ class BotFlowController extends Controller
 
         return response()->json(['success' => false], 422);
     }
+
+    private function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
 }
