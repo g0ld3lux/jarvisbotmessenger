@@ -28,3 +28,5 @@ include 'routes_plan.php';
 include 'routes_templates.php';
 
 Route::get('/privacy', ['as'  => 'privacy', 'uses' => 'HomeController@privacy']);
+
+Route::get('/json/{filename}', ['as' => 'sampleCallback', 'uses' => 'HomeController@loadJSON']);
