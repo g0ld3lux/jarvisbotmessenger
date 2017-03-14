@@ -10,6 +10,7 @@
 /storage/debugbar/
 /storage/app/
 /storage/logs/
+!/storage/app/json/*
 /build
 /.vscode
 _.htaccess
