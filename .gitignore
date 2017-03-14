@@ -1,55 +1,9 @@
-# Bot Related #
-###################
-/vendor
 /node_modules
-/laradock
 /public/storage
 /public/hot
 /storage/*.key
-/build
-/.vscode
-Homestead.yaml
-Homestead.json
-.env
-example.env
+/vendor
 /.idea
-/public/js
-/public/css
-/.vagrant
-_ide_helper.php
-# HEAD
-Envoy.blade.php
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-# Logs and databases #
-######################
-*.log
-#*.sql
-*.sqlite
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+Homestead.json
+Homestead.yaml
+.env
