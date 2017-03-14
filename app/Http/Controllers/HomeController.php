@@ -11,7 +11,7 @@ class HomeController extends Controller
     }
 
     public function loadJSON($filename) {
-      $path = storage_path() . "/app/public/json/".$filename.".json";
+      $path = storage_path() . "/json/" . $filename. ".json";
 
     if (!\File::exists($path)) {
         throw new \Exception("Invalid File");
