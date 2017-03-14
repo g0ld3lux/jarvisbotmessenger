@@ -76,10 +76,17 @@ $(function () {
                         });
                     });
                 }
-
+                
                 FB.getLoginStatus(function(response) {
                     if (response.status === 'connected') {
-                        listPages(response.authResponse.userID);
+                        FB.api('/me/permissions', function(response){
+                        if (response && response.data && response.data.length){
+                            var permissions = response.data.shift();
+                            if (permissions.manage_pages && pages_messaging) {
+                            listPages(response.authResponse.userID);
+                            }
+                        }
+                        });
                     } else {
                         FB.login(function(response) {
                             if (response.authResponse) {
