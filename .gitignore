@@ -8,12 +8,6 @@
 /storage/*.key
 /build
 /.vscode
-_.htaccess
-.htaccess
-index.php
-robots.txt
-web.config
-favicon.cio
 Homestead.yaml
 Homestead.json
 .env
