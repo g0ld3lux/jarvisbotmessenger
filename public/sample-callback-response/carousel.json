@@ -1,0 +1,36 @@
+{
+    "type": "carousel",
+    "payload": {
+      "elements": [
+        {
+          "title": "title",
+          "sub_title": "sub title",
+          "image_url": "http://media.idownloadblog.com/wp-content/uploads/2017/01/google-logo.jpg",
+          "buttons": [
+            {
+              "type": "web_url",
+              "title": "Google",
+              "url": "https://google.com"
+            }
+          ]
+        },
+        {
+          "title": "title",
+          "sub_title": "sub title",
+          "image_url": "http://static.trustedsreviews.com/94/00002d886/258f/facebook-messenger-logo.jpg",
+          "buttons": [
+            {
+              "type": "web_url",
+              "title": "Google",
+              "url": "https://google.com"
+            },
+            {
+              "type": "web_url",
+              "title": "Facebook",
+              "url": "https://www.facebook.com"
+            }
+          ]
+        }
+      ]
+    }
+  }
