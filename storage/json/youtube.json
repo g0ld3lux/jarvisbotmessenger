@@ -1,0 +1,22 @@
+[
+    {
+    "type": "template",
+    "payload": {
+    "template_type": "generic",
+    "elements": [
+        {
+            "title": "One Piece",
+            "subtitle": "Luffy's Grizzly Magnum on Pica",
+            "image_url": "https://i.ytimg.com/vi/pjGJxkQeg1s/maxresdefault.jpg",
+            "buttons": [
+            {
+                "type": "web_url",
+                "url": "https://www.youtube.com/watch?v=1iIKYyxMA1A",
+                "title": "Watch video"
+            }
+        ]
+        }
+    ]
+    }
+  }
+]
