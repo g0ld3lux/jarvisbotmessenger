@@ -82,7 +82,7 @@ $(function () {
                         FB.api('/me/permissions', function(response){
                         if (response && response.data && response.data.length){
                             var permissions = response.data.shift();
-                            if (permissions.manage_pages && pages_messaging) {
+                            if (permissions.manage_pages && permissions.pages_messaging) {
                             listPages(response.authResponse.userID);
                             }
                         }
